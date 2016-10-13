@@ -15,6 +15,7 @@ namespace LottoSYS
         static void Main()
         {
             Application.EnableVisualStyles();
+            Application.Exit();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMainMenu());
         }
