@@ -30,7 +30,7 @@
         {
             this.mnuUpdateCustomer = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             // 
             this.mnuUpdateCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBack,
-            this.exitToolStripMenuItem});
+            this.mnuExit});
             this.mnuUpdateCustomer.Location = new System.Drawing.Point(0, 0);
             this.mnuUpdateCustomer.Name = "mnuUpdateCustomer";
             this.mnuUpdateCustomer.Size = new System.Drawing.Size(774, 24);
@@ -77,12 +77,12 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // exitToolStripMenuItem
+            // mnuExit
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.Size = new System.Drawing.Size(37, 20);
+            this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // lblSearch
             // 
@@ -364,7 +364,7 @@
 
         private System.Windows.Forms.MenuStrip mnuUpdateCustomer;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Button btnSearch;

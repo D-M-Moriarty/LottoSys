@@ -92,7 +92,8 @@
             // 
             this.mnuCustomerList.Name = "mnuCustomerList";
             this.mnuCustomerList.Size = new System.Drawing.Size(190, 22);
-            this.mnuCustomerList.Text = "List Customers";
+            mnuCustomerList.Text = "List Customers";
+            mnuCustomerList.Click += new System.EventHandler(mnuCustomerList_Click);
             // 
             // salesToolStripMenuItem
             // 

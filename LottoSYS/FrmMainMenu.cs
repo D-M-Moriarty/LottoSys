@@ -42,5 +42,12 @@ namespace LottoSYS
             this.Hide();
             frmNext.Show();
         }
+
+        private void mnuCustomerList_Click(object sender, EventArgs e)
+        {
+            frmListCustomers frmNext = new frmListCustomers(this);
+            this.Hide();
+            frmNext.Show();
+        }
     }
 }

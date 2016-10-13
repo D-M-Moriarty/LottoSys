@@ -71,6 +71,12 @@
     <Compile Include="frmCustomerUpdate.Designer.cs">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListCustomers.Designer.cs">
+      <DependentUpon>frmListCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerUpdate.resx">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListCustomers.resx">
+      <DependentUpon>frmListCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>

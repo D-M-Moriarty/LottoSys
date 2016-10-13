@@ -33,7 +33,7 @@ namespace LottoSYS
             parent.Show();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
