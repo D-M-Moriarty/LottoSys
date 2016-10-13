@@ -539,5 +539,29 @@ namespace LottoSYS
             
 
         }
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Data has been registered");
+
+            txtSurname.Text = "";
+            txtForename.Text = "";
+            txtEmail.Text = "";
+            txtAddress1.Text = "";
+            txtAddress2.Text = "";
+            txtPhone.Text = "";
+            txtPPSN.Text = "";
+            txtTown.Text = "";
+            cboCounty.SelectedIndex = -1;
+            cboGender.SelectedIndex = -1;
+            cboNationality.SelectedIndex = -1;
+            cboTitle.SelectedIndex = -1;
+            cboCountry.SelectedIndex = -1;
+        }
+
+        private void lblNationality_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
