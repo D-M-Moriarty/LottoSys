@@ -30,5 +30,15 @@ namespace LottoSYS
         {
             Application.Exit();
         }
+
+        private void frmCustomerDeReg_Load(object sender, EventArgs e)
+        {
+            grpDeReg.Visible = false;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            grpDeReg.Visible = true;
+        }
     }
 }

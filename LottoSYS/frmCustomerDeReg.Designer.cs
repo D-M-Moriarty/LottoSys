@@ -35,7 +35,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpDeReg = new System.Windows.Forms.GroupBox();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.lblForename = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.chkDeceased = new System.Windows.Forms.CheckBox();
             this.chkWithdrawn = new System.Windows.Forms.CheckBox();
             this.mnuUpdateCustomer.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpDeReg.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuUpdateCustomer
@@ -97,6 +97,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchBox
             // 
@@ -116,26 +117,26 @@
             this.lblSearch.TabIndex = 4;
             this.lblSearch.Text = "Id Number:";
             // 
-            // groupBox1
+            // grpDeReg
             // 
-            this.groupBox1.Controls.Add(this.chkWithdrawn);
-            this.groupBox1.Controls.Add(this.chkDeceased);
-            this.groupBox1.Controls.Add(this.txtForename);
-            this.groupBox1.Controls.Add(this.lblForename);
-            this.groupBox1.Controls.Add(this.txtSurname);
-            this.groupBox1.Controls.Add(this.lblSurname);
-            this.groupBox1.Controls.Add(this.txtTown);
-            this.groupBox1.Controls.Add(this.lblTown);
-            this.groupBox1.Controls.Add(this.txtAddress2);
-            this.groupBox1.Controls.Add(this.lblAddressLine2);
-            this.groupBox1.Controls.Add(this.txtAddress1);
-            this.groupBox1.Controls.Add(this.lblAddressLine1);
-            this.groupBox1.Location = new System.Drawing.Point(38, 173);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(499, 258);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grpDeReg.Controls.Add(this.chkWithdrawn);
+            this.grpDeReg.Controls.Add(this.chkDeceased);
+            this.grpDeReg.Controls.Add(this.txtForename);
+            this.grpDeReg.Controls.Add(this.lblForename);
+            this.grpDeReg.Controls.Add(this.txtSurname);
+            this.grpDeReg.Controls.Add(this.lblSurname);
+            this.grpDeReg.Controls.Add(this.txtTown);
+            this.grpDeReg.Controls.Add(this.lblTown);
+            this.grpDeReg.Controls.Add(this.txtAddress2);
+            this.grpDeReg.Controls.Add(this.lblAddressLine2);
+            this.grpDeReg.Controls.Add(this.txtAddress1);
+            this.grpDeReg.Controls.Add(this.lblAddressLine1);
+            this.grpDeReg.Location = new System.Drawing.Point(38, 173);
+            this.grpDeReg.Name = "grpDeReg";
+            this.grpDeReg.Size = new System.Drawing.Size(499, 258);
+            this.grpDeReg.TabIndex = 7;
+            this.grpDeReg.TabStop = false;
+            this.grpDeReg.Text = "DeReg";
             // 
             // txtForename
             // 
@@ -257,7 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 462);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpDeReg);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBox);
             this.Controls.Add(this.lblSearch);
@@ -267,10 +268,11 @@
             this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmCustomerDeReg";
             this.Text = "frmCustomerDeReg";
+            this.Load += new System.EventHandler(this.frmCustomerDeReg_Load);
             this.mnuUpdateCustomer.ResumeLayout(false);
             this.mnuUpdateCustomer.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpDeReg.ResumeLayout(false);
+            this.grpDeReg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +287,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpDeReg;
         private System.Windows.Forms.CheckBox chkWithdrawn;
         private System.Windows.Forms.CheckBox chkDeceased;
         private System.Windows.Forms.TextBox txtForename;
