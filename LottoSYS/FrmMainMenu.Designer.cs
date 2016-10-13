@@ -38,6 +38,7 @@
             this.financeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +86,7 @@
             this.mnuCustomerDeReg.Name = "mnuCustomerDeReg";
             this.mnuCustomerDeReg.Size = new System.Drawing.Size(190, 22);
             this.mnuCustomerDeReg.Text = "De-Register Customer";
+            this.mnuCustomerDeReg.Click += new System.EventHandler(this.mnuCustomerDeReg_Click);
             // 
             // mnuCustomerList
             // 
@@ -117,11 +119,22 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(162, 169);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(222, 29);
+            this.lblWelcome.TabIndex = 1;
+            this.lblWelcome.Text = "Lotto System Home";
+            // 
             // FrmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 373);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.mnuMainMenu);
             this.MainMenuStrip = this.mnuMainMenu;
             this.Name = "FrmMainMenu";
@@ -145,6 +158,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerUpdate;
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerDeReg;
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerList;
+        private System.Windows.Forms.Label lblWelcome;
     }
 }
 

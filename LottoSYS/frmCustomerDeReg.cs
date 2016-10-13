@@ -12,9 +12,23 @@ namespace LottoSYS
 {
     public partial class frmCustomerDeReg : Form
     {
-        public frmCustomerDeReg()
+        private FrmMainMenu parent;
+
+        public frmCustomerDeReg(FrmMainMenu Parent)
         {
             InitializeComponent();
+            parent = Parent;
+        }
+
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            parent.Show();
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -14,16 +14,13 @@ namespace LottoSYS
     {
         private FrmMainMenu parent;
 
-        public frmCustomerUpdate()
-        {
-            InitializeComponent();
-        }
-
         public frmCustomerUpdate(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;
         }
+
+       
 
         private void frmCustomerUpdate_Load(object sender, EventArgs e)
         {

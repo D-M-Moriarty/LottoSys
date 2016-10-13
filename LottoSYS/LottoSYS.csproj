@@ -79,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCustomerDeReg.resx">
+      <DependentUpon>frmCustomerDeReg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerProfile.resx">
       <DependentUpon>frmCustomerProfile.cs</DependentUpon>
     </EmbeddedResource>
