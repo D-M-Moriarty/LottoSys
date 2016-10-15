@@ -3,16 +3,16 @@ using System.Windows.Forms;
 
 namespace LottoSYS.Finance
 {
-    public partial class frmRevenueReport : Form
+    public partial class frmPayPrize : Form
     {
         FrmMainMenu parent;
 
-        public frmRevenueReport()
+        public frmPayPrize()
         {
             InitializeComponent();
         }
 
-        public frmRevenueReport(FrmMainMenu Parent)
+        public frmPayPrize(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;
@@ -25,10 +25,13 @@ namespace LottoSYS.Finance
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            if (txtPassword.Equals("hello"){
+            if (txtPassword.Text == "12345" && txtUsername.Text == "Darren")
+            {
                 grpRevenue.Visible = true;
-            } else {
-                Console.WriteLine("Invalid");
+            }
+            else
+            {
+                MessageBox.Show("Invalid");
             }
         }
     }

@@ -164,24 +164,28 @@
             this.runDrawToolStripMenuItem.Name = "runDrawToolStripMenuItem";
             this.runDrawToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.runDrawToolStripMenuItem.Text = "Run Draw";
+            this.runDrawToolStripMenuItem.Click += new System.EventHandler(this.mnuRunDraw_Click);
             // 
             // listWinningTicketsToolStripMenuItem
             // 
             this.listWinningTicketsToolStripMenuItem.Name = "listWinningTicketsToolStripMenuItem";
             this.listWinningTicketsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.listWinningTicketsToolStripMenuItem.Text = "List Winning Tickets";
+            this.listWinningTicketsToolStripMenuItem.Click += new System.EventHandler(this.listWinningTicketsToolStripMenuItem_Click);
             // 
             // payPrizeToolStripMenuItem
             // 
             this.payPrizeToolStripMenuItem.Name = "payPrizeToolStripMenuItem";
             this.payPrizeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.payPrizeToolStripMenuItem.Text = "Pay Prize";
+            this.payPrizeToolStripMenuItem.Click += new System.EventHandler(this.mnuPayPrize_Click);
             // 
             // listUnclaimedPrizesToolStripMenuItem
             // 
             this.listUnclaimedPrizesToolStripMenuItem.Name = "listUnclaimedPrizesToolStripMenuItem";
             this.listUnclaimedPrizesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.listUnclaimedPrizesToolStripMenuItem.Text = "List Unclaimed Prizes";
+            this.listUnclaimedPrizesToolStripMenuItem.Click += new System.EventHandler(this.mnuListUnclaimedPrizes_Click);
             // 
             // mnuExit
             // 
@@ -210,6 +214,7 @@
             this.MainMenuStrip = this.mnuMainMenu;
             this.Name = "FrmMainMenu";
             this.Text = "LottoSYS - Main Menu";
+            this.Load += new System.EventHandler(this.FrmMainMenu_Load);
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
             this.ResumeLayout(false);

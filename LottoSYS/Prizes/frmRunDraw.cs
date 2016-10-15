@@ -12,9 +12,22 @@ namespace LottoSYS.Prizes
 {
     public partial class frmRunDraw : Form
     {
+        FrmMainMenu parent;
+
         public frmRunDraw()
         {
             InitializeComponent();
+        }
+
+        public frmRunDraw(FrmMainMenu Parent)
+        {
+            InitializeComponent();
+            parent = Parent;
+        }
+
+        private void frmRunDraw_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

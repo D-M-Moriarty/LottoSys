@@ -12,9 +12,22 @@ namespace LottoSYS.Prizes
 {
     public partial class frmPayPrize : Form
     {
+        FrmMainMenu parent;
+
         public frmPayPrize()
         {
             InitializeComponent();
+        }
+
+        public frmPayPrize(FrmMainMenu Parent)
+        {
+            InitializeComponent();
+            parent = Parent;
+        }
+
+        private void frmPayPrize_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

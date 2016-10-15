@@ -1,6 +1,6 @@
 ﻿namespace LottoSYS.Finance
 {
-    partial class frmRevenueReport
+    partial class frmPayPrize
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.grpRevenue = new System.Windows.Forms.GroupBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -50,7 +52,7 @@
             this.txtPassword.Location = new System.Drawing.Point(221, 78);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(147, 22);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 10;
             // 
             // btnEnter
             // 
@@ -72,17 +74,37 @@
             this.grpRevenue.TabStop = false;
             this.grpRevenue.Text = "Revenue";
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(221, 41);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(147, 22);
+            this.txtUsername.TabIndex = 6;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(124, 47);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(71, 16);
+            this.lblUserName.TabIndex = 9;
+            this.lblUserName.Text = "Username";
+            // 
             // frmRevenueReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.grpRevenue);
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRevenueReport";
             this.Text = "frmRevenueReport";
             this.Load += new System.EventHandler(this.frmRevenueReport_Load);
@@ -97,5 +119,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.GroupBox grpRevenue;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblUserName;
     }
 }

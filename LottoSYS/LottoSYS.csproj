@@ -148,6 +148,18 @@
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prizes\frmListWinTick.resx">
+      <DependentUpon>frmListWinTick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prizes\frmPayPrize.resx">
+      <DependentUpon>frmPayPrize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prizes\frmRunDraw.resx">
+      <DependentUpon>frmRunDraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prizes\frmUnclaimedPrize.resx">
+      <DependentUpon>frmUnclaimedPrize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

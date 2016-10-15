@@ -12,9 +12,22 @@ namespace LottoSYS.Prizes
 {
     public partial class frmListWinTick : Form
     {
+        FrmMainMenu parent;
+
         public frmListWinTick()
         {
             InitializeComponent();
+        }
+
+        public frmListWinTick(FrmMainMenu Parent)
+        {
+            InitializeComponent();
+            parent = Parent;
+        }
+
+        private void frmListWinTick_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

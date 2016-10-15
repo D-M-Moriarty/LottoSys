@@ -2,6 +2,7 @@
 using LottoSYS.Finance;
 using System;
 using System.Windows.Forms;
+using LottoSYS.Prizes;
 
 namespace LottoSYS
 {
@@ -62,7 +63,40 @@ namespace LottoSYS
 
         private void mnuRevenueReport_Click(object sender, EventArgs e)
         {
-            frmRevenueReport frmNext = new frmRevenueReport(this);
+            Finance.frmPayPrize frmNext = new Finance.frmPayPrize(this);
+            this.Hide();
+            frmNext.Show();
+        }
+
+        private void FrmMainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPayPrize_Click(object sender, EventArgs e)
+        {
+            Prizes.frmPayPrize frmNext = new Prizes.frmPayPrize(this);
+            this.Hide();
+            frmNext.Show();
+        }
+
+        private void mnuRunDraw_Click(object sender, EventArgs e)
+        {
+            frmRunDraw frmNext = new frmRunDraw(this);
+            this.Hide();
+            frmNext.Show();
+        }
+
+        private void mnuListUnclaimedPrizes_Click(object sender, EventArgs e)
+        {
+            frmUnclaimedPrize frmNext = new frmUnclaimedPrize(this);
+            this.Hide();
+            frmNext.Show();
+        }
+
+        private void listWinningTicketsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListWinTick frmNext = new frmListWinTick(this);
             this.Hide();
             frmNext.Show();
         }
