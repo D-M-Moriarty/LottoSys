@@ -47,35 +47,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCustomerDeReg.cs">
+    <Compile Include="Customers\frmCustomerDeReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerDeReg.Designer.cs">
+    <Compile Include="Customers\frmCustomerDeReg.Designer.cs">
       <DependentUpon>frmCustomerDeReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerProfile.cs">
+    <Compile Include="Customers\frmCustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerProfile.Designer.cs">
+    <Compile Include="Customers\frmCustomerProfile.Designer.cs">
       <DependentUpon>frmCustomerProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerReg.cs">
+    <Compile Include="Customers\frmCustomerReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerReg.Designer.cs">
+    <Compile Include="Customers\frmCustomerReg.Designer.cs">
       <DependentUpon>frmCustomerReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerUpdate.cs">
+    <Compile Include="Customers\frmCustomerUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerUpdate.Designer.cs">
+    <Compile Include="Customers\frmCustomerUpdate.Designer.cs">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListCustomers.cs">
+    <Compile Include="Customers\frmListCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListCustomers.Designer.cs">
+    <Compile Include="Customers\frmListCustomers.Designer.cs">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmRevenueReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmRevenueReport.Designer.cs">
+      <DependentUpon>frmRevenueReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMainMenu.cs">
       <SubType>Form</SubType>
@@ -83,22 +89,61 @@
     <Compile Include="FrmMainMenu.Designer.cs">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prizes\frmListWinTick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prizes\frmListWinTick.Designer.cs">
+      <DependentUpon>frmListWinTick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prizes\frmPayPrize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prizes\frmPayPrize.Designer.cs">
+      <DependentUpon>frmPayPrize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prizes\frmRunDraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prizes\frmRunDraw.Designer.cs">
+      <DependentUpon>frmRunDraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prizes\frmUnclaimedPrize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prizes\frmUnclaimedPrize.Designer.cs">
+      <DependentUpon>frmUnclaimedPrize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCustomerDeReg.resx">
+    <Compile Include="Sales\frmCashTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmCashTicket.Designer.cs">
+      <DependentUpon>frmCashTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\frmSellTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmSellTickets.Designer.cs">
+      <DependentUpon>frmSellTickets.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Customers\frmCustomerDeReg.resx">
       <DependentUpon>frmCustomerDeReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerProfile.resx">
+    <EmbeddedResource Include="Customers\frmCustomerProfile.resx">
       <DependentUpon>frmCustomerProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerReg.resx">
+    <EmbeddedResource Include="Customers\frmCustomerReg.resx">
       <DependentUpon>frmCustomerReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerUpdate.resx">
+    <EmbeddedResource Include="Customers\frmCustomerUpdate.resx">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListCustomers.resx">
+    <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\frmRevenueReport.resx">
+      <DependentUpon>frmRevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
@@ -112,6 +157,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sales\frmCashTicket.resx">
+      <DependentUpon>frmCashTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frmSellTickets.resx">
+      <DependentUpon>frmSellTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,6 +177,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

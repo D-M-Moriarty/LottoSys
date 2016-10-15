@@ -34,6 +34,8 @@
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
+            this.cboNationality = new System.Windows.Forms.ComboBox();
+            this.lblNationality = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.lblForename = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
-            this.cboNationality = new System.Windows.Forms.ComboBox();
-            this.lblNationality = new System.Windows.Forms.Label();
             this.grpOptional = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -139,6 +139,24 @@
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
             // 
+            // cboNationality
+            // 
+            this.cboNationality.FormattingEnabled = true;
+            this.cboNationality.Location = new System.Drawing.Point(125, 220);
+            this.cboNationality.Name = "cboNationality";
+            this.cboNationality.Size = new System.Drawing.Size(136, 24);
+            this.cboNationality.TabIndex = 35;
+            // 
+            // lblNationality
+            // 
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Location = new System.Drawing.Point(35, 228);
+            this.lblNationality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(82, 16);
+            this.lblNationality.TabIndex = 34;
+            this.lblNationality.Text = "Nationality: *";
+            // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
@@ -224,24 +242,6 @@
             this.lblSurname.Size = new System.Drawing.Size(73, 16);
             this.lblSurname.TabIndex = 11;
             this.lblSurname.Text = "Surname: *";
-            // 
-            // cboNationality
-            // 
-            this.cboNationality.FormattingEnabled = true;
-            this.cboNationality.Location = new System.Drawing.Point(125, 220);
-            this.cboNationality.Name = "cboNationality";
-            this.cboNationality.Size = new System.Drawing.Size(136, 24);
-            this.cboNationality.TabIndex = 35;
-            // 
-            // lblNationality
-            // 
-            this.lblNationality.AutoSize = true;
-            this.lblNationality.Location = new System.Drawing.Point(35, 228);
-            this.lblNationality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNationality.Name = "lblNationality";
-            this.lblNationality.Size = new System.Drawing.Size(82, 16);
-            this.lblNationality.TabIndex = 34;
-            this.lblNationality.Text = "Nationality: *";
             // 
             // grpOptional
             // 

@@ -35,8 +35,16 @@
             this.mnuCustomerDeReg = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustomerList = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sellTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cashTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frmRevenueReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.transToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runDrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listWinningTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payPrizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listUnclaimedPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.mnuMainMenu.SuspendLayout();
@@ -92,26 +100,88 @@
             // 
             this.mnuCustomerList.Name = "mnuCustomerList";
             this.mnuCustomerList.Size = new System.Drawing.Size(190, 22);
-            mnuCustomerList.Text = "List Customers";
-            mnuCustomerList.Click += new System.EventHandler(mnuCustomerList_Click);
+            this.mnuCustomerList.Text = "List Customers";
+            this.mnuCustomerList.Click += new System.EventHandler(this.mnuCustomerList_Click);
             // 
             // salesToolStripMenuItem
             // 
+            this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sellTicketsToolStripMenuItem,
+            this.cashTicketToolStripMenuItem});
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
             this.salesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.salesToolStripMenuItem.Text = "Sales";
             // 
+            // sellTicketsToolStripMenuItem
+            // 
+            this.sellTicketsToolStripMenuItem.Name = "sellTicketsToolStripMenuItem";
+            this.sellTicketsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.sellTicketsToolStripMenuItem.Text = "Sell Tickets";
+            this.sellTicketsToolStripMenuItem.Click += new System.EventHandler(this.mnuSellTickets_Click);
+            // 
+            // cashTicketToolStripMenuItem
+            // 
+            this.cashTicketToolStripMenuItem.Name = "cashTicketToolStripMenuItem";
+            this.cashTicketToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.cashTicketToolStripMenuItem.Text = "Cash Ticket";
+            this.cashTicketToolStripMenuItem.Click += new System.EventHandler(this.mnuCashTicket_Click);
+            // 
             // financeToolStripMenuItem
             // 
+            this.financeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.frmRevenueReport,
+            this.transToolStripMenuItem});
             this.financeToolStripMenuItem.Name = "financeToolStripMenuItem";
             this.financeToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.financeToolStripMenuItem.Text = "Finance";
             // 
+            // frmRevenueReport
+            // 
+            this.frmRevenueReport.Name = "frmRevenueReport";
+            this.frmRevenueReport.Size = new System.Drawing.Size(157, 22);
+            this.frmRevenueReport.Text = "Revenue Report";
+            this.frmRevenueReport.Click += new System.EventHandler(this.mnuRevenueReport_Click);
+            // 
+            // transToolStripMenuItem
+            // 
+            this.transToolStripMenuItem.Name = "transToolStripMenuItem";
+            this.transToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.transToolStripMenuItem.Text = "Trans";
+            // 
             // prizesToolStripMenuItem
             // 
+            this.prizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runDrawToolStripMenuItem,
+            this.listWinningTicketsToolStripMenuItem,
+            this.payPrizeToolStripMenuItem,
+            this.listUnclaimedPrizesToolStripMenuItem});
             this.prizesToolStripMenuItem.Name = "prizesToolStripMenuItem";
             this.prizesToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.prizesToolStripMenuItem.Text = "Prizes";
+            // 
+            // runDrawToolStripMenuItem
+            // 
+            this.runDrawToolStripMenuItem.Name = "runDrawToolStripMenuItem";
+            this.runDrawToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.runDrawToolStripMenuItem.Text = "Run Draw";
+            // 
+            // listWinningTicketsToolStripMenuItem
+            // 
+            this.listWinningTicketsToolStripMenuItem.Name = "listWinningTicketsToolStripMenuItem";
+            this.listWinningTicketsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.listWinningTicketsToolStripMenuItem.Text = "List Winning Tickets";
+            // 
+            // payPrizeToolStripMenuItem
+            // 
+            this.payPrizeToolStripMenuItem.Name = "payPrizeToolStripMenuItem";
+            this.payPrizeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.payPrizeToolStripMenuItem.Text = "Pay Prize";
+            // 
+            // listUnclaimedPrizesToolStripMenuItem
+            // 
+            this.listUnclaimedPrizesToolStripMenuItem.Name = "listUnclaimedPrizesToolStripMenuItem";
+            this.listUnclaimedPrizesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.listUnclaimedPrizesToolStripMenuItem.Text = "List Unclaimed Prizes";
             // 
             // mnuExit
             // 
@@ -160,6 +230,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerDeReg;
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerList;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.ToolStripMenuItem sellTicketsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cashTicketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem frmRevenueReport;
+        private System.Windows.Forms.ToolStripMenuItem transToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runDrawToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listWinningTicketsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payPrizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listUnclaimedPrizesToolStripMenuItem;
     }
 }
 
