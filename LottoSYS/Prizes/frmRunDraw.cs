@@ -46,6 +46,7 @@ namespace LottoSYS.Prizes
             string str = "";
             int Min = 1;
             int Max = 47;
+            string zero = "0";
             Random randNum = new Random();
 
 
@@ -62,19 +63,28 @@ namespace LottoSYS.Prizes
 
                     while (alreadyPicked[num])
                         num = randNum.Next(Min, Max);
-
+                    
                     alreadyPicked[num] = true;
                     nums[i] = num;
-                    str += " " + nums[i];
+
+                    if (num < 10)
+                    {
+                        zero += nums[i];
+                        str += " " + zero;
+                        zero = "0";
+                    }
+                    else
+                    {
+                        str += " " + nums[i];
+                    }
+                    
+
                 }
 
                 alreadyPicked = new bool[47];
 
                 str += "\n";
             }
-
-            
-
             
 
             MessageBox.Show(str);
