@@ -34,5 +34,16 @@ namespace LottoSYS.Finance
                 MessageBox.Show("Invalid");
             }
         }
+
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Show();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

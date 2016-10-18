@@ -34,6 +34,10 @@
             this.grpRevenue = new System.Windows.Forms.GroupBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.mnuRevenueReport = new System.Windows.Forms.MenuStrip();
+            this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRevenueReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -92,7 +96,32 @@
             this.lblUserName.TabIndex = 9;
             this.lblUserName.Text = "Username";
             // 
-            // frmRevenueReport
+            // mnuRevenueReport
+            // 
+            this.mnuRevenueReport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuBack,
+            this.mnuExit});
+            this.mnuRevenueReport.Location = new System.Drawing.Point(0, 0);
+            this.mnuRevenueReport.Name = "mnuRevenueReport";
+            this.mnuRevenueReport.Size = new System.Drawing.Size(684, 24);
+            this.mnuRevenueReport.TabIndex = 11;
+            this.mnuRevenueReport.Text = "menuStrip1";
+            // 
+            // mnuBack
+            // 
+            this.mnuBack.Name = "mnuBack";
+            this.mnuBack.Size = new System.Drawing.Size(44, 20);
+            this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.Size = new System.Drawing.Size(37, 20);
+            this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
+            // frmPayPrize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,11 +132,15 @@
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.mnuRevenueReport);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuStrip = this.mnuRevenueReport;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmRevenueReport";
+            this.Name = "frmPayPrize";
             this.Text = "frmRevenueReport";
             this.Load += new System.EventHandler(this.frmRevenueReport_Load);
+            this.mnuRevenueReport.ResumeLayout(false);
+            this.mnuRevenueReport.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +154,8 @@
         private System.Windows.Forms.GroupBox grpRevenue;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.MenuStrip mnuRevenueReport;
+        private System.Windows.Forms.ToolStripMenuItem mnuBack;
+        private System.Windows.Forms.ToolStripMenuItem mnuExit;
     }
 }
