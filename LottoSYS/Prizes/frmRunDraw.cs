@@ -43,12 +43,16 @@ namespace LottoSYS.Prizes
 
         private void btnRunDraw_Click(object sender, EventArgs e)
         {
+
+            //Currently converting the arrays to string
+            //Ideally would like to change to 2d array or jagged array
+
+
             string str = "";
             int Min = 1;
             int Max = 47;
             string zero = "0";
             Random randNum = new Random();
-
 
             int[] nums = new int[6];
             bool[] alreadyPicked = new bool[47];
@@ -77,9 +81,12 @@ namespace LottoSYS.Prizes
                     {
                         str += " " + nums[i];
                     }
+
                     
 
                 }
+
+                
 
                 alreadyPicked = new bool[47];
 

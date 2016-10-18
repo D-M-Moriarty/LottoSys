@@ -113,7 +113,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(61, 79);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 39);
-            this.btnSubmit.TabIndex = 32;
+            this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
@@ -145,7 +145,7 @@
             this.cboNationality.Location = new System.Drawing.Point(125, 220);
             this.cboNationality.Name = "cboNationality";
             this.cboNationality.Size = new System.Drawing.Size(136, 24);
-            this.cboNationality.TabIndex = 35;
+            this.cboNationality.TabIndex = 6;
             // 
             // lblNationality
             // 
@@ -172,7 +172,7 @@
             this.dtpDOB.Location = new System.Drawing.Point(125, 151);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(136, 22);
-            this.dtpDOB.TabIndex = 19;
+            this.dtpDOB.TabIndex = 4;
             // 
             // lblTitle
             // 
@@ -190,14 +190,14 @@
             this.cboTitle.Location = new System.Drawing.Point(125, 36);
             this.cboTitle.Name = "cboTitle";
             this.cboTitle.Size = new System.Drawing.Size(66, 24);
-            this.cboTitle.TabIndex = 17;
+            this.cboTitle.TabIndex = 1;
             // 
             // txtPPSN
             // 
             this.txtPPSN.Location = new System.Drawing.Point(125, 192);
             this.txtPPSN.Name = "txtPPSN";
             this.txtPPSN.Size = new System.Drawing.Size(136, 22);
-            this.txtPPSN.TabIndex = 16;
+            this.txtPPSN.TabIndex = 5;
             // 
             // lblPPSN
             // 
@@ -214,7 +214,7 @@
             this.txtForename.Location = new System.Drawing.Point(125, 113);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(136, 22);
-            this.txtForename.TabIndex = 14;
+            this.txtForename.TabIndex = 3;
             // 
             // lblForename
             // 
@@ -231,7 +231,7 @@
             this.txtSurname.Location = new System.Drawing.Point(125, 76);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(136, 22);
-            this.txtSurname.TabIndex = 12;
+            this.txtSurname.TabIndex = 2;
             // 
             // lblSurname
             // 
@@ -263,7 +263,7 @@
             this.txtEmail.Location = new System.Drawing.Point(125, 134);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 22);
-            this.txtEmail.TabIndex = 35;
+            this.txtEmail.TabIndex = 14;
             // 
             // lblEmail
             // 
@@ -280,7 +280,7 @@
             this.txtPhone.Location = new System.Drawing.Point(125, 93);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(136, 22);
-            this.txtPhone.TabIndex = 33;
+            this.txtPhone.TabIndex = 13;
             // 
             // lblPhone
             // 
@@ -298,7 +298,7 @@
             this.cboGender.Location = new System.Drawing.Point(125, 53);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(136, 24);
-            this.cboGender.TabIndex = 31;
+            this.cboGender.TabIndex = 12;
             // 
             // lblGender
             // 
@@ -335,7 +335,7 @@
             this.cboCountry.Location = new System.Drawing.Point(166, 212);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(136, 24);
-            this.cboCountry.TabIndex = 31;
+            this.cboCountry.TabIndex = 11;
             // 
             // lblCountry
             // 
@@ -353,7 +353,7 @@
             this.cboCounty.Location = new System.Drawing.Point(166, 170);
             this.cboCounty.Name = "cboCounty";
             this.cboCounty.Size = new System.Drawing.Size(136, 24);
-            this.cboCounty.TabIndex = 29;
+            this.cboCounty.TabIndex = 10;
             // 
             // lblCounty
             // 
@@ -370,7 +370,7 @@
             this.txtTown.Location = new System.Drawing.Point(166, 134);
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(136, 22);
-            this.txtTown.TabIndex = 27;
+            this.txtTown.TabIndex = 9;
             // 
             // lblTown
             // 
@@ -387,7 +387,7 @@
             this.txtAddress2.Location = new System.Drawing.Point(166, 95);
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(136, 22);
-            this.txtAddress2.TabIndex = 25;
+            this.txtAddress2.TabIndex = 8;
             // 
             // lblAddressLine2
             // 
@@ -404,7 +404,7 @@
             this.txtAddress1.Location = new System.Drawing.Point(166, 57);
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(136, 22);
-            this.txtAddress1.TabIndex = 23;
+            this.txtAddress1.TabIndex = 7;
             // 
             // lblAddressLine1
             // 

@@ -556,5 +556,11 @@ namespace LottoSYS
         {
 
         }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
