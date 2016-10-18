@@ -58,16 +58,25 @@ namespace LottoSYS.Prizes
             bool[] alreadyPicked = new bool[47];
             int num;
 
+
+            //might make each ticket a line instead
+
             for (int j = 0; j < 4; j++)
             {
 
+                str += "Draw " + (j + 1) + ": ";
+
                 for (int i = 0; i < nums.Length; i++)
                 {
+
+                    if (i > 0)
+                        str += ",";
+
                     num = randNum.Next(Min, Max);
 
                     while (alreadyPicked[num])
                         num = randNum.Next(Min, Max);
-                    
+
                     alreadyPicked[num] = true;
                     nums[i] = num;
 
@@ -82,19 +91,16 @@ namespace LottoSYS.Prizes
                         str += " " + nums[i];
                     }
 
-                    
-
                 }
 
-                
 
                 alreadyPicked = new bool[47];
 
-                str += "\n";
+                str += "\n\n";
             }
             
 
-            MessageBox.Show(str);
+            MessageBox.Show(str,"Draw Results");
         }
     }
 }

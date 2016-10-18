@@ -21,7 +21,7 @@ namespace LottoSYS.Sales
 
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
-
+            grpDetailBox.Visible = false;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -56,15 +56,17 @@ namespace LottoSYS.Sales
             Random randNum = new Random();
 
             int[] nums = new int[6];
+            int[] serialNum = new int[21];
             bool[] alreadyPicked = new bool[47];
             int num;
+            
 
             //might make each ticket a line instead
 
             for (int j = 0; j < numOfTickets; j++)
             {
 
-                str += "Ticket no. " + (j+1) + ": ";
+                str += "Line no. " + (j+1) + ": ";
 
                 for (int i = 0; i < nums.Length; i++)
                 {
@@ -100,7 +102,30 @@ namespace LottoSYS.Sales
             }
 
 
-            MessageBox.Show(str);
+            //Generating the serial number
+            str += "Serial Number: ";
+            for (int j = 0; j < serialNum.Length; j++)
+            {
+                serialNum[j] = randNum.Next(0, 9);
+
+                if(j == 4 || j == 16)
+                {
+                    str += " - " + serialNum[j];
+                }
+                else
+                {
+                    str += "" + serialNum[j];
+                }
+                
+            }
+            
+            MessageBox.Show(str,"Ticket Details");
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            grpDetailBox.Visible = true;
         }
     }
 }

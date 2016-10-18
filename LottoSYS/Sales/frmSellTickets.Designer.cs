@@ -36,6 +36,9 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpDetailBox = new System.Windows.Forms.GroupBox();
+            this.btnProcess = new System.Windows.Forms.Button();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -46,9 +49,6 @@
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtTown = new System.Windows.Forms.TextBox();
             this.lblTown = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.btnProcess = new System.Windows.Forms.Button();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpDetailBox.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,7 @@
             this.btnSearch.TabIndex = 46;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchBox
             // 
@@ -136,6 +137,35 @@
             this.grpDetailBox.TabIndex = 48;
             this.grpDetailBox.TabStop = false;
             this.grpDetailBox.Text = "Customer Details";
+            // 
+            // btnProcess
+            // 
+            this.btnProcess.Location = new System.Drawing.Point(562, 191);
+            this.btnProcess.Name = "btnProcess";
+            this.btnProcess.Size = new System.Drawing.Size(75, 23);
+            this.btnProcess.TabIndex = 62;
+            this.btnProcess.Text = "Confirm ";
+            this.btnProcess.UseVisualStyleBackColor = true;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(342, 41);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(136, 21);
+            this.txtQuantity.TabIndex = 61;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(261, 47);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(62, 15);
+            this.lblQuantity.TabIndex = 60;
+            this.lblQuantity.Text = "Quantity: *";
             // 
             // txtEmail
             // 
@@ -230,35 +260,6 @@
             this.lblTown.Size = new System.Drawing.Size(48, 15);
             this.lblTown.TabIndex = 46;
             this.lblTown.Text = "Town: *";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(342, 41);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(136, 21);
-            this.txtQuantity.TabIndex = 61;
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(261, 47);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(62, 15);
-            this.lblQuantity.TabIndex = 60;
-            this.lblQuantity.Text = "Quantity: *";
-            // 
-            // btnProcess
-            // 
-            this.btnProcess.Location = new System.Drawing.Point(562, 191);
-            this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(75, 23);
-            this.btnProcess.TabIndex = 62;
-            this.btnProcess.Text = "Confirm ";
-            this.btnProcess.UseVisualStyleBackColor = true;
-            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // frmSellTickets
             // 
