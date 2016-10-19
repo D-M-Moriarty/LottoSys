@@ -59,6 +59,7 @@ namespace LottoSYS.Sales
             int[] serialNum = new int[21];
             bool[] alreadyPicked = new bool[47];
             int num;
+            string numsoutput = "";
             
 
             //might make each ticket a line instead
@@ -92,10 +93,34 @@ namespace LottoSYS.Sales
                     {
                         str += " " + nums[i];
                     }
-                    
+
+
+
+                    /*
+                     for(int f = 0; f < nums.Length; f++)
+                        {
+                            int smallest = f;
+                            for (j = (f + 1); j < nums.Length; j++)
+                            {
+                                if (nums[j] < nums[smallest])
+                                {
+                                    smallest = j;
+                                }
+                            }
+
+                            if (smallest != f)
+                            {
+                                var smallestTemp = nums[f];
+                                nums[f] = nums[smallest];
+                                nums[smallest] = smallestTemp;
+                            }
+                        }
+
+                    numsoutput += " " + nums[i];
+*/
                 }
 
-             
+
                 alreadyPicked = new bool[47];
 
                 str += "\n\n";
