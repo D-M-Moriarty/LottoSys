@@ -1,2 +1,1 @@
 # LottoSys
-College Project
