@@ -57,6 +57,7 @@ namespace LottoSYS.Sales
 
             int[] nums = new int[6];
             int[] serialNum = new int[21];
+            int[] numsCopy = new int[6];
             bool[] alreadyPicked = new bool[47];
             int num;
             string numsoutput = "";
@@ -82,47 +83,69 @@ namespace LottoSYS.Sales
 
                     alreadyPicked[num] = true;
                     nums[i] = num;
+                    numsCopy[i] = num;
 
                     if (num < 10)
                     {
                         zero += nums[i];
                         str += " " + zero;
                         zero = "0";
+                        zero += numsCopy[i];
+                        numsoutput += " " + zero;
+                        zero = "0";
                     }
                     else
                     {
                         str += " " + nums[i];
+                        numsoutput += " " + numsCopy[i];
                     }
 
-
-
-                    /*
-                     for(int f = 0; f < nums.Length; f++)
+                    //insertion sort
+                    if(i == nums.Length-1)
+                    {
+                        int min;
+                        for (int b = 0; b < numsCopy.Length; b++)
                         {
-                            int smallest = f;
-                            for (j = (f + 1); j < nums.Length; j++)
+                            // Assume first element is min
+                            min = b;
+                            for (int a = (b + 1); a < numsCopy.Length; a++)
                             {
-                                if (nums[j] < nums[smallest])
+                                if (numsCopy[a] < numsCopy[min])
                                 {
-                                    smallest = j;
+                                    min = a;
+
                                 }
                             }
-
-                            if (smallest != f)
-                            {
-                                var smallestTemp = nums[f];
-                                nums[f] = nums[smallest];
-                                nums[smallest] = smallestTemp;
+                            if (min != b)
+                            {   //switching with the temperary viriables
+                                int temp = numsCopy[b];
+                                numsCopy[b] = numsCopy[min];
+                                numsCopy[min] = temp;
                             }
                         }
 
-                    numsoutput += " " + nums[i];
-*/
+                        //formatting into a string for output
+                        string txt = "";
+                        foreach(int element in numsCopy)
+                        {
+                            txt += element + ", ";
+                        }
+                        MessageBox.Show(txt, "Ticket Details");
+
+                    }
+                        
+
                 }
 
+                
+
+                
+
+                
 
                 alreadyPicked = new bool[47];
 
+                numsoutput += "\n\n";
                 str += "\n\n";
             }
 
@@ -145,6 +168,7 @@ namespace LottoSYS.Sales
             }
             
             MessageBox.Show(str,"Ticket Details");
+           
 
         }
 
