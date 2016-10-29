@@ -137,6 +137,7 @@
             this.grpDetailBox.TabIndex = 48;
             this.grpDetailBox.TabStop = false;
             this.grpDetailBox.Text = "Customer Details";
+            this.grpDetailBox.Enter += new System.EventHandler(this.grpDetailBox_Enter);
             // 
             // btnProcess
             // 

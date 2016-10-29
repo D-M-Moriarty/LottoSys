@@ -42,12 +42,13 @@ namespace LottoSYS
 
         private void frmCustomerReg_Load(object sender, EventArgs e)
         {
-            cboTitle.Items.Add("Miss");
+            /*cboTitle.Items.Add("Miss");
             cboTitle.Items.Add("Ms");
             cboTitle.Items.Add("Mx");
             cboTitle.Items.Add("Mrs");
             cboTitle.Items.Add("Mr");
-            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList; */
+            loadTitles();
 
             cboCounty.Items.Add("Antrim");
             cboCounty.Items.Add("Armagh");
@@ -560,6 +561,16 @@ namespace LottoSYS
         private void txtSurname_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void loadTitles()
+        {
+            cboTitle.Items.Add("Miss");
+            cboTitle.Items.Add("Ms");
+            cboTitle.Items.Add("Mx");
+            cboTitle.Items.Add("Mrs");
+            cboTitle.Items.Add("Mr");
+            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
     }

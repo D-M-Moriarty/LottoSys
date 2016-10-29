@@ -104,6 +104,7 @@ namespace LottoSYS.Sales
                     if(i == nums.Length-1)
                     {
                         int min;
+                        int temp;
                         for (int b = 0; b < numsCopy.Length; b++)
                         {
                             // Assume first element is min
@@ -118,7 +119,7 @@ namespace LottoSYS.Sales
                             }
                             if (min != b)
                             {   //switching with the temperary viriables
-                                int temp = numsCopy[b];
+                                temp = numsCopy[b];
                                 numsCopy[b] = numsCopy[min];
                                 numsCopy[min] = temp;
                             }
@@ -136,13 +137,7 @@ namespace LottoSYS.Sales
                         
 
                 }
-
                 
-
-                
-
-                
-
                 alreadyPicked = new bool[47];
 
                 numsoutput += "\n\n";
@@ -175,6 +170,11 @@ namespace LottoSYS.Sales
         private void btnSearch_Click(object sender, EventArgs e)
         {
             grpDetailBox.Visible = true;
+        }
+
+        private void grpDetailBox_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
