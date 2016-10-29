@@ -1,22 +1,29 @@
 ﻿using System;
 using System.Windows.Forms;
+using LottoSYS.Sales;
 
 namespace LottoSYS
 {
-    public partial class frmCustomerReg : Form
+    public partial class frmSellTicketPayment : Form
     {
 
         FrmMainMenu parent;
+        private frmSellTickets frmSellTickets;
 
-        public frmCustomerReg()
+        public frmSellTicketPayment()
         {
             InitializeComponent();
         }
 
-        public frmCustomerReg(FrmMainMenu Parent)
+        public frmSellTicketPayment(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;
+        }
+
+        public frmSellTicketPayment(frmSellTickets frmSellTickets)
+        {
+            this.frmSellTickets = frmSellTickets;
         }
 
         private void mnuExit(object sender, EventArgs e)

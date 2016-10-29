@@ -6,6 +6,9 @@ namespace LottoSYS.Sales
     public partial class frmSellTickets : Form
     {
         private FrmMainMenu parent;
+        public float price;
+        public int numOfLines;
+        
 
         public frmSellTickets()
         {
@@ -22,6 +25,7 @@ namespace LottoSYS.Sales
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
             grpDetailBox.Visible = false;
+            btnPayment.Enabled = false;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -38,131 +42,148 @@ namespace LottoSYS.Sales
         private void btnProcess_Click(object sender, EventArgs e)
         {
             //Placing the quantity into the number of tickets
-            string numOfTicketsString = txtQuantity.Text;
-
-            //Parsing to an integer
-            int numOfTickets = Int32.Parse(numOfTicketsString);
-
-            //MessageBox.Show(numOfTicketsString);
-
-            //Currently converting the arrays to string
-            //Ideally would like to change to 2d array or jagged array
-
-
-            string str = "";
-            int Min = 1;
-            int Max = 47;
-            string zero = "0";
-            Random randNum = new Random();
-
-            int[] nums = new int[6];
-            int[] serialNum = new int[21];
-            int[] numsCopy = new int[6];
-            bool[] alreadyPicked = new bool[47];
-            int num;
-            string numsoutput = "";
-            
-
-            //might make each ticket a line instead
-
-            for (int j = 0; j < numOfTickets; j++)
+            if(txtQuantity.Text != "")
             {
+                string numOfTicketsString = txtQuantity.Text;
 
-                str += "Line no. " + (j+1) + ": ";
+                //Parsing to an integer
+                int numOfTickets = int.Parse(numOfTicketsString);
 
-                for (int i = 0; i < nums.Length; i++)
+                //MessageBox.Show(numOfTicketsString);
+
+                //Currently converting the arrays to string
+                //Ideally would like to change to 2d array or jagged array
+
+                float price = 2.2f;
+                string str = "";
+                int Min = 1;
+                int Max = 47;
+                string zero = "0";
+                Random randNum = new Random();
+
+                int[] nums = new int[6];
+                int[] serialNum = new int[21];
+                int[] numsCopy = new int[6];
+                bool[] alreadyPicked = new bool[47];
+                int num;
+                string numsoutput = "";
+
+
+                //might make each ticket a line instead
+
+                for (int j = 0; j < numOfTickets; j++)
                 {
 
-                    if (i > 0)
-                        str += ",";
+                    str += "Line no. " + (j + 1) + ": ";
 
-                    num = randNum.Next(Min, Max);
+                    for (int i = 0; i < nums.Length; i++)
+                    {
 
-                    while (alreadyPicked[num])
+                        if (i > 0)
+                            str += ",";
+
                         num = randNum.Next(Min, Max);
 
-                    alreadyPicked[num] = true;
-                    nums[i] = num;
-                    numsCopy[i] = num;
+                        while (alreadyPicked[num])
+                            num = randNum.Next(Min, Max);
 
-                    if (num < 10)
+                        alreadyPicked[num] = true;
+                        nums[i] = num;
+                        numsCopy[i] = num;
+
+                        if (num < 10)
+                        {
+                            zero += nums[i];
+                            str += " " + zero;
+                            zero = "0";
+                            zero += numsCopy[i];
+                            numsoutput += " " + zero;
+                            zero = "0";
+                        }
+                        else
+                        {
+                            str += " " + nums[i];
+                            numsoutput += " " + numsCopy[i];
+                        }
+
+                        //insertion sort
+                        if (i == nums.Length - 1)
+                        {
+                            int min;
+                            int temp;
+                            for (int b = 0; b < numsCopy.Length; b++)
+                            {
+                                // Assume first element is min
+                                min = b;
+                                for (int a = (b + 1); a < numsCopy.Length; a++)
+                                {
+                                    if (numsCopy[a] < numsCopy[min])
+                                    {
+                                        min = a;
+
+                                    }
+                                }
+                                if (min != b)
+                                {   //switching with the temperary viriables
+                                    temp = numsCopy[b];
+                                    numsCopy[b] = numsCopy[min];
+                                    numsCopy[min] = temp;
+                                }
+                            }
+
+                            //formatting into a string for output
+                            string txt = "";
+                            foreach (int element in numsCopy)
+                            {
+                                txt += element + ", ";
+                            }
+                            MessageBox.Show(txt, "Ticket Details");
+
+                        }
+
+
+                    }
+
+                    alreadyPicked = new bool[47];
+
+                    numsoutput += "\n\n";
+                    str += "\n\n";
+                }
+
+
+                //Generating the serial number
+                str += "Serial Number: ";
+                for (int j = 0; j < serialNum.Length; j++)
+                {
+                    serialNum[j] = randNum.Next(0, 9);
+
+                    if (j == 4 || j == 16)
                     {
-                        zero += nums[i];
-                        str += " " + zero;
-                        zero = "0";
-                        zero += numsCopy[i];
-                        numsoutput += " " + zero;
-                        zero = "0";
+                        str += " - " + serialNum[j];
                     }
                     else
                     {
-                        str += " " + nums[i];
-                        numsoutput += " " + numsCopy[i];
+                        str += "" + serialNum[j];
                     }
-
-                    //insertion sort
-                    if(i == nums.Length-1)
-                    {
-                        int min;
-                        int temp;
-                        for (int b = 0; b < numsCopy.Length; b++)
-                        {
-                            // Assume first element is min
-                            min = b;
-                            for (int a = (b + 1); a < numsCopy.Length; a++)
-                            {
-                                if (numsCopy[a] < numsCopy[min])
-                                {
-                                    min = a;
-
-                                }
-                            }
-                            if (min != b)
-                            {   //switching with the temperary viriables
-                                temp = numsCopy[b];
-                                numsCopy[b] = numsCopy[min];
-                                numsCopy[min] = temp;
-                            }
-                        }
-
-                        //formatting into a string for output
-                        string txt = "";
-                        foreach(int element in numsCopy)
-                        {
-                            txt += element + ", ";
-                        }
-                        MessageBox.Show(txt, "Ticket Details");
-
-                    }
-                        
 
                 }
-                
-                alreadyPicked = new bool[47];
 
-                numsoutput += "\n\n";
-                str += "\n\n";
+                str += "\n\nTicket price €" + string.Format("{0:0.00}", price * numOfTickets);
+
+                MessageBox.Show(str, "Ticket Details");
+
+                txtQuantity.Text = "";
+                this.price = price;
+                numOfLines = numOfTickets;
+
+                btnPayment.Enabled = true;
+
             }
-
-
-            //Generating the serial number
-            str += "Serial Number: ";
-            for (int j = 0; j < serialNum.Length; j++)
+            else
             {
-                serialNum[j] = randNum.Next(0, 9);
-
-                if(j == 4 || j == 16)
-                {
-                    str += " - " + serialNum[j];
-                }
-                else
-                {
-                    str += "" + serialNum[j];
-                }
-                
+                MessageBox.Show("Please enter a Line quantity!");
             }
             
-            MessageBox.Show(str,"Ticket Details");
            
 
         }
@@ -174,6 +195,15 @@ namespace LottoSYS.Sales
 
         private void grpDetailBox_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+           
+            frmSellTicketPayment frmNext = new frmSellTicketPayment(this);
+            Hide();
+            frmNext.Show();
 
         }
     }

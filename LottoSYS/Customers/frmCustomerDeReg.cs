@@ -40,5 +40,25 @@ namespace LottoSYS
         {
             grpDeReg.Visible = true;
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if(chkWithdrawn.Checked && chkDeceased.Checked)
+            {
+                MessageBox.Show("Only one check box may selected!!!");
+            }
+            else if(chkDeceased.Checked)
+            {
+                MessageBox.Show("Please enter dated deceased");
+            }
+            else if (chkWithdrawn.Checked)
+            {
+                MessageBox.Show("Please enter dated withdrawn");
+            }
+            else
+            {
+                MessageBox.Show("Please select a checkbox!!");
+            }
+        }
     }
 }

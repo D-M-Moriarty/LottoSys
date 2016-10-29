@@ -1,6 +1,6 @@
 ﻿namespace LottoSYS
 {
-    partial class frmCustomerReg
+    partial class frmSellTicketPayment
     {
         /// <summary>
         /// Required designer variable.

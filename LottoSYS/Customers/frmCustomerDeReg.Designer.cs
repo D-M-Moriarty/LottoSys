@@ -36,6 +36,8 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpDeReg = new System.Windows.Forms.GroupBox();
+            this.chkWithdrawn = new System.Windows.Forms.CheckBox();
+            this.chkDeceased = new System.Windows.Forms.CheckBox();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.lblForename = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -46,8 +48,7 @@
             this.lblAddressLine2 = new System.Windows.Forms.Label();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.lblAddressLine1 = new System.Windows.Forms.Label();
-            this.chkDeceased = new System.Windows.Forms.CheckBox();
-            this.chkWithdrawn = new System.Windows.Forms.CheckBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpDeReg.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +120,7 @@
             // 
             // grpDeReg
             // 
+            this.grpDeReg.Controls.Add(this.btnSubmit);
             this.grpDeReg.Controls.Add(this.chkWithdrawn);
             this.grpDeReg.Controls.Add(this.chkDeceased);
             this.grpDeReg.Controls.Add(this.txtForename);
@@ -137,6 +139,26 @@
             this.grpDeReg.TabIndex = 7;
             this.grpDeReg.TabStop = false;
             this.grpDeReg.Text = "DeReg";
+            // 
+            // chkWithdrawn
+            // 
+            this.chkWithdrawn.AutoSize = true;
+            this.chkWithdrawn.Location = new System.Drawing.Point(317, 137);
+            this.chkWithdrawn.Name = "chkWithdrawn";
+            this.chkWithdrawn.Size = new System.Drawing.Size(132, 29);
+            this.chkWithdrawn.TabIndex = 67;
+            this.chkWithdrawn.Text = "Withdrawn";
+            this.chkWithdrawn.UseVisualStyleBackColor = true;
+            // 
+            // chkDeceased
+            // 
+            this.chkDeceased.AutoSize = true;
+            this.chkDeceased.Location = new System.Drawing.Point(317, 66);
+            this.chkDeceased.Name = "chkDeceased";
+            this.chkDeceased.Size = new System.Drawing.Size(128, 29);
+            this.chkDeceased.TabIndex = 66;
+            this.chkDeceased.Text = "Deceased";
+            this.chkDeceased.UseVisualStyleBackColor = true;
             // 
             // txtForename
             // 
@@ -233,25 +255,16 @@
             this.lblAddressLine1.TabIndex = 56;
             this.lblAddressLine1.Text = "Address Line 1: *";
             // 
-            // chkDeceased
+            // btnSubmit
             // 
-            this.chkDeceased.AutoSize = true;
-            this.chkDeceased.Location = new System.Drawing.Point(317, 66);
-            this.chkDeceased.Name = "chkDeceased";
-            this.chkDeceased.Size = new System.Drawing.Size(128, 29);
-            this.chkDeceased.TabIndex = 66;
-            this.chkDeceased.Text = "Deceased";
-            this.chkDeceased.UseVisualStyleBackColor = true;
-            // 
-            // chkWithdrawn
-            // 
-            this.chkWithdrawn.AutoSize = true;
-            this.chkWithdrawn.Location = new System.Drawing.Point(317, 137);
-            this.chkWithdrawn.Name = "chkWithdrawn";
-            this.chkWithdrawn.Size = new System.Drawing.Size(132, 29);
-            this.chkWithdrawn.TabIndex = 67;
-            this.chkWithdrawn.Text = "Withdrawn";
-            this.chkWithdrawn.UseVisualStyleBackColor = true;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(317, 179);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 68;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // frmCustomerDeReg
             // 
@@ -265,7 +278,7 @@
             this.Controls.Add(this.lblDeReg);
             this.Controls.Add(this.mnuUpdateCustomer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmCustomerDeReg";
             this.Text = "frmCustomerDeReg";
             this.Load += new System.EventHandler(this.frmCustomerDeReg_Load);
@@ -300,5 +313,6 @@
         private System.Windows.Forms.Label lblAddressLine2;
         private System.Windows.Forms.TextBox txtAddress1;
         private System.Windows.Forms.Label lblAddressLine1;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

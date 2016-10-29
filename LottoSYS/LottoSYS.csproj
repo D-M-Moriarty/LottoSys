@@ -127,6 +127,12 @@
     <Compile Include="Sales\frmSellTickets.Designer.cs">
       <DependentUpon>frmSellTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales\frmSellTicketPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\frmSellTicketPayment.Designer.cs">
+      <DependentUpon>frmSellTicketPayment.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customers\frmCustomerDeReg.resx">
       <DependentUpon>frmCustomerDeReg.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\frmSellTickets.resx">
       <DependentUpon>frmSellTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\frmSellTicketPayment.resx">
+      <DependentUpon>frmSellTicketPayment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

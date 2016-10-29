@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LottoSYS.Sales
+{
+    public partial class frmSellTicketPayment : Form
+    {
+       
+        private frmSellTickets parent;
+
+        public frmSellTicketPayment()
+        {
+            InitializeComponent();
+        }
+
+        public frmSellTicketPayment(frmSellTickets Parent)
+        {
+            InitializeComponent();
+            parent = Parent;
+        }
+
+        private void SellTicketPaymentForm_Load(object sender, EventArgs e)
+        {
+            grpBankDetails.Visible = false;
+
+            txtValue.Text = "€" + string.Format("{0:0.00}", parent.price * parent.numOfLines);
+            txtNoOfLines.Text = "" + parent.numOfLines;
+
+         
+            
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Show();
+        }
+
+        private void rdoLodged_CheckedChanged(object sender, EventArgs e)
+        {
+            grpBankDetails.Visible = true;
+        }
+
+        private void rdoForwardAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            grpBankDetails.Visible = false;
+        }
+    }
+}

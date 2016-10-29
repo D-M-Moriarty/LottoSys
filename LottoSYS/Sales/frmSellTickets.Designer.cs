@@ -36,6 +36,8 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpDetailBox = new System.Windows.Forms.GroupBox();
+            this.btnPayment = new System.Windows.Forms.Button();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.btnProcess = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -85,9 +87,9 @@
             this.lblSellTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSellTicket.Location = new System.Drawing.Point(36, 47);
             this.lblSellTicket.Name = "lblSellTicket";
-            this.lblSellTicket.Size = new System.Drawing.Size(209, 25);
+            this.lblSellTicket.Size = new System.Drawing.Size(112, 25);
             this.lblSellTicket.TabIndex = 47;
-            this.lblSellTicket.Text = "Search for Customer";
+            this.lblSellTicket.Text = "Sell Ticket";
             // 
             // btnSearch
             // 
@@ -110,14 +112,16 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(32, 113);
+            this.lblSearch.Location = new System.Drawing.Point(41, 97);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(68, 15);
+            this.lblSearch.Size = new System.Drawing.Size(61, 30);
             this.lblSearch.TabIndex = 44;
-            this.lblSearch.Text = "Id Number:";
+            this.lblSearch.Text = "Customer\r\nSurname:";
             // 
             // grpDetailBox
             // 
+            this.grpDetailBox.Controls.Add(this.btnPayment);
+            this.grpDetailBox.Controls.Add(this.lblPrice);
             this.grpDetailBox.Controls.Add(this.btnProcess);
             this.grpDetailBox.Controls.Add(this.txtQuantity);
             this.grpDetailBox.Controls.Add(this.lblQuantity);
@@ -138,6 +142,25 @@
             this.grpDetailBox.TabStop = false;
             this.grpDetailBox.Text = "Customer Details";
             this.grpDetailBox.Enter += new System.EventHandler(this.grpDetailBox_Enter);
+            // 
+            // btnPayment
+            // 
+            this.btnPayment.Location = new System.Drawing.Point(335, 169);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(89, 43);
+            this.btnPayment.TabIndex = 64;
+            this.btnPayment.Text = "Payment Details";
+            this.btnPayment.UseVisualStyleBackColor = true;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(529, 16);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(108, 13);
+            this.lblPrice.TabIndex = 63;
+            this.lblPrice.Text = "Price is €2.20 per line";
             // 
             // btnProcess
             // 
@@ -161,12 +184,12 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(261, 47);
+            this.lblQuantity.Location = new System.Drawing.Point(257, 32);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(62, 15);
+            this.lblQuantity.Size = new System.Drawing.Size(85, 30);
             this.lblQuantity.TabIndex = 60;
-            this.lblQuantity.Text = "Quantity: *";
+            this.lblQuantity.Text = "No of lines for \r\nquick pick: *";
             // 
             // txtEmail
             // 
@@ -308,5 +331,7 @@
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.TextBox txtTown;
         private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.Button btnPayment;
+        private System.Windows.Forms.Label lblPrice;
     }
 }
