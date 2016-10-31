@@ -137,7 +137,7 @@ namespace LottoSYS.Sales
                             {
                                 txt += element + ", ";
                             }
-                            MessageBox.Show(txt, "Ticket Details");
+                            //MessageBox.Show(txt, "Ticket Details");
 
                         }
 

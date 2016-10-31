@@ -43,22 +43,24 @@ namespace LottoSYS
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(chkWithdrawn.Checked && chkDeceased.Checked)
+            if(rdoWithdrawn.Checked && rdoDeceased.Checked)
             {
                 MessageBox.Show("Only one check box may selected!!!");
             }
-            else if(chkDeceased.Checked)
+            else if(rdoDeceased.Checked)
             {
                 MessageBox.Show("Please enter dated deceased");
             }
-            else if (chkWithdrawn.Checked)
+            else if (rdoWithdrawn.Checked)
             {
                 MessageBox.Show("Please enter dated withdrawn");
             }
             else
             {
-                MessageBox.Show("Please select a checkbox!!");
+                MessageBox.Show("Please select a radio button!!");
             }
         }
+
+        
     }
 }
