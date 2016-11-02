@@ -51,8 +51,20 @@
             this.rdoDebitCard = new System.Windows.Forms.RadioButton();
             this.rdoForwardAdd = new System.Windows.Forms.RadioButton();
             this.rdoLodged = new System.Windows.Forms.RadioButton();
+            this.grpCardDetails = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCardNo = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.cboMonth = new System.Windows.Forms.ComboBox();
+            this.llblType = new System.Windows.Forms.Label();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.mnuSellTickPayment.SuspendLayout();
             this.grpBankDetails.SuspendLayout();
+            this.grpCardDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblValue
@@ -145,16 +157,16 @@
             this.grpBankDetails.Controls.Add(this.lblIBAN);
             this.grpBankDetails.Controls.Add(this.txtBIC);
             this.grpBankDetails.Controls.Add(this.lblBIC);
-            this.grpBankDetails.Location = new System.Drawing.Point(291, 156);
+            this.grpBankDetails.Location = new System.Drawing.Point(329, 229);
             this.grpBankDetails.Name = "grpBankDetails";
-            this.grpBankDetails.Size = new System.Drawing.Size(383, 205);
+            this.grpBankDetails.Size = new System.Drawing.Size(345, 186);
             this.grpBankDetails.TabIndex = 12;
             this.grpBankDetails.TabStop = false;
             this.grpBankDetails.Text = "Bank Details";
             // 
             // txtBankAddress
             // 
-            this.txtBankAddress.Location = new System.Drawing.Point(149, 148);
+            this.txtBankAddress.Location = new System.Drawing.Point(111, 144);
             this.txtBankAddress.Name = "txtBankAddress";
             this.txtBankAddress.Size = new System.Drawing.Size(214, 22);
             this.txtBankAddress.TabIndex = 11;
@@ -162,7 +174,7 @@
             // lblBankAddress
             // 
             this.lblBankAddress.AutoSize = true;
-            this.lblBankAddress.Location = new System.Drawing.Point(46, 153);
+            this.lblBankAddress.Location = new System.Drawing.Point(8, 149);
             this.lblBankAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBankAddress.Name = "lblBankAddress";
             this.lblBankAddress.Size = new System.Drawing.Size(96, 16);
@@ -171,7 +183,7 @@
             // 
             // txtNameBank
             // 
-            this.txtNameBank.Location = new System.Drawing.Point(149, 110);
+            this.txtNameBank.Location = new System.Drawing.Point(111, 106);
             this.txtNameBank.Name = "txtNameBank";
             this.txtNameBank.Size = new System.Drawing.Size(214, 22);
             this.txtNameBank.TabIndex = 9;
@@ -179,7 +191,7 @@
             // lblNameBank
             // 
             this.lblNameBank.AutoSize = true;
-            this.lblNameBank.Location = new System.Drawing.Point(46, 113);
+            this.lblNameBank.Location = new System.Drawing.Point(8, 109);
             this.lblNameBank.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameBank.Name = "lblNameBank";
             this.lblNameBank.Size = new System.Drawing.Size(96, 16);
@@ -188,7 +200,7 @@
             // 
             // tctIBAN
             // 
-            this.tctIBAN.Location = new System.Drawing.Point(149, 73);
+            this.tctIBAN.Location = new System.Drawing.Point(111, 69);
             this.tctIBAN.Name = "tctIBAN";
             this.tctIBAN.Size = new System.Drawing.Size(214, 22);
             this.tctIBAN.TabIndex = 7;
@@ -196,7 +208,7 @@
             // lblIBAN
             // 
             this.lblIBAN.AutoSize = true;
-            this.lblIBAN.Location = new System.Drawing.Point(100, 78);
+            this.lblIBAN.Location = new System.Drawing.Point(62, 74);
             this.lblIBAN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIBAN.Name = "lblIBAN";
             this.lblIBAN.Size = new System.Drawing.Size(42, 16);
@@ -205,7 +217,7 @@
             // 
             // txtBIC
             // 
-            this.txtBIC.Location = new System.Drawing.Point(149, 35);
+            this.txtBIC.Location = new System.Drawing.Point(111, 31);
             this.txtBIC.Name = "txtBIC";
             this.txtBIC.Size = new System.Drawing.Size(214, 22);
             this.txtBIC.TabIndex = 5;
@@ -213,7 +225,7 @@
             // lblBIC
             // 
             this.lblBIC.AutoSize = true;
-            this.lblBIC.Location = new System.Drawing.Point(110, 38);
+            this.lblBIC.Location = new System.Drawing.Point(72, 34);
             this.lblBIC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBIC.Name = "lblBIC";
             this.lblBIC.Size = new System.Drawing.Size(32, 16);
@@ -230,6 +242,7 @@
             this.rdoCheque.TabStop = true;
             this.rdoCheque.Text = "Cheque";
             this.rdoCheque.UseVisualStyleBackColor = true;
+            this.rdoCheque.CheckedChanged += new System.EventHandler(this.rdoCheque_CheckedChanged);
             // 
             // rdoCash
             // 
@@ -241,6 +254,7 @@
             this.rdoCash.TabStop = true;
             this.rdoCash.Text = "Cash";
             this.rdoCash.UseVisualStyleBackColor = true;
+            this.rdoCash.CheckedChanged += new System.EventHandler(this.rdoCash_CheckedChanged);
             // 
             // rdoDebitCard
             // 
@@ -252,6 +266,7 @@
             this.rdoDebitCard.TabStop = true;
             this.rdoDebitCard.Text = "Debit Card";
             this.rdoDebitCard.UseVisualStyleBackColor = true;
+            this.rdoDebitCard.CheckedChanged += new System.EventHandler(this.rdoDebitCard_CheckedChanged);
             // 
             // rdoForwardAdd
             // 
@@ -277,11 +292,119 @@
             this.rdoLodged.UseVisualStyleBackColor = true;
             this.rdoLodged.CheckedChanged += new System.EventHandler(this.rdoLodged_CheckedChanged);
             // 
+            // grpCardDetails
+            // 
+            this.grpCardDetails.Controls.Add(this.llblType);
+            this.grpCardDetails.Controls.Add(this.cboType);
+            this.grpCardDetails.Controls.Add(this.lblMonth);
+            this.grpCardDetails.Controls.Add(this.cboMonth);
+            this.grpCardDetails.Controls.Add(this.lblYear);
+            this.grpCardDetails.Controls.Add(this.cboYear);
+            this.grpCardDetails.Controls.Add(this.textBox1);
+            this.grpCardDetails.Controls.Add(this.lblCardNo);
+            this.grpCardDetails.Controls.Add(this.textBox2);
+            this.grpCardDetails.Controls.Add(this.lblName);
+            this.grpCardDetails.Location = new System.Drawing.Point(28, 229);
+            this.grpCardDetails.Name = "grpCardDetails";
+            this.grpCardDetails.Size = new System.Drawing.Size(295, 186);
+            this.grpCardDetails.TabIndex = 18;
+            this.grpCardDetails.TabStop = false;
+            this.grpCardDetails.Text = "Card Details";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(112, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(177, 22);
+            this.textBox1.TabIndex = 11;
+            // 
+            // lblCardNo
+            // 
+            this.lblCardNo.AutoSize = true;
+            this.lblCardNo.Location = new System.Drawing.Point(47, 77);
+            this.lblCardNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCardNo.Name = "lblCardNo";
+            this.lblCardNo.Size = new System.Drawing.Size(61, 16);
+            this.lblCardNo.TabIndex = 10;
+            this.lblCardNo.Text = "Card No:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(112, 34);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(177, 22);
+            this.textBox2.TabIndex = 9;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(60, 37);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(48, 16);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Name:";
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(6, 116);
+            this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(48, 16);
+            this.lblYear.TabIndex = 20;
+            this.lblYear.Text = "Year: *";
+            // 
+            // cboYear
+            // 
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Location = new System.Drawing.Point(59, 108);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(82, 24);
+            this.cboYear.TabIndex = 19;
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(148, 116);
+            this.lblMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(55, 16);
+            this.lblMonth.TabIndex = 22;
+            this.lblMonth.Text = "Month: *";
+            // 
+            // cboMonth
+            // 
+            this.cboMonth.FormattingEnabled = true;
+            this.cboMonth.Location = new System.Drawing.Point(209, 108);
+            this.cboMonth.Name = "cboMonth";
+            this.cboMonth.Size = new System.Drawing.Size(80, 24);
+            this.cboMonth.TabIndex = 21;
+            // 
+            // llblType
+            // 
+            this.llblType.AutoSize = true;
+            this.llblType.Location = new System.Drawing.Point(6, 164);
+            this.llblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblType.Name = "llblType";
+            this.llblType.Size = new System.Drawing.Size(51, 16);
+            this.llblType.TabIndex = 24;
+            this.llblType.Text = "Type: *";
+            // 
+            // cboType
+            // 
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(59, 156);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(82, 24);
+            this.cboType.TabIndex = 23;
+            // 
             // frmSellTicketPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 440);
+            this.Controls.Add(this.grpCardDetails);
             this.Controls.Add(this.rdoForwardAdd);
             this.Controls.Add(this.rdoLodged);
             this.Controls.Add(this.rdoDebitCard);
@@ -304,6 +427,8 @@
             this.mnuSellTickPayment.PerformLayout();
             this.grpBankDetails.ResumeLayout(false);
             this.grpBankDetails.PerformLayout();
+            this.grpCardDetails.ResumeLayout(false);
+            this.grpCardDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +459,16 @@
         private System.Windows.Forms.Label lblIBAN;
         private System.Windows.Forms.TextBox txtBIC;
         private System.Windows.Forms.Label lblBIC;
+        private System.Windows.Forms.GroupBox grpCardDetails;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblCardNo;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label llblType;
+        private System.Windows.Forms.ComboBox cboType;
+        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.ComboBox cboMonth;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.ComboBox cboYear;
     }
 }

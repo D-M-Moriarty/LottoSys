@@ -29,6 +29,7 @@ namespace LottoSYS.Sales
         private void SellTicketPaymentForm_Load(object sender, EventArgs e)
         {
             grpBankDetails.Visible = false;
+            grpCardDetails.Visible = false;
 
             txtValue.Text = "€" + string.Format("{0:0.00}", parent.price * parent.numOfLines);
             txtNoOfLines.Text = "" + parent.numOfLines;
@@ -56,6 +57,21 @@ namespace LottoSYS.Sales
         private void rdoForwardAdd_CheckedChanged(object sender, EventArgs e)
         {
             grpBankDetails.Visible = false;
+        }
+
+        private void rdoDebitCard_CheckedChanged(object sender, EventArgs e)
+        {
+            grpCardDetails.Visible = true;
+        }
+
+        private void rdoCash_CheckedChanged(object sender, EventArgs e)
+        {
+            grpCardDetails.Visible = false;
+        }
+
+        private void rdoCheque_CheckedChanged(object sender, EventArgs e)
+        {
+            grpCardDetails.Visible = false;
         }
     }
 }
