@@ -29,5 +29,16 @@ namespace LottoSYS.Prizes
         {
 
         }
+
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Show();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
