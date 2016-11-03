@@ -47,6 +47,7 @@
             this.listUnclaimedPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.customerProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +71,8 @@
             this.mnuCustomerReg,
             this.mnuCustomerUpdate,
             this.mnuCustomerDeReg,
-            this.mnuCustomerList});
+            this.mnuCustomerList,
+            this.customerProfileToolStripMenuItem});
             this.mnuCustomerProfile.Name = "mnuCustomerProfile";
             this.mnuCustomerProfile.Size = new System.Drawing.Size(76, 20);
             this.mnuCustomerProfile.Text = "Customers";
@@ -204,6 +206,13 @@
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Lotto System Home";
             // 
+            // customerProfileToolStripMenuItem
+            // 
+            this.customerProfileToolStripMenuItem.Name = "customerProfileToolStripMenuItem";
+            this.customerProfileToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.customerProfileToolStripMenuItem.Text = "Customer Profile";
+            this.customerProfileToolStripMenuItem.Click += new System.EventHandler(this.customerProfileToolStripMenuItem_Click);
+            // 
             // FrmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem listWinningTicketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payPrizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listUnclaimedPrizesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerProfileToolStripMenuItem;
     }
 }
 

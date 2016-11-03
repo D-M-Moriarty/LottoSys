@@ -12,14 +12,33 @@ namespace LottoSYS
 {
     public partial class frmCustomerProfile : Form
     {
+        FrmMainMenu parent;
+
         public frmCustomerProfile()
         {
             InitializeComponent();
         }
 
+        public frmCustomerProfile(FrmMainMenu Parent)
+        {
+            InitializeComponent();
+            parent = Parent;
+        }
+
         private void frmCustomerProfile_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Show();
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -100,5 +100,12 @@ namespace LottoSYS
             this.Hide();
             frmNext.Show();
         }
+
+        private void customerProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomerProfile frmNext = new frmCustomerProfile(this);
+            this.Hide();
+            frmNext.Show();
+        }
     }
 }

@@ -52,16 +52,16 @@
             this.rdoForwardAdd = new System.Windows.Forms.RadioButton();
             this.rdoLodged = new System.Windows.Forms.RadioButton();
             this.grpCardDetails = new System.Windows.Forms.GroupBox();
+            this.llblType = new System.Windows.Forms.Label();
+            this.cboType = new System.Windows.Forms.ComboBox();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.cboMonth = new System.Windows.Forms.ComboBox();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.cboYear = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblCardNo = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblYear = new System.Windows.Forms.Label();
-            this.cboYear = new System.Windows.Forms.ComboBox();
-            this.lblMonth = new System.Windows.Forms.Label();
-            this.cboMonth = new System.Windows.Forms.ComboBox();
-            this.llblType = new System.Windows.Forms.Label();
-            this.cboType = new System.Windows.Forms.ComboBox();
             this.mnuSellTickPayment.SuspendLayout();
             this.grpBankDetails.SuspendLayout();
             this.grpCardDetails.SuspendLayout();
@@ -311,6 +311,60 @@
             this.grpCardDetails.TabStop = false;
             this.grpCardDetails.Text = "Card Details";
             // 
+            // llblType
+            // 
+            this.llblType.AutoSize = true;
+            this.llblType.Location = new System.Drawing.Point(6, 164);
+            this.llblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblType.Name = "llblType";
+            this.llblType.Size = new System.Drawing.Size(51, 16);
+            this.llblType.TabIndex = 24;
+            this.llblType.Text = "Type: *";
+            // 
+            // cboType
+            // 
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(59, 156);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(82, 24);
+            this.cboType.TabIndex = 23;
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(148, 116);
+            this.lblMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(55, 16);
+            this.lblMonth.TabIndex = 22;
+            this.lblMonth.Text = "Month: *";
+            // 
+            // cboMonth
+            // 
+            this.cboMonth.FormattingEnabled = true;
+            this.cboMonth.Location = new System.Drawing.Point(209, 108);
+            this.cboMonth.Name = "cboMonth";
+            this.cboMonth.Size = new System.Drawing.Size(80, 24);
+            this.cboMonth.TabIndex = 21;
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(6, 116);
+            this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(48, 16);
+            this.lblYear.TabIndex = 20;
+            this.lblYear.Text = "Year: *";
+            // 
+            // cboYear
+            // 
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Location = new System.Drawing.Point(59, 108);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(82, 24);
+            this.cboYear.TabIndex = 19;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(112, 72);
@@ -344,60 +398,6 @@
             this.lblName.Size = new System.Drawing.Size(48, 16);
             this.lblName.TabIndex = 8;
             this.lblName.Text = "Name:";
-            // 
-            // lblYear
-            // 
-            this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(6, 116);
-            this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(48, 16);
-            this.lblYear.TabIndex = 20;
-            this.lblYear.Text = "Year: *";
-            // 
-            // cboYear
-            // 
-            this.cboYear.FormattingEnabled = true;
-            this.cboYear.Location = new System.Drawing.Point(59, 108);
-            this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(82, 24);
-            this.cboYear.TabIndex = 19;
-            // 
-            // lblMonth
-            // 
-            this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(148, 116);
-            this.lblMonth.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(55, 16);
-            this.lblMonth.TabIndex = 22;
-            this.lblMonth.Text = "Month: *";
-            // 
-            // cboMonth
-            // 
-            this.cboMonth.FormattingEnabled = true;
-            this.cboMonth.Location = new System.Drawing.Point(209, 108);
-            this.cboMonth.Name = "cboMonth";
-            this.cboMonth.Size = new System.Drawing.Size(80, 24);
-            this.cboMonth.TabIndex = 21;
-            // 
-            // llblType
-            // 
-            this.llblType.AutoSize = true;
-            this.llblType.Location = new System.Drawing.Point(6, 164);
-            this.llblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.llblType.Name = "llblType";
-            this.llblType.Size = new System.Drawing.Size(51, 16);
-            this.llblType.TabIndex = 24;
-            this.llblType.Text = "Type: *";
-            // 
-            // cboType
-            // 
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(59, 156);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(82, 24);
-            this.cboType.TabIndex = 23;
             // 
             // frmSellTicketPayment
             // 
