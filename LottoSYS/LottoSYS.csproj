@@ -83,6 +83,12 @@
     <Compile Include="Finance\frmRevenueReport.Designer.cs">
       <DependentUpon>frmRevenueReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finance\frmViewTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmViewTransactions.Designer.cs">
+      <DependentUpon>frmViewTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finance\frmRevenueReport.resx">
       <DependentUpon>frmRevenueReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\frmViewTransactions.resx">
+      <DependentUpon>frmViewTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>

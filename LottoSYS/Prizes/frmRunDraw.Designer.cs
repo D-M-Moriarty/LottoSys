@@ -32,6 +32,8 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRunDraw = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblRunDraw = new System.Windows.Forms.Label();
             this.mnuRunDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,11 +72,31 @@
             this.btnRunDraw.UseVisualStyleBackColor = true;
             this.btnRunDraw.Click += new System.EventHandler(this.btnRunDraw_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 2;
+            // 
+            // lblRunDraw
+            // 
+            this.lblRunDraw.AutoSize = true;
+            this.lblRunDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRunDraw.Location = new System.Drawing.Point(13, 47);
+            this.lblRunDraw.Name = "lblRunDraw";
+            this.lblRunDraw.Size = new System.Drawing.Size(160, 25);
+            this.lblRunDraw.TabIndex = 44;
+            this.lblRunDraw.Text = "Run Lotto Draw";
+            // 
             // frmRunDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 415);
+            this.Controls.Add(this.lblRunDraw);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRunDraw);
             this.Controls.Add(this.mnuRunDraw);
             this.MainMenuStrip = this.mnuRunDraw;
@@ -94,5 +116,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.Button btnRunDraw;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRunDraw;
     }
 }

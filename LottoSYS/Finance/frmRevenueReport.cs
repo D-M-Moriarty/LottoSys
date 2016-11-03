@@ -16,6 +16,7 @@ namespace LottoSYS.Finance
         {
             InitializeComponent();
             parent = Parent;
+            txtPassword.PasswordChar = '*';
         }
 
         private void frmRevenueReport_Load(object sender, EventArgs e)
@@ -25,6 +26,7 @@ namespace LottoSYS.Finance
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+
             if (txtPassword.Text == "12345" && txtUsername.Text == "Darren")
             {
                 grpRevenue.Visible = true;

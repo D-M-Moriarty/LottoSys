@@ -39,7 +39,7 @@
             this.cashTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.financeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frmRevenueReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.transToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuViewTransactions = new System.Windows.Forms.ToolStripMenuItem();
             this.prizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runDrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listWinningTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,7 +132,7 @@
             // 
             this.financeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.frmRevenueReport,
-            this.transToolStripMenuItem});
+            this.mnuViewTransactions});
             this.financeToolStripMenuItem.Name = "financeToolStripMenuItem";
             this.financeToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.financeToolStripMenuItem.Text = "Finance";
@@ -140,15 +140,16 @@
             // frmRevenueReport
             // 
             this.frmRevenueReport.Name = "frmRevenueReport";
-            this.frmRevenueReport.Size = new System.Drawing.Size(157, 22);
+            this.frmRevenueReport.Size = new System.Drawing.Size(168, 22);
             this.frmRevenueReport.Text = "Revenue Report";
             this.frmRevenueReport.Click += new System.EventHandler(this.mnuRevenueReport_Click);
             // 
-            // transToolStripMenuItem
+            // mnuViewTransactions
             // 
-            this.transToolStripMenuItem.Name = "transToolStripMenuItem";
-            this.transToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.transToolStripMenuItem.Text = "Trans";
+            this.mnuViewTransactions.Name = "mnuViewTransactions";
+            this.mnuViewTransactions.Size = new System.Drawing.Size(168, 22);
+            this.mnuViewTransactions.Text = "View Transactions";
+            this.mnuViewTransactions.Click += new System.EventHandler(this.transToolStripMenuItem_Click);
             // 
             // prizesToolStripMenuItem
             // 
@@ -247,7 +248,7 @@
         private System.Windows.Forms.ToolStripMenuItem sellTicketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cashTicketToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frmRevenueReport;
-        private System.Windows.Forms.ToolStripMenuItem transToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuViewTransactions;
         private System.Windows.Forms.ToolStripMenuItem runDrawToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listWinningTicketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payPrizeToolStripMenuItem;
