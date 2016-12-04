@@ -61,10 +61,9 @@ namespace LottoSYS.Prizes
 
             //might make each ticket a line instead
 
-            for (int j = 0; j < 4; j++)
-            {
+          
 
-                str += "Draw " + (j + 1) + ": ";
+                str += "Draw result: ";
 
                 for (int i = 0; i < nums.Length; i++)
                 {
@@ -97,7 +96,7 @@ namespace LottoSYS.Prizes
                 alreadyPicked = new bool[47];
 
                 str += "\n\n";
-            }
+            
             
 
             MessageBox.Show(str,"Draw Results");
