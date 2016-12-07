@@ -36,6 +36,8 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpDeReg = new System.Windows.Forms.GroupBox();
+            this.rdoWithdrawn = new System.Windows.Forms.RadioButton();
+            this.rdoDeceased = new System.Windows.Forms.RadioButton();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtForename = new System.Windows.Forms.TextBox();
             this.lblForename = new System.Windows.Forms.Label();
@@ -47,8 +49,7 @@
             this.lblAddressLine2 = new System.Windows.Forms.Label();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.lblAddressLine1 = new System.Windows.Forms.Label();
-            this.rdoDeceased = new System.Windows.Forms.RadioButton();
-            this.rdoWithdrawn = new System.Windows.Forms.RadioButton();
+            this.lstdereg = new System.Windows.Forms.ListBox();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpDeReg.SuspendLayout();
             this.SuspendLayout();
@@ -82,17 +83,18 @@
             // lblDeReg
             // 
             this.lblDeReg.AutoSize = true;
-            this.lblDeReg.Location = new System.Drawing.Point(51, 52);
+            this.lblDeReg.Location = new System.Drawing.Point(56, 49);
             this.lblDeReg.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDeReg.Name = "lblDeReg";
             this.lblDeReg.Size = new System.Drawing.Size(130, 25);
             this.lblDeReg.TabIndex = 2;
             this.lblDeReg.Text = "De - register";
+            this.lblDeReg.Click += new System.EventHandler(this.lblDeReg_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(238, 101);
+            this.btnSearch.Location = new System.Drawing.Point(243, 98);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 6;
@@ -103,20 +105,22 @@
             // txtSearchBox
             // 
             this.txtSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBox.Location = new System.Drawing.Point(112, 104);
+            this.txtSearchBox.Location = new System.Drawing.Point(117, 101);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(100, 22);
             this.txtSearchBox.TabIndex = 5;
+            this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(35, 109);
+            this.lblSearch.Location = new System.Drawing.Point(40, 106);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(68, 15);
+            this.lblSearch.Size = new System.Drawing.Size(61, 15);
             this.lblSearch.TabIndex = 4;
-            this.lblSearch.Text = "Id Number:";
+            this.lblSearch.Text = "Surname:";
+            this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
             // 
             // grpDeReg
             // 
@@ -133,17 +137,38 @@
             this.grpDeReg.Controls.Add(this.lblAddressLine2);
             this.grpDeReg.Controls.Add(this.txtAddress1);
             this.grpDeReg.Controls.Add(this.lblAddressLine1);
-            this.grpDeReg.Location = new System.Drawing.Point(38, 173);
+            this.grpDeReg.Location = new System.Drawing.Point(434, 49);
             this.grpDeReg.Name = "grpDeReg";
-            this.grpDeReg.Size = new System.Drawing.Size(499, 258);
+            this.grpDeReg.Size = new System.Drawing.Size(317, 407);
             this.grpDeReg.TabIndex = 7;
             this.grpDeReg.TabStop = false;
             this.grpDeReg.Text = "DeReg";
             // 
+            // rdoWithdrawn
+            // 
+            this.rdoWithdrawn.AutoSize = true;
+            this.rdoWithdrawn.Location = new System.Drawing.Point(148, 294);
+            this.rdoWithdrawn.Name = "rdoWithdrawn";
+            this.rdoWithdrawn.Size = new System.Drawing.Size(131, 29);
+            this.rdoWithdrawn.TabIndex = 70;
+            this.rdoWithdrawn.TabStop = true;
+            this.rdoWithdrawn.Text = "Withdrawn";
+            // 
+            // rdoDeceased
+            // 
+            this.rdoDeceased.AutoSize = true;
+            this.rdoDeceased.Location = new System.Drawing.Point(148, 246);
+            this.rdoDeceased.Name = "rdoDeceased";
+            this.rdoDeceased.Size = new System.Drawing.Size(127, 29);
+            this.rdoDeceased.TabIndex = 69;
+            this.rdoDeceased.TabStop = true;
+            this.rdoDeceased.Text = "Deceased";
+            this.rdoDeceased.UseVisualStyleBackColor = true;
+            // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(317, 179);
+            this.btnSubmit.Location = new System.Drawing.Point(148, 378);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 68;
@@ -246,32 +271,23 @@
             this.lblAddressLine1.TabIndex = 56;
             this.lblAddressLine1.Text = "Address Line 1: *";
             // 
-            // rdoDeceased
+            // lstdereg
             // 
-            this.rdoDeceased.AutoSize = true;
-            this.rdoDeceased.Location = new System.Drawing.Point(317, 47);
-            this.rdoDeceased.Name = "rdoDeceased";
-            this.rdoDeceased.Size = new System.Drawing.Size(127, 29);
-            this.rdoDeceased.TabIndex = 69;
-            this.rdoDeceased.TabStop = true;
-            this.rdoDeceased.Text = "Deceased";
-            this.rdoDeceased.UseVisualStyleBackColor = true;
+            this.lstdereg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstdereg.FormattingEnabled = true;
+            this.lstdereg.ItemHeight = 20;
+            this.lstdereg.Location = new System.Drawing.Point(21, 174);
+            this.lstdereg.Name = "lstdereg";
+            this.lstdereg.Size = new System.Drawing.Size(379, 124);
+            this.lstdereg.TabIndex = 45;
+            this.lstdereg.SelectedIndexChanged += new System.EventHandler(this.lstdereg_SelectedIndexChanged);
             // 
-            // rdoWithdrawn
-            // 
-            this.rdoWithdrawn.AutoSize = true;
-            this.rdoWithdrawn.Location = new System.Drawing.Point(317, 95);
-            this.rdoWithdrawn.Name = "rdoWithdrawn";
-            this.rdoWithdrawn.Size = new System.Drawing.Size(131, 29);
-            this.rdoWithdrawn.TabIndex = 70;
-            this.rdoWithdrawn.TabStop = true;
-            this.rdoWithdrawn.Text = "Withdrawn";
-            //
             // frmCustomerDeReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 462);
+            this.ClientSize = new System.Drawing.Size(784, 476);
+            this.Controls.Add(this.lstdereg);
             this.Controls.Add(this.grpDeReg);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBox);
@@ -315,5 +331,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.RadioButton rdoWithdrawn;
         private System.Windows.Forms.RadioButton rdoDeceased;
+        private System.Windows.Forms.ListBox lstdereg;
     }
 }

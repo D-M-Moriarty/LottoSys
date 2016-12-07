@@ -54,6 +54,7 @@
             this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.lblAddressLine1 = new System.Windows.Forms.Label();
             this.lblSearchLabel = new System.Windows.Forms.Label();
+            this.lstUpdate = new System.Windows.Forms.ListBox();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpUpdateBox.SuspendLayout();
             this.SuspendLayout();
@@ -135,7 +136,7 @@
             this.grpUpdateBox.Controls.Add(this.lblAddressLine1);
             this.grpUpdateBox.Location = new System.Drawing.Point(43, 214);
             this.grpUpdateBox.Name = "grpUpdateBox";
-            this.grpUpdateBox.Size = new System.Drawing.Size(633, 276);
+            this.grpUpdateBox.Size = new System.Drawing.Size(719, 276);
             this.grpUpdateBox.TabIndex = 42;
             this.grpUpdateBox.TabStop = false;
             this.grpUpdateBox.Text = "Update Details";
@@ -336,11 +337,21 @@
             this.lblSearchLabel.TabIndex = 43;
             this.lblSearchLabel.Text = "Search for Customer";
             // 
+            // lstUpdate
+            // 
+            this.lstUpdate.FormattingEnabled = true;
+            this.lstUpdate.Location = new System.Drawing.Point(383, 59);
+            this.lstUpdate.Name = "lstUpdate";
+            this.lstUpdate.Size = new System.Drawing.Size(379, 134);
+            this.lstUpdate.TabIndex = 44;
+            this.lstUpdate.SelectedIndexChanged += new System.EventHandler(this.lstUpdate_SelectedIndexChanged);
+            // 
             // frmCustomerUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 545);
+            this.Controls.Add(this.lstUpdate);
             this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.grpUpdateBox);
             this.Controls.Add(this.btnSearch);
@@ -388,5 +399,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblSearchLabel;
+        private System.Windows.Forms.ListBox lstUpdate;
     }
 }

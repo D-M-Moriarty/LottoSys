@@ -29,6 +29,7 @@ namespace LottoSYS
         private void mnuExit(object sender, EventArgs e)
         {
             Application.Exit();
+            
         }
 
         private void mnuBack_Click(object sender, EventArgs e)

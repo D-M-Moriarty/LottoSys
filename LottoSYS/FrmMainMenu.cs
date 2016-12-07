@@ -102,13 +102,7 @@ namespace LottoSYS
         }
 
        
-
-        private void transToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmViewTransactions frmNext = new frmViewTransactions(this);
-            this.Hide();
-            frmNext.Show();
-        }
+        
 
         private void salesAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {

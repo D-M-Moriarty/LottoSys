@@ -253,7 +253,7 @@
             this.grpOptional.Controls.Add(this.lblGender);
             this.grpOptional.Location = new System.Drawing.Point(16, 398);
             this.grpOptional.Name = "grpOptional";
-            this.grpOptional.Size = new System.Drawing.Size(279, 187);
+            this.grpOptional.Size = new System.Drawing.Size(336, 187);
             this.grpOptional.TabIndex = 34;
             this.grpOptional.TabStop = false;
             this.grpOptional.Text = "Optional Details";
@@ -426,7 +426,7 @@
             this.lblHeading.TabIndex = 36;
             this.lblHeading.Text = "Enter New Customer Details";
             // 
-            // frmCustomerReg
+            // frmSellTicketPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -440,7 +440,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.mnuCustomerReg;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmCustomerReg";
+            this.Name = "frmSellTicketPayment";
             this.Text = "frmCustomerReg";
             this.Load += new System.EventHandler(this.frmCustomerReg_Load);
             this.Click += new System.EventHandler(this.frmCustomerReg_Click);
