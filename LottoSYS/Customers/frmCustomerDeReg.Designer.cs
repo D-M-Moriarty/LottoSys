@@ -143,6 +143,7 @@
             this.grpDeReg.TabIndex = 7;
             this.grpDeReg.TabStop = false;
             this.grpDeReg.Text = "DeReg";
+            this.grpDeReg.Enter += new System.EventHandler(this.grpDeReg_Enter);
             // 
             // rdoWithdrawn
             // 

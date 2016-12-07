@@ -57,7 +57,7 @@ namespace LottoSYS.Sales
                 //Parsing to an integer
                 int numOfTickets = int.Parse(numOfTicketsString);
 
-                if(numOfTickets < 6)
+                if(numOfTickets < 6 && numOfTickets > 0)
                 {
                     //MessageBox.Show(numOfTicketsString);
 
@@ -189,7 +189,7 @@ namespace LottoSYS.Sales
                 }
                 else
                 {
-                    MessageBox.Show("Maximum line quantity is 5, please re enter");
+                    MessageBox.Show("Please pick between 1 and 5 lines, please re enter");
                 }
                 
             }

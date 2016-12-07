@@ -44,7 +44,7 @@
             this.mnuExit});
             this.mnuRunDraw.Location = new System.Drawing.Point(0, 0);
             this.mnuRunDraw.Name = "mnuRunDraw";
-            this.mnuRunDraw.Size = new System.Drawing.Size(603, 24);
+            this.mnuRunDraw.Size = new System.Drawing.Size(516, 24);
             this.mnuRunDraw.TabIndex = 1;
             this.mnuRunDraw.Text = "menuStrip1";
             // 
@@ -66,7 +66,7 @@
             // 
             this.lblRunDraw.AutoSize = true;
             this.lblRunDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRunDraw.Location = new System.Drawing.Point(38, 40);
+            this.lblRunDraw.Location = new System.Drawing.Point(25, 43);
             this.lblRunDraw.Name = "lblRunDraw";
             this.lblRunDraw.Size = new System.Drawing.Size(148, 25);
             this.lblRunDraw.TabIndex = 45;
@@ -74,7 +74,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(421, 296);
+            this.btnPrint.Location = new System.Drawing.Point(405, 183);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 46;
@@ -84,7 +84,7 @@
             // lstWinning
             // 
             this.lstWinning.FormattingEnabled = true;
-            this.lstWinning.Location = new System.Drawing.Point(43, 200);
+            this.lstWinning.Location = new System.Drawing.Point(30, 98);
             this.lstWinning.Name = "lstWinning";
             this.lstWinning.Size = new System.Drawing.Size(343, 108);
             this.lstWinning.TabIndex = 47;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 365);
+            this.ClientSize = new System.Drawing.Size(516, 231);
             this.Controls.Add(this.lstWinning);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblRunDraw);

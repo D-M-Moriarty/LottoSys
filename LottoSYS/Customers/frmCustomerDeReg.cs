@@ -63,6 +63,7 @@ namespace LottoSYS
             else if(rdoDeceased.Checked)
             {
                 MessageBox.Show("Please enter dated deceased");
+                
             }
             else if (rdoWithdrawn.Checked)
             {
@@ -144,6 +145,11 @@ namespace LottoSYS
             txtAddress2.Text = add2;
             txtTown.Text = town;
             txtAddress1.Text = add1;
+        }
+
+        private void grpDeReg_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

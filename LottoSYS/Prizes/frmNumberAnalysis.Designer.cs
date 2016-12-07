@@ -46,7 +46,7 @@
             this.mnuExit});
             this.mnuRunDraw.Location = new System.Drawing.Point(0, 0);
             this.mnuRunDraw.Name = "mnuRunDraw";
-            this.mnuRunDraw.Size = new System.Drawing.Size(721, 24);
+            this.mnuRunDraw.Size = new System.Drawing.Size(533, 24);
             this.mnuRunDraw.TabIndex = 1;
             this.mnuRunDraw.Text = "menuStrip1";
             // 
@@ -77,7 +77,7 @@
             // lstMost
             // 
             this.lstMost.FormattingEnabled = true;
-            this.lstMost.Location = new System.Drawing.Point(110, 221);
+            this.lstMost.Location = new System.Drawing.Point(31, 132);
             this.lstMost.Name = "lstMost";
             this.lstMost.Size = new System.Drawing.Size(191, 95);
             this.lstMost.TabIndex = 47;
@@ -85,7 +85,7 @@
             // lblMostFrequent
             // 
             this.lblMostFrequent.AutoSize = true;
-            this.lblMostFrequent.Location = new System.Drawing.Point(110, 188);
+            this.lblMostFrequent.Location = new System.Drawing.Point(28, 100);
             this.lblMostFrequent.Name = "lblMostFrequent";
             this.lblMostFrequent.Size = new System.Drawing.Size(72, 13);
             this.lblMostFrequent.TabIndex = 49;
@@ -95,7 +95,7 @@
             // lblLeastFrequent
             // 
             this.lblLeastFrequent.AutoSize = true;
-            this.lblLeastFrequent.Location = new System.Drawing.Point(400, 188);
+            this.lblLeastFrequent.Location = new System.Drawing.Point(313, 100);
             this.lblLeastFrequent.Name = "lblLeastFrequent";
             this.lblLeastFrequent.Size = new System.Drawing.Size(75, 13);
             this.lblLeastFrequent.TabIndex = 50;
@@ -104,7 +104,7 @@
             // lstLeast
             // 
             this.lstLeast.FormattingEnabled = true;
-            this.lstLeast.Location = new System.Drawing.Point(403, 221);
+            this.lstLeast.Location = new System.Drawing.Point(316, 132);
             this.lstLeast.Name = "lstLeast";
             this.lstLeast.Size = new System.Drawing.Size(188, 95);
             this.lstLeast.TabIndex = 51;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 536);
+            this.ClientSize = new System.Drawing.Size(533, 275);
             this.Controls.Add(this.lstLeast);
             this.Controls.Add(this.lblLeastFrequent);
             this.Controls.Add(this.lblMostFrequent);

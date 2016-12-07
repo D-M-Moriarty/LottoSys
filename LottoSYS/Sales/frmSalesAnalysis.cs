@@ -21,7 +21,8 @@ namespace LottoSYS.Finance
 
         private void frmRevenueReport_Load(object sender, EventArgs e)
         {
-            grpRevenue.Visible = false;
+            grpAnalysis.Visible = false;
+            lstAnalysis.Items.Add("Total sales\t\t€67000");
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace LottoSYS.Finance
 
             if (txtPassword.Text == "12345" && txtUsername.Text == "Darren")
             {
-                grpRevenue.Visible = true;
+                grpAnalysis.Visible = true;
             }
             else
             {
@@ -46,6 +47,31 @@ namespace LottoSYS.Finance
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lblStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEndDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpEndDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpAnalysis_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

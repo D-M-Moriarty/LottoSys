@@ -55,6 +55,7 @@
             this.lblAddressLine1 = new System.Windows.Forms.Label();
             this.lblSearchLabel = new System.Windows.Forms.Label();
             this.lstUpdate = new System.Windows.Forms.ListBox();
+            this.tbnSubmit = new System.Windows.Forms.Button();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpUpdateBox.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +117,7 @@
             // 
             // grpUpdateBox
             // 
+            this.grpUpdateBox.Controls.Add(this.tbnSubmit);
             this.grpUpdateBox.Controls.Add(this.txtEmail);
             this.grpUpdateBox.Controls.Add(this.lblEmail);
             this.grpUpdateBox.Controls.Add(this.txtPhone);
@@ -346,6 +348,15 @@
             this.lstUpdate.TabIndex = 44;
             this.lstUpdate.SelectedIndexChanged += new System.EventHandler(this.lstUpdate_SelectedIndexChanged);
             // 
+            // tbnSubmit
+            // 
+            this.tbnSubmit.Location = new System.Drawing.Point(534, 217);
+            this.tbnSubmit.Name = "tbnSubmit";
+            this.tbnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.tbnSubmit.TabIndex = 45;
+            this.tbnSubmit.Text = "Submit";
+            this.tbnSubmit.UseVisualStyleBackColor = true;
+            // 
             // frmCustomerUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,5 +411,6 @@
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.ListBox lstUpdate;
+        private System.Windows.Forms.Button tbnSubmit;
     }
 }
