@@ -13,6 +13,12 @@ namespace LottoSYS.Customers
     public partial class frmListCustomers : Form
     {
         private FrmMainMenu parent;
+        // Get the currently selected item in the ListBox.
+        String curItem;
+
+
+        // Find the string in ListBox2.
+        int index;
 
         public frmListCustomers()
         {
@@ -27,7 +33,7 @@ namespace LottoSYS.Customers
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void lblSearchLabel_Click(object sender, EventArgs e)
@@ -37,8 +43,13 @@ namespace LottoSYS.Customers
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            // Check if non empty Resultset is there first
+            lstList.Items.Add("Jim Miller, Examlpe street, Killorglin");
+            lstList.Items.Add("Mary Shea, Examlpe street, Tralee");
+            lstList.Items.Add("Tim Clifford, Examlpe street, Millstreet");
+            lstList.Items.Add("Jim Miller, Examlpe street, Killorglin");
         }
+    
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
@@ -64,6 +75,18 @@ namespace LottoSYS.Customers
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lstList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the currently selected item in the ListBox.
+            curItem = lstList.SelectedItem.ToString();
+
+
+
+            // Find the string in ListBox2.
+            index = lstList.FindString(curItem);
+
         }
     }
 }

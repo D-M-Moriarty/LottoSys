@@ -31,7 +31,7 @@
             this.mnuListCustomers = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstList = new System.Windows.Forms.ListBox();
             this.rdoSurname = new System.Windows.Forms.RadioButton();
             this.rdoCustID = new System.Windows.Forms.RadioButton();
             this.rdoCounty = new System.Windows.Forms.RadioButton();
@@ -69,13 +69,14 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // listBox1
+            // lstList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(40, 202);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(502, 147);
-            this.listBox1.TabIndex = 3;
+            this.lstList.FormattingEnabled = true;
+            this.lstList.Location = new System.Drawing.Point(40, 202);
+            this.lstList.Name = "lstList";
+            this.lstList.Size = new System.Drawing.Size(502, 147);
+            this.lstList.TabIndex = 3;
+            this.lstList.SelectedIndexChanged += new System.EventHandler(this.lstList_SelectedIndexChanged);
             // 
             // rdoSurname
             // 
@@ -185,7 +186,7 @@
             this.Controls.Add(this.rdoCounty);
             this.Controls.Add(this.rdoCustID);
             this.Controls.Add(this.rdoSurname);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstList);
             this.Controls.Add(this.mnuListCustomers);
             this.Name = "frmListCustomers";
             this.Text = "frmListCustomers";
@@ -202,7 +203,7 @@
         private System.Windows.Forms.MenuStrip mnuListCustomers;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstList;
         private System.Windows.Forms.RadioButton rdoSurname;
         private System.Windows.Forms.RadioButton rdoCustID;
         private System.Windows.Forms.RadioButton rdoCounty;

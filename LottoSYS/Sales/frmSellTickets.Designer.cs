@@ -36,7 +36,6 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpDetailBox = new System.Windows.Forms.GroupBox();
-            this.btnPayment = new System.Windows.Forms.Button();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnProcess = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtTown = new System.Windows.Forms.TextBox();
             this.lblTown = new System.Windows.Forms.Label();
+            this.lstList = new System.Windows.Forms.ListBox();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpDetailBox.SuspendLayout();
             this.SuspendLayout();
@@ -120,7 +120,6 @@
             // 
             // grpDetailBox
             // 
-            this.grpDetailBox.Controls.Add(this.btnPayment);
             this.grpDetailBox.Controls.Add(this.lblPrice);
             this.grpDetailBox.Controls.Add(this.btnProcess);
             this.grpDetailBox.Controls.Add(this.txtQuantity);
@@ -135,36 +134,27 @@
             this.grpDetailBox.Controls.Add(this.lblSurname);
             this.grpDetailBox.Controls.Add(this.txtTown);
             this.grpDetailBox.Controls.Add(this.lblTown);
-            this.grpDetailBox.Location = new System.Drawing.Point(12, 150);
+            this.grpDetailBox.Location = new System.Drawing.Point(359, 47);
             this.grpDetailBox.Name = "grpDetailBox";
-            this.grpDetailBox.Size = new System.Drawing.Size(655, 233);
+            this.grpDetailBox.Size = new System.Drawing.Size(263, 388);
             this.grpDetailBox.TabIndex = 48;
             this.grpDetailBox.TabStop = false;
             this.grpDetailBox.Text = "Customer Details";
             this.grpDetailBox.Enter += new System.EventHandler(this.grpDetailBox_Enter);
             // 
-            // btnPayment
-            // 
-            this.btnPayment.Location = new System.Drawing.Point(335, 169);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(89, 43);
-            this.btnPayment.TabIndex = 64;
-            this.btnPayment.Text = "Payment Details";
-            this.btnPayment.UseVisualStyleBackColor = true;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
-            // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(529, 16);
+            this.lblPrice.Location = new System.Drawing.Point(94, 245);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(108, 13);
             this.lblPrice.TabIndex = 63;
             this.lblPrice.Text = "Price is €2.20 per line";
+            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
             // 
             // btnProcess
             // 
-            this.btnProcess.Location = new System.Drawing.Point(562, 191);
+            this.btnProcess.Location = new System.Drawing.Point(22, 328);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(75, 23);
             this.btnProcess.TabIndex = 62;
@@ -175,21 +165,23 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(342, 41);
+            this.txtQuantity.Location = new System.Drawing.Point(97, 274);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(136, 21);
             this.txtQuantity.TabIndex = 61;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(257, 32);
+            this.lblQuantity.Location = new System.Drawing.Point(12, 265);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(85, 30);
             this.lblQuantity.TabIndex = 60;
             this.lblQuantity.Text = "No of lines for \r\nquick pick: *";
+            this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
             // 
             // txtEmail
             // 
@@ -285,11 +277,21 @@
             this.lblTown.TabIndex = 46;
             this.lblTown.Text = "Town: *";
             // 
+            // lstList
+            // 
+            this.lstList.FormattingEnabled = true;
+            this.lstList.Location = new System.Drawing.Point(44, 161);
+            this.lstList.Name = "lstList";
+            this.lstList.Size = new System.Drawing.Size(273, 277);
+            this.lstList.TabIndex = 49;
+            this.lstList.SelectedIndexChanged += new System.EventHandler(this.lstList_SelectedIndexChanged);
+            // 
             // frmSellTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 395);
+            this.ClientSize = new System.Drawing.Size(679, 459);
+            this.Controls.Add(this.lstList);
             this.Controls.Add(this.grpDetailBox);
             this.Controls.Add(this.lblSellTicket);
             this.Controls.Add(this.btnSearch);
@@ -331,7 +333,7 @@
         private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.TextBox txtTown;
         private System.Windows.Forms.Label lblTown;
-        private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.ListBox lstList;
     }
 }
