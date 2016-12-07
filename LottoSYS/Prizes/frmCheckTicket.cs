@@ -27,7 +27,12 @@ namespace LottoSYS.Prizes
 
         private void frmPayPrize_Load(object sender, EventArgs e)
         {
-
+            lstWinning.Items.Add("Name,             TicketId    Value\n");
+            lstWinning.Items.Add("Tom O shea,    5432,       €4000\n");
+            lstWinning.Items.Add("Tom O shea,    5432,       €4000\n");
+            lstWinning.Items.Add("Tom O shea,    5432,       €4000\n");
+            lstWinning.Items.Add("Tom O shea,    5432,       €4000\n");
+            lstWinning.Items.Add("Tom O shea,    5432,       €4000\n");
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -35,15 +40,16 @@ namespace LottoSYS.Prizes
             this.Close();
             parent.Show();
         }
-
-        private void mnuExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

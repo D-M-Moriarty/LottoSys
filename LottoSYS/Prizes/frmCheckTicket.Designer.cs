@@ -31,9 +31,9 @@
             this.mnuRunDraw = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.lblRunDraw = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.lstWinning = new System.Windows.Forms.ListBox();
             this.mnuRunDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,20 +60,7 @@
             this.mnuExit.Name = "mnuExit";
             this.mnuExit.Size = new System.Drawing.Size(37, 20);
             this.mnuExit.Text = "Exit";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "TicketId\tAmount\t",
-            "485\t€485",
-            "22\t€5000",
-            "12 \t€6093"});
-            this.listBox1.Location = new System.Drawing.Point(43, 224);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(324, 95);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click_1);
             // 
             // lblRunDraw
             // 
@@ -94,14 +81,22 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // lstWinning
+            // 
+            this.lstWinning.FormattingEnabled = true;
+            this.lstWinning.Location = new System.Drawing.Point(43, 200);
+            this.lstWinning.Name = "lstWinning";
+            this.lstWinning.Size = new System.Drawing.Size(343, 108);
+            this.lstWinning.TabIndex = 47;
+            // 
             // frmCheckTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 365);
+            this.Controls.Add(this.lstWinning);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblRunDraw);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.mnuRunDraw);
             this.Name = "frmCheckTicket";
             this.Text = "frmCheckTicket";
@@ -118,8 +113,8 @@
         private System.Windows.Forms.MenuStrip mnuRunDraw;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label lblRunDraw;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.ListBox lstWinning;
     }
 }
