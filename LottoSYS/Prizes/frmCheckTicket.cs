@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace LottoSYS.Prizes
 {
-    public partial class frmPayPrize : Form
+    public partial class frmCheckTicket : Form
     {
         FrmMainMenu parent;
 
-        public frmPayPrize()
+        public frmCheckTicket()
         {
             InitializeComponent();
         }
 
-        public frmPayPrize(FrmMainMenu Parent)
+        public frmCheckTicket(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;
@@ -39,6 +39,11 @@ namespace LottoSYS.Prizes
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

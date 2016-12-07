@@ -3,16 +3,16 @@ using System.Windows.Forms;
 
 namespace LottoSYS.Finance
 {
-    public partial class frmPayPrize : Form
+    public partial class frmSalesAnalysis : Form
     {
         FrmMainMenu parent;
 
-        public frmPayPrize()
+        public frmSalesAnalysis()
         {
             InitializeComponent();
         }
 
-        public frmPayPrize(FrmMainMenu Parent)
+        public frmSalesAnalysis(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;

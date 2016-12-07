@@ -8,12 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LottoSYS
+namespace LottoSYS.Customers
 {
     public partial class frmListCustomers : Form
     {
-
-        FrmMainMenu parent;
+        private FrmMainMenu parent;
 
         public frmListCustomers()
         {
@@ -26,7 +25,30 @@ namespace LottoSYS
             parent = Parent;
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void lblSearchLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSearch_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void frmListCustomers_Load(object sender, EventArgs e)
         {
@@ -35,7 +57,7 @@ namespace LottoSYS
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             parent.Show();
         }
 
@@ -43,6 +65,5 @@ namespace LottoSYS
         {
             Application.Exit();
         }
-
     }
 }

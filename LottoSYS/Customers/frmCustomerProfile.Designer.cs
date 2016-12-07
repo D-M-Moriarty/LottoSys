@@ -28,112 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mnuCustomerProfile = new System.Windows.Forms.MenuStrip();
+            this.mnuListCustomers = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblSellTicket = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.lblSearchLabel = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.mnuCustomerProfile.SuspendLayout();
+            this.mnuListCustomers.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mnuCustomerProfile
+            // mnuListCustomers
             // 
-            this.mnuCustomerProfile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuListCustomers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBack,
             this.mnuExit});
-            this.mnuCustomerProfile.Location = new System.Drawing.Point(0, 0);
-            this.mnuCustomerProfile.Name = "mnuCustomerProfile";
-            this.mnuCustomerProfile.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.mnuCustomerProfile.Size = new System.Drawing.Size(633, 27);
-            this.mnuCustomerProfile.TabIndex = 2;
-            this.mnuCustomerProfile.Text = "menuStrip1";
+            this.mnuListCustomers.Location = new System.Drawing.Point(0, 0);
+            this.mnuListCustomers.Name = "mnuListCustomers";
+            this.mnuListCustomers.Size = new System.Drawing.Size(702, 24);
+            this.mnuListCustomers.TabIndex = 1;
+            this.mnuListCustomers.Text = "ListCustomers";
             // 
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(44, 19);
+            this.mnuBack.Size = new System.Drawing.Size(44, 20);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(37, 19);
+            this.mnuExit.Size = new System.Drawing.Size(37, 20);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // lblSellTicket
+            // listBox1
             // 
-            this.lblSellTicket.AutoSize = true;
-            this.lblSellTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSellTicket.Location = new System.Drawing.Point(12, 37);
-            this.lblSellTicket.Name = "lblSellTicket";
-            this.lblSellTicket.Size = new System.Drawing.Size(155, 25);
-            this.lblSellTicket.TabIndex = 51;
-            this.lblSellTicket.Text = "List Customers";
-            this.lblSellTicket.Click += new System.EventHandler(this.lblSellTicket_Click);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(22, 230);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(279, 147);
+            this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Location = new System.Drawing.Point(339, 354);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(75, 23);
+            this.btnProfile.TabIndex = 3;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // lblSearchLabel
+            // 
+            this.lblSearchLabel.AutoSize = true;
+            this.lblSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchLabel.Location = new System.Drawing.Point(17, 36);
+            this.lblSearchLabel.Name = "lblSearchLabel";
+            this.lblSearchLabel.Size = new System.Drawing.Size(171, 25);
+            this.lblSearchLabel.TabIndex = 47;
+            this.lblSearchLabel.Text = "Customer Profile";
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(211, 95);
+            this.btnSearch.Location = new System.Drawing.Point(216, 94);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 50;
+            this.btnSearch.TabIndex = 46;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchBox
             // 
-            this.txtSearchBox.Location = new System.Drawing.Point(85, 98);
+            this.txtSearchBox.Location = new System.Drawing.Point(90, 97);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchBox.TabIndex = 49;
-            this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
+            this.txtSearchBox.TabIndex = 45;
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(17, 87);
+            this.lblSearch.Location = new System.Drawing.Point(13, 102);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(61, 30);
-            this.lblSearch.TabIndex = 48;
-            this.lblSearch.Text = "Customer\r\nSurname:";
-            this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Mary Doe , Killorglin, Kerry",
-            "John Doe, Killarney, Kerry",
-            "Billy Doe, Millstreet, Cork"});
-            this.listBox1.Location = new System.Drawing.Point(20, 144);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(378, 173);
-            this.listBox1.TabIndex = 52;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lblSearch.Size = new System.Drawing.Size(61, 15);
+            this.lblSearch.TabIndex = 44;
+            this.lblSearch.Text = "Surname:";
             // 
             // frmCustomerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 417);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.lblSellTicket);
+            this.ClientSize = new System.Drawing.Size(702, 411);
+            this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBox);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.mnuCustomerProfile);
+            this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.mnuListCustomers);
             this.Name = "frmCustomerProfile";
             this.Text = "frmCustomerProfile";
-            this.Load += new System.EventHandler(this.frmCustomerProfile_Load);
-            this.mnuCustomerProfile.ResumeLayout(false);
-            this.mnuCustomerProfile.PerformLayout();
+            this.Load += new System.EventHandler(this.frmListCustomers_Load);
+            this.mnuListCustomers.ResumeLayout(false);
+            this.mnuListCustomers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,13 +145,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mnuCustomerProfile;
+        private System.Windows.Forms.MenuStrip mnuListCustomers;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.Label lblSellTicket;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

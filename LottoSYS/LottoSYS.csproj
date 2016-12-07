@@ -53,12 +53,6 @@
     <Compile Include="Customers\frmCustomerDeReg.Designer.cs">
       <DependentUpon>frmCustomerDeReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers\frmCustomerProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customers\frmCustomerProfile.Designer.cs">
-      <DependentUpon>frmCustomerProfile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customers\frmCustomerReg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,23 +65,23 @@
     <Compile Include="Customers\frmCustomerUpdate.Designer.cs">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customers\frmCustomerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomerProfile.Designer.cs">
+      <DependentUpon>frmCustomerProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers\frmListCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customers\frmListCustomers.Designer.cs">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Finance\frmRevenueReport.cs">
+    <Compile Include="Sales\frmSalesAnalysis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finance\frmRevenueReport.Designer.cs">
-      <DependentUpon>frmRevenueReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Finance\frmViewTransactions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Finance\frmViewTransactions.Designer.cs">
-      <DependentUpon>frmViewTransactions.cs</DependentUpon>
+    <Compile Include="Sales\frmSalesAnalysis.Designer.cs">
+      <DependentUpon>frmSalesAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMainMenu.cs">
       <SubType>Form</SubType>
@@ -95,17 +89,11 @@
     <Compile Include="FrmMainMenu.Designer.cs">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prizes\frmListWinTick.cs">
+    <Compile Include="Prizes\frmCheckTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prizes\frmListWinTick.Designer.cs">
-      <DependentUpon>frmListWinTick.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Prizes\frmPayPrize.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Prizes\frmPayPrize.Designer.cs">
-      <DependentUpon>frmPayPrize.cs</DependentUpon>
+    <Compile Include="Prizes\frmCheckTicket.Designer.cs">
+      <DependentUpon>frmCheckTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Prizes\frmRunDraw.cs">
       <SubType>Form</SubType>
@@ -113,11 +101,11 @@
     <Compile Include="Prizes\frmRunDraw.Designer.cs">
       <DependentUpon>frmRunDraw.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prizes\frmUnclaimedPrize.cs">
+    <Compile Include="Prizes\frmNumberAnalysis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prizes\frmUnclaimedPrize.Designer.cs">
-      <DependentUpon>frmUnclaimedPrize.cs</DependentUpon>
+    <Compile Include="Prizes\frmNumberAnalysis.Designer.cs">
+      <DependentUpon>frmNumberAnalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,38 +130,32 @@
     <EmbeddedResource Include="Customers\frmCustomerDeReg.resx">
       <DependentUpon>frmCustomerDeReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customers\frmCustomerProfile.resx">
-      <DependentUpon>frmCustomerProfile.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmCustomerReg.resx">
       <DependentUpon>frmCustomerReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmCustomerUpdate.resx">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomerProfile.resx">
+      <DependentUpon>frmCustomerProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Finance\frmRevenueReport.resx">
-      <DependentUpon>frmRevenueReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Finance\frmViewTransactions.resx">
-      <DependentUpon>frmViewTransactions.cs</DependentUpon>
+    <EmbeddedResource Include="Sales\frmSalesAnalysis.resx">
+      <DependentUpon>frmSalesAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prizes\frmListWinTick.resx">
-      <DependentUpon>frmListWinTick.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Prizes\frmPayPrize.resx">
-      <DependentUpon>frmPayPrize.cs</DependentUpon>
+    <EmbeddedResource Include="Prizes\frmCheckTicket.resx">
+      <DependentUpon>frmCheckTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prizes\frmRunDraw.resx">
       <DependentUpon>frmRunDraw.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prizes\frmUnclaimedPrize.resx">
-      <DependentUpon>frmUnclaimedPrize.cs</DependentUpon>
+    <EmbeddedResource Include="Prizes\frmNumberAnalysis.resx">
+      <DependentUpon>frmNumberAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
-﻿namespace LottoSYS.Finance
+﻿namespace LottoSYS.Prizes
 {
-    partial class frmViewTransactions
+    partial class frmNumberAnalysis
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mnuViewTransactions = new System.Windows.Forms.MenuStrip();
+            this.mnuRunDraw = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuViewTransactions.SuspendLayout();
+            this.mnuRunDraw.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mnuViewTransactions
+            // mnuRunDraw
             // 
-            this.mnuViewTransactions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuRunDraw.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBack,
             this.mnuExit});
-            this.mnuViewTransactions.Location = new System.Drawing.Point(0, 0);
-            this.mnuViewTransactions.Name = "mnuViewTransactions";
-            this.mnuViewTransactions.Size = new System.Drawing.Size(559, 24);
-            this.mnuViewTransactions.TabIndex = 12;
-            this.mnuViewTransactions.Text = "menuStrip1";
+            this.mnuRunDraw.Location = new System.Drawing.Point(0, 0);
+            this.mnuRunDraw.Name = "mnuRunDraw";
+            this.mnuRunDraw.Size = new System.Drawing.Size(284, 24);
+            this.mnuRunDraw.TabIndex = 1;
+            this.mnuRunDraw.Text = "menuStrip1";
             // 
             // mnuBack
             // 
@@ -57,17 +57,19 @@
             this.mnuExit.Name = "mnuExit";
             this.mnuExit.Size = new System.Drawing.Size(37, 20);
             this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // frmViewTransactions
+            // frmNumberAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 439);
-            this.Controls.Add(this.mnuViewTransactions);
-            this.Name = "frmViewTransactions";
-            this.Text = "frmViewTransactions";
-            this.mnuViewTransactions.ResumeLayout(false);
-            this.mnuViewTransactions.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.mnuRunDraw);
+            this.Name = "frmNumberAnalysis";
+            this.Text = "frmNumberAnalysis";
+            this.Load += new System.EventHandler(this.frmUnclaimedPrize_Load);
+            this.mnuRunDraw.ResumeLayout(false);
+            this.mnuRunDraw.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,7 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mnuViewTransactions;
+        private System.Windows.Forms.MenuStrip mnuRunDraw;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
     }

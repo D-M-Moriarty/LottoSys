@@ -1,6 +1,6 @@
 ﻿namespace LottoSYS.Finance
 {
-    partial class frmPayPrize
+    partial class frmSalesAnalysis
     {
         /// <summary>
         /// Required designer variable.
@@ -121,7 +121,7 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // frmPayPrize
+            // frmSalesAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,8 +136,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.mnuRevenueReport;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmPayPrize";
-            this.Text = "frmRevenueReport";
+            this.Name = "frmSalesAnalysis";
+            this.Text = "frmSalesAnalysis";
             this.Load += new System.EventHandler(this.frmRevenueReport_Load);
             this.mnuRevenueReport.ResumeLayout(false);
             this.mnuRevenueReport.PerformLayout();

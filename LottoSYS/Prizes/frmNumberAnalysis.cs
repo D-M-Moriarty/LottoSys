@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace LottoSYS.Prizes
 {
-    public partial class frmUnclaimedPrize : Form
+    public partial class frmNumberAnalysis : Form
     {
         FrmMainMenu parent;
 
-        public frmUnclaimedPrize()
+        public frmNumberAnalysis()
         {
             InitializeComponent();
         }
 
-        public frmUnclaimedPrize(FrmMainMenu Parent)
+        public frmNumberAnalysis(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;

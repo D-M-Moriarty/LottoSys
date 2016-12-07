@@ -36,18 +36,14 @@
             this.mnuCustomerList = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sellTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cashTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.financeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.frmRevenueReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuViewTransactions = new System.Windows.Forms.ToolStripMenuItem();
             this.prizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runDrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listWinningTicketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payPrizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listUnclaimedPrizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NumberAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.customerProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +52,6 @@
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCustomerProfile,
             this.salesToolStripMenuItem,
-            this.financeToolStripMenuItem,
             this.prizesToolStripMenuItem,
             this.mnuExit});
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
@@ -71,8 +66,8 @@
             this.mnuCustomerReg,
             this.mnuCustomerUpdate,
             this.mnuCustomerDeReg,
-            this.mnuCustomerList,
-            this.customerProfileToolStripMenuItem});
+            this.listCustomersToolStripMenuItem,
+            this.mnuCustomerList});
             this.mnuCustomerProfile.Name = "mnuCustomerProfile";
             this.mnuCustomerProfile.Size = new System.Drawing.Size(76, 20);
             this.mnuCustomerProfile.Text = "Customers";
@@ -102,14 +97,14 @@
             // 
             this.mnuCustomerList.Name = "mnuCustomerList";
             this.mnuCustomerList.Size = new System.Drawing.Size(190, 22);
-            this.mnuCustomerList.Text = "List Customers";
+            this.mnuCustomerList.Text = "Customer Profile";
             this.mnuCustomerList.Click += new System.EventHandler(this.mnuCustomerList_Click);
             // 
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sellTicketsToolStripMenuItem,
-            this.cashTicketToolStripMenuItem});
+            this.salesAnalysisToolStripMenuItem});
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
             this.salesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.salesToolStripMenuItem.Text = "Sales";
@@ -117,47 +112,16 @@
             // sellTicketsToolStripMenuItem
             // 
             this.sellTicketsToolStripMenuItem.Name = "sellTicketsToolStripMenuItem";
-            this.sellTicketsToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.sellTicketsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sellTicketsToolStripMenuItem.Text = "Sell Tickets";
             this.sellTicketsToolStripMenuItem.Click += new System.EventHandler(this.mnuSellTickets_Click);
-            // 
-            // cashTicketToolStripMenuItem
-            // 
-            this.cashTicketToolStripMenuItem.Name = "cashTicketToolStripMenuItem";
-            this.cashTicketToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.cashTicketToolStripMenuItem.Text = "Cash Ticket";
-            this.cashTicketToolStripMenuItem.Click += new System.EventHandler(this.mnuCashTicket_Click);
-            // 
-            // financeToolStripMenuItem
-            // 
-            this.financeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.frmRevenueReport,
-            this.mnuViewTransactions});
-            this.financeToolStripMenuItem.Name = "financeToolStripMenuItem";
-            this.financeToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.financeToolStripMenuItem.Text = "Finance";
-            // 
-            // frmRevenueReport
-            // 
-            this.frmRevenueReport.Name = "frmRevenueReport";
-            this.frmRevenueReport.Size = new System.Drawing.Size(168, 22);
-            this.frmRevenueReport.Text = "Revenue Report";
-            this.frmRevenueReport.Click += new System.EventHandler(this.mnuRevenueReport_Click);
-            // 
-            // mnuViewTransactions
-            // 
-            this.mnuViewTransactions.Name = "mnuViewTransactions";
-            this.mnuViewTransactions.Size = new System.Drawing.Size(168, 22);
-            this.mnuViewTransactions.Text = "View Transactions";
-            this.mnuViewTransactions.Click += new System.EventHandler(this.transToolStripMenuItem_Click);
             // 
             // prizesToolStripMenuItem
             // 
             this.prizesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runDrawToolStripMenuItem,
-            this.listWinningTicketsToolStripMenuItem,
             this.payPrizeToolStripMenuItem,
-            this.listUnclaimedPrizesToolStripMenuItem});
+            this.NumberAnalysisToolStripMenuItem});
             this.prizesToolStripMenuItem.Name = "prizesToolStripMenuItem";
             this.prizesToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.prizesToolStripMenuItem.Text = "Prizes";
@@ -165,30 +129,23 @@
             // runDrawToolStripMenuItem
             // 
             this.runDrawToolStripMenuItem.Name = "runDrawToolStripMenuItem";
-            this.runDrawToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.runDrawToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.runDrawToolStripMenuItem.Text = "Run Draw";
             this.runDrawToolStripMenuItem.Click += new System.EventHandler(this.mnuRunDraw_Click);
-            // 
-            // listWinningTicketsToolStripMenuItem
-            // 
-            this.listWinningTicketsToolStripMenuItem.Name = "listWinningTicketsToolStripMenuItem";
-            this.listWinningTicketsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.listWinningTicketsToolStripMenuItem.Text = "List Winning Tickets";
-            this.listWinningTicketsToolStripMenuItem.Click += new System.EventHandler(this.listWinningTicketsToolStripMenuItem_Click);
             // 
             // payPrizeToolStripMenuItem
             // 
             this.payPrizeToolStripMenuItem.Name = "payPrizeToolStripMenuItem";
-            this.payPrizeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.payPrizeToolStripMenuItem.Text = "Pay Prize";
+            this.payPrizeToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.payPrizeToolStripMenuItem.Text = "Check Ticket";
             this.payPrizeToolStripMenuItem.Click += new System.EventHandler(this.mnuPayPrize_Click);
             // 
-            // listUnclaimedPrizesToolStripMenuItem
+            // NumberAnalysisToolStripMenuItem
             // 
-            this.listUnclaimedPrizesToolStripMenuItem.Name = "listUnclaimedPrizesToolStripMenuItem";
-            this.listUnclaimedPrizesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.listUnclaimedPrizesToolStripMenuItem.Text = "List Unclaimed Prizes";
-            this.listUnclaimedPrizesToolStripMenuItem.Click += new System.EventHandler(this.mnuListUnclaimedPrizes_Click);
+            this.NumberAnalysisToolStripMenuItem.Name = "NumberAnalysisToolStripMenuItem";
+            this.NumberAnalysisToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.NumberAnalysisToolStripMenuItem.Text = "Number Analysis";
+            this.NumberAnalysisToolStripMenuItem.Click += new System.EventHandler(this.mnuNumberAnalysis_Click);
             // 
             // mnuExit
             // 
@@ -207,12 +164,19 @@
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Lotto System Home";
             // 
-            // customerProfileToolStripMenuItem
+            // salesAnalysisToolStripMenuItem
             // 
-            this.customerProfileToolStripMenuItem.Name = "customerProfileToolStripMenuItem";
-            this.customerProfileToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.customerProfileToolStripMenuItem.Text = "Customer Profile";
-            this.customerProfileToolStripMenuItem.Click += new System.EventHandler(this.customerProfileToolStripMenuItem_Click);
+            this.salesAnalysisToolStripMenuItem.Name = "salesAnalysisToolStripMenuItem";
+            this.salesAnalysisToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salesAnalysisToolStripMenuItem.Text = "Sales Analysis";
+            this.salesAnalysisToolStripMenuItem.Click += new System.EventHandler(this.salesAnalysisToolStripMenuItem_Click);
+            // 
+            // listCustomersToolStripMenuItem
+            // 
+            this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
+            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.listCustomersToolStripMenuItem.Text = "List Customers";
+            this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
             // 
             // FrmMainMenu
             // 
@@ -237,7 +201,6 @@
         private System.Windows.Forms.MenuStrip mnuMainMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerProfile;
         private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem financeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prizesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerReg;
@@ -246,14 +209,11 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerList;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.ToolStripMenuItem sellTicketsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cashTicketToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem frmRevenueReport;
-        private System.Windows.Forms.ToolStripMenuItem mnuViewTransactions;
         private System.Windows.Forms.ToolStripMenuItem runDrawToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listWinningTicketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem payPrizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listUnclaimedPrizesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerProfileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NumberAnalysisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesAnalysisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listCustomersToolStripMenuItem;
     }
 }
 

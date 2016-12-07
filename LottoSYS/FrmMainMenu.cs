@@ -42,7 +42,7 @@ namespace LottoSYS
 
         private void mnuCustomerList_Click(object sender, EventArgs e)
         {
-            frmListCustomers frmNext = new frmListCustomers(this);
+            frmCustomerProfile frmNext = new frmCustomerProfile(this);
             this.Hide();
             frmNext.Show();
         }
@@ -63,7 +63,7 @@ namespace LottoSYS
 
         private void mnuRevenueReport_Click(object sender, EventArgs e)
         {
-            Finance.frmPayPrize frmNext = new Finance.frmPayPrize(this);
+            Finance.frmSalesAnalysis frmNext = new Finance.frmSalesAnalysis(this);
             this.Hide();
             frmNext.Show();
         }
@@ -75,7 +75,7 @@ namespace LottoSYS
 
         private void mnuPayPrize_Click(object sender, EventArgs e)
         {
-            Prizes.frmPayPrize frmNext = new Prizes.frmPayPrize(this);
+            Prizes.frmCheckTicket frmNext = new Prizes.frmCheckTicket(this);
             this.Hide();
             frmNext.Show();
         }
@@ -87,30 +87,39 @@ namespace LottoSYS
             frmNext.Show();
         }
 
-        private void mnuListUnclaimedPrizes_Click(object sender, EventArgs e)
+        private void mnuNumberAnalysis_Click(object sender, EventArgs e)
         {
-            frmUnclaimedPrize frmNext = new frmUnclaimedPrize(this);
+            frmNumberAnalysis frmNext = new frmNumberAnalysis(this);
             this.Hide();
             frmNext.Show();
         }
 
         private void listWinningTicketsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListWinTick frmNext = new frmListWinTick(this);
+            frmCheckTicket frmNext = new frmCheckTicket(this);
             this.Hide();
             frmNext.Show();
         }
 
-        private void customerProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCustomerProfile frmNext = new frmCustomerProfile(this);
-            this.Hide();
-            frmNext.Show();
-        }
+       
 
         private void transToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmViewTransactions frmNext = new frmViewTransactions(this);
+            this.Hide();
+            frmNext.Show();
+        }
+
+        private void salesAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalesAnalysis frmNext = new frmSalesAnalysis(this);
+            this.Hide();
+            frmNext.Show();
+        }
+
+        private void listCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customers.frmListCustomers frmNext = new Customers.frmListCustomers(this);
             this.Hide();
             frmNext.Show();
         }
