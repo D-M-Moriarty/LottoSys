@@ -94,7 +94,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(243, 98);
+            this.btnSearch.Location = new System.Drawing.Point(317, 106);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 6;
@@ -105,9 +105,9 @@
             // txtSearchBox
             // 
             this.txtSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBox.Location = new System.Drawing.Point(117, 101);
+            this.txtSearchBox.Location = new System.Drawing.Point(119, 106);
             this.txtSearchBox.Name = "txtSearchBox";
-            this.txtSearchBox.Size = new System.Drawing.Size(100, 22);
+            this.txtSearchBox.Size = new System.Drawing.Size(113, 22);
             this.txtSearchBox.TabIndex = 5;
             this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
@@ -139,7 +139,7 @@
             this.grpDeReg.Controls.Add(this.lblAddressLine1);
             this.grpDeReg.Location = new System.Drawing.Point(434, 49);
             this.grpDeReg.Name = "grpDeReg";
-            this.grpDeReg.Size = new System.Drawing.Size(317, 407);
+            this.grpDeReg.Size = new System.Drawing.Size(317, 351);
             this.grpDeReg.TabIndex = 7;
             this.grpDeReg.TabStop = false;
             this.grpDeReg.Text = "DeReg";
@@ -148,7 +148,7 @@
             // rdoWithdrawn
             // 
             this.rdoWithdrawn.AutoSize = true;
-            this.rdoWithdrawn.Location = new System.Drawing.Point(148, 294);
+            this.rdoWithdrawn.Location = new System.Drawing.Point(11, 246);
             this.rdoWithdrawn.Name = "rdoWithdrawn";
             this.rdoWithdrawn.Size = new System.Drawing.Size(131, 29);
             this.rdoWithdrawn.TabIndex = 70;
@@ -158,7 +158,7 @@
             // rdoDeceased
             // 
             this.rdoDeceased.AutoSize = true;
-            this.rdoDeceased.Location = new System.Drawing.Point(148, 246);
+            this.rdoDeceased.Location = new System.Drawing.Point(11, 290);
             this.rdoDeceased.Name = "rdoDeceased";
             this.rdoDeceased.Size = new System.Drawing.Size(127, 29);
             this.rdoDeceased.TabIndex = 69;
@@ -169,7 +169,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(148, 378);
+            this.btnSubmit.Location = new System.Drawing.Point(185, 296);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 68;
@@ -277,9 +277,9 @@
             this.lstdereg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstdereg.FormattingEnabled = true;
             this.lstdereg.ItemHeight = 20;
-            this.lstdereg.Location = new System.Drawing.Point(21, 174);
+            this.lstdereg.Location = new System.Drawing.Point(43, 175);
             this.lstdereg.Name = "lstdereg";
-            this.lstdereg.Size = new System.Drawing.Size(379, 124);
+            this.lstdereg.Size = new System.Drawing.Size(349, 124);
             this.lstdereg.TabIndex = 45;
             this.lstdereg.SelectedIndexChanged += new System.EventHandler(this.lstdereg_SelectedIndexChanged);
             // 
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 476);
+            this.ClientSize = new System.Drawing.Size(784, 421);
             this.Controls.Add(this.lstdereg);
             this.Controls.Add(this.grpDeReg);
             this.Controls.Add(this.btnSearch);

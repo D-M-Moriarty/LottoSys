@@ -36,12 +36,14 @@
             this.rdoCustID = new System.Windows.Forms.RadioButton();
             this.rdoCounty = new System.Windows.Forms.RadioButton();
             this.rdoAge = new System.Windows.Forms.RadioButton();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.grpSort = new System.Windows.Forms.Button();
             this.lblList = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mnuListCustomers.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuListCustomers
@@ -72,7 +74,7 @@
             // lstList
             // 
             this.lstList.FormattingEnabled = true;
-            this.lstList.Location = new System.Drawing.Point(40, 202);
+            this.lstList.Location = new System.Drawing.Point(34, 111);
             this.lstList.Name = "lstList";
             this.lstList.Size = new System.Drawing.Size(502, 147);
             this.lstList.TabIndex = 3;
@@ -81,7 +83,7 @@
             // rdoSurname
             // 
             this.rdoSurname.AutoSize = true;
-            this.rdoSurname.Location = new System.Drawing.Point(40, 165);
+            this.rdoSurname.Location = new System.Drawing.Point(34, 74);
             this.rdoSurname.Name = "rdoSurname";
             this.rdoSurname.Size = new System.Drawing.Size(67, 17);
             this.rdoSurname.TabIndex = 4;
@@ -93,7 +95,7 @@
             // rdoCustID
             // 
             this.rdoCustID.AutoSize = true;
-            this.rdoCustID.Location = new System.Drawing.Point(181, 165);
+            this.rdoCustID.Location = new System.Drawing.Point(175, 74);
             this.rdoCustID.Name = "rdoCustID";
             this.rdoCustID.Size = new System.Drawing.Size(80, 17);
             this.rdoCustID.TabIndex = 5;
@@ -104,7 +106,7 @@
             // rdoCounty
             // 
             this.rdoCounty.AutoSize = true;
-            this.rdoCounty.Location = new System.Drawing.Point(351, 165);
+            this.rdoCounty.Location = new System.Drawing.Point(345, 74);
             this.rdoCounty.Name = "rdoCounty";
             this.rdoCounty.Size = new System.Drawing.Size(58, 17);
             this.rdoCounty.TabIndex = 6;
@@ -115,7 +117,7 @@
             // rdoAge
             // 
             this.rdoAge.AutoSize = true;
-            this.rdoAge.Location = new System.Drawing.Point(498, 165);
+            this.rdoAge.Location = new System.Drawing.Point(492, 74);
             this.rdoAge.Name = "rdoAge";
             this.rdoAge.Size = new System.Drawing.Size(44, 17);
             this.rdoAge.TabIndex = 7;
@@ -123,14 +125,14 @@
             this.rdoAge.Text = "Age";
             this.rdoAge.UseVisualStyleBackColor = true;
             // 
-            // btnPrint
+            // grpSort
             // 
-            this.btnPrint.Location = new System.Drawing.Point(566, 326);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 8;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.grpSort.Location = new System.Drawing.Point(560, 235);
+            this.grpSort.Name = "grpSort";
+            this.grpSort.Size = new System.Drawing.Size(75, 23);
+            this.grpSort.TabIndex = 8;
+            this.grpSort.Text = "Print";
+            this.grpSort.UseVisualStyleBackColor = true;
             // 
             // lblList
             // 
@@ -172,27 +174,39 @@
             this.lblSearch.Text = "Surname:";
             this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.grpSort);
+            this.groupBox1.Controls.Add(this.rdoAge);
+            this.groupBox1.Controls.Add(this.rdoCounty);
+            this.groupBox1.Controls.Add(this.rdoCustID);
+            this.groupBox1.Controls.Add(this.rdoSurname);
+            this.groupBox1.Controls.Add(this.lstList);
+            this.groupBox1.Location = new System.Drawing.Point(12, 141);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(656, 289);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sort Listings";
+            // 
             // frmListCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 442);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblList);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBox);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.rdoAge);
-            this.Controls.Add(this.rdoCounty);
-            this.Controls.Add(this.rdoCustID);
-            this.Controls.Add(this.rdoSurname);
-            this.Controls.Add(this.lstList);
             this.Controls.Add(this.mnuListCustomers);
             this.Name = "frmListCustomers";
             this.Text = "frmListCustomers";
             this.Load += new System.EventHandler(this.frmListCustomers_Load);
             this.mnuListCustomers.ResumeLayout(false);
             this.mnuListCustomers.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,10 +222,11 @@
         private System.Windows.Forms.RadioButton rdoCustID;
         private System.Windows.Forms.RadioButton rdoCounty;
         private System.Windows.Forms.RadioButton rdoAge;
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button grpSort;
         private System.Windows.Forms.Label lblList;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

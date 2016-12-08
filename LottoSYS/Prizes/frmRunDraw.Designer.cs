@@ -34,6 +34,7 @@
             this.btnRunDraw = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRunDraw = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.mnuRunDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             // btnRunDraw
             // 
-            this.btnRunDraw.Location = new System.Drawing.Point(228, 291);
+            this.btnRunDraw.Location = new System.Drawing.Point(218, 119);
             this.btnRunDraw.Name = "btnRunDraw";
             this.btnRunDraw.Size = new System.Drawing.Size(92, 48);
             this.btnRunDraw.TabIndex = 1;
@@ -90,11 +91,20 @@
             this.lblRunDraw.TabIndex = 44;
             this.lblRunDraw.Text = "Run Lotto Draw";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(96, 210);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(349, 95);
+            this.listBox1.TabIndex = 45;
+            // 
             // frmRunDraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 415);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblRunDraw);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRunDraw);
@@ -118,5 +128,6 @@
         private System.Windows.Forms.Button btnRunDraw;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRunDraw;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

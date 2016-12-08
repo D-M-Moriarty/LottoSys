@@ -13,6 +13,7 @@ namespace LottoSYS.Prizes
     public partial class frmRunDraw : Form
     {
         FrmMainMenu parent;
+        private int[] nums;
 
         public frmRunDraw()
         {
@@ -27,7 +28,7 @@ namespace LottoSYS.Prizes
 
         private void frmRunDraw_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace LottoSYS.Prizes
             string zero = "0";
             Random randNum = new Random();
 
-            int[] nums = new int[6];
+            nums = new int[6];
             bool[] alreadyPicked = new bool[47];
             int num;
 
@@ -99,7 +100,9 @@ namespace LottoSYS.Prizes
             
             
 
-            MessageBox.Show(str,"Draw Results");
+            //MessageBox.Show(str,"Draw Results");
+            listBox1.Items.Add(str);
+            btnRunDraw.Enabled = false;
         }
     }
 }

@@ -18,10 +18,6 @@ namespace LottoSYS
         private String add1;
         private String add2;
         private String town;
-        private String county;
-        private String residence;
-        private String phone;
-        private String email;
 
         public frmCustomerDeReg(FrmMainMenu Parent)
         {
@@ -42,7 +38,16 @@ namespace LottoSYS
 
         private void frmCustomerDeReg_Load(object sender, EventArgs e)
         {
-
+            txtAddress1.ReadOnly = true;
+            txtAddress1.BackColor = Color.White;
+            txtAddress2.ReadOnly = true;
+            txtAddress2.BackColor = Color.White;
+            txtForename.ReadOnly = true;
+            txtForename.BackColor = Color.White;
+            txtSurname.ReadOnly = true;
+            txtSurname.BackColor = Color.White;
+            txtTown.ReadOnly = true;
+            txtTown.BackColor = Color.White;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -73,6 +78,14 @@ namespace LottoSYS
             {
                 MessageBox.Show("Please select a radio button!!");
             }
+
+            txtSurname.Text = "";
+            txtForename.Text = "";
+            txtAddress1.Text = "";
+            txtAddress2.Text = "";
+            txtTown.Text = "";
+
+
         }
 
         private void lblSearch_Click(object sender, EventArgs e)
@@ -107,10 +120,6 @@ namespace LottoSYS
                 add1 = "Example Street";
                 add2 = "";
                 town = "Killorglin";
-                county = "Kerry";
-                residence = "Ireland";
-                phone = "89689679";
-                email = "dkgfsuio|@sf.com";
 
 
 
@@ -122,10 +131,6 @@ namespace LottoSYS
                 add1 = "Example Street";
                 add2 = "";
                 town = "Tralee";
-                county = "Kerry";
-                residence = "Ireland";
-                phone = "89689679";
-                email = "dkgfsuio|@sf.com";
             }
             else
             {
@@ -134,10 +139,6 @@ namespace LottoSYS
                 add1 = "Example Street";
                 add2 = "";
                 town = "Millstreet";
-                county = "Cork";
-                residence = "Ireland";
-                phone = "89689679";
-                email = "dkgfsuio|@sf.com";
             }
 
             txtSurname.Text = surname;

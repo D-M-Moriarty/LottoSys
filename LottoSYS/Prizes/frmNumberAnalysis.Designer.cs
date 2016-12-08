@@ -36,6 +36,7 @@
             this.lblMostFrequent = new System.Windows.Forms.Label();
             this.lblLeastFrequent = new System.Windows.Forms.Label();
             this.lstLeast = new System.Windows.Forms.ListBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.mnuRunDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,11 +110,21 @@
             this.lstLeast.Size = new System.Drawing.Size(188, 95);
             this.lstLeast.TabIndex = 51;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(220, 240);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(100, 23);
+            this.btnPrint.TabIndex = 52;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
             // frmNumberAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 275);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lstLeast);
             this.Controls.Add(this.lblLeastFrequent);
             this.Controls.Add(this.lblMostFrequent);
@@ -140,5 +151,6 @@
         private System.Windows.Forms.Label lblMostFrequent;
         private System.Windows.Forms.Label lblLeastFrequent;
         private System.Windows.Forms.ListBox lstLeast;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

@@ -10,11 +10,7 @@ namespace LottoSYS.Sales
         public int numOfLines;
         private String surname;
         private String forename;
-        private String add1;
-        private String add2;
         private String town;
-        private String county;
-        private String residence;
         private String phone;
         private String email;
 
@@ -199,6 +195,12 @@ namespace LottoSYS.Sales
             }
 
 
+            txtSurname.ResetText();
+            txtForename.ResetText();
+            txtTown.ResetText();
+            txtEmail.ResetText();
+            txtPhone.ResetText();
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -253,11 +255,7 @@ namespace LottoSYS.Sales
             {
                 surname = "Miller";
                 forename = "Jim";
-                add1 = "Example Street";
-                add2 = "";
                 town = "Killorglin";
-                county = "Kerry";
-                residence = "Ireland";
                 phone = "89689679";
                 email = "dkgfsuio|@sf.com";
 
@@ -268,11 +266,7 @@ namespace LottoSYS.Sales
             {
                 surname = "Mary";
                 forename = "Shea";
-                add1 = "Example Street";
-                add2 = "";
                 town = "Tralee";
-                county = "Kerry";
-                residence = "Ireland";
                 phone = "89689679";
                 email = "dkgfsuio|@sf.com";
             }
@@ -280,11 +274,7 @@ namespace LottoSYS.Sales
             {
                 surname = "Tim";
                 forename = "Clifford";
-                add1 = "Example Street";
-                add2 = "";
                 town = "Millstreet";
-                county = "Cork";
-                residence = "Ireland";
                 phone = "89689679";
                 email = "dkgfsuio|@sf.com";
             }
@@ -292,6 +282,10 @@ namespace LottoSYS.Sales
             txtSurname.Text = surname;
             txtForename.Text = forename;
             txtTown.Text = town;
+            txtEmail.Text = email;
+            txtPhone.Text = phone;
+            
+
         }
     }
 }

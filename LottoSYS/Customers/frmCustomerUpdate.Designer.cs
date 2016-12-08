@@ -35,6 +35,7 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grpUpdateBox = new System.Windows.Forms.GroupBox();
+            this.tbnSubmit = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.lblAddressLine1 = new System.Windows.Forms.Label();
             this.lblSearchLabel = new System.Windows.Forms.Label();
             this.lstUpdate = new System.Windows.Forms.ListBox();
-            this.tbnSubmit = new System.Windows.Forms.Button();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpUpdateBox.SuspendLayout();
             this.SuspendLayout();
@@ -142,6 +142,16 @@
             this.grpUpdateBox.TabIndex = 42;
             this.grpUpdateBox.TabStop = false;
             this.grpUpdateBox.Text = "Update Details";
+            // 
+            // tbnSubmit
+            // 
+            this.tbnSubmit.Location = new System.Drawing.Point(534, 217);
+            this.tbnSubmit.Name = "tbnSubmit";
+            this.tbnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.tbnSubmit.TabIndex = 45;
+            this.tbnSubmit.Text = "Submit";
+            this.tbnSubmit.UseVisualStyleBackColor = true;
+            this.tbnSubmit.Click += new System.EventHandler(this.tbnSubmit_Click);
             // 
             // txtEmail
             // 
@@ -347,15 +357,6 @@
             this.lstUpdate.Size = new System.Drawing.Size(379, 134);
             this.lstUpdate.TabIndex = 44;
             this.lstUpdate.SelectedIndexChanged += new System.EventHandler(this.lstUpdate_SelectedIndexChanged);
-            // 
-            // tbnSubmit
-            // 
-            this.tbnSubmit.Location = new System.Drawing.Point(534, 217);
-            this.tbnSubmit.Name = "tbnSubmit";
-            this.tbnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.tbnSubmit.TabIndex = 45;
-            this.tbnSubmit.Text = "Submit";
-            this.tbnSubmit.UseVisualStyleBackColor = true;
             // 
             // frmCustomerUpdate
             // 

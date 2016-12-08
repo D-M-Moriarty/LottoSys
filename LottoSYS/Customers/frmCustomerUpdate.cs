@@ -236,5 +236,20 @@ namespace LottoSYS
             // listBox1.SetSelected(index, true);
             //}
         }
+
+        private void tbnSubmit_Click(object sender, EventArgs e)
+        {
+            txtSurname.Text = "";
+            txtForename.Text = "";
+            txtAddress2.Text = "";
+            txtTown.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtAddress1.Text = "";
+            cboCounty.Text = "";
+            cboCountry.Text = "";
+
+            MessageBox.Show("Customer information updated");
+        }
     }
 }

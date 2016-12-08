@@ -47,7 +47,7 @@
             this.mnuExit});
             this.mnuListCustomers.Location = new System.Drawing.Point(0, 0);
             this.mnuListCustomers.Name = "mnuListCustomers";
-            this.mnuListCustomers.Size = new System.Drawing.Size(702, 24);
+            this.mnuListCustomers.Size = new System.Drawing.Size(332, 24);
             this.mnuListCustomers.TabIndex = 1;
             this.mnuListCustomers.Text = "ListCustomers";
             // 
@@ -68,7 +68,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(22, 230);
+            this.listBox1.Location = new System.Drawing.Point(22, 145);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(279, 147);
             this.listBox1.TabIndex = 2;
@@ -76,9 +76,9 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.Location = new System.Drawing.Point(339, 354);
+            this.btnProfile.Location = new System.Drawing.Point(23, 325);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(75, 23);
+            this.btnProfile.Size = new System.Drawing.Size(278, 23);
             this.btnProfile.TabIndex = 3;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(13, 102);
+            this.lblSearch.Location = new System.Drawing.Point(20, 102);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(61, 15);
             this.lblSearch.TabIndex = 44;
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 411);
+            this.ClientSize = new System.Drawing.Size(332, 411);
             this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBox);
