@@ -22,6 +22,10 @@ namespace LottoSYS
         private String residence;
         private String phone;
         private String email;
+        private String title;
+        private String PPSN;
+        private String Nationality;
+        private String gender;
 
 
         public frmCustomerUpdate(FrmMainMenu Parent)
@@ -180,12 +184,16 @@ namespace LottoSYS
                 surname = "Miller";
                 forename = "Jim";
                 add1 = "Example Street";
-                add2 = "";
+                add2 = "Exampl2";
                 town = "Killorglin";
                 county = "Kerry";
                 residence = "Ireland";
                 phone = "89689679";
                 email = "dkgfsuio|@sf.com";
+                title = "mr";
+                PPSN = "8572589";
+                Nationality = "Irish";
+                gender = "male";
 
                 
 
@@ -201,6 +209,10 @@ namespace LottoSYS
                 residence = "Ireland";
                 phone = "89689679";
                 email = "dkgfsuio|@sf.com";
+                title = "mr";
+                PPSN = "8572589";
+                Nationality = "Irish";
+                gender = "male";
             }
             else
             {
@@ -213,6 +225,10 @@ namespace LottoSYS
                 residence = "Ireland";
                 phone = "89689679";
                 email = "dkgfsuio|@sf.com";
+                title = "mr";
+                PPSN = "8572589";
+                Nationality = "Irish";
+                gender = "male";
             }
 
             txtSurname.Text = surname;
@@ -224,10 +240,11 @@ namespace LottoSYS
             txtAddress1.Text = add1;
             cboCounty.Text = county;
             cboCountry.Text = residence;
+            cboTitle.Items.Add(title);
+            cboGender.Items.Add(gender);
+            txtPPSN.Text = PPSN;
 
             
-
-
             // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
             //if (index == -1)
             //MessageBox.Show("Item is not available in ListBox2");
