@@ -544,7 +544,15 @@ namespace LottoSYS
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Data has been registered");
+
+            if (txtSurname.Text != "")
+            {
+                MessageBox.Show("Data has been registered");
+            }
+            else
+            {
+                MessageBox.Show("Please fill out all the required fields");
+            }
 
             txtSurname.Text = "";
             txtForename.Text = "";
@@ -559,6 +567,8 @@ namespace LottoSYS
             cboNationality.SelectedIndex = -1;
             cboTitle.SelectedIndex = -1;
             cboCountry.SelectedIndex = -1;
+
+            
         }
 
         private void lblNationality_Click(object sender, EventArgs e)

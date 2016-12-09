@@ -34,6 +34,8 @@
             this.lblRunDraw = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.lstWinning = new System.Windows.Forms.ListBox();
+            this.rdoCounty = new System.Windows.Forms.RadioButton();
+            this.rdoWinnings = new System.Windows.Forms.RadioButton();
             this.mnuRunDraw.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(405, 183);
+            this.btnPrint.Location = new System.Drawing.Point(405, 237);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 46;
@@ -84,16 +86,40 @@
             // lstWinning
             // 
             this.lstWinning.FormattingEnabled = true;
-            this.lstWinning.Location = new System.Drawing.Point(30, 98);
+            this.lstWinning.Location = new System.Drawing.Point(30, 152);
             this.lstWinning.Name = "lstWinning";
             this.lstWinning.Size = new System.Drawing.Size(343, 108);
             this.lstWinning.TabIndex = 47;
+            // 
+            // rdoCounty
+            // 
+            this.rdoCounty.AutoSize = true;
+            this.rdoCounty.Location = new System.Drawing.Point(30, 123);
+            this.rdoCounty.Name = "rdoCounty";
+            this.rdoCounty.Size = new System.Drawing.Size(58, 17);
+            this.rdoCounty.TabIndex = 48;
+            this.rdoCounty.TabStop = true;
+            this.rdoCounty.Text = "County";
+            this.rdoCounty.UseVisualStyleBackColor = true;
+            // 
+            // rdoWinnings
+            // 
+            this.rdoWinnings.AutoSize = true;
+            this.rdoWinnings.Location = new System.Drawing.Point(173, 123);
+            this.rdoWinnings.Name = "rdoWinnings";
+            this.rdoWinnings.Size = new System.Drawing.Size(69, 17);
+            this.rdoWinnings.TabIndex = 49;
+            this.rdoWinnings.TabStop = true;
+            this.rdoWinnings.Text = "Winnings";
+            this.rdoWinnings.UseVisualStyleBackColor = true;
             // 
             // frmCheckTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 231);
+            this.ClientSize = new System.Drawing.Size(516, 272);
+            this.Controls.Add(this.rdoWinnings);
+            this.Controls.Add(this.rdoCounty);
             this.Controls.Add(this.lstWinning);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblRunDraw);
@@ -116,5 +142,7 @@
         private System.Windows.Forms.Label lblRunDraw;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.ListBox lstWinning;
+        private System.Windows.Forms.RadioButton rdoCounty;
+        private System.Windows.Forms.RadioButton rdoWinnings;
     }
 }

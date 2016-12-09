@@ -188,6 +188,7 @@
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sort Listings";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // frmListCustomers
             // 

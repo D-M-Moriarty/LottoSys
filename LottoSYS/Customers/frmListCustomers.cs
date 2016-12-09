@@ -48,6 +48,8 @@ namespace LottoSYS.Customers
             lstList.Items.Add("Mary Shea, Examlpe street, Tralee");
             lstList.Items.Add("Tim Clifford, Examlpe street, Millstreet");
             lstList.Items.Add("Jim Miller, Examlpe street, Killorglin");
+
+            btnSearch.Enabled = false;
         }
     
 
@@ -86,6 +88,11 @@ namespace LottoSYS.Customers
 
             // Find the string in ListBox2.
             index = lstList.FindString(curItem);
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

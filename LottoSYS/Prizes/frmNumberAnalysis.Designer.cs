@@ -112,9 +112,9 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(220, 240);
+            this.btnPrint.Location = new System.Drawing.Point(31, 240);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(100, 23);
+            this.btnPrint.Size = new System.Drawing.Size(473, 23);
             this.btnPrint.TabIndex = 52;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.Controls.Add(this.lblnumberAnalysis);
             this.Controls.Add(this.mnuRunDraw);
             this.Name = "frmNumberAnalysis";
-            this.Text = "v";
+            this.Text = "NumberAnalysis";
             this.Load += new System.EventHandler(this.frmUnclaimedPrize_Load);
             this.mnuRunDraw.ResumeLayout(false);
             this.mnuRunDraw.PerformLayout();

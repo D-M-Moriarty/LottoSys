@@ -35,6 +35,18 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grpUpdateBox = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.cboGender = new System.Windows.Forms.ComboBox();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.cboNationality = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtPPSN = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboTitle = new System.Windows.Forms.ComboBox();
             this.tbnSubmit = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -56,16 +68,6 @@
             this.lblAddressLine1 = new System.Windows.Forms.Label();
             this.lblSearchLabel = new System.Windows.Forms.Label();
             this.lstUpdate = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboTitle = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtPPSN = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboGender = new System.Windows.Forms.ComboBox();
-            this.lblGender = new System.Windows.Forms.Label();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpUpdateBox.SuspendLayout();
             this.SuspendLayout();
@@ -127,9 +129,11 @@
             // 
             // grpUpdateBox
             // 
+            this.grpUpdateBox.Controls.Add(this.comboBox1);
+            this.grpUpdateBox.Controls.Add(this.lblNationality);
             this.grpUpdateBox.Controls.Add(this.cboGender);
             this.grpUpdateBox.Controls.Add(this.lblGender);
-            this.grpUpdateBox.Controls.Add(this.comboBox2);
+            this.grpUpdateBox.Controls.Add(this.cboNationality);
             this.grpUpdateBox.Controls.Add(this.label4);
             this.grpUpdateBox.Controls.Add(this.label5);
             this.grpUpdateBox.Controls.Add(this.dateTimePicker1);
@@ -162,6 +166,114 @@
             this.grpUpdateBox.TabIndex = 42;
             this.grpUpdateBox.TabStop = false;
             this.grpUpdateBox.Text = "Update Details";
+            this.grpUpdateBox.Enter += new System.EventHandler(this.grpUpdateBox_Enter);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(473, 182);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 21);
+            this.comboBox1.TabIndex = 73;
+            // 
+            // lblNationality
+            // 
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationality.Location = new System.Drawing.Point(386, 183);
+            this.lblNationality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(56, 15);
+            this.lblNationality.TabIndex = 72;
+            this.lblNationality.Text = "Country:*";
+            // 
+            // cboGender
+            // 
+            this.cboGender.FormattingEnabled = true;
+            this.cboGender.Location = new System.Drawing.Point(167, 235);
+            this.cboGender.Name = "cboGender";
+            this.cboGender.Size = new System.Drawing.Size(136, 21);
+            this.cboGender.TabIndex = 68;
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(104, 243);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(45, 13);
+            this.lblGender.TabIndex = 71;
+            this.lblGender.Text = "Gender:";
+            // 
+            // cboNationality
+            // 
+            this.cboNationality.FormattingEnabled = true;
+            this.cboNationality.Location = new System.Drawing.Point(167, 199);
+            this.cboNationality.Name = "cboNationality";
+            this.cboNationality.Size = new System.Drawing.Size(136, 21);
+            this.cboNationality.TabIndex = 64;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(77, 207);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Nationality: *";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(111, 136);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "DOB: *";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(167, 130);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(136, 20);
+            this.dateTimePicker1.TabIndex = 62;
+            // 
+            // txtPPSN
+            // 
+            this.txtPPSN.Location = new System.Drawing.Point(167, 166);
+            this.txtPPSN.Name = "txtPPSN";
+            this.txtPPSN.Size = new System.Drawing.Size(136, 20);
+            this.txtPPSN.TabIndex = 63;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(103, 172);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "PPSN: *";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(114, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "Title: *";
+            // 
+            // cboTitle
+            // 
+            this.cboTitle.FormattingEnabled = true;
+            this.cboTitle.Location = new System.Drawing.Point(167, 34);
+            this.cboTitle.Name = "cboTitle";
+            this.cboTitle.Size = new System.Drawing.Size(66, 21);
+            this.cboTitle.TabIndex = 60;
             // 
             // tbnSubmit
             // 
@@ -176,7 +288,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(473, 258);
+            this.txtEmail.Location = new System.Drawing.Point(167, 272);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 21);
             this.txtEmail.TabIndex = 59;
@@ -186,7 +298,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(418, 264);
+            this.lblEmail.Location = new System.Drawing.Point(112, 278);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(42, 15);
@@ -197,7 +309,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(473, 221);
+            this.txtPhone.Location = new System.Drawing.Point(473, 256);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(136, 21);
             this.txtPhone.TabIndex = 57;
@@ -207,7 +319,7 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(392, 227);
+            this.lblPhone.Location = new System.Drawing.Point(392, 262);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(66, 15);
@@ -260,7 +372,7 @@
             // cboCountry
             // 
             this.cboCountry.FormattingEnabled = true;
-            this.cboCountry.Location = new System.Drawing.Point(473, 183);
+            this.cboCountry.Location = new System.Drawing.Point(473, 218);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(136, 21);
             this.cboCountry.TabIndex = 51;
@@ -270,7 +382,7 @@
             // 
             this.lblCountry.AutoSize = true;
             this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(327, 189);
+            this.lblCountry.Location = new System.Drawing.Point(327, 224);
             this.lblCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(134, 15);
@@ -378,94 +490,6 @@
             this.lstUpdate.TabIndex = 44;
             this.lstUpdate.SelectedIndexChanged += new System.EventHandler(this.lstUpdate_SelectedIndexChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 42);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Title: *";
-            // 
-            // cboTitle
-            // 
-            this.cboTitle.FormattingEnabled = true;
-            this.cboTitle.Location = new System.Drawing.Point(167, 34);
-            this.cboTitle.Name = "cboTitle";
-            this.cboTitle.Size = new System.Drawing.Size(66, 21);
-            this.cboTitle.TabIndex = 60;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(167, 199);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(136, 21);
-            this.comboBox2.TabIndex = 64;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 207);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Nationality: *";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(111, 136);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "DOB: *";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 130);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker1.TabIndex = 62;
-            // 
-            // txtPPSN
-            // 
-            this.txtPPSN.Location = new System.Drawing.Point(167, 166);
-            this.txtPPSN.Name = "txtPPSN";
-            this.txtPPSN.Size = new System.Drawing.Size(136, 20);
-            this.txtPPSN.TabIndex = 63;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(103, 172);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "PPSN: *";
-            // 
-            // cboGender
-            // 
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Location = new System.Drawing.Point(167, 235);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(136, 21);
-            this.cboGender.TabIndex = 68;
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(104, 243);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(45, 13);
-            this.lblGender.TabIndex = 71;
-            this.lblGender.Text = "Gender:";
-            // 
             // frmCustomerUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,7 +547,7 @@
         private System.Windows.Forms.Button tbnSubmit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTitle;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboNationality;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -531,5 +555,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblNationality;
     }
 }

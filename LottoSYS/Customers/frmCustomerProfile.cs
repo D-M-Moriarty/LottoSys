@@ -101,7 +101,11 @@ namespace LottoSYS
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(profile);
+            if(profile != null)
+            {
+                MessageBox.Show(profile);
+            }
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@ namespace LottoSYS
         private String email;
         private String title;
         private String PPSN;
-        private String Nationality;
+        private String nationality;
         private String gender;
 
 
@@ -192,7 +192,7 @@ namespace LottoSYS
                 email = "dkgfsuio|@sf.com";
                 title = "mr";
                 PPSN = "8572589";
-                Nationality = "Irish";
+                nationality = "Irish";
                 gender = "male";
 
                 
@@ -211,7 +211,7 @@ namespace LottoSYS
                 email = "dkgfsuio|@sf.com";
                 title = "mr";
                 PPSN = "8572589";
-                Nationality = "Irish";
+                nationality = "Irish";
                 gender = "male";
             }
             else
@@ -227,7 +227,7 @@ namespace LottoSYS
                 email = "dkgfsuio|@sf.com";
                 title = "mr";
                 PPSN = "8572589";
-                Nationality = "Irish";
+                nationality = "Irish";
                 gender = "male";
             }
 
@@ -243,6 +243,7 @@ namespace LottoSYS
             cboTitle.Items.Add(title);
             cboGender.Items.Add(gender);
             txtPPSN.Text = PPSN;
+            cboNationality.Items.Add(nationality);
 
             
             // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
@@ -265,8 +266,22 @@ namespace LottoSYS
             txtAddress1.Text = "";
             cboCounty.Text = "";
             cboCountry.Text = "";
+            txtPPSN.Text = "";
 
-            MessageBox.Show("Customer information updated");
+            if(txtSurname.Text != "")
+            {
+                MessageBox.Show("Customer information updated");
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer to Update");
+            }
+            
+        }
+
+        private void grpUpdateBox_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
