@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using LottoSYS.Sales;
+using LottoSYS.Customers;
 
 namespace LottoSYS
 {
@@ -521,7 +522,7 @@ namespace LottoSYS
             
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+       /* private void btnSubmit_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Data has been registered");
 
@@ -540,34 +541,17 @@ namespace LottoSYS
             cboCountry.SelectedIndex = -1;
             
 
-        }
+        }*/
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
 
-            if (txtSurname.Text != "")
-            {
-                MessageBox.Show("Data has been registered");
-            }
-            else
-            {
-                MessageBox.Show("Please fill out all the required fields");
-            }
-
-            txtSurname.Text = "";
-            txtForename.Text = "";
-            txtEmail.Text = "";
-            txtAddress1.Text = "";
-            txtAddress2.Text = "";
-            txtPhone.Text = "";
-            txtPPSN.Text = "";
-            txtTown.Text = "";
-            cboCounty.SelectedIndex = -1;
-            cboGender.SelectedIndex = -1;
-            cboNationality.SelectedIndex = -1;
-            cboTitle.SelectedIndex = -1;
-            cboCountry.SelectedIndex = -1;
-
+            Customer.validateCustomer(cboCounty, cboNationality,
+            cboTitle, cboCountry, txtSurname, txtForename,
+            txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+            lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+            lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+            lblTitle);
             
         }
 
