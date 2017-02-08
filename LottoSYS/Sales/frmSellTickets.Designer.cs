@@ -36,9 +36,9 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grpDetailBox = new System.Windows.Forms.GroupBox();
+            this.cboTicketQTY = new System.Windows.Forms.ComboBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnProcess = new System.Windows.Forms.Button();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -120,9 +120,9 @@
             // 
             // grpDetailBox
             // 
+            this.grpDetailBox.Controls.Add(this.cboTicketQTY);
             this.grpDetailBox.Controls.Add(this.lblPrice);
             this.grpDetailBox.Controls.Add(this.btnProcess);
-            this.grpDetailBox.Controls.Add(this.txtQuantity);
             this.grpDetailBox.Controls.Add(this.lblQuantity);
             this.grpDetailBox.Controls.Add(this.txtEmail);
             this.grpDetailBox.Controls.Add(this.lblEmail);
@@ -141,6 +141,14 @@
             this.grpDetailBox.TabStop = false;
             this.grpDetailBox.Text = "Customer Details";
             this.grpDetailBox.Enter += new System.EventHandler(this.grpDetailBox_Enter);
+            // 
+            // cboTicketQTY
+            // 
+            this.cboTicketQTY.FormattingEnabled = true;
+            this.cboTicketQTY.Location = new System.Drawing.Point(97, 274);
+            this.cboTicketQTY.Name = "cboTicketQTY";
+            this.cboTicketQTY.Size = new System.Drawing.Size(136, 21);
+            this.cboTicketQTY.TabIndex = 64;
             // 
             // lblPrice
             // 
@@ -161,15 +169,6 @@
             this.btnProcess.Text = "Confirm ";
             this.btnProcess.UseVisualStyleBackColor = true;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(97, 274);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(136, 21);
-            this.txtQuantity.TabIndex = 61;
-            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // lblQuantity
             // 
@@ -321,7 +320,6 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.GroupBox grpDetailBox;
         private System.Windows.Forms.Button btnProcess;
-        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
@@ -335,5 +333,6 @@
         private System.Windows.Forms.Label lblTown;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ListBox lstList;
+        private System.Windows.Forms.ComboBox cboTicketQTY;
     }
 }

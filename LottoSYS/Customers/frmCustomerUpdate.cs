@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LottoSYS.Customers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -257,7 +258,15 @@ namespace LottoSYS
 
         private void tbnSubmit_Click(object sender, EventArgs e)
         {
-            txtSurname.Text = "";
+            Customer.validateCustomer(cboCounty, cboNationality,
+            cboTitle, cboCountry, txtSurname, txtForename,
+            txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+            lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+            lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+            lblTitle, lblDOB);
+
+
+            /*txtSurname.Text = "";
             txtForename.Text = "";
             txtAddress2.Text = "";
             txtTown.Text = "";
@@ -266,9 +275,9 @@ namespace LottoSYS
             txtAddress1.Text = "";
             cboCounty.Text = "";
             cboCountry.Text = "";
-            txtPPSN.Text = "";
+            txtPPSN.Text = "";*/
 
-            if(txtSurname.Text != "")
+            if (txtSurname.Text != "")
             {
                 MessageBox.Show("Customer information updated");
             }

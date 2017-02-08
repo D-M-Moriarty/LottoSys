@@ -36,16 +36,16 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.grpUpdateBox = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblNationality = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.cboNationality = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.lblDOB = new System.Windows.Forms.Label();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtPPSN = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPPSN = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.cboTitle = new System.Windows.Forms.ComboBox();
             this.tbnSubmit = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
             this.cboCountry = new System.Windows.Forms.ComboBox();
-            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblCountryRes = new System.Windows.Forms.Label();
             this.cboCounty = new System.Windows.Forms.ComboBox();
             this.lblCounty = new System.Windows.Forms.Label();
             this.txtTown = new System.Windows.Forms.TextBox();
@@ -130,16 +130,16 @@
             // grpUpdateBox
             // 
             this.grpUpdateBox.Controls.Add(this.comboBox1);
-            this.grpUpdateBox.Controls.Add(this.lblNationality);
+            this.grpUpdateBox.Controls.Add(this.lblCountry);
             this.grpUpdateBox.Controls.Add(this.cboGender);
             this.grpUpdateBox.Controls.Add(this.lblGender);
             this.grpUpdateBox.Controls.Add(this.cboNationality);
-            this.grpUpdateBox.Controls.Add(this.label4);
-            this.grpUpdateBox.Controls.Add(this.label5);
-            this.grpUpdateBox.Controls.Add(this.dateTimePicker1);
+            this.grpUpdateBox.Controls.Add(this.lblNationality);
+            this.grpUpdateBox.Controls.Add(this.lblDOB);
+            this.grpUpdateBox.Controls.Add(this.dtpDOB);
             this.grpUpdateBox.Controls.Add(this.txtPPSN);
-            this.grpUpdateBox.Controls.Add(this.label6);
-            this.grpUpdateBox.Controls.Add(this.label3);
+            this.grpUpdateBox.Controls.Add(this.lblPPSN);
+            this.grpUpdateBox.Controls.Add(this.lblTitle);
             this.grpUpdateBox.Controls.Add(this.cboTitle);
             this.grpUpdateBox.Controls.Add(this.tbnSubmit);
             this.grpUpdateBox.Controls.Add(this.txtEmail);
@@ -151,7 +151,7 @@
             this.grpUpdateBox.Controls.Add(this.txtSurname);
             this.grpUpdateBox.Controls.Add(this.lblSurname);
             this.grpUpdateBox.Controls.Add(this.cboCountry);
-            this.grpUpdateBox.Controls.Add(this.lblCountry);
+            this.grpUpdateBox.Controls.Add(this.lblCountryRes);
             this.grpUpdateBox.Controls.Add(this.cboCounty);
             this.grpUpdateBox.Controls.Add(this.lblCounty);
             this.grpUpdateBox.Controls.Add(this.txtTown);
@@ -176,16 +176,16 @@
             this.comboBox1.Size = new System.Drawing.Size(136, 21);
             this.comboBox1.TabIndex = 73;
             // 
-            // lblNationality
+            // lblCountry
             // 
-            this.lblNationality.AutoSize = true;
-            this.lblNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNationality.Location = new System.Drawing.Point(386, 183);
-            this.lblNationality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNationality.Name = "lblNationality";
-            this.lblNationality.Size = new System.Drawing.Size(56, 15);
-            this.lblNationality.TabIndex = 72;
-            this.lblNationality.Text = "Country:*";
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Location = new System.Drawing.Point(386, 183);
+            this.lblCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(56, 15);
+            this.lblCountry.TabIndex = 72;
+            this.lblCountry.Text = "Country:*";
             // 
             // cboGender
             // 
@@ -213,32 +213,32 @@
             this.cboNationality.Size = new System.Drawing.Size(136, 21);
             this.cboNationality.TabIndex = 64;
             // 
-            // label4
+            // lblNationality
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 207);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Nationality: *";
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Location = new System.Drawing.Point(77, 207);
+            this.lblNationality.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(66, 13);
+            this.lblNationality.TabIndex = 67;
+            this.lblNationality.Text = "Nationality: *";
             // 
-            // label5
+            // lblDOB
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(111, 136);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 66;
-            this.label5.Text = "DOB: *";
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Location = new System.Drawing.Point(111, 136);
+            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(40, 13);
+            this.lblDOB.TabIndex = 66;
+            this.lblDOB.Text = "DOB: *";
             // 
-            // dateTimePicker1
+            // dtpDOB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(167, 130);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker1.TabIndex = 62;
+            this.dtpDOB.Location = new System.Drawing.Point(167, 130);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(136, 20);
+            this.dtpDOB.TabIndex = 62;
             // 
             // txtPPSN
             // 
@@ -247,25 +247,25 @@
             this.txtPPSN.Size = new System.Drawing.Size(136, 20);
             this.txtPPSN.TabIndex = 63;
             // 
-            // label6
+            // lblPPSN
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(103, 172);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "PPSN: *";
+            this.lblPPSN.AutoSize = true;
+            this.lblPPSN.Location = new System.Drawing.Point(103, 172);
+            this.lblPPSN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPPSN.Name = "lblPPSN";
+            this.lblPPSN.Size = new System.Drawing.Size(46, 13);
+            this.lblPPSN.TabIndex = 65;
+            this.lblPPSN.Text = "PPSN: *";
             // 
-            // label3
+            // lblTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 42);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Title: *";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(114, 42);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(37, 13);
+            this.lblTitle.TabIndex = 61;
+            this.lblTitle.Text = "Title: *";
             // 
             // cboTitle
             // 
@@ -378,17 +378,17 @@
             this.cboCountry.TabIndex = 51;
             this.cboCountry.SelectedIndexChanged += new System.EventHandler(this.cboCountry_SelectedIndexChanged);
             // 
-            // lblCountry
+            // lblCountryRes
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(327, 224);
-            this.lblCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(134, 15);
-            this.lblCountry.TabIndex = 50;
-            this.lblCountry.Text = "Country of Residence: *";
-            this.lblCountry.Click += new System.EventHandler(this.lblCountry_Click);
+            this.lblCountryRes.AutoSize = true;
+            this.lblCountryRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountryRes.Location = new System.Drawing.Point(327, 224);
+            this.lblCountryRes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCountryRes.Name = "lblCountryRes";
+            this.lblCountryRes.Size = new System.Drawing.Size(134, 15);
+            this.lblCountryRes.TabIndex = 50;
+            this.lblCountryRes.Text = "Country of Residence: *";
+            this.lblCountryRes.Click += new System.EventHandler(this.lblCountry_Click);
             // 
             // cboCounty
             // 
@@ -525,7 +525,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox grpUpdateBox;
         private System.Windows.Forms.ComboBox cboCountry;
-        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblCountryRes;
         private System.Windows.Forms.ComboBox cboCounty;
         private System.Windows.Forms.Label lblCounty;
         private System.Windows.Forms.TextBox txtTown;
@@ -545,17 +545,17 @@
         private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.ListBox lstUpdate;
         private System.Windows.Forms.Button tbnSubmit;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ComboBox cboTitle;
         private System.Windows.Forms.ComboBox cboNationality;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblNationality;
+        private System.Windows.Forms.Label lblDOB;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.TextBox txtPPSN;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPPSN;
         private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblNationality;
+        private System.Windows.Forms.Label lblCountry;
     }
 }

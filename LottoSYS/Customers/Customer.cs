@@ -38,10 +38,10 @@ namespace LottoSYS.Customers
 
         }
 
-       /* public static DataSet getCustomer(DataSet DS)
+        public static DataSet getCustomer(DataSet DS)
         {
 
-            //OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
 
             //connect to the database
             conn.Open();
@@ -65,7 +65,7 @@ namespace LottoSYS.Customers
         public static DataSet getCustomer(DataSet DS, string description)
         {
 
-            OracleConnection conn = new OracleConnection(DBConnect.oradb);
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
 
             //connect to the database
             conn.Open();
@@ -101,7 +101,7 @@ namespace LottoSYS.Customers
             int intNextStockNo;
 
             // connect to the Db
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to get MAX Stock_No used
@@ -135,10 +135,10 @@ namespace LottoSYS.Customers
 
         }
 
-        public void regCustomer()
+       /* public void regCustomer()
         {
             // Connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to INSERT stock record
@@ -154,15 +154,15 @@ namespace LottoSYS.Customers
             // Close DB connection
             myConn.Close();
         }
-
+        */
         public void updateCustomer()
         {
             // Connect to database
-            OracleConnection myConn = new OracleConnection(DBConnect.oradb);
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "UPDATE STOCK SET DESCRIPTION = '" + this.description + "' WHERE STOCK_NO = " + this.stock_no;
+            String strSQl = "UPDATE STOCK SET DESCRIPTION = '";//+ this.description + "' WHERE STOCK_NO = " + this.stock_no;
 
             // Execute the command
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
@@ -174,14 +174,14 @@ namespace LottoSYS.Customers
 
             // Close DB connection
             myConn.Close();
-        }*/
+        }
 
         public static void validateCustomer(ComboBox cboCounty, ComboBox cboNationality,
             ComboBox cboTitle, ComboBox cboCountry, TextBox txtSurname, TextBox txtForename,
             TextBox txtAddress1, TextBox txtAddress2, TextBox txtPPSN, TextBox txtTown, DateTimePicker dtpDOB, 
             Label lblSurname, Label lblForename, Label lblAddressLine1, Label lblAddressLine2, 
             Label lblPPSN, Label lblTown, Label lblCounty, Label lblCountry, Label lblNationality,
-            Label lblTitle)
+            Label lblTitle, Label lblDOB)
         {
             if (txtSurname.Text != ""
             && txtForename.Text != ""
@@ -217,6 +217,13 @@ namespace LottoSYS.Customers
                     if (!isValidDOB(dtpDOB.Value))
                         error += "The customer is under 18\n\n";
 
+                    textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB);
+
 
                     MessageBox.Show(error);
                 }
@@ -227,102 +234,128 @@ namespace LottoSYS.Customers
             {
                 MessageBox.Show("Please fill out all the required highlighted fields");
 
-                if (txtSurname.Text == "")
-                {
-                    lblSurname.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblSurname.ForeColor = System.Drawing.Color.Black;
-                }
+                textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB);
 
-                if (txtForename.Text == "")
-                {
-                    lblForename.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblForename.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (txtAddress1.Text == "")
-                {
-                    lblAddressLine1.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblAddressLine1.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (txtAddress2.Text == "")
-                {
-                    lblAddressLine2.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblAddressLine2.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (txtPPSN.Text == "")
-                {
-                    lblPPSN.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblPPSN.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (txtTown.Text == "")
-                {
-                    lblTown.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblTown.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (cboCounty.Text == "")
-                {
-                    lblCounty.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblCounty.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (cboNationality.Text == "")
-                {
-                    lblNationality.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblNationality.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (cboTitle.Text == "")
-                {
-                    lblTitle.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblTitle.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (cboCountry.Text == "")
-                {
-                    lblCountry.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lblCountry.ForeColor = System.Drawing.Color.Black;
-                }
             }
 
         }
 
+        // Checking fields
+        private static void textFieldChecker(ComboBox cboCounty, ComboBox cboNationality,
+            ComboBox cboTitle, ComboBox cboCountry, TextBox txtSurname, TextBox txtForename,
+            TextBox txtAddress1, TextBox txtAddress2, TextBox txtPPSN, TextBox txtTown, DateTimePicker dtpDOB,
+            Label lblSurname, Label lblForename, Label lblAddressLine1, Label lblAddressLine2,
+            Label lblPPSN, Label lblTown, Label lblCounty, Label lblCountry, Label lblNationality,
+            Label lblTitle, Label lblDOB)
+        {
+            if (txtSurname.Text == "" || !isValidName(txtSurname.ToString()))
+            {
+                lblSurname.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblSurname.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (txtForename.Text == "" || !isValidName(txtForename.ToString()))
+            {
+                lblForename.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblForename.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (txtAddress1.Text == "")
+            {
+                lblAddressLine1.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblAddressLine1.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (txtAddress2.Text == "")
+            {
+                lblAddressLine2.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblAddressLine2.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if(!isValidDOB(dtpDOB.Value))
+            {
+                lblDOB.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblDOB.ForeColor = System.Drawing.Color.Red;
+            }
+
+            if (txtPPSN.Text == "")
+            {
+                lblPPSN.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblPPSN.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (txtTown.Text == "")
+            {
+                lblTown.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblTown.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (cboCounty.Text == "")
+            {
+                lblCounty.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblCounty.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (cboNationality.Text == "")
+            {
+                lblNationality.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblNationality.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (cboTitle.Text == "")
+            {
+                lblTitle.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblTitle.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (cboCountry.Text == "")
+            {
+                lblCountry.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblCountry.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
 
         // Name validation
-        private bool isValidName(string name)
+        private static bool isValidName(string name)
         {
             for (int i = 0; i < name.Length; i++)
             {
@@ -333,7 +366,7 @@ namespace LottoSYS.Customers
             return true;
         }
 
-        private bool isValidDOB(DateTime DOB)
+        private static bool isValidDOB(DateTime DOB)
         {
             if (DateTime.Now.Year - DOB.Year >= 18)
                 return true;

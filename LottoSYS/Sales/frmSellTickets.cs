@@ -29,7 +29,12 @@ namespace LottoSYS.Sales
 
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
-           
+            loadTicketQTY();
+            txtEmail.Enabled = false;
+            txtForename.Enabled = false;
+            txtPhone.Enabled = false;
+            txtSurname.Enabled = false;
+            txtTown.Enabled = false;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -46,9 +51,9 @@ namespace LottoSYS.Sales
         private void btnProcess_Click(object sender, EventArgs e)
         {
             //Placing the quantity into the number of tickets
-            if(txtQuantity.Text != "")
+            if(cboTicketQTY.Text != "")
             {
-                string numOfTicketsString = txtQuantity.Text;
+                string numOfTicketsString = cboTicketQTY.Text;
 
                 //Parsing to an integer
                 int numOfTickets = int.Parse(numOfTicketsString);
@@ -178,7 +183,7 @@ namespace LottoSYS.Sales
 
                     MessageBox.Show(str, "Ticket Details");
 
-                    txtQuantity.Text = "";
+                    cboTicketQTY.SelectedIndex = -1;
                     this.price = price;
                     numOfLines = numOfTickets;
                     
@@ -200,6 +205,7 @@ namespace LottoSYS.Sales
             txtTown.ResetText();
             txtEmail.ResetText();
             txtPhone.ResetText();
+            cboTicketQTY.SelectedIndex = -1;
 
         }
 
@@ -286,6 +292,16 @@ namespace LottoSYS.Sales
             txtPhone.Text = phone;
             
 
+        }
+
+        private void loadTicketQTY()
+        {
+            for (int i = 1; i < 6; i++)
+            {
+                cboTicketQTY.Items.Add(i.ToString());
+            }
+            
+            cboTicketQTY.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using LottoSYS.Sales;
 using LottoSYS.Customers;
+using System.Data;
+using Oracle.DataAccess.Client;
 
 namespace LottoSYS
 {
@@ -522,26 +524,28 @@ namespace LottoSYS
             
         }
 
-       /* private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Data has been registered");
+        /* private void btnSubmit_Click(object sender, EventArgs e)
+         {
+             MessageBox.Show("Data has been registered");
 
-            txtSurname.Text = "";
-            txtForename.Text = "";
-            txtEmail.Text = "";
-            txtAddress1.Text = "";
-            txtAddress2.Text = "";
-            txtPhone.Text = "";
-            txtPPSN.Text = "";
-            txtTown.Text = "";
-            cboCounty.SelectedIndex = -1;
-            cboGender.SelectedIndex = -1;
-            cboNationality.SelectedIndex = -1;
-            cboTitle.SelectedIndex = -1;
-            cboCountry.SelectedIndex = -1;
-            
+             txtSurname.Text = "";
+             txtForename.Text = "";
+             txtEmail.Text = "";
+             txtAddress1.Text = "";
+             txtAddress2.Text = "";
+             txtPhone.Text = "";
+             txtPPSN.Text = "";
+             txtTown.Text = "";
+             cboCounty.SelectedIndex = -1;
+             cboGender.SelectedIndex = -1;
+             cboNationality.SelectedIndex = -1;
+             cboTitle.SelectedIndex = -1;
+             cboCountry.SelectedIndex = -1;
 
-        }*/
+
+         }*/
+
+      //  OracleConnection conn = new OracleConnection(ConnectDB.oradb);
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
@@ -551,8 +555,38 @@ namespace LottoSYS
             txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
             lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
             lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-            lblTitle);
-            
+            lblTitle, lblDOB);
+
+            /*try
+            {
+                if (conn.State != ConnectionState.Open) 
+                {
+                    conn.Open();
+                    MessageBox.Show("Connection Open");
+                }
+                else
+                {
+                    MessageBox.Show("Connection not Open");
+                }
+
+                
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            DataSet ds = new DataSet();
+
+            Customer stock = new Customer();
+
+            //load data onto form
+            //MessageBox.Show(Customer.getCustomer(ds, txtDescription.Text).Tables["res"]);*/
+
         }
 
         private void lblNationality_Click(object sender, EventArgs e)
@@ -574,6 +608,6 @@ namespace LottoSYS
             cboTitle.Items.Add("Mr");
             cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-
+        
     }
 }
