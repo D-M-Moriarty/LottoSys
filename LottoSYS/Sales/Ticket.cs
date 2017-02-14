@@ -230,10 +230,10 @@ namespace LottoSYS.Prizes
         }
 
 
-        public static int[] generateNumbers2(ComboBox cboTicketQTY)
+        public static void generateNumbers2(ComboBox cboTicketQTY)
         {
             //Placing the quantity into the number of tickets
-            string numOfTicketsString =  cboTicketQTY.Text;
+            string numOfTicketsString = cboTicketQTY.Text;
 
             //Parsing to an integer
             int numOfTickets = Int32.Parse(numOfTicketsString);
@@ -269,7 +269,7 @@ namespace LottoSYS.Prizes
                 {
 
                     //if (i > 0)
-                        //str += ",";
+                    //str += ",";
 
                     num = randNum.Next(Min, Max);
 
@@ -336,8 +336,8 @@ namespace LottoSYS.Prizes
                                 txt += element + ", ";
                             }
 
-                           
-                            
+
+
                         }
 
                         str += txt;
@@ -348,7 +348,7 @@ namespace LottoSYS.Prizes
 
                 }
 
-                return numsCopy;
+                //return numsCopy;
 
                 alreadyPicked = new bool[47];
 
@@ -377,8 +377,68 @@ namespace LottoSYS.Prizes
             MessageBox.Show(str, "Ticket Details");
         }
 
+        public static int[] generateNumbers()
+        {
 
-        public static void generateNumbers(ComboBox cboTicketQTY)
+            string str = "";
+            int Min = 1;
+            int Max = 47;
+            string zero = "0";
+            Random randNum = new Random();
+
+            int[] nums = new int[6];
+            int[] serialNum = new int[21];
+            int[] numsCopy = new int[6];
+            bool[] alreadyPicked = new bool[47];
+            int num;
+
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    num = randNum.Next(Min, Max);
+
+                    while (alreadyPicked[num])
+                        num = randNum.Next(Min, Max);
+
+                    alreadyPicked[num] = true;
+                    nums[i] = num;
+                    numsCopy[i] = num;
+                
+
+                    //insertion sort
+                    if (i == nums.Length - 1)
+                    {
+                        int min;
+                        int temp;
+                        for (int b = 0; b < numsCopy.Length; b++)
+                        {
+                            // Assume first element is min
+                            min = b;
+                            for (int a = (b + 1); a < numsCopy.Length; a++)
+                            {
+                                if (numsCopy[a] < numsCopy[min])
+                                {
+                                    min = a;
+
+                                }
+                            }
+                            if (min != b)
+                            {   //switching with the temperary viriables
+                                temp = numsCopy[b];
+                                numsCopy[b] = numsCopy[min];
+                                numsCopy[min] = temp;
+                            }
+                        }
+
+                    }
+            }
+
+            return numsCopy;
+
+                
+        }
+
+
+        public static void generateNumbers3(ComboBox cboTicketQTY)
         {
             //Placing the quantity into the number of tickets
             if (cboTicketQTY.Text != "")

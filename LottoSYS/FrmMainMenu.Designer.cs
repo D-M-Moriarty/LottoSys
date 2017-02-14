@@ -1,7 +1,7 @@
 ﻿namespace LottoSYS
 {
     partial class FrmMainMenu
-    {
+    { 
         /// <summary>
         /// Required designer variable.
         /// </summary>
