@@ -17,7 +17,7 @@ namespace LottoSYS.Customers
         private string title;
         private string surname;
         private string forename;
-        private DateTime DOB;
+        private string DOB;
         private string PPSN;
         private string addressLine1;
         private string addressLine2;
@@ -29,6 +29,9 @@ namespace LottoSYS.Customers
         private string gender;
         private string phone;
         private string email;
+        private string status;
+        private string regDate;
+        private double balance;
 
 
 
@@ -38,10 +41,12 @@ namespace LottoSYS.Customers
 
         }
 
-        public static DataSet getCustomer(DataSet DS)
+        public static DataSet getCustomer()
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
 
             //connect to the database
             conn.Open();
@@ -54,7 +59,60 @@ namespace LottoSYS.Customers
             //execute the query
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
-            da.Fill(DS, "res");
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getCustomer(string surname)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'Active'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getCustomer(string surname, string order)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname +
+                "%' AND CUSTOMER_STATUS = 'Active' ORDER BY " + order;
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
 
             //close database
             conn.Close();
@@ -98,14 +156,14 @@ namespace LottoSYS.Customers
         public static int nextCustomerId()
         {
             // variable to hold value to be returned
-            int intNextStockNo;
+            int intNextCustomerId;
 
             // connect to the Db
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to get MAX Stock_No used
-            String strSQl = "SELECT MAX(stock_No) FROM Stock";
+            String strSQl = "SELECT MAX(CustomerId) FROM Customer";
 
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
 
@@ -118,33 +176,36 @@ namespace LottoSYS.Customers
 
             if (dr.IsDBNull(0))
             {
-                intNextStockNo = 1;
+                intNextCustomerId = 1;
             }
             else
             {
-                intNextStockNo = Convert.ToInt16(dr.GetValue(0)) + 1;
+                intNextCustomerId = Convert.ToInt16(dr.GetValue(0)) + 1;
             }
 
             // Close DB connection
             myConn.Close();
 
             // Return next StockNo
-            return intNextStockNo;
+            return intNextCustomerId;
 
 
 
         }
 
-       /* public void regCustomer()
+        public void regCustomer()
         {
             // Connect to database
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Stock VALUES(" + this.stock_no.ToString() +
-                ",'" + this.description.ToUpper() + "'," + this.cost_price + "," +
-                this.sale_price + "," + this.qty + ",'" + this.status + "')";
+            String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle() + "', '" + getSurname() + "', '" + getForename() +
+                "', '" + getDOB() + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
+                getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" + 
+                getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" + 
+                getBalance() + "', '" + getStatus() + "', '" + getRegDate() + "')";
+
 
             // Execute the command
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
@@ -154,226 +215,48 @@ namespace LottoSYS.Customers
             // Close DB connection
             myConn.Close();
         }
-        */
+
         public void updateCustomer()
         {
             // Connect to database
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
-            // Define SQL query to INSERT stock record
-            String strSQl = "UPDATE STOCK SET DESCRIPTION = '";//+ this.description + "' WHERE STOCK_NO = " + this.stock_no;
+            // Define SQL query to UPDATE Customer details
+            String strSQl = "UPDATE Customer SET Title = '" + getTitle() + "', Surname = '" + getSurname() +
+                "', Forename = '" + getForename() + "', DOB = '" + getDOB() + "', PPSN = '" +
+                getPPSN() + "', AddressLine1 = '" + getAddressLine1() + "', AddressLine2 = '" +
+                getAddressLine2() + "', Town = '" + getTown() + "', County = '" + getCounty() +
+                "', Country = '" + getCountry() + "', Nationality = '" + getNationality() +
+                "', Gender = '" + getGender() + "', Phone = '" + getPhone() +
+                "', Email = '" + getEmail() + "' WHERE CustomerId = " + getCustomerId();
 
             // Execute the command
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
             cmd.ExecuteNonQuery();
 
 
+            // Close DB connection
+            myConn.Close();
+        }
 
+        public void updateCustomer(string status)
+        {
+            // Connect to database
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            // Define SQL query to UPDATE Customer details
+            String strSQl = "UPDATE Customer SET CUSTOMER_STATUS = '" + status + "' WHERE CustomerId = " + getCustomerId();
+
+            // Execute the command
+            OracleCommand cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
 
 
             // Close DB connection
             myConn.Close();
         }
-
-        public static void validateCustomer(ComboBox cboCounty, ComboBox cboNationality,
-            ComboBox cboTitle, ComboBox cboCountry, TextBox txtSurname, TextBox txtForename,
-            TextBox txtAddress1, TextBox txtAddress2, TextBox txtPPSN, TextBox txtTown, DateTimePicker dtpDOB, 
-            Label lblSurname, Label lblForename, Label lblAddressLine1, Label lblAddressLine2, 
-            Label lblPPSN, Label lblTown, Label lblCounty, Label lblCountry, Label lblNationality,
-            Label lblTitle, Label lblDOB)
-        {
-            if (txtSurname.Text != ""
-            && txtForename.Text != ""
-            && txtAddress1.Text != ""
-            && txtAddress2.Text != ""
-            && txtPPSN.Text != ""
-            && txtTown.Text != ""
-            && cboCounty.SelectedIndex != -1
-            && cboNationality.SelectedIndex != -1
-            && cboTitle.SelectedIndex != -1
-            && cboCountry.SelectedIndex != -1)
-            {
-
-                if (isValidName(txtSurname.ToString()) && isValidName(txtForename.ToString()) &&
-                    isValidDOB(dtpDOB.Value))
-                {
-                    MessageBox.Show("Data has been registered");
-                }
-                else
-                {
-                    string error = "";
-
-                    if (!isValidName(txtSurname.ToString()))
-                        error += "The surname is invalid\n\n";
-                    else
-                        lblSurname.ForeColor = System.Drawing.Color.Black;
-
-                    if (!isValidName(txtForename.ToString()))
-                        error += "The forename is invalid\n\n";
-                    else
-                        lblForename.ForeColor = System.Drawing.Color.Black;
-
-                    if (!isValidDOB(dtpDOB.Value))
-                        error += "The customer is under 18\n\n";
-
-                    textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB);
-
-
-                    MessageBox.Show(error);
-                }
-
-
-            }
-            else
-            {
-                MessageBox.Show("Please fill out all the required highlighted fields");
-
-                textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB);
-
-            }
-
-        }
-
-        // Checking fields
-        private static void textFieldChecker(ComboBox cboCounty, ComboBox cboNationality,
-            ComboBox cboTitle, ComboBox cboCountry, TextBox txtSurname, TextBox txtForename,
-            TextBox txtAddress1, TextBox txtAddress2, TextBox txtPPSN, TextBox txtTown, DateTimePicker dtpDOB,
-            Label lblSurname, Label lblForename, Label lblAddressLine1, Label lblAddressLine2,
-            Label lblPPSN, Label lblTown, Label lblCounty, Label lblCountry, Label lblNationality,
-            Label lblTitle, Label lblDOB)
-        {
-            if (txtSurname.Text == "" || !isValidName(txtSurname.ToString()))
-            {
-                lblSurname.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblSurname.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (txtForename.Text == "" || !isValidName(txtForename.ToString()))
-            {
-                lblForename.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblForename.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (txtAddress1.Text == "")
-            {
-                lblAddressLine1.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblAddressLine1.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (txtAddress2.Text == "")
-            {
-                lblAddressLine2.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblAddressLine2.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if(!isValidDOB(dtpDOB.Value))
-            {
-                lblDOB.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblDOB.ForeColor = System.Drawing.Color.Red;
-            }
-
-            if (txtPPSN.Text == "")
-            {
-                lblPPSN.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblPPSN.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (txtTown.Text == "")
-            {
-                lblTown.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblTown.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (cboCounty.Text == "")
-            {
-                lblCounty.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblCounty.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (cboNationality.Text == "")
-            {
-                lblNationality.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblNationality.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (cboTitle.Text == "")
-            {
-                lblTitle.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblTitle.ForeColor = System.Drawing.Color.Black;
-            }
-
-            if (cboCountry.Text == "")
-            {
-                lblCountry.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-                lblCountry.ForeColor = System.Drawing.Color.Black;
-            }
-        }
-
-
-        // Name validation
-        private static bool isValidName(string name)
-        {
-            for (int i = 0; i < name.Length; i++)
-            {
-                if (char.IsNumber(name[i]))
-                    return false;
-            }
-
-            return true;
-        }
-
-        private static bool isValidDOB(DateTime DOB)
-        {
-            if (DateTime.Now.Year - DOB.Year >= 18)
-                return true;
-            else
-                return false;
-        }
-
 
         public void setCustomerId(int customerId)
         {
@@ -395,7 +278,7 @@ namespace LottoSYS.Customers
             this.forename = forename;
         }
 
-        public void setDOB(DateTime DOB)
+        public void setDOB(string DOB)
         {
             this.DOB = DOB;
         }
@@ -454,6 +337,117 @@ namespace LottoSYS.Customers
         {
             this.email = email;
         }
+
+        public void setStatus(string status)
+        {
+            this.status = status;
+        }
+
+        public void setRegDate(string regDate)
+        {
+            this.regDate = regDate;
+        }
+
+        public void setBalance(int balance)
+        {
+            this.balance = balance;
+        }
+
+        public int getCustomerId()
+        {
+            return customerId;
+        }
+
+        public string getTitle()
+        {
+            return title;
+        }
+
+        public string getSurname()
+        {
+            return surname;
+        }
+
+        public string getForename()
+        {
+            return forename;
+        }
+
+        public string getDOB()
+        {
+            return DOB;
+        }
+
+        public string getPPSN()
+        {
+            return PPSN;
+        }
+
+        public string getAddressLine1()
+        {
+            return addressLine1;
+        }
+
+        public string getAddressLine2()
+        {
+            return addressLine2;
+        }
+
+        public string getTown()
+        {
+            return town;
+        }
+
+        public string getCounty()
+        {
+            return county;
+        }
+
+        public string getCountry()
+        {
+            return country;
+        }
+
+        public string getCountryResidence()
+        {
+            return countryResidence;
+        }
+
+        public string getNationality()
+        {
+            return nationality;
+        }
+
+        public string getGender()
+        {
+            return gender;
+        }
+
+        public string getPhone()
+        {
+            return phone;
+        }
+
+        public string getEmail()
+        {
+            return email;
+        }
+
+        public string getStatus()
+        {
+            return status;
+        }
+
+        public string getRegDate()
+        {
+            return regDate;
+        }
+
+        public double getBalance()
+        {
+            return this.balance;
+        }
+
 
     }
 }

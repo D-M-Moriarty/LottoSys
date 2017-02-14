@@ -28,6 +28,7 @@ namespace LottoSYS
         private String nationality;
         private String gender;
 
+        private int custId;
 
         public frmCustomerUpdate(FrmMainMenu Parent)
         {
@@ -73,11 +74,7 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // Check if non empty Resultset is there first
-            lstUpdate.Items.Add("Jim Miller, Examlpe street, Killorglin");
-            lstUpdate.Items.Add("Mary Shea, Examlpe street, Tralee");
-            lstUpdate.Items.Add("Tim Clifford, Examlpe street, Millstreet");
-            lstUpdate.Items.Add("Jim Miller, Examlpe street, Killorglin");
+            grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
         }
 
         private void mnuUpdateCustomer_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -170,127 +167,144 @@ namespace LottoSYS
 
         }
 
-        private void lstUpdate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Get the currently selected item in the ListBox.
-            String curItem = lstUpdate.SelectedItem.ToString();
-
-
-
-            // Find the string in ListBox2.
-            int index = lstUpdate.FindString(curItem);
-
-            if (index == 0)
-            {
-                surname = "Miller";
-                forename = "Jim";
-                add1 = "Example Street";
-                add2 = "Exampl2";
-                town = "Killorglin";
-                county = "Kerry";
-                residence = "Ireland";
-                phone = "89689679";
-                email = "dkgfsuio|@sf.com";
-                title = "mr";
-                PPSN = "8572589";
-                nationality = "Irish";
-                gender = "male";
-
-                
-
-            }
-            else if (index == 1)
-            {
-                surname = "Mary";
-                forename = "Shea";
-                add1 = "Example Street";
-                add2 = "";
-                town = "Tralee";
-                county = "Kerry";
-                residence = "Ireland";
-                phone = "89689679";
-                email = "dkgfsuio|@sf.com";
-                title = "mr";
-                PPSN = "8572589";
-                nationality = "Irish";
-                gender = "male";
-            }
-            else
-            {
-                surname = "Tim";
-                forename = "Clifford";
-                add1 = "Example Street";
-                add2 = "";
-                town = "Millstreet";
-                county = "Cork";
-                residence = "Ireland";
-                phone = "89689679";
-                email = "dkgfsuio|@sf.com";
-                title = "mr";
-                PPSN = "8572589";
-                nationality = "Irish";
-                gender = "male";
-            }
-
-            txtSurname.Text = surname;
-            txtForename.Text = forename;
-            txtAddress2.Text = add2;
-            txtTown.Text = town;
-            txtPhone.Text = phone;
-            txtEmail.Text = email;
-            txtAddress1.Text = add1;
-            cboCounty.Text = county;
-            cboCountry.Text = residence;
-            cboTitle.Items.Add(title);
-            cboGender.Items.Add(gender);
-            txtPPSN.Text = PPSN;
-            cboNationality.Items.Add(nationality);
-
-            
-            // If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
-            //if (index == -1)
-            //MessageBox.Show("Item is not available in ListBox2");
-            ///else
-            // {
-            // listBox1.SetSelected(index, true);
-            //}
-        }
-
         private void tbnSubmit_Click(object sender, EventArgs e)
         {
-            Customer.validateCustomer(cboCounty, cboNationality,
-            cboTitle, cboCountry, txtSurname, txtForename,
-            txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-            lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-            lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-            lblTitle, lblDOB);
-
-
-            /*txtSurname.Text = "";
-            txtForename.Text = "";
-            txtAddress2.Text = "";
-            txtTown.Text = "";
-            txtPhone.Text = "";
-            txtEmail.Text = "";
-            txtAddress1.Text = "";
-            cboCounty.Text = "";
-            cboCountry.Text = "";
-            txtPPSN.Text = "";*/
-
-            if (txtSurname.Text != "")
+            //validate data
+            if (Validation.validateCustomer(cboCounty, cboNationality,
+             cboTitle, cboCountry, txtSurname, txtForename,
+             txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+             lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+             lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+             lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
-                MessageBox.Show("Customer information updated");
+                if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
+                    Validation.isValidDOB(dtpDOB.Value))
+                {
+                    MessageBox.Show("Data has been updated");
+
+                    Customer customer = new Customer();
+
+                    customer.setCustomerId(custId);
+                    customer.setTitle(cboTitle.Text);
+                    customer.setSurname(txtSurname.Text);
+                    customer.setForename(txtForename.Text);
+                    customer.setDOB(dtpDOB.Text);
+                    customer.setPPSN(txtPPSN.Text);
+                    customer.setAddressLine1(txtAddress1.Text);
+                    customer.setAddressLine2(txtAddress2.Text);
+                    customer.setTown(txtTown.Text);
+                    customer.setCounty(cboCounty.Text);
+                    customer.setCountry(cboCountry.Text);
+                    customer.setNationality(cboNationality.Text);
+                    customer.setGender(cboGender.Text);
+                    customer.setPhone(txtPhone.Text);
+                    customer.setEmail(txtEmail.Text);
+
+                    customer.updateCustomer();
+
+                    txtSurname.Text = "";
+                    txtForename.Text = "";
+                    txtAddress2.Text = "";
+                    txtTown.Text = "";
+                    txtPhone.Text = "";
+                    txtEmail.Text = "";
+                    txtAddress1.Text = "";
+                    cboCounty.Text = "";
+                    cboCountry.Text = "";
+                    txtPPSN.Text = "";
+                    cboCountry.SelectedIndex = -1;
+                    cboCounty.SelectedIndex = -1;
+                    cboGender.SelectedIndex = -1;
+                    cboNationality.SelectedIndex = -1;
+                    cboTitle.SelectedIndex = -1;
+
+                }
+                else
+                {
+                    string error = "";
+
+                    if (!Validation.isValidName(txtSurname.ToString()))
+                        error += "The surname is invalid\n\n";
+                    else
+                        lblSurname.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidName(txtForename.ToString()))
+                        error += "The forename is invalid\n\n";
+                    else
+                        lblForename.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidDOB(dtpDOB.Value))
+                        error += "The customer is under 18\n\n";
+
+                    Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
+
+
+                    MessageBox.Show(error);
+                }
+
             }
             else
             {
-                MessageBox.Show("Please select a customer to Update");
+                MessageBox.Show("Please fill out all the required highlighted fields");
+
+                Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
             }
-            
+
         }
 
         private void grpUpdateBox_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void grdUpdate_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grdUpdate.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                DataGridViewRow row = this.grdUpdate.Rows[e.RowIndex];
+
+                custId = Convert.ToInt32(row.Cells[0].Value);
+
+                cboTitle.Text = row.Cells[1].Value.ToString();
+
+                txtSurname.Text = row.Cells[2].Value.ToString();
+
+                txtForename.Text = row.Cells[3].Value.ToString();
+
+                dtpDOB.Text = row.Cells[4].Value.ToString();
+
+                txtPPSN.Text = row.Cells[5].Value.ToString();
+
+                txtAddress1.Text = row.Cells[6].Value.ToString();
+                
+                txtAddress2.Text = row.Cells[7].Value.ToString();
+
+                txtTown.Text = row.Cells[8].Value.ToString();
+
+                cboCounty.Text = row.Cells[9].Value.ToString();
+
+                cboCountry.Text = row.Cells[10].Value.ToString();
+
+                cboNationality.Text = row.Cells[11].Value.ToString();
+
+                cboGender.Text = row.Cells[12].Value.ToString();
+
+                txtPhone.Text = row.Cells[13].Value.ToString();
+
+                txtEmail.Text = row.Cells[14].Value.ToString();
+
+
+            }
         }
     }
 }

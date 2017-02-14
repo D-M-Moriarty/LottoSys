@@ -31,11 +31,6 @@ namespace LottoSYS.Customers
             parent = Parent;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void lblSearchLabel_Click(object sender, EventArgs e)
         {
 
@@ -43,15 +38,11 @@ namespace LottoSYS.Customers
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // Check if non empty Resultset is there first
-            lstList.Items.Add("Jim Miller, Examlpe street, Killorglin");
-            lstList.Items.Add("Mary Shea, Examlpe street, Tralee");
-            lstList.Items.Add("Tim Clifford, Examlpe street, Millstreet");
-            lstList.Items.Add("Jim Miller, Examlpe street, Killorglin");
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
 
             btnSearch.Enabled = false;
         }
-    
+
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
@@ -79,21 +70,15 @@ namespace LottoSYS.Customers
             Application.Exit();
         }
 
-        private void lstList_SelectedIndexChanged(object sender, EventArgs e)
+        private void rdoSurname_CheckedChanged(object sender, EventArgs e)
         {
-            // Get the currently selected item in the ListBox.
-            curItem = lstList.SelectedItem.ToString();
-
-
-
-            // Find the string in ListBox2.
-            index = lstList.FindString(curItem);
-
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void rdoCounty_CheckedChanged(object sender, EventArgs e)
         {
-
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text, "County").Tables["ss"];
         }
     }
+        
 }

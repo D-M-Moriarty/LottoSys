@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LottoSYS.Customers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace LottoSYS
         private String add1;
         private String add2;
         private String town;
+
+        private int custId;
 
         public frmCustomerDeReg(FrmMainMenu Parent)
         {
@@ -48,38 +51,27 @@ namespace LottoSYS
             txtSurname.BackColor = Color.White;
             txtTown.ReadOnly = true;
             txtTown.BackColor = Color.White;
+            btnSubmit.Enabled = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // Check if non empty Resultset is there first
-            lstdereg.Items.Add("Jim Miller, Examlpe street, Killorglin");
-            lstdereg.Items.Add("Mary Shea, Examlpe street, Tralee");
-            lstdereg.Items.Add("Tim Clifford, Examlpe street, Millstreet");
-            lstdereg.Items.Add("Jim Miller, Examlpe street, Killorglin");
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
+
+            btnSubmit.Enabled = true;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(txtForename.Text != "")
-            {
-                if (rdoWithdrawn.Checked && rdoDeceased.Checked)
-                {
-                    MessageBox.Show("Only one check box may selected!!!");
-                }
-                else if (rdoDeceased.Checked)
-                {
-                    MessageBox.Show("Please enter dated deceased");
+            Customer customer = new Customer();
 
-                }
-                else if (rdoWithdrawn.Checked)
-                {
-                    MessageBox.Show("Please enter dated withdrawn");
-                }
-                else
-                {
-                    MessageBox.Show("Please select a radio button!!");
-                }
+            customer.setCustomerId(custId);
+
+            if (rdoDeceased.Checked)
+            {
+                MessageBox.Show("Please enter dated deceased");
+
+                customer.updateCustomer("Deceased");
 
                 txtSurname.Text = "";
                 txtForename.Text = "";
@@ -88,7 +80,24 @@ namespace LottoSYS
                 txtTown.Text = "";
 
             }
+            else if (rdoWithdrawn.Checked)
+            {
+                MessageBox.Show("Please enter dated withdrawn");
 
+                customer.updateCustomer("Withdrawn");
+
+                txtSurname.Text = "";
+                txtForename.Text = "";
+                txtAddress1.Text = "";
+                txtAddress2.Text = "";
+                txtTown.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Please select a radio button!!");
+            }
+
+            
 
         }
 
@@ -107,54 +116,31 @@ namespace LottoSYS
 
         }
 
-        private void lstdereg_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Get the currently selected item in the ListBox.
-            String curItem = lstdereg.SelectedItem.ToString();
-
-
-
-            // Find the string in ListBox2.
-            int index = lstdereg.FindString(curItem);
-
-            if (index == 0)
-            {
-                surname = "Miller";
-                forename = "Jim";
-                add1 = "Example Street";
-                add2 = "";
-                town = "Killorglin";
-
-
-
-            }
-            else if (index == 1)
-            {
-                surname = "Mary";
-                forename = "Shea";
-                add1 = "Example Street";
-                add2 = "";
-                town = "Tralee";
-            }
-            else
-            {
-                surname = "Tim";
-                forename = "Clifford";
-                add1 = "Example Street";
-                add2 = "";
-                town = "Millstreet";
-            }
-
-            txtSurname.Text = surname;
-            txtForename.Text = forename;
-            txtAddress2.Text = add2;
-            txtTown.Text = town;
-            txtAddress1.Text = add1;
-        }
-
         private void grpDeReg_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grdListing.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                DataGridViewRow row = this.grdListing.Rows[e.RowIndex];
+
+                custId = Convert.ToInt32(row.Cells[0].Value);
+
+                txtSurname.Text = row.Cells[2].Value.ToString();
+
+                txtForename.Text = row.Cells[3].Value.ToString();
+
+                txtAddress1.Text = row.Cells[6].Value.ToString();
+
+                txtAddress2.Text = row.Cells[7].Value.ToString();
+
+                txtTown.Text = row.Cells[8].Value.ToString();
+
+
+            }
         }
     }
 }

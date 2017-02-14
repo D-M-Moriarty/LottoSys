@@ -21,7 +21,7 @@ namespace LottoSYS
 
         private void mnuCustomerReg_Click(object sender, EventArgs e)
         {
-            frmSellTicketPayment frmNext = new frmSellTicketPayment(this);
+            frmCustomerReg frmNext = new frmCustomerReg(this);
             this.Hide();
             frmNext.Show();
         }

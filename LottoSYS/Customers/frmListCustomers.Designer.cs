@@ -31,7 +31,6 @@
             this.mnuListCustomers = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.lstList = new System.Windows.Forms.ListBox();
             this.rdoSurname = new System.Windows.Forms.RadioButton();
             this.rdoCustID = new System.Windows.Forms.RadioButton();
             this.rdoCounty = new System.Windows.Forms.RadioButton();
@@ -42,8 +41,10 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grdListing = new System.Windows.Forms.DataGridView();
             this.mnuListCustomers.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListing)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuListCustomers
@@ -71,15 +72,6 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // lstList
-            // 
-            this.lstList.FormattingEnabled = true;
-            this.lstList.Location = new System.Drawing.Point(34, 111);
-            this.lstList.Name = "lstList";
-            this.lstList.Size = new System.Drawing.Size(502, 147);
-            this.lstList.TabIndex = 3;
-            this.lstList.SelectedIndexChanged += new System.EventHandler(this.lstList_SelectedIndexChanged);
-            // 
             // rdoSurname
             // 
             this.rdoSurname.AutoSize = true;
@@ -90,7 +82,7 @@
             this.rdoSurname.TabStop = true;
             this.rdoSurname.Text = "Surname";
             this.rdoSurname.UseVisualStyleBackColor = true;
-            this.rdoSurname.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rdoSurname.CheckedChanged += new System.EventHandler(this.rdoSurname_CheckedChanged);
             // 
             // rdoCustID
             // 
@@ -113,6 +105,7 @@
             this.rdoCounty.TabStop = true;
             this.rdoCounty.Text = "County";
             this.rdoCounty.UseVisualStyleBackColor = true;
+            this.rdoCounty.CheckedChanged += new System.EventHandler(this.rdoCounty_CheckedChanged);
             // 
             // rdoAge
             // 
@@ -176,19 +169,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.grdListing);
             this.groupBox1.Controls.Add(this.grpSort);
             this.groupBox1.Controls.Add(this.rdoAge);
             this.groupBox1.Controls.Add(this.rdoCounty);
             this.groupBox1.Controls.Add(this.rdoCustID);
             this.groupBox1.Controls.Add(this.rdoSurname);
-            this.groupBox1.Controls.Add(this.lstList);
             this.groupBox1.Location = new System.Drawing.Point(12, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(656, 289);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sort Listings";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // grdListing
+            // 
+            this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListing.Location = new System.Drawing.Point(34, 118);
+            this.grdListing.Name = "grdListing";
+            this.grdListing.Size = new System.Drawing.Size(502, 152);
+            this.grdListing.TabIndex = 9;
             // 
             // frmListCustomers
             // 
@@ -208,6 +208,7 @@
             this.mnuListCustomers.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListing)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +219,6 @@
         private System.Windows.Forms.MenuStrip mnuListCustomers;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.ListBox lstList;
         private System.Windows.Forms.RadioButton rdoSurname;
         private System.Windows.Forms.RadioButton rdoCustID;
         private System.Windows.Forms.RadioButton rdoCounty;
@@ -229,5 +229,6 @@
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView grdListing;
     }
 }

@@ -50,9 +50,10 @@
             this.lblSurname = new System.Windows.Forms.Label();
             this.txtTown = new System.Windows.Forms.TextBox();
             this.lblTown = new System.Windows.Forms.Label();
-            this.lstList = new System.Windows.Forms.ListBox();
+            this.grdListing = new System.Windows.Forms.DataGridView();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpDetailBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListing)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuUpdateCustomer
@@ -158,7 +159,6 @@
             this.lblPrice.Size = new System.Drawing.Size(108, 13);
             this.lblPrice.TabIndex = 63;
             this.lblPrice.Text = "Price is €2.20 per line";
-            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
             // 
             // btnProcess
             // 
@@ -180,7 +180,6 @@
             this.lblQuantity.Size = new System.Drawing.Size(85, 30);
             this.lblQuantity.TabIndex = 60;
             this.lblQuantity.Text = "No of lines for \r\nquick pick: *";
-            this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
             // 
             // txtEmail
             // 
@@ -276,21 +275,21 @@
             this.lblTown.TabIndex = 46;
             this.lblTown.Text = "Town: *";
             // 
-            // lstList
+            // grdListing
             // 
-            this.lstList.FormattingEnabled = true;
-            this.lstList.Location = new System.Drawing.Point(44, 161);
-            this.lstList.Name = "lstList";
-            this.lstList.Size = new System.Drawing.Size(273, 277);
-            this.lstList.TabIndex = 49;
-            this.lstList.SelectedIndexChanged += new System.EventHandler(this.lstList_SelectedIndexChanged);
+            this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListing.Location = new System.Drawing.Point(44, 161);
+            this.grdListing.Name = "grdListing";
+            this.grdListing.Size = new System.Drawing.Size(266, 218);
+            this.grdListing.TabIndex = 49;
+            this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
             // 
             // frmSellTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 459);
-            this.Controls.Add(this.lstList);
+            this.Controls.Add(this.grdListing);
             this.Controls.Add(this.grpDetailBox);
             this.Controls.Add(this.lblSellTicket);
             this.Controls.Add(this.btnSearch);
@@ -304,6 +303,7 @@
             this.mnuUpdateCustomer.PerformLayout();
             this.grpDetailBox.ResumeLayout(false);
             this.grpDetailBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListing)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,7 +332,7 @@
         private System.Windows.Forms.TextBox txtTown;
         private System.Windows.Forms.Label lblTown;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.ListBox lstList;
         private System.Windows.Forms.ComboBox cboTicketQTY;
+        private System.Windows.Forms.DataGridView grdListing;
     }
 }

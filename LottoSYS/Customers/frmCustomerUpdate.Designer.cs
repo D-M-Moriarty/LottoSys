@@ -35,8 +35,6 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grpUpdateBox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblCountry = new System.Windows.Forms.Label();
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.cboNationality = new System.Windows.Forms.ComboBox();
@@ -57,7 +55,7 @@
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblSurname = new System.Windows.Forms.Label();
             this.cboCountry = new System.Windows.Forms.ComboBox();
-            this.lblCountryRes = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
             this.cboCounty = new System.Windows.Forms.ComboBox();
             this.lblCounty = new System.Windows.Forms.Label();
             this.txtTown = new System.Windows.Forms.TextBox();
@@ -67,9 +65,10 @@
             this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.lblAddressLine1 = new System.Windows.Forms.Label();
             this.lblSearchLabel = new System.Windows.Forms.Label();
-            this.lstUpdate = new System.Windows.Forms.ListBox();
+            this.grdUpdate = new System.Windows.Forms.DataGridView();
             this.mnuUpdateCustomer.SuspendLayout();
             this.grpUpdateBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUpdate)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuUpdateCustomer
@@ -100,13 +99,14 @@
             // 
             // lblSearch
             // 
+            this.lblSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.Location = new System.Drawing.Point(49, 106);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(68, 15);
+            this.lblSearch.Size = new System.Drawing.Size(61, 15);
             this.lblSearch.TabIndex = 1;
-            this.lblSearch.Text = "Id Number:";
+            this.lblSearch.Text = "Surname:";
             this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
             // 
             // txtSearchBox
@@ -129,8 +129,6 @@
             // 
             // grpUpdateBox
             // 
-            this.grpUpdateBox.Controls.Add(this.comboBox1);
-            this.grpUpdateBox.Controls.Add(this.lblCountry);
             this.grpUpdateBox.Controls.Add(this.cboGender);
             this.grpUpdateBox.Controls.Add(this.lblGender);
             this.grpUpdateBox.Controls.Add(this.cboNationality);
@@ -151,7 +149,7 @@
             this.grpUpdateBox.Controls.Add(this.txtSurname);
             this.grpUpdateBox.Controls.Add(this.lblSurname);
             this.grpUpdateBox.Controls.Add(this.cboCountry);
-            this.grpUpdateBox.Controls.Add(this.lblCountryRes);
+            this.grpUpdateBox.Controls.Add(this.lblCountry);
             this.grpUpdateBox.Controls.Add(this.cboCounty);
             this.grpUpdateBox.Controls.Add(this.lblCounty);
             this.grpUpdateBox.Controls.Add(this.txtTown);
@@ -167,25 +165,6 @@
             this.grpUpdateBox.TabStop = false;
             this.grpUpdateBox.Text = "Update Details";
             this.grpUpdateBox.Enter += new System.EventHandler(this.grpUpdateBox_Enter);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(473, 182);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 21);
-            this.comboBox1.TabIndex = 73;
-            // 
-            // lblCountry
-            // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Location = new System.Drawing.Point(386, 183);
-            this.lblCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(56, 15);
-            this.lblCountry.TabIndex = 72;
-            this.lblCountry.Text = "Country:*";
             // 
             // cboGender
             // 
@@ -277,7 +256,7 @@
             // 
             // tbnSubmit
             // 
-            this.tbnSubmit.Location = new System.Drawing.Point(534, 296);
+            this.tbnSubmit.Location = new System.Drawing.Point(534, 270);
             this.tbnSubmit.Name = "tbnSubmit";
             this.tbnSubmit.Size = new System.Drawing.Size(75, 23);
             this.tbnSubmit.TabIndex = 45;
@@ -309,7 +288,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(473, 256);
+            this.txtPhone.Location = new System.Drawing.Point(473, 224);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(136, 21);
             this.txtPhone.TabIndex = 57;
@@ -319,7 +298,7 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(392, 262);
+            this.lblPhone.Location = new System.Drawing.Point(392, 230);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(66, 15);
@@ -372,23 +351,23 @@
             // cboCountry
             // 
             this.cboCountry.FormattingEnabled = true;
-            this.cboCountry.Location = new System.Drawing.Point(473, 218);
+            this.cboCountry.Location = new System.Drawing.Point(473, 186);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(136, 21);
             this.cboCountry.TabIndex = 51;
             this.cboCountry.SelectedIndexChanged += new System.EventHandler(this.cboCountry_SelectedIndexChanged);
             // 
-            // lblCountryRes
+            // lblCountry
             // 
-            this.lblCountryRes.AutoSize = true;
-            this.lblCountryRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountryRes.Location = new System.Drawing.Point(327, 224);
-            this.lblCountryRes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCountryRes.Name = "lblCountryRes";
-            this.lblCountryRes.Size = new System.Drawing.Size(134, 15);
-            this.lblCountryRes.TabIndex = 50;
-            this.lblCountryRes.Text = "Country of Residence: *";
-            this.lblCountryRes.Click += new System.EventHandler(this.lblCountry_Click);
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Location = new System.Drawing.Point(327, 192);
+            this.lblCountry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(134, 15);
+            this.lblCountry.TabIndex = 50;
+            this.lblCountry.Text = "Country of Residence: *";
+            this.lblCountry.Click += new System.EventHandler(this.lblCountry_Click);
             // 
             // cboCounty
             // 
@@ -481,21 +460,21 @@
             this.lblSearchLabel.TabIndex = 43;
             this.lblSearchLabel.Text = "Search for Customer";
             // 
-            // lstUpdate
+            // grdUpdate
             // 
-            this.lstUpdate.FormattingEnabled = true;
-            this.lstUpdate.Location = new System.Drawing.Point(383, 59);
-            this.lstUpdate.Name = "lstUpdate";
-            this.lstUpdate.Size = new System.Drawing.Size(379, 134);
-            this.lstUpdate.TabIndex = 44;
-            this.lstUpdate.SelectedIndexChanged += new System.EventHandler(this.lstUpdate_SelectedIndexChanged);
+            this.grdUpdate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUpdate.Location = new System.Drawing.Point(359, 40);
+            this.grdUpdate.Name = "grdUpdate";
+            this.grdUpdate.Size = new System.Drawing.Size(403, 150);
+            this.grdUpdate.TabIndex = 44;
+            this.grdUpdate.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUpdate_CellClick);
             // 
             // frmCustomerUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 545);
-            this.Controls.Add(this.lstUpdate);
+            this.Controls.Add(this.grdUpdate);
             this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.grpUpdateBox);
             this.Controls.Add(this.btnSearch);
@@ -510,6 +489,7 @@
             this.mnuUpdateCustomer.PerformLayout();
             this.grpUpdateBox.ResumeLayout(false);
             this.grpUpdateBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUpdate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,7 +505,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox grpUpdateBox;
         private System.Windows.Forms.ComboBox cboCountry;
-        private System.Windows.Forms.Label lblCountryRes;
+        private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.ComboBox cboCounty;
         private System.Windows.Forms.Label lblCounty;
         private System.Windows.Forms.TextBox txtTown;
@@ -543,7 +523,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblSearchLabel;
-        private System.Windows.Forms.ListBox lstUpdate;
         private System.Windows.Forms.Button tbnSubmit;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ComboBox cboTitle;
@@ -555,7 +534,6 @@
         private System.Windows.Forms.Label lblPPSN;
         private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.DataGridView grdUpdate;
     }
 }

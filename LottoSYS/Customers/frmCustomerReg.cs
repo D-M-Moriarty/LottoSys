@@ -7,24 +7,24 @@ using Oracle.DataAccess.Client;
 
 namespace LottoSYS
 {
-    public partial class frmSellTicketPayment : Form
+    public partial class frmCustomerReg : Form
     {
 
         FrmMainMenu parent;
         private frmSellTickets frmSellTickets;
 
-        public frmSellTicketPayment()
+        public frmCustomerReg()
         {
             InitializeComponent();
         }
 
-        public frmSellTicketPayment(FrmMainMenu Parent)
+        public frmCustomerReg(FrmMainMenu Parent)
         {
             InitializeComponent();
             parent = Parent;
         }
 
-        public frmSellTicketPayment(frmSellTickets frmSellTickets)
+        public frmCustomerReg(frmSellTickets frmSellTickets)
         {
             this.frmSellTickets = frmSellTickets;
         }
@@ -524,78 +524,106 @@ namespace LottoSYS
             
         }
 
-        /* private void btnSubmit_Click(object sender, EventArgs e)
-         {
-             MessageBox.Show("Data has been registered");
-
-             txtSurname.Text = "";
-             txtForename.Text = "";
-             txtEmail.Text = "";
-             txtAddress1.Text = "";
-             txtAddress2.Text = "";
-             txtPhone.Text = "";
-             txtPPSN.Text = "";
-             txtTown.Text = "";
-             cboCounty.SelectedIndex = -1;
-             cboGender.SelectedIndex = -1;
-             cboNationality.SelectedIndex = -1;
-             cboTitle.SelectedIndex = -1;
-             cboCountry.SelectedIndex = -1;
-
-
-         }*/
-
       //  OracleConnection conn = new OracleConnection(ConnectDB.oradb);
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
 
-            Customer.validateCustomer(cboCounty, cboNationality,
-            cboTitle, cboCountry, txtSurname, txtForename,
-            txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-            lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-            lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-            lblTitle, lblDOB);
-
-            /*try
+            //validate data
+            if (Validation.validateCustomer(cboCounty, cboNationality,
+             cboTitle, cboCountry, txtSurname, txtForename,
+             txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+             lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+             lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+             lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
-                if (conn.State != ConnectionState.Open) 
+                if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
+                    Validation.isValidDOB(dtpDOB.Value))
                 {
-                    conn.Open();
-                    MessageBox.Show("Connection Open");
+
+                    MessageBox.Show("Data has been registered");
+
+                    Customer customer = new Customer();
+
+                    customer.setCustomerId(Convert.ToInt32(Customer.nextCustomerId().ToString("00000")));
+                    customer.setTitle(cboTitle.Text);
+                    customer.setSurname(txtSurname.Text);
+                    customer.setForename(txtForename.Text);
+                    customer.setDOB(dtpDOB.Text);
+                    customer.setPPSN(txtPPSN.Text);
+                    customer.setAddressLine1(txtAddress1.Text);
+                    customer.setAddressLine2(txtAddress2.Text);
+                    customer.setTown(txtTown.Text);
+                    customer.setCounty(cboCounty.Text);
+                    customer.setCountry(cboCountry.Text);
+                    customer.setNationality(cboNationality.Text);
+                    customer.setGender(cboGender.Text);
+                    customer.setPhone(txtPhone.Text);
+                    customer.setEmail(txtEmail.Text);
+                    customer.setStatus("Active");
+                    customer.setRegDate(DateTime.Now.ToString());
+
+                    customer.regCustomer();
+
+                    txtSurname.Text = "";
+                    txtForename.Text = "";
+                    txtAddress2.Text = "";
+                    txtTown.Text = "";
+                    txtPhone.Text = "";
+                    txtEmail.Text = "";
+                    txtAddress1.Text = "";
+                    cboCounty.Text = "";
+                    cboCountry.Text = "";
+                    txtPPSN.Text = "";
+                    cboCountry.SelectedIndex = -1;
+                    cboCounty.SelectedIndex = -1;
+                    cboGender.SelectedIndex = -1;
+                    cboNationality.SelectedIndex = -1;
+                    cboTitle.SelectedIndex = -1;
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Connection not Open");
-                }
+                    string error = "";
 
+                    if (!Validation.isValidName(txtSurname.ToString()))
+                        error += "The surname is invalid\n\n";
+                    else
+                        lblSurname.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidName(txtForename.ToString()))
+                        error += "The forename is invalid\n\n";
+                    else
+                        lblForename.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidDOB(dtpDOB.Value))
+                        error += "The customer is under 18\n\n";
+
+                    Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
+
+
+                    MessageBox.Show(error);
+                }
                 
             }
-            catch (System.InvalidOperationException ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please fill out all the required highlighted fields");
+
+                Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
             }
-            catch (OracleException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
-            DataSet ds = new DataSet();
-
-            Customer stock = new Customer();
-
-            //load data onto form
-            //MessageBox.Show(Customer.getCustomer(ds, txtDescription.Text).Tables["res"]);*/
-
-        }
-
-        private void lblNationality_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSurname_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -608,6 +636,6 @@ namespace LottoSYS
             cboTitle.Items.Add("Mr");
             cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        
+
     }
 }
