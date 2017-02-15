@@ -14,19 +14,19 @@ namespace LottoSYS
     public partial class frmCustomerUpdate : Form
     { 
         private FrmMainMenu parent;
-        private String surname;
-        private String forename;
-        private String add1;
-        private String add2;
-        private String town;
-        private String county;
-        private String residence;
-        private String phone;
-        private String email;
-        private String title;
-        private String PPSN;
-        private String nationality;
-        private String gender;
+        private string surname;
+        private string forename;
+        private string add1;
+        private string add2;
+        private string town;
+        private string county;
+        private string residence;
+        private string phone;
+        private string email;
+        private string title;
+        private string PPSN;
+        private string nationality;
+        private string gender;
 
         private int custId;
 

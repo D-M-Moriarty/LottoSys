@@ -8,7 +8,7 @@ namespace LottoSYS.Sales
     public partial class frmSellTickets : Form
     {
         private FrmMainMenu parent;
-        public float price;
+        public const float price = 2.2f;
         public int numOfLines;
         private String surname;
         private String forename;
@@ -58,12 +58,29 @@ namespace LottoSYS.Sales
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            string ticketOut = "";
-
-            Ticket.generateNumbers2(cboTicketQTY);
 
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
+
+            Ticket ticket = new Ticket();
+            Panel panel;
+
+            int ticketId = Ticket.nextTicketId();
+
+            ticket.setTicketId(Convert.ToInt32(Ticket.nextTicketId().ToString("00000")));
+            ticket.setCustomerId(custId);
+            ticket.setPurchaseDate(DateTime.Now.ToString());
+            ticket.setTime(DateTime.Now.ToString());
+            ticket.setPrice(price * numOfLines);
+            ticket.setPrizeFlag("NO");
+
+            ticket.regTicket();
+
+            string ticketOut = "";
+
+            //Ticket.generateNumbers2(cboTicketQTY);
+
+
 
             panelNums = new int[numOfLines, numbers6];
 
@@ -71,22 +88,84 @@ namespace LottoSYS.Sales
             {
                 generated = Ticket.generateNumbers();
 
-
                 for (int j = 0; j < numbers6; j++)
                 {
                     panelNums[i, j] = generated[j];
-                }
 
+                }
             }
+
+            /*for (int i = 0; i < numOfLines; i++)
+            {
+                generated = Ticket.generateNumbers();
+
+                Panel panel = new Panel();
+
+                panel.setPanelId(i + 1);
+
+                panel.setTicketId(ticketId);
+
+                panel.setNum1(generated[0]);
+                panel.setNum2(generated[1]);
+                panel.setNum3(generated[2]);
+                panel.setNum4(generated[3]);
+                panel.setNum5(generated[4]);
+                panel.setNum6(generated[5]);
+
+                panel.regPanel();
+                
+
+            }*/
+
+             for(int i = 0; i < numOfLines; i++)
+             {
+                 panel = new Panel();
+
+                 panel.setPanelId(i + 1);
+
+                 panel.setTicketId(ticketId);
+
+                 panel.setNum1(panelNums[i, 0]);
+                 panel.setNum2(panelNums[i, 1]);
+                 panel.setNum3(panelNums[i, 2]);
+                 panel.setNum4(panelNums[i, 3]);
+                 panel.setNum5(panelNums[i, 4]);
+                 panel.setNum6(panelNums[i, 5]);
+
+                 panel.regPanel();
+
+             }
+
+
 
             string outpo = "";
 
             for (int i = 0; i < numOfLines; i++)
             {
-                for (int j = 0; j < 6; j++) Console.Write(panelNums[i, j]);
+                outpo += "Line no. " + (i + 1) + ": ";
+
+                for (int j = 0; j < numbers6; j++)
+                {
+                    if (panelNums[i, j] < 10)
+                    {
+                        string zero = "0";
+                        zero += panelNums[i, j];
+                        outpo += " " + zero;
+                    }
+                    else
+                    {
+                        outpo += " " + panelNums[i, j];
+                    }
+
+                    Console.Write(panelNums[i, j]);
+                }
+
+                outpo += "\n\n";
 
                 Console.WriteLine(" ");
             }
+        
+            MessageBox.Show(outpo);
 
 
 

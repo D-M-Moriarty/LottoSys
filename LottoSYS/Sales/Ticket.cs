@@ -1,10 +1,11 @@
-﻿using Oracle.DataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace LottoSYS.Prizes
@@ -153,7 +154,7 @@ namespace LottoSYS.Prizes
         public static int nextTicketId()
         {
             // variable to hold value to be returned
-            int intNextCustomerId;
+            int intNextTicketId;
 
             // connect to the Db
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
@@ -173,18 +174,18 @@ namespace LottoSYS.Prizes
 
             if (dr.IsDBNull(0))
             {
-                intNextCustomerId = 1;
+                intNextTicketId = 1;
             }
             else
             {
-                intNextCustomerId = Convert.ToInt16(dr.GetValue(0)) + 1;
+                intNextTicketId = Convert.ToInt16(dr.GetValue(0)) + 1;
             }
 
             // Close DB connection
             myConn.Close();
 
             // Return next StockNo
-            return intNextCustomerId;
+            return intNextTicketId;
 
 
 
@@ -197,9 +198,9 @@ namespace LottoSYS.Prizes
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Ticket VALUES(" + getTicketId() + ", '" + getCustomerId() +
-                ", '" + getPurchaseDate() + "', '" + getTime() + "', '" + getPrice() +
-                "', '" + getPrizeFlag() + "')";
+            String strSQl = "INSERT INTO Ticket VALUES(" + getTicketId() + ", " + getCustomerId() +
+                ", '" + getPurchaseDate() + "', '" + getTime() + "', " + getPrice() +
+                ", '" + getPrizeFlag() + "')";
 
 
             // Execute the command

@@ -28,7 +28,7 @@ namespace LottoSYS.Prizes
 
         private void frmRunDraw_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -44,6 +44,23 @@ namespace LottoSYS.Prizes
 
         private void btnRunDraw_Click(object sender, EventArgs e)
         {
+
+            Draw draw;
+
+            int[] drawNums = Ticket.generateNumbers();
+
+            draw = new Draw();
+
+            draw.setDate(DateTime.Now.ToString());
+            draw.setNumber1(drawNums[0]);
+            draw.setNumber2(drawNums[1]);
+            draw.setNumber3(drawNums[2]);
+            draw.setNumber4(drawNums[3]);
+            draw.setNumber5(drawNums[4]);
+            draw.setNumber6(drawNums[5]);
+
+            draw.regDraw();
+
 
             //Currently converting the arrays to string
             //Ideally would like to change to 2d array or jagged array
@@ -62,43 +79,43 @@ namespace LottoSYS.Prizes
 
             //might make each ticket a line instead
 
-          
 
-                str += "Draw result: ";
 
-                for (int i = 0; i < nums.Length; i++)
-                {
+            str += "Draw result: ";
 
-                    if (i > 0)
-                        str += ",";
+            for (int i = 0; i < nums.Length; i++)
+            {
 
+                if (i > 0)
+                    str += ",";
+
+                num = randNum.Next(Min, Max);
+
+                while (alreadyPicked[num])
                     num = randNum.Next(Min, Max);
 
-                    while (alreadyPicked[num])
-                        num = randNum.Next(Min, Max);
+                alreadyPicked[num] = true;
+                nums[i] = num;
 
-                    alreadyPicked[num] = true;
-                    nums[i] = num;
-
-                    if (num < 10)
-                    {
-                        zero += nums[i];
-                        str += " " + zero;
-                        zero = "0";
-                    }
-                    else
-                    {
-                        str += " " + nums[i];
-                    }
-
+                if (num < 10)
+                {
+                    zero += nums[i];
+                    str += " " + zero;
+                    zero = "0";
+                }
+                else
+                {
+                    str += " " + nums[i];
                 }
 
+            }
 
-                alreadyPicked = new bool[47];
 
-                str += "\n\n";
-            
-            
+            alreadyPicked = new bool[47];
+
+            str += "\n\n";
+
+
 
             //MessageBox.Show(str,"Draw Results");
             listBox1.Items.Add(str);

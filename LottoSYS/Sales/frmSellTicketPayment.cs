@@ -31,7 +31,7 @@ namespace LottoSYS.Sales
             grpBankDetails.Visible = false;
             grpCardDetails.Visible = false;
 
-            txtValue.Text = "€" + string.Format("{0:0.00}", parent.price * parent.numOfLines);
+            txtValue.Text = "€" + string.Format("{0:0.00}", 2.2f * parent.numOfLines);
             txtNoOfLines.Text = "" + parent.numOfLines;
 
          

@@ -8,21 +8,20 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace LottoSYS.Sales
+namespace LottoSYS.Prizes
 {
-    class Panel
+    class Draw
     {
 
-        private int panelId;
-        private int ticketId;
-        private int num1;
-        private int num2;
-        private int num3;
-        private int num4;
-        private int num5;
-        private int num6;
+       private string drawDate;
+       private int number1;
+       private int number2;
+       private int number3;
+       private int number4;
+       private int number5;
+       private int number6;
 
-        public static DataSet getPanel()
+        public static DataSet getDraw()
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -33,7 +32,7 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Panel";
+            string strSQL = "SELECT * FROM Draw";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -48,7 +47,7 @@ namespace LottoSYS.Sales
             return DS;
         }
 
-        public static DataSet getPanel(string surname)
+        public static DataSet getDraw(string surname)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -174,16 +173,17 @@ namespace LottoSYS.Sales
 
         }
 
-        public void regPanel()
+        public void regDraw()
         {
             // Connect to database
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Panel VALUES(" + getPanelId() + ", " + getTicketId() +
-                ", " + getNum1() + ", " + getNum2() + ", " + getNum3() +
-                ", " + getNum4() + ", " + getNum5() + ", " + getNum6() + ")";
+            String strSQl = "INSERT INTO Draw VALUES('" + getDate() + "', " +
+                getNumber1() + ", " + getNumber2() + ", " +
+                getNumber3() + ", " + getNumber4() + ", " +
+                getNumber5() + ", " + getNumber6() + ")";
 
 
             // Execute the command
@@ -213,84 +213,74 @@ namespace LottoSYS.Sales
             myConn.Close();
         }
 
-        public void setPanelId(int panelId)
+        public void setDate(string drawDate)
         {
-            this.panelId = panelId;
+            this.drawDate = drawDate;
         }
 
-        public void setTicketId(int ticketId)
+        public string getDate()
         {
-            this.ticketId = ticketId;
+            return drawDate;
         }
 
-        public void setNum1(int num1)
+        public void setNumber1(int number1)
         {
-            this.num1 = num1;
+            this.number1 = number1;
         }
 
-        public void setNum2(int num2)
+        public void setNumber2(int number2)
         {
-            this.num2 = num2;
+            this.number2 = number2;
         }
 
-        public void setNum3(int num3)
+        public void setNumber3(int number3)
         {
-            this.num3 = num3;
+            this.number3 = number3;
         }
 
-        public void setNum4(int num4)
+        public void setNumber4(int number4)
         {
-            this.num4 = num4;
+            this.number4 = number4;
         }
 
-        public void setNum5(int num5)
+        public void setNumber5(int number5)
         {
-            this.num5 = num5;
+            this.number5 = number5;
         }
 
-        public void setNum6(int num6)
+        public void setNumber6(int number6)
         {
-            this.num6 = num6;
+            this.number6 = number6;
         }
 
-        public int getPanelId()
+        public int getNumber1()
         {
-            return panelId;
+            return number1;
         }
 
-        public int getTicketId()
+        public int getNumber2()
         {
-            return ticketId;
+            return number2;
         }
 
-        public int getNum1()
+        public int getNumber3()
         {
-            return num1;
+            return number3;
         }
 
-        public int getNum2()
+        public int getNumber4()
         {
-            return num2;
+            return number4;
         }
 
-        public int getNum3()
+        public int getNumber5()
         {
-            return num3;
+            return number5;
         }
 
-        public int getNum4()
+        public int getNumber6()
         {
-            return num4;
-        }
-
-        public int getNum5()
-        {
-            return num5;
-        }
-
-        public int getNum6()
-        {
-            return num6;
+            return number6;
         }
 
     }
