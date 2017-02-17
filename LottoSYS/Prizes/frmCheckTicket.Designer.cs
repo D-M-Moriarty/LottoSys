@@ -1,4 +1,4 @@
-﻿namespace LottoSYS.Prizes
+﻿namespace LottoSYS.Prize
 {
     partial class frmCheckTicket
     {

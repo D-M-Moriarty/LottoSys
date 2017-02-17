@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
-namespace LottoSYS.Prizes
+namespace LottoSYS.Prize
 {
     class Draw
     {
-
-       private string drawDate;
-       private int number1;
-       private int number2;
-       private int number3;
-       private int number4;
-       private int number5;
-       private int number6;
+        public string drawDate { get; set; }
+        public int number1 { get; set; }
+        public int number2 { get; set; }
+        public int number3 { get; set; }
+        public int number4 { get; set; }
+        public int number5 { get; set; }
+        public int number6 { get; set; }
 
         public static DataSet getDraw(String f)
         {
@@ -73,104 +66,31 @@ namespace LottoSYS.Prizes
             return DS;
         }
 
-        public static DataSet getPanel(string surname, string order)
+        public static DataTable getDraws()
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
 
-            DataSet DS = new DataSet();
+            DataTable DT = new DataTable();
 
             //connect to the database
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname +
-                "%' AND CUSTOMER_STATUS = 'Active' ORDER BY " + order;
+            string strSQL = "SELECT * FROM Draw";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static DataSet getPanel(DataSet DS, string description)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT Stock_No, Description FROM STOCK WHERE Description LIKE '" + description + "%'";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
             //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            var dr = cmd.ExecuteReader();
 
-            try
-            {
-                da.Fill(DS, "res");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
+            DT.Load(dr);
 
             //close database
             conn.Close();
 
-            return DS;
-        }
-
-        public static int nextPanelId()
-        {
-            // variable to hold value to be returned
-            int intNextCustomerId;
-
-            // connect to the Db
-            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
-            myConn.Open();
-
-            // Define SQL query to get MAX Stock_No used
-            String strSQl = "SELECT MAX(PanelId) FROM Panel";
-
-            OracleCommand cmd = new OracleCommand(strSQl, myConn);
-
-            // Execute the query
-            OracleDataReader dr = cmd.ExecuteReader();
-
-            // read the first (only) value returned by query
-            // If the first stockno, assign value 1, otherwise add 1 to MAX value
-            dr.Read();
-
-            if (dr.IsDBNull(0))
-            {
-                intNextCustomerId = 1;
-            }
-            else
-            {
-                intNextCustomerId = Convert.ToInt16(dr.GetValue(0)) + 1;
-            }
-
-            // Close DB connection
-            myConn.Close();
-
-            // Return next StockNo
-            return intNextCustomerId;
-
-
-
+            return DT;
         }
 
         public void regDraw()

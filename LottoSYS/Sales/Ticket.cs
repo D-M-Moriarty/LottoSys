@@ -8,7 +8,7 @@ using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace LottoSYS.Prizes
+namespace LottoSYS.Prize
 {
     class Ticket
     {

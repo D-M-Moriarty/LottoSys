@@ -2,7 +2,7 @@
 using LottoSYS.Finance;
 using System;
 using System.Windows.Forms;
-using LottoSYS.Prizes;
+using LottoSYS.Prize;
 
 namespace LottoSYS
 {
@@ -75,7 +75,7 @@ namespace LottoSYS
 
         private void mnuPayPrize_Click(object sender, EventArgs e)
         {
-            Prizes.frmCheckTicket frmNext = new Prizes.frmCheckTicket(this);
+            Prize.frmCheckTicket frmNext = new Prize.frmCheckTicket(this);
             this.Hide();
             frmNext.Show();
         }

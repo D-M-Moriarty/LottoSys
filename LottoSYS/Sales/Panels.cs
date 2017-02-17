@@ -1,26 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace LottoSYS.Sales
 {
     class Panels
     {
-
-        private int panelId;
-        private int ticketId;
-        private int num1;
-        private int num2;
-        private int num3;
-        private int num4;
-        private int num5;
-        private int num6;
+        public int panelid { get; set; }
+        public int ticketid { get; set; }
+        public int number1 { get; set; }
+        public int number2 { get; set; }
+        public int number3 { get; set; }
+        public int number4 { get; set; }
+        public int number5 { get; set; }
+        public int number6 { get; set; }
 
         public static DataSet getPanel()
         {
@@ -40,12 +33,40 @@ namespace LottoSYS.Sales
             //execute the query
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
+
+
             da.Fill(DS, "ss");
 
             //close database
             conn.Close();
 
             return DS;
+        }
+
+        public static DataTable getPanels()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataTable DT = new DataTable();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Panel";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            var dr = cmd.ExecuteReader();
+
+            DT.Load(dr);
+
+            //close database
+            conn.Close();
+
+            return DT;
         }
 
         public static DataSet getPanel(int ticketId, int panelId)
@@ -215,82 +236,82 @@ namespace LottoSYS.Sales
 
         public void setPanelId(int panelId)
         {
-            this.panelId = panelId;
+            panelid = panelId;
         }
 
         public void setTicketId(int ticketId)
         {
-            this.ticketId = ticketId;
+            ticketid = ticketId;
         }
 
         public void setNum1(int num1)
         {
-            this.num1 = num1;
+            number1 = num1;
         }
 
         public void setNum2(int num2)
         {
-            this.num2 = num2;
+            number2 = num2;
         }
 
         public void setNum3(int num3)
         {
-            this.num3 = num3;
+            number3 = num3;
         }
 
         public void setNum4(int num4)
         {
-            this.num4 = num4;
+            number4 = num4;
         }
 
         public void setNum5(int num5)
         {
-            this.num5 = num5;
+            number5 = num5;
         }
 
         public void setNum6(int num6)
         {
-            this.num6 = num6;
+            number6 = num6;
         }
 
         public int getPanelId()
         {
-            return panelId;
+            return panelid;
         }
 
         public int getTicketId()
         {
-            return ticketId;
+            return ticketid;
         }
 
         public int getNum1()
         {
-            return num1;
+            return number1;
         }
 
         public int getNum2()
         {
-            return num2;
+            return number2;
         }
 
         public int getNum3()
         {
-            return num3;
+            return number3;
         }
 
         public int getNum4()
         {
-            return num4;
+            return number4;
         }
 
         public int getNum5()
         {
-            return num5;
+            return number5;
         }
 
         public int getNum6()
         {
-            return num6;
+            return number6;
         }
 
     }

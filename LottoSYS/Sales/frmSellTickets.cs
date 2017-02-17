@@ -1,5 +1,5 @@
 ﻿using LottoSYS.Customers;
-using LottoSYS.Prizes;
+using LottoSYS.Prize;
 using System;
 using System.Windows.Forms;
 
