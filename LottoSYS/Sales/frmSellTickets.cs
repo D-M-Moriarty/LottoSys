@@ -63,7 +63,7 @@ namespace LottoSYS.Sales
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
 
             Ticket ticket = new Ticket();
-            Panel panel;
+            Panels panel;
 
             int ticketId = Ticket.nextTicketId();
 
@@ -80,20 +80,28 @@ namespace LottoSYS.Sales
 
             //Ticket.generateNumbers2(cboTicketQTY);
 
+            
+
 
 
             panelNums = new int[numOfLines, numbers6];
 
-            for (int i = 0; i < numOfLines; i++)
+            panelNums = Ticket.generateNumbers(numOfLines);
+
+            /*for (int i = 0; i < numOfLines; i++)
             {
-                generated = Ticket.generateNumbers();
+                
 
                 for (int j = 0; j < numbers6; j++)
                 {
+                    // schrodinger cat method
                     panelNums[i, j] = generated[j];
-
+                    Console.Write(panelNums[i, j] + ",");
                 }
-            }
+
+                
+
+            }*/
 
             /*for (int i = 0; i < numOfLines; i++)
             {
@@ -119,7 +127,7 @@ namespace LottoSYS.Sales
 
              for(int i = 0; i < numOfLines; i++)
              {
-                 panel = new Panel();
+                 panel = new Panels();
 
                  panel.setPanelId(i + 1);
 

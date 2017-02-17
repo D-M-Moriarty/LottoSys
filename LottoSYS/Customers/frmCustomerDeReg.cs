@@ -67,11 +67,14 @@ namespace LottoSYS
 
             customer.setCustomerId(custId);
 
+
             if (rdoDeceased.Checked)
             {
                 MessageBox.Show("Please enter dated deceased");
 
                 customer.updateCustomer("Deceased");
+
+                customer.de_regCustomer(custId);
 
                 txtSurname.Text = "";
                 txtForename.Text = "";
@@ -85,6 +88,8 @@ namespace LottoSYS
                 MessageBox.Show("Please enter dated withdrawn");
 
                 customer.updateCustomer("Withdrawn");
+
+                customer.de_regCustomer(custId);
 
                 txtSurname.Text = "";
                 txtForename.Text = "";

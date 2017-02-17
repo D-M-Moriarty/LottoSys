@@ -31,13 +31,14 @@
             this.mnuListCustomers = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnProfile = new System.Windows.Forms.Button();
             this.lblSearchLabel = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.grdListing = new System.Windows.Forms.DataGridView();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.mnuListCustomers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListing)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuListCustomers
@@ -47,7 +48,7 @@
             this.mnuExit});
             this.mnuListCustomers.Location = new System.Drawing.Point(0, 0);
             this.mnuListCustomers.Name = "mnuListCustomers";
-            this.mnuListCustomers.Size = new System.Drawing.Size(332, 24);
+            this.mnuListCustomers.Size = new System.Drawing.Size(799, 24);
             this.mnuListCustomers.TabIndex = 1;
             this.mnuListCustomers.Text = "ListCustomers";
             // 
@@ -65,25 +66,6 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(22, 145);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(279, 147);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Location = new System.Drawing.Point(23, 325);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(278, 23);
-            this.btnProfile.TabIndex = 3;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
             // lblSearchLabel
             // 
             this.lblSearchLabel.AutoSize = true;
@@ -96,7 +78,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(216, 94);
+            this.btnSearch.Location = new System.Drawing.Point(229, 94);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 46;
@@ -121,23 +103,42 @@
             this.lblSearch.TabIndex = 44;
             this.lblSearch.Text = "Surname:";
             // 
+            // grdListing
+            // 
+            this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListing.Location = new System.Drawing.Point(22, 156);
+            this.grdListing.Name = "grdListing";
+            this.grdListing.Size = new System.Drawing.Size(752, 150);
+            this.grdListing.TabIndex = 48;
+            this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Location = new System.Drawing.Point(496, 95);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(278, 23);
+            this.btnProfile.TabIndex = 49;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            // 
             // frmCustomerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 411);
+            this.ClientSize = new System.Drawing.Size(799, 411);
+            this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.grdListing);
             this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchBox);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.mnuListCustomers);
             this.Name = "frmCustomerProfile";
             this.Text = "frmCustomerProfile";
             this.Load += new System.EventHandler(this.frmListCustomers_Load);
             this.mnuListCustomers.ResumeLayout(false);
             this.mnuListCustomers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListing)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,11 +149,11 @@
         private System.Windows.Forms.MenuStrip mnuListCustomers;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.DataGridView grdListing;
+        private System.Windows.Forms.Button btnProfile;
     }
 }

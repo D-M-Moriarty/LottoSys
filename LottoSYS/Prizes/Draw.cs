@@ -21,7 +21,7 @@ namespace LottoSYS.Prizes
        private int number5;
        private int number6;
 
-        public static DataSet getDraw()
+        public static DataSet getDraw(String f)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -47,7 +47,7 @@ namespace LottoSYS.Prizes
             return DS;
         }
 
-        public static DataSet getDraw(string surname)
+        public static DataSet getDraw()
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -58,7 +58,7 @@ namespace LottoSYS.Prizes
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Panel WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'Active'";
+            string strSQL = "SELECT * FROM Draw WHERE DrawDate = '15/02/2017 23:08:17'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

@@ -65,7 +65,7 @@ namespace LottoSYS.Prizes
             return DS;
         }
 
-        public static DataSet getTicket(string surname)
+        public static DataSet getTicket(int ticketId)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -76,7 +76,7 @@ namespace LottoSYS.Prizes
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'Active'";
+            string strSQL = "SELECT * FROM Ticket WHERE TicketId = " + ticketId;
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -378,6 +378,68 @@ namespace LottoSYS.Prizes
             MessageBox.Show(str, "Ticket Details");
         }
 
+        public static int[,] generateNumbers(int loop)
+        {
+            int Min = 1;
+            int Max = 47;
+            Random randNum = new Random();
+
+            int[] nums = new int[6];
+            int[,] numsCopy = new int[loop, 6];
+            bool[] alreadyPicked = new bool[47];
+            int num;
+
+            for(int i = 0; i < loop; i++)
+            {
+
+                for (int j = 0; j < 6; j++)
+                {
+                    num = randNum.Next(Min, Max);
+
+                    while (alreadyPicked[num])
+                        num = randNum.Next(Min, Max);
+
+                    alreadyPicked[num] = true;
+
+                    numsCopy[i, j] = num;
+
+                    //insertion sort
+                    if (j == 5)
+                    {
+                        int min;
+                        int temp;
+                        for (int b = 0; b < 6; b++)
+                        {
+                            // Assume first element is min
+                            min = b;
+                            for (int a = (b + 1); a < 6; a++)
+                            {
+                                if (numsCopy[i,a] < numsCopy[i, min])
+                                {
+                                    min = a;
+
+                                }
+                            }
+                            if (min != b)
+                            {   //switching with the temperary viriables
+                                temp = numsCopy[i, b];
+                                numsCopy[i, b] = numsCopy[i, min];
+                                numsCopy[i, min] = temp;
+                            }
+                        }
+
+                    }
+
+                }
+
+                
+            }
+
+            return numsCopy;
+
+
+        }
+
         public static int[] generateNumbers()
         {
 
@@ -393,49 +455,49 @@ namespace LottoSYS.Prizes
             bool[] alreadyPicked = new bool[47];
             int num;
 
-                for (int i = 0; i < nums.Length; i++)
-                {
+            for (int i = 0; i < nums.Length; i++)
+            {
+                num = randNum.Next(Min, Max);
+
+                while (alreadyPicked[num])
                     num = randNum.Next(Min, Max);
 
-                    while (alreadyPicked[num])
-                        num = randNum.Next(Min, Max);
+                alreadyPicked[num] = true;
+                nums[i] = num;
+                numsCopy[i] = num;
 
-                    alreadyPicked[num] = true;
-                    nums[i] = num;
-                    numsCopy[i] = num;
-                
 
-                    //insertion sort
-                    if (i == nums.Length - 1)
+                //insertion sort
+                if (i == nums.Length - 1)
+                {
+                    int min;
+                    int temp;
+                    for (int b = 0; b < numsCopy.Length; b++)
                     {
-                        int min;
-                        int temp;
-                        for (int b = 0; b < numsCopy.Length; b++)
+                        // Assume first element is min
+                        min = b;
+                        for (int a = (b + 1); a < numsCopy.Length; a++)
                         {
-                            // Assume first element is min
-                            min = b;
-                            for (int a = (b + 1); a < numsCopy.Length; a++)
+                            if (numsCopy[a] < numsCopy[min])
                             {
-                                if (numsCopy[a] < numsCopy[min])
-                                {
-                                    min = a;
+                                min = a;
 
-                                }
-                            }
-                            if (min != b)
-                            {   //switching with the temperary viriables
-                                temp = numsCopy[b];
-                                numsCopy[b] = numsCopy[min];
-                                numsCopy[min] = temp;
                             }
                         }
-
+                        if (min != b)
+                        {   //switching with the temperary viriables
+                            temp = numsCopy[b];
+                            numsCopy[b] = numsCopy[min];
+                            numsCopy[min] = temp;
+                        }
                     }
+
+                }
             }
 
             return numsCopy;
 
-                
+
         }
 
 

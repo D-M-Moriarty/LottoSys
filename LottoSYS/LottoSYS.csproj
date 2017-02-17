@@ -85,7 +85,7 @@
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Prizes\Draw.cs" />
-    <Compile Include="Sales\Panel.cs" />
+    <Compile Include="Sales\Panels.cs" />
     <Compile Include="Validation.cs" />
     <Compile Include="Sales\Ticket.cs" />
     <Compile Include="Sales\frmSalesAnalysis.cs">

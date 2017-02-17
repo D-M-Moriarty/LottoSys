@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LottoSYS.Customers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,7 +50,7 @@ namespace LottoSYS
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Get the currently selected item in the ListBox.
+           /* // Get the currently selected item in the ListBox.
             curItem = listBox1.SelectedItem.ToString();
 
             
@@ -96,6 +97,7 @@ namespace LottoSYS
            // {
                // listBox1.SetSelected(index, true);
             //}
+            */
                 
         }
 
@@ -110,9 +112,12 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add("Mary Doe, Killorglin, Co Kerry");
-            listBox1.Items.Add("John Doe, Killarney, Co Kerry");
-            listBox1.Items.Add("Daveid Doe, Glenbeigh, Co Kerry");
+            grdListing.DataSource = Customer.getCustomerProfile(txtSearchBox.Text).Tables["ss"];
+        }
+
+        private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

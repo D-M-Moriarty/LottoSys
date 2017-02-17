@@ -49,6 +49,7 @@ namespace LottoSYS.Prizes
 
             int[] drawNums = Ticket.generateNumbers();
 
+            
             draw = new Draw();
 
             draw.setDate(DateTime.Now.ToString());
@@ -67,56 +68,34 @@ namespace LottoSYS.Prizes
 
 
             string str = "";
-            int Min = 1;
-            int Max = 47;
             string zero = "0";
-            Random randNum = new Random();
-
-            nums = new int[6];
-            bool[] alreadyPicked = new bool[47];
-            int num;
-
-
+           
             //might make each ticket a line instead
 
-
-
+            
             str += "Draw result: ";
 
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < drawNums.Length; i++)
             {
 
                 if (i > 0)
                     str += ",";
 
-                num = randNum.Next(Min, Max);
-
-                while (alreadyPicked[num])
-                    num = randNum.Next(Min, Max);
-
-                alreadyPicked[num] = true;
-                nums[i] = num;
-
-                if (num < 10)
+                if (drawNums[i] < 10)
                 {
-                    zero += nums[i];
+                    zero += drawNums[i];
                     str += " " + zero;
                     zero = "0";
                 }
                 else
                 {
-                    str += " " + nums[i];
+                    str += " " + drawNums[i];
                 }
 
             }
-
-
-            alreadyPicked = new bool[47];
-
+            
             str += "\n\n";
-
-
-
+            
             //MessageBox.Show(str,"Draw Results");
             listBox1.Items.Add(str);
             btnRunDraw.Enabled = false;

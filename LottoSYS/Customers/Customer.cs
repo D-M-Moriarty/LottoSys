@@ -67,6 +67,37 @@ namespace LottoSYS.Customers
             return DS;
         }
 
+        public static DataSet getCustomerProfile(string surname)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT C.Forename, C.Surname, T.purchaseDate, P.* " + 
+                "From Customer C Join Ticket T ON C.CustomerId = T.CUSTOMERID " +
+                "Join Panel P ON P.TICKETID = T.TICKETID " +
+                "WHERE C.Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'Active'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+
+
         public static DataSet getCustomer(string surname)
         {
 
@@ -202,9 +233,29 @@ namespace LottoSYS.Customers
             // Define SQL query to INSERT stock record
             String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle() + "', '" + getSurname() + "', '" + getForename() +
                 "', '" + getDOB() + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
-                getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" + 
-                getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" + 
+                getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" +
+                getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" +
                 getBalance() + "', '" + getStatus() + "', '" + getRegDate() + "')";
+
+
+            // Execute the command
+            OracleCommand cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+
+
+            // Close DB connection
+            myConn.Close();
+        }
+
+        public void de_regCustomer(int customerId)
+        {
+            // Connect to database
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            // Define SQL query to INSERT stock record
+            String strSQl = "INSERT INTO De_Reg VALUES(" + customerId + 
+                ",'" + DateTime.Now.ToString() + "')";
 
 
             // Execute the command

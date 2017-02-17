@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LottoSYS.Sales
 {
-    class Panel
+    class Panels
     {
 
         private int panelId;
@@ -48,7 +48,7 @@ namespace LottoSYS.Sales
             return DS;
         }
 
-        public static DataSet getPanel(string surname)
+        public static DataSet getPanel(int ticketId, int panelId)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -59,7 +59,7 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Panel WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'Active'";
+            string strSQL = "SELECT * FROM Panel WHERE TicketId = " + ticketId + " AND PanelId = " + panelId;
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
