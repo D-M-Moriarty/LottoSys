@@ -1,9 +1,12 @@
-﻿using Oracle.DataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+using System.Data;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace LottoSYS.Prizes
@@ -39,8 +42,7 @@ namespace LottoSYS.Prizes
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Draw PRIZES('" +
-                getDrawDate() + "', " +
+            String strSQl = "INSERT INTO Prizes VALUES('" + getDrawDate() + "', " +
                 getTicketId() + ", " + getPanelId() + ", " +
                 getPrizeAmount() + ")";
 

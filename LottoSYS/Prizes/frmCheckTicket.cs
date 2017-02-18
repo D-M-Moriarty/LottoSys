@@ -66,6 +66,7 @@ namespace LottoSYS.Prize
             Application.Exit();
         }
 
+        // method for checking numbers
         private void checkNumbers(Panels pan, Draw draw)
         {
             //Check Numbers for winners
@@ -92,7 +93,7 @@ namespace LottoSYS.Prize
             panelNums[4] = pan.getNum5();
             panelNums[5] = pan.getNum6();
             
-
+            // Comparing all the panel numbers with each draw number
             for(int i = 0; i < 6; i++)
             {
                 for(int j = 0; j < 6; j++)
@@ -102,6 +103,7 @@ namespace LottoSYS.Prize
                 }
             }
 
+            // Checking the amount of matching numbers
             if(count > 2)
             {
                 if (count == 3)
@@ -135,7 +137,13 @@ namespace LottoSYS.Prize
                                            prizeAmount
                                        );
 
+                // Register the winning ticket and panel
                 prize.regPrize();
+
+                // Set Prize Flag to Yes
+                Ticket.setPrizeFlag(pan.getTicketId());
+                
+
 
             }
             else

@@ -76,7 +76,8 @@ namespace LottoSYS.Prize
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Ticket WHERE TicketId = " + ticketId;
+            string strSQL = "SELECT * FROM Ticket WHERE TicketId = " + ticketId +
+                             "AND PrizeFlag = 'NO'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -116,6 +117,24 @@ namespace LottoSYS.Prize
             conn.Close();
 
             return DS;
+        }
+
+        public static void setPrizeFlag(int TicketId)
+        {
+            // Connect to database
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            // Define SQL query to UPDATE Customer details
+            String strSQl = "UPDATE Ticket SET PrizeFlag = 'YES' WHERE TicketId = " + TicketId;
+
+            // Execute the command
+            OracleCommand cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+
+
+            // Close DB connection
+            myConn.Close();
         }
 
         public static DataSet getTicket(DataSet DS, string description)
@@ -654,6 +673,8 @@ namespace LottoSYS.Prize
 
 
         }
+
+        
 
         public void setTicketId(int ticketId)
         {
