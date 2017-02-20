@@ -62,121 +62,124 @@ namespace LottoSYS.Sales
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
 
-            Ticket ticket = new Ticket();
-            Panels panel;
-
-            int ticketId = Ticket.nextTicketId();
-
-            ticket.setTicketId(Convert.ToInt32(Ticket.nextTicketId().ToString("00000")));
-            ticket.setCustomerId(custId);
-            ticket.setPurchaseDate(DateTime.Now.ToString());
-            ticket.setTime(DateTime.Now.ToString());
-            ticket.setPrice(price * numOfLines);
-            ticket.setPrizeFlag("NO");
-
-            ticket.regTicket();
-
-            string ticketOut = "";
-
-            //Ticket.generateNumbers2(cboTicketQTY);
-
-            
-
-
-
-            panelNums = new int[numOfLines, numbers6];
-
-            panelNums = Ticket.generateNumbers(numOfLines);
-
-            /*for (int i = 0; i < numOfLines; i++)
+            for (int p = 0; p < 1000; p++)
             {
-                
 
-                for (int j = 0; j < numbers6; j++)
+                Ticket ticket = new Ticket();
+                Panels panel;
+
+                int ticketId = Ticket.nextTicketId();
+
+                ticket.setTicketId(Convert.ToInt32(Ticket.nextTicketId().ToString("00000")));
+                ticket.setCustomerId(custId);
+                ticket.setPurchaseDate(DateTime.Now.ToString());
+                ticket.setTime(DateTime.Now.ToString());
+                ticket.setPrice(price * numOfLines);
+                ticket.setPrizeFlag("NO");
+
+                ticket.regTicket();
+
+                string ticketOut = "";
+
+                //Ticket.generateNumbers2(cboTicketQTY);
+
+
+
+
+
+                panelNums = new int[numOfLines, numbers6];
+
+                panelNums = Ticket.generateNumbers(numOfLines);
+
+                /*for (int i = 0; i < numOfLines; i++)
                 {
-                    // schrodinger cat method
-                    panelNums[i, j] = generated[j];
-                    Console.Write(panelNums[i, j] + ",");
-                }
-
-                
-
-            }*/
-
-            /*for (int i = 0; i < numOfLines; i++)
-            {
-                generated = Ticket.generateNumbers();
-
-                Panel panel = new Panel();
-
-                panel.setPanelId(i + 1);
-
-                panel.setTicketId(ticketId);
-
-                panel.setNum1(generated[0]);
-                panel.setNum2(generated[1]);
-                panel.setNum3(generated[2]);
-                panel.setNum4(generated[3]);
-                panel.setNum5(generated[4]);
-                panel.setNum6(generated[5]);
-
-                panel.regPanel();
-                
-
-            }*/
-
-             for(int i = 0; i < numOfLines; i++)
-             {
-                 panel = new Panels();
-
-                 panel.setPanelId(i + 1);
-
-                 panel.setTicketId(ticketId);
-
-                 panel.setNum1(panelNums[i, 0]);
-                 panel.setNum2(panelNums[i, 1]);
-                 panel.setNum3(panelNums[i, 2]);
-                 panel.setNum4(panelNums[i, 3]);
-                 panel.setNum5(panelNums[i, 4]);
-                 panel.setNum6(panelNums[i, 5]);
-
-                 panel.regPanel();
-
-             }
 
 
-
-            string outpo = "";
-
-            for (int i = 0; i < numOfLines; i++)
-            {
-                outpo += "Line no. " + (i + 1) + ": ";
-
-                for (int j = 0; j < numbers6; j++)
-                {
-                    if (panelNums[i, j] < 10)
+                    for (int j = 0; j < numbers6; j++)
                     {
-                        string zero = "0";
-                        zero += panelNums[i, j];
-                        outpo += " " + zero;
-                    }
-                    else
-                    {
-                        outpo += " " + panelNums[i, j];
+                        // schrodinger cat method
+                        panelNums[i, j] = generated[j];
+                        Console.Write(panelNums[i, j] + ",");
                     }
 
-                    Console.Write(panelNums[i, j]);
+
+
+                }*/
+
+                /*for (int i = 0; i < numOfLines; i++)
+                {
+                    generated = Ticket.generateNumbers();
+
+                    Panel panel = new Panel();
+
+                    panel.setPanelId(i + 1);
+
+                    panel.setTicketId(ticketId);
+
+                    panel.setNum1(generated[0]);
+                    panel.setNum2(generated[1]);
+                    panel.setNum3(generated[2]);
+                    panel.setNum4(generated[3]);
+                    panel.setNum5(generated[4]);
+                    panel.setNum6(generated[5]);
+
+                    panel.regPanel();
+
+
+                }*/
+
+                for (int i = 0; i < numOfLines; i++)
+                {
+                    panel = new Panels();
+
+                    panel.setPanelId(i + 1);
+
+                    panel.setTicketId(ticketId);
+
+                    panel.setNum1(panelNums[i, 0]);
+                    panel.setNum2(panelNums[i, 1]);
+                    panel.setNum3(panelNums[i, 2]);
+                    panel.setNum4(panelNums[i, 3]);
+                    panel.setNum5(panelNums[i, 4]);
+                    panel.setNum6(panelNums[i, 5]);
+
+                    panel.regPanel();
+
                 }
 
-                outpo += "\n\n";
 
-                Console.WriteLine(" ");
+
+                string outpo = "";
+
+                for (int i = 0; i < numOfLines; i++)
+                {
+                    outpo += "Line no. " + (i + 1) + ": ";
+
+                    for (int j = 0; j < numbers6; j++)
+                    {
+                        if (panelNums[i, j] < 10)
+                        {
+                            string zero = "0";
+                            zero += panelNums[i, j];
+                            outpo += " " + zero;
+                        }
+                        else
+                        {
+                            outpo += " " + panelNums[i, j];
+                        }
+
+                        Console.Write(panelNums[i, j]);
+                    }
+
+                    outpo += "\n\n";
+
+                    Console.WriteLine(" ");
+                }
+
+                //MessageBox.Show(outpo);
+
+
             }
-        
-            MessageBox.Show(outpo);
-
-
-
 
             txtSurname.ResetText();
             txtForename.ResetText();

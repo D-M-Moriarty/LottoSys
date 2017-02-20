@@ -232,7 +232,7 @@ namespace LottoSYS.Customers
 
             // Define SQL query to INSERT stock record
             String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle() + "', '" + getSurname() + "', '" + getForename() +
-                "', '" + getDOB() + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
+                "', '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
                 getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" +
                 getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" +
                 getBalance() + "', '" + getStatus() + "', '" + getRegDate() + "')";
@@ -275,7 +275,7 @@ namespace LottoSYS.Customers
 
             // Define SQL query to UPDATE Customer details
             String strSQl = "UPDATE Customer SET Title = '" + getTitle() + "', Surname = '" + getSurname() +
-                "', Forename = '" + getForename() + "', DOB = '" + getDOB() + "', PPSN = '" +
+                "', Forename = '" + getForename() + "', DOB = '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', PPSN = '" +
                 getPPSN() + "', AddressLine1 = '" + getAddressLine1() + "', AddressLine2 = '" +
                 getAddressLine2() + "', Town = '" + getTown() + "', County = '" + getCounty() +
                 "', Country = '" + getCountry() + "', Nationality = '" + getNationality() +

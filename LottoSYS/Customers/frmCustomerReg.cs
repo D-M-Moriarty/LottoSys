@@ -53,14 +53,345 @@ namespace LottoSYS
 
         private void frmCustomerReg_Load(object sender, EventArgs e)
         {
-            /*cboTitle.Items.Add("Miss");
+          
+            loadTitles();
+            loadNationalities();
+            loadCounties();
+            loadCountries();
+            loadGenders();
+
+        }
+
+        private void lblSurname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCustomerReg_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+      //  OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
+        {
+
+            //validate data
+            if (Validation.validateCustomer(cboCounty, cboNationality,
+             cboTitle, cboCountry, txtSurname, txtForename,
+             txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+             lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+             lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+             lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
+            {
+                if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
+                    Validation.isValidDOB(dtpDOB.Value))
+                {
+
+                    MessageBox.Show("Data has been registered");
+
+                    Customer customer = new Customer();
+
+                    customer.setCustomerId(Convert.ToInt32(Customer.nextCustomerId().ToString("00000")));
+                    customer.setTitle(cboTitle.Text);
+                    customer.setSurname(txtSurname.Text);
+                    customer.setForename(txtForename.Text);
+                    customer.setDOB(dtpDOB.Text);
+                    customer.setPPSN(txtPPSN.Text);
+                    customer.setAddressLine1(txtAddress1.Text);
+                    customer.setAddressLine2(txtAddress2.Text);
+                    customer.setTown(txtTown.Text);
+                    customer.setCounty(cboCounty.Text);
+                    customer.setCountry(cboCountry.Text);
+                    customer.setNationality(cboNationality.Text);
+                    customer.setGender(cboGender.Text);
+                    customer.setPhone(txtPhone.Text);
+                    customer.setEmail(txtEmail.Text);
+                    customer.setStatus("Active");
+                    customer.setRegDate(DateTime.Now.ToString());
+
+                    customer.regCustomer();
+
+                    txtSurname.Text = "";
+                    txtForename.Text = "";
+                    txtAddress2.Text = "";
+                    txtTown.Text = "";
+                    txtPhone.Text = "";
+                    txtEmail.Text = "";
+                    txtAddress1.Text = "";
+                    cboCounty.Text = "";
+                    cboCountry.Text = "";
+                    txtPPSN.Text = "";
+                    cboCountry.SelectedIndex = -1;
+                    cboCounty.SelectedIndex = -1;
+                    cboGender.SelectedIndex = -1;
+                    cboNationality.SelectedIndex = -1;
+                    cboTitle.SelectedIndex = -1;
+
+
+                }
+                else
+                {
+                    string error = "";
+
+                    if (!Validation.isValidName(txtSurname.ToString()))
+                        error += "The surname is invalid\n\n";
+                    else
+                        lblSurname.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidName(txtForename.ToString()))
+                        error += "The forename is invalid\n\n";
+                    else
+                        lblForename.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidDOB(dtpDOB.Value))
+                        error += "The customer is under 18\n\n";
+
+                    Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
+
+
+                    MessageBox.Show(error);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Please fill out all the required highlighted fields");
+
+                Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
+            }
+
+
+        }
+
+        private void loadTitles()
+        {
+            cboTitle.Items.Add("Miss");
             cboTitle.Items.Add("Ms");
             cboTitle.Items.Add("Mx");
             cboTitle.Items.Add("Mrs");
             cboTitle.Items.Add("Mr");
-            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList; */
-            loadTitles();
+            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
 
+        private void loadNationalities()
+        {
+            cboNationality.Items.Add("Afghan");
+            cboNationality.Items.Add("Albanian");
+            cboNationality.Items.Add("Algerian");
+            cboNationality.Items.Add("American");
+            cboNationality.Items.Add("Andorran");
+            cboNationality.Items.Add("Angolan");
+            cboNationality.Items.Add("Antiguans");
+            cboNationality.Items.Add("Argentinean");
+            cboNationality.Items.Add("Armenian");
+            cboNationality.Items.Add("Australian");
+            cboNationality.Items.Add("Austrian");
+            cboNationality.Items.Add("Azerbaijani");
+            cboNationality.Items.Add("Bahamian");
+            cboNationality.Items.Add("Bahraini");
+            cboNationality.Items.Add("Bangladeshi");
+            cboNationality.Items.Add("Barbadian");
+            cboNationality.Items.Add("Barbudans");
+            cboNationality.Items.Add("Batswana");
+            cboNationality.Items.Add("Belarusian");
+            cboNationality.Items.Add("Belgian");
+            cboNationality.Items.Add("Belizean");
+            cboNationality.Items.Add("Beninese");
+            cboNationality.Items.Add("Bhutanese");
+            cboNationality.Items.Add("Bolivian");
+            cboNationality.Items.Add("Bosnian");
+            cboNationality.Items.Add("Brazilian");
+            cboNationality.Items.Add("British");
+            cboNationality.Items.Add("Bruneian");
+            cboNationality.Items.Add("Bulgarian");
+            cboNationality.Items.Add("Burkinabe");
+            cboNationality.Items.Add("Burmese");
+            cboNationality.Items.Add("Burundian");
+            cboNationality.Items.Add("Cambodian");
+            cboNationality.Items.Add("Cameroonian");
+            cboNationality.Items.Add("Canadian");
+            cboNationality.Items.Add("Cape Verdean");
+            cboNationality.Items.Add("Central African");
+            cboNationality.Items.Add("Chadian");
+            cboNationality.Items.Add("Chilean");
+            cboNationality.Items.Add("Chinese");
+            cboNationality.Items.Add("Colombian");
+            cboNationality.Items.Add("Comoran");
+            cboNationality.Items.Add("Congolese");
+            cboNationality.Items.Add("Congolese");
+            cboNationality.Items.Add("Costa Rican");
+            cboNationality.Items.Add("Croatian");
+            cboNationality.Items.Add("Cuban");
+            cboNationality.Items.Add("Cypriot");
+            cboNationality.Items.Add("Czech");
+            cboNationality.Items.Add("Danish");
+            cboNationality.Items.Add("Djibouti");
+            cboNationality.Items.Add("Dominican");
+            cboNationality.Items.Add("Dominican");
+            cboNationality.Items.Add("Dutch");
+            cboNationality.Items.Add("Dutchman");
+            cboNationality.Items.Add("Dutchwoman");
+            cboNationality.Items.Add("East Timorese");
+            cboNationality.Items.Add("Ecuadorean");
+            cboNationality.Items.Add("Egyptian");
+            cboNationality.Items.Add("Emirian");
+            cboNationality.Items.Add("Equatorial Guinean");
+            cboNationality.Items.Add("Eritrean");
+            cboNationality.Items.Add("Estonian");
+            cboNationality.Items.Add("Ethiopian");
+            cboNationality.Items.Add("Fijian");
+            cboNationality.Items.Add("Filipino");
+            cboNationality.Items.Add("Finnish");
+            cboNationality.Items.Add("French");
+            cboNationality.Items.Add("Gabonese");
+            cboNationality.Items.Add("Gambian");
+            cboNationality.Items.Add("Georgian");
+            cboNationality.Items.Add("German");
+            cboNationality.Items.Add("Ghanaian");
+            cboNationality.Items.Add("Greek");
+            cboNationality.Items.Add("Grenadian");
+            cboNationality.Items.Add("Guatemalan");
+            cboNationality.Items.Add("Guinea - Bissauan");
+            cboNationality.Items.Add("Guinean");
+            cboNationality.Items.Add("Guyanese");
+            cboNationality.Items.Add("Haitian");
+            cboNationality.Items.Add("Herzegovinian");
+            cboNationality.Items.Add("Honduran");
+            cboNationality.Items.Add("Hungarian");
+            cboNationality.Items.Add("I - Kiribati");
+            cboNationality.Items.Add("Icelander");
+            cboNationality.Items.Add("Indian");
+            cboNationality.Items.Add("Indonesian");
+            cboNationality.Items.Add("Iranian");
+            cboNationality.Items.Add("Iraqi");
+            cboNationality.Items.Add("Irish");
+            cboNationality.Items.Add("Irish");
+            cboNationality.Items.Add("Israeli");
+            cboNationality.Items.Add("Italian");
+            cboNationality.Items.Add("Ivorian");
+            cboNationality.Items.Add("Jamaican");
+            cboNationality.Items.Add("Japanese");
+            cboNationality.Items.Add("Jordanian");
+            cboNationality.Items.Add("Kazakhstani");
+            cboNationality.Items.Add("Kenyan");
+            cboNationality.Items.Add("Kittian and Nevisian");
+            cboNationality.Items.Add("Kuwaiti");
+            cboNationality.Items.Add("Kyrgyz");
+            cboNationality.Items.Add("Laotian");
+            cboNationality.Items.Add("Latvian");
+            cboNationality.Items.Add("Lebanese");
+            cboNationality.Items.Add("Liberian");
+            cboNationality.Items.Add("Libyan");
+            cboNationality.Items.Add("Liechtensteiner");
+            cboNationality.Items.Add("Lithuanian  ");
+            cboNationality.Items.Add("Luxembourger");
+            cboNationality.Items.Add("Macedonian");
+            cboNationality.Items.Add("Malagasy");
+            cboNationality.Items.Add("Malawian");
+            cboNationality.Items.Add("Malaysian");
+            cboNationality.Items.Add("Maldivan");
+            cboNationality.Items.Add("Malian");
+            cboNationality.Items.Add("Maltese");
+            cboNationality.Items.Add("Marshallese");
+            cboNationality.Items.Add("Mauritanian");
+            cboNationality.Items.Add("Mauritian");
+            cboNationality.Items.Add("Mexican");
+            cboNationality.Items.Add("Micronesian");
+            cboNationality.Items.Add("Moldovan");
+            cboNationality.Items.Add("Monacan");
+            cboNationality.Items.Add("Mongolian");
+            cboNationality.Items.Add("Moroccan");
+            cboNationality.Items.Add("Mosotho");
+            cboNationality.Items.Add("Motswana");
+            cboNationality.Items.Add("Mozambican");
+            cboNationality.Items.Add("Namibian");
+            cboNationality.Items.Add("Nauruan");
+            cboNationality.Items.Add("Nepalese");
+            cboNationality.Items.Add("Netherlander");
+            cboNationality.Items.Add("New Zealander");
+            cboNationality.Items.Add("Ni - Vanuatu");
+            cboNationality.Items.Add("Nicaraguan");
+            cboNationality.Items.Add("Nigerian");
+            cboNationality.Items.Add("Nigerien");
+            cboNationality.Items.Add("North Korean");
+            cboNationality.Items.Add("Northern Irish");
+            cboNationality.Items.Add("Norwegian");
+            cboNationality.Items.Add("Omani");
+            cboNationality.Items.Add("Pakistani");
+            cboNationality.Items.Add("Palauan");
+            cboNationality.Items.Add("Panamanian");
+            cboNationality.Items.Add("Papua New Guinean  ");
+            cboNationality.Items.Add("Paraguayan");
+            cboNationality.Items.Add("Peruvian");
+            cboNationality.Items.Add("Polish");
+            cboNationality.Items.Add("Portuguese");
+            cboNationality.Items.Add("Qatari");
+            cboNationality.Items.Add("Romanian");
+            cboNationality.Items.Add("Russian");
+            cboNationality.Items.Add("Rwandan");
+            cboNationality.Items.Add("Saint Lucian");
+            cboNationality.Items.Add("Salvadoran");
+            cboNationality.Items.Add("Samoan");
+            cboNationality.Items.Add("San Marinese");
+            cboNationality.Items.Add("Sao Tomean");
+            cboNationality.Items.Add("Saudi");
+            cboNationality.Items.Add("Scottish");
+            cboNationality.Items.Add("Senegalese");
+            cboNationality.Items.Add("Serbian");
+            cboNationality.Items.Add("Seychellois");
+            cboNationality.Items.Add("Sierra Leonean");
+            cboNationality.Items.Add("Singaporean");
+            cboNationality.Items.Add("Slovakian");
+            cboNationality.Items.Add("Slovenian");
+            cboNationality.Items.Add("Solomon Islander");
+            cboNationality.Items.Add("Somali");
+            cboNationality.Items.Add("South African");
+            cboNationality.Items.Add("South Korean");
+            cboNationality.Items.Add("Spanish");
+            cboNationality.Items.Add("Sri Lankan");
+            cboNationality.Items.Add("Sudanese");
+            cboNationality.Items.Add("Surinamer");
+            cboNationality.Items.Add("Swazi");
+            cboNationality.Items.Add("Swedish");
+            cboNationality.Items.Add("Swiss");
+            cboNationality.Items.Add("Syrian");
+            cboNationality.Items.Add("Taiwanese");
+            cboNationality.Items.Add("Tajik");
+            cboNationality.Items.Add("Tanzanian");
+            cboNationality.Items.Add("Thai");
+            cboNationality.Items.Add("Togolese");
+            cboNationality.Items.Add("Tongan");
+            cboNationality.Items.Add("Trinidadian or Tobagonian  ");
+            cboNationality.Items.Add("Tunisian");
+            cboNationality.Items.Add("Turkish");
+            cboNationality.Items.Add("Tuvaluan");
+            cboNationality.Items.Add("Ugandan");
+            cboNationality.Items.Add("Ukrainian");
+            cboNationality.Items.Add("Uruguayan");
+            cboNationality.Items.Add("Uzbekistani");
+            cboNationality.Items.Add("Venezuelan");
+            cboNationality.Items.Add("Vietnamese");
+            cboNationality.Items.Add("Welsh");
+            cboNationality.Items.Add("Yemenite");
+            cboNationality.Items.Add("Zambian");
+            cboNationality.Items.Add("Zimbabwean");
+            cboNationality.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void loadCounties()
+        {
             cboCounty.Items.Add("Antrim");
             cboCounty.Items.Add("Armagh");
             cboCounty.Items.Add("Carlow");
@@ -95,7 +426,10 @@ namespace LottoSYS
             cboCounty.Items.Add("Wexford");
             cboCounty.Items.Add("Wicklow");
             cboCounty.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
 
+        private void loadCountries()
+        {
             cboCountry.Items.Add("Afghanistan");
             cboCountry.Items.Add("Albania");
             cboCountry.Items.Add("Algeria");
@@ -300,342 +634,14 @@ namespace LottoSYS
             cboCountry.Items.Add("Zambia");
             cboCountry.Items.Add("Zimbabwe");
             cboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
 
-
-            cboNationality.Items.Add("Afghan");
-            cboNationality.Items.Add("Albanian");
-            cboNationality.Items.Add("Algerian");
-            cboNationality.Items.Add("American");
-            cboNationality.Items.Add("Andorran");
-            cboNationality.Items.Add("Angolan");
-            cboNationality.Items.Add("Antiguans");
-            cboNationality.Items.Add("Argentinean");
-            cboNationality.Items.Add("Armenian");
-            cboNationality.Items.Add("Australian");
-            cboNationality.Items.Add("Austrian");
-            cboNationality.Items.Add("Azerbaijani");
-            cboNationality.Items.Add("Bahamian");
-            cboNationality.Items.Add("Bahraini");
-            cboNationality.Items.Add("Bangladeshi");
-            cboNationality.Items.Add("Barbadian");
-            cboNationality.Items.Add("Barbudans");
-            cboNationality.Items.Add("Batswana");
-            cboNationality.Items.Add("Belarusian");
-            cboNationality.Items.Add("Belgian");
-            cboNationality.Items.Add("Belizean");
-            cboNationality.Items.Add("Beninese");
-            cboNationality.Items.Add("Bhutanese");
-            cboNationality.Items.Add("Bolivian");
-            cboNationality.Items.Add("Bosnian");
-            cboNationality.Items.Add("Brazilian");
-            cboNationality.Items.Add("British");
-            cboNationality.Items.Add("Bruneian");
-            cboNationality.Items.Add("Bulgarian");
-            cboNationality.Items.Add("Burkinabe");
-            cboNationality.Items.Add("Burmese");
-            cboNationality.Items.Add("Burundian");
-            cboNationality.Items.Add("Cambodian");
-            cboNationality.Items.Add("Cameroonian");
-            cboNationality.Items.Add("Canadian");
-            cboNationality.Items.Add("Cape Verdean");
-            cboNationality.Items.Add("Central African");
-            cboNationality.Items.Add("Chadian");
-            cboNationality.Items.Add("Chilean");
-            cboNationality.Items.Add("Chinese");
-            cboNationality.Items.Add("Colombian");
-            cboNationality.Items.Add("Comoran");
-            cboNationality.Items.Add("Congolese");
-            cboNationality.Items.Add("Congolese");
-            cboNationality.Items.Add("Costa Rican");
-            cboNationality.Items.Add("Croatian");
-            cboNationality.Items.Add("Cuban");
-            cboNationality.Items.Add("Cypriot");
-            cboNationality.Items.Add("Czech");
-            cboNationality.Items.Add("Danish");
-            cboNationality.Items.Add("Djibouti");
-            cboNationality.Items.Add("Dominican");
-            cboNationality.Items.Add("Dominican");
-            cboNationality.Items.Add("Dutch");
-            cboNationality.Items.Add("Dutchman");
-            cboNationality.Items.Add("Dutchwoman");
-            cboNationality.Items.Add("East Timorese");
-            cboNationality.Items.Add("Ecuadorean");
-            cboNationality.Items.Add("Egyptian");
-            cboNationality.Items.Add("Emirian");
-            cboNationality.Items.Add("Equatorial Guinean");
-            cboNationality.Items.Add("Eritrean");
-            cboNationality.Items.Add("Estonian");
-            cboNationality.Items.Add("Ethiopian");
-            cboNationality.Items.Add("Fijian");
-            cboNationality.Items.Add("Filipino");
-            cboNationality.Items.Add("Finnish");
-            cboNationality.Items.Add("French");
-            cboNationality.Items.Add("Gabonese");
-            cboNationality.Items.Add("Gambian");
-            cboNationality.Items.Add("Georgian");
-            cboNationality.Items.Add("German");
-            cboNationality.Items.Add("Ghanaian");
-            cboNationality.Items.Add("Greek");
-            cboNationality.Items.Add("Grenadian");
-            cboNationality.Items.Add("Guatemalan");
-            cboNationality.Items.Add("Guinea - Bissauan");
-            cboNationality.Items.Add("Guinean");
-            cboNationality.Items.Add("Guyanese");
-            cboNationality.Items.Add("Haitian");
-            cboNationality.Items.Add("Herzegovinian");
-            cboNationality.Items.Add("Honduran");
-            cboNationality.Items.Add("Hungarian");
-            cboNationality.Items.Add("I - Kiribati");
-            cboNationality.Items.Add("Icelander");
-            cboNationality.Items.Add("Indian");
-            cboNationality.Items.Add("Indonesian");
-            cboNationality.Items.Add("Iranian");
-            cboNationality.Items.Add("Iraqi");
-            cboNationality.Items.Add("Irish");
-            cboNationality.Items.Add("Irish");
-            cboNationality.Items.Add("Israeli");
-            cboNationality.Items.Add("Italian");
-            cboNationality.Items.Add("Ivorian");
-            cboNationality.Items.Add("Jamaican");
-            cboNationality.Items.Add("Japanese");
-            cboNationality.Items.Add("Jordanian");
-            cboNationality.Items.Add("Kazakhstani");
-            cboNationality.Items.Add("Kenyan");
-            cboNationality.Items.Add("Kittian and Nevisian");
-            cboNationality.Items.Add("Kuwaiti");
-            cboNationality.Items.Add("Kyrgyz");
-            cboNationality.Items.Add("Laotian");
-            cboNationality.Items.Add("Latvian");
-            cboNationality.Items.Add("Lebanese");
-            cboNationality.Items.Add("Liberian");
-            cboNationality.Items.Add("Libyan");
-            cboNationality.Items.Add("Liechtensteiner");
-            cboNationality.Items.Add("Lithuanian  ");
-            cboNationality.Items.Add("Luxembourger");
-            cboNationality.Items.Add("Macedonian");
-            cboNationality.Items.Add("Malagasy");
-            cboNationality.Items.Add("Malawian");
-            cboNationality.Items.Add("Malaysian");
-            cboNationality.Items.Add("Maldivan");
-            cboNationality.Items.Add("Malian");
-            cboNationality.Items.Add("Maltese");
-            cboNationality.Items.Add("Marshallese");
-            cboNationality.Items.Add("Mauritanian");
-            cboNationality.Items.Add("Mauritian");
-            cboNationality.Items.Add("Mexican");
-            cboNationality.Items.Add("Micronesian");
-            cboNationality.Items.Add("Moldovan");
-            cboNationality.Items.Add("Monacan");
-            cboNationality.Items.Add("Mongolian");
-            cboNationality.Items.Add("Moroccan");
-            cboNationality.Items.Add("Mosotho");
-            cboNationality.Items.Add("Motswana");
-            cboNationality.Items.Add("Mozambican");
-            cboNationality.Items.Add("Namibian");
-            cboNationality.Items.Add("Nauruan");
-            cboNationality.Items.Add("Nepalese");
-            cboNationality.Items.Add("Netherlander");
-            cboNationality.Items.Add("New Zealander");
-            cboNationality.Items.Add("Ni - Vanuatu");
-            cboNationality.Items.Add("Nicaraguan");
-            cboNationality.Items.Add("Nigerian");
-            cboNationality.Items.Add("Nigerien");
-            cboNationality.Items.Add("North Korean");
-            cboNationality.Items.Add("Northern Irish");
-            cboNationality.Items.Add("Norwegian");
-            cboNationality.Items.Add("Omani");
-            cboNationality.Items.Add("Pakistani");
-            cboNationality.Items.Add("Palauan");
-            cboNationality.Items.Add("Panamanian");
-            cboNationality.Items.Add("Papua New Guinean  ");
-            cboNationality.Items.Add("Paraguayan");
-            cboNationality.Items.Add("Peruvian");
-            cboNationality.Items.Add("Polish");
-            cboNationality.Items.Add("Portuguese");
-            cboNationality.Items.Add("Qatari");
-            cboNationality.Items.Add("Romanian");
-            cboNationality.Items.Add("Russian");
-            cboNationality.Items.Add("Rwandan");
-            cboNationality.Items.Add("Saint Lucian");
-            cboNationality.Items.Add("Salvadoran");
-            cboNationality.Items.Add("Samoan");
-            cboNationality.Items.Add("San Marinese");
-            cboNationality.Items.Add("Sao Tomean");
-            cboNationality.Items.Add("Saudi");
-            cboNationality.Items.Add("Scottish");
-            cboNationality.Items.Add("Senegalese");
-            cboNationality.Items.Add("Serbian");
-            cboNationality.Items.Add("Seychellois");
-            cboNationality.Items.Add("Sierra Leonean");
-            cboNationality.Items.Add("Singaporean");
-            cboNationality.Items.Add("Slovakian");
-            cboNationality.Items.Add("Slovenian");
-            cboNationality.Items.Add("Solomon Islander");
-            cboNationality.Items.Add("Somali");
-            cboNationality.Items.Add("South African");
-            cboNationality.Items.Add("South Korean");
-            cboNationality.Items.Add("Spanish");
-            cboNationality.Items.Add("Sri Lankan");
-            cboNationality.Items.Add("Sudanese");
-            cboNationality.Items.Add("Surinamer");
-            cboNationality.Items.Add("Swazi");
-            cboNationality.Items.Add("Swedish");
-            cboNationality.Items.Add("Swiss");
-            cboNationality.Items.Add("Syrian");
-            cboNationality.Items.Add("Taiwanese");
-            cboNationality.Items.Add("Tajik");
-            cboNationality.Items.Add("Tanzanian");
-            cboNationality.Items.Add("Thai");
-            cboNationality.Items.Add("Togolese");
-            cboNationality.Items.Add("Tongan");
-            cboNationality.Items.Add("Trinidadian or Tobagonian  ");
-            cboNationality.Items.Add("Tunisian");
-            cboNationality.Items.Add("Turkish");
-            cboNationality.Items.Add("Tuvaluan");
-            cboNationality.Items.Add("Ugandan");
-            cboNationality.Items.Add("Ukrainian");
-            cboNationality.Items.Add("Uruguayan");
-            cboNationality.Items.Add("Uzbekistani");
-            cboNationality.Items.Add("Venezuelan");
-            cboNationality.Items.Add("Vietnamese");
-            cboNationality.Items.Add("Welsh");
-            cboNationality.Items.Add("Yemenite");
-            cboNationality.Items.Add("Zambian");
-            cboNationality.Items.Add("Zimbabwean");
-            cboNationality.DropDownStyle = ComboBoxStyle.DropDownList;
-
-
+        private void loadGenders()
+        {
             cboGender.Items.Add("Male");
             cboGender.Items.Add("Female");
             cboGender.Items.Add("Other");
             cboGender.DropDownStyle = ComboBoxStyle.DropDownList;
-
-
-
         }
-
-        private void lblSurname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmCustomerReg_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-      //  OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-        private void btnSubmit_Click_1(object sender, EventArgs e)
-        {
-
-            //validate data
-            if (Validation.validateCustomer(cboCounty, cboNationality,
-             cboTitle, cboCountry, txtSurname, txtForename,
-             txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-             lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-             lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-             lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
-            {
-                if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
-                    Validation.isValidDOB(dtpDOB.Value))
-                {
-
-                    MessageBox.Show("Data has been registered");
-
-                    Customer customer = new Customer();
-
-                    customer.setCustomerId(Convert.ToInt32(Customer.nextCustomerId().ToString("00000")));
-                    customer.setTitle(cboTitle.Text);
-                    customer.setSurname(txtSurname.Text);
-                    customer.setForename(txtForename.Text);
-                    customer.setDOB(dtpDOB.Text);
-                    customer.setPPSN(txtPPSN.Text);
-                    customer.setAddressLine1(txtAddress1.Text);
-                    customer.setAddressLine2(txtAddress2.Text);
-                    customer.setTown(txtTown.Text);
-                    customer.setCounty(cboCounty.Text);
-                    customer.setCountry(cboCountry.Text);
-                    customer.setNationality(cboNationality.Text);
-                    customer.setGender(cboGender.Text);
-                    customer.setPhone(txtPhone.Text);
-                    customer.setEmail(txtEmail.Text);
-                    customer.setStatus("Active");
-                    customer.setRegDate(DateTime.Now.ToString());
-
-                    customer.regCustomer();
-
-                    txtSurname.Text = "";
-                    txtForename.Text = "";
-                    txtAddress2.Text = "";
-                    txtTown.Text = "";
-                    txtPhone.Text = "";
-                    txtEmail.Text = "";
-                    txtAddress1.Text = "";
-                    cboCounty.Text = "";
-                    cboCountry.Text = "";
-                    txtPPSN.Text = "";
-                    cboCountry.SelectedIndex = -1;
-                    cboCounty.SelectedIndex = -1;
-                    cboGender.SelectedIndex = -1;
-                    cboNationality.SelectedIndex = -1;
-                    cboTitle.SelectedIndex = -1;
-
-
-                }
-                else
-                {
-                    string error = "";
-
-                    if (!Validation.isValidName(txtSurname.ToString()))
-                        error += "The surname is invalid\n\n";
-                    else
-                        lblSurname.ForeColor = System.Drawing.Color.Black;
-
-                    if (!Validation.isValidName(txtForename.ToString()))
-                        error += "The forename is invalid\n\n";
-                    else
-                        lblForename.ForeColor = System.Drawing.Color.Black;
-
-                    if (!Validation.isValidDOB(dtpDOB.Value))
-                        error += "The customer is under 18\n\n";
-
-                    Validation.textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB, txtEmail, lblEmail);
-
-
-                    MessageBox.Show(error);
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("Please fill out all the required highlighted fields");
-
-                Validation.textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB, txtEmail, lblEmail);
-            }
-
-
-        }
-
-        private void loadTitles()
-        {
-            cboTitle.Items.Add("Miss");
-            cboTitle.Items.Add("Ms");
-            cboTitle.Items.Add("Mx");
-            cboTitle.Items.Add("Mrs");
-            cboTitle.Items.Add("Mr");
-            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
     }
 }

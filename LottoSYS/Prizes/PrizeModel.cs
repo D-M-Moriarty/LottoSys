@@ -42,7 +42,7 @@ namespace LottoSYS.Prizes
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Prizes VALUES('" + getDrawDate() + "', " +
+            String strSQl = "INSERT INTO Prizes VALUES('" + DateTime.Now.ToString("dd-MMM-yy") + "', " +
                 getTicketId() + ", " + getPanelId() + ", " +
                 getPrizeAmount() + ")";
 

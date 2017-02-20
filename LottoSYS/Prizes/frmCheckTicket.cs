@@ -98,7 +98,7 @@ namespace LottoSYS.Prize
             {
                 for(int j = 0; j < 6; j++)
                 {
-                    if (n1[i] == n2[j])
+                    if (drawNums[i] == panelNums[j])
                         count++;
                 }
             }
@@ -148,9 +148,8 @@ namespace LottoSYS.Prize
             }
             else
             {
-                MessageBox.Show("There are no winners this week");
+                Console.WriteLine("There are no winners this week");
             }
-
             
 
         }

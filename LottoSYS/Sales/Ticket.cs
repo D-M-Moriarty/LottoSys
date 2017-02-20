@@ -218,7 +218,7 @@ namespace LottoSYS.Prize
 
             // Define SQL query to INSERT stock record
             String strSQl = "INSERT INTO Ticket VALUES(" + getTicketId() + ", " + getCustomerId() +
-                ", '" + getPurchaseDate() + "', '" + getTime() + "', " + getPrice() +
+                ", '" + DateTime.Now.ToString("dd-MMM-yy") + "', '" + getTime() + "', " + getPrice() +
                 ", '" + getPrizeFlag() + "')";
 
 
