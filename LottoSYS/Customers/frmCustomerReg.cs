@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using LottoSYS.Sales;
 using LottoSYS.Customers;
 using System.Data;
-using Oracle.DataAccess.Client;
 
 namespace LottoSYS
 {

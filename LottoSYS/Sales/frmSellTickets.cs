@@ -61,9 +61,7 @@ namespace LottoSYS.Sales
 
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
-
-            for (int p = 0; p < 1000; p++)
-            {
+            
 
                 Ticket ticket = new Ticket();
                 Panels panel;
@@ -179,7 +177,7 @@ namespace LottoSYS.Sales
                 //MessageBox.Show(outpo);
 
 
-            }
+            
 
             txtSurname.ResetText();
             txtForename.ResetText();

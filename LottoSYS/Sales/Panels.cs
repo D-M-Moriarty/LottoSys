@@ -54,7 +54,7 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Panel";
+            string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PrizeFlag = 'NO'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

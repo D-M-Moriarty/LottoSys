@@ -27,7 +27,7 @@ namespace LottoSYS.Prize
 
         private void frmPayPrize_Load(object sender, EventArgs e)
         {
-            var ticket = Ticket.getTicket();
+            var ticket = Ticket.getTickets();
 
             var panel = Panels.getPanels();
 
@@ -36,6 +36,7 @@ namespace LottoSYS.Prize
             //Populate panels
             var panels = panel.DataTableToList<Panels>();
             var draws = draw.DataTableToList<Draw>();
+            var tickets = ticket.DataTableToList<Ticket>();
 
             //Get Draw numbers
             int[] drawNums = new int[6];
@@ -76,8 +77,8 @@ namespace LottoSYS.Prize
             int[] drawNums = new int[6];
             int[] panelNums = new int[6];
 
-            int[] n1 = new int[] { 2, 4, 6, 8 , 7, 1 };
-            int[] n2 = new int[] { 2, 4, 6, 8 , 7, 9 };
+            int[] n1 = new int[] { 2, 4, 6, 8, 7, 1 };
+            int[] n2 = new int[] { 2, 4, 6, 8, 7, 9 };
 
             drawNums[0] = draw.getNumber1();
             drawNums[1] = draw.getNumber2();
@@ -92,11 +93,11 @@ namespace LottoSYS.Prize
             panelNums[3] = pan.getNum4();
             panelNums[4] = pan.getNum5();
             panelNums[5] = pan.getNum6();
-            
+
             // Comparing all the panel numbers with each draw number
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
-                for(int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++)
                 {
                     if (drawNums[i] == panelNums[j])
                         count++;
@@ -104,31 +105,31 @@ namespace LottoSYS.Prize
             }
 
             // Checking the amount of matching numbers
-            if(count > 2)
+            if (count > 2)
             {
                 if (count == 3)
                 {
                     prizeAmount = 50000;
 
-                    MessageBox.Show("you won " + prizeAmount.ToString());
+                    //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 4)
                 {
                     prizeAmount = 100000;
 
-                    MessageBox.Show("you won " + prizeAmount.ToString());
+                    //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 5)
                 {
                     prizeAmount = 500000;
 
-                    MessageBox.Show("you won " + prizeAmount.ToString());
+                    //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 6)
                 {
                     prizeAmount = 1000000;
 
-                    MessageBox.Show("you won " + prizeAmount.ToString());
+                    //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
 
                 prize = new PrizeModel(DateTime.Now.ToString(),
@@ -137,12 +138,14 @@ namespace LottoSYS.Prize
                                            prizeAmount
                                        );
 
+                // Set Prize Flag to Yes    
+                Ticket.setPrizeFlag(pan.getTicketId());
+
                 // Register the winning ticket and panel
                 prize.regPrize();
 
-                // Set Prize Flag to Yes
-                Ticket.setPrizeFlag(pan.getTicketId());
-                
+
+
 
 
             }
@@ -150,7 +153,8 @@ namespace LottoSYS.Prize
             {
                 Console.WriteLine("There are no winners this week");
             }
-            
+
+
 
         }
     }

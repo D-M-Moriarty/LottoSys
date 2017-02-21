@@ -49,7 +49,15 @@ namespace LottoSYS.Prizes
 
             // Execute the command
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.ToString());
+            }
+
 
 
             // Close DB connection

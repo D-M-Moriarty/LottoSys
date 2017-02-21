@@ -20,7 +20,7 @@ namespace LottoSYS.Prize
         private double price;
         private string prizeFlag;
 
-        
+
 
 
 
@@ -50,7 +50,7 @@ namespace LottoSYS.Prize
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Ticket";
+            string strSQL = "SELECT * FROM Ticket WHERE PrizeFlag = 'NO'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -63,6 +63,32 @@ namespace LottoSYS.Prize
             conn.Close();
 
             return DS;
+        }
+
+        public static DataTable getTickets()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataTable DT = new DataTable();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Ticket WHERE PrizeFlag = 'NO'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            var dr = cmd.ExecuteReader();
+
+            DT.Load(dr);
+
+            //close database
+            conn.Close();
+
+            return DT;
         }
 
         public static DataSet getTicket(int ticketId)
@@ -408,7 +434,7 @@ namespace LottoSYS.Prize
             bool[] alreadyPicked = new bool[47];
             int num;
 
-            for(int i = 0; i < loop; i++)
+            for (int i = 0; i < loop; i++)
             {
 
                 for (int j = 0; j < 6; j++)
@@ -433,7 +459,7 @@ namespace LottoSYS.Prize
                             min = b;
                             for (int a = (b + 1); a < 6; a++)
                             {
-                                if (numsCopy[i,a] < numsCopy[i, min])
+                                if (numsCopy[i, a] < numsCopy[i, min])
                                 {
                                     min = a;
 
@@ -451,7 +477,7 @@ namespace LottoSYS.Prize
 
                 }
 
-                
+
             }
 
             return numsCopy;
@@ -674,7 +700,7 @@ namespace LottoSYS.Prize
 
         }
 
-        
+
 
         public void setTicketId(int ticketId)
         {
