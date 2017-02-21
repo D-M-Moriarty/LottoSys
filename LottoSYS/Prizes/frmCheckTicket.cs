@@ -157,5 +157,10 @@ namespace LottoSYS.Prize
 
 
         }
+
+        private void btnCheckTickets_Click(object sender, EventArgs e)
+        {
+            grdWinningTickets.DataSource = PrizeModel.getPrize().Tables["ss"];
+        }
     }
 }

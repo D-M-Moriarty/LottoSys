@@ -32,18 +32,20 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.grpAnalysis = new System.Windows.Forms.GroupBox();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.mnuRevenueReport = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.lblStart = new System.Windows.Forms.Label();
-            this.lblEndDate = new System.Windows.Forms.Label();
-            this.lstAnalysis = new System.Windows.Forms.ListBox();
+            this.grdSales = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.grpAnalysis.SuspendLayout();
             this.mnuRevenueReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSales)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -77,18 +79,55 @@
             // 
             // grpAnalysis
             // 
-            this.grpAnalysis.Controls.Add(this.lstAnalysis);
+            this.grpAnalysis.Controls.Add(this.btnSearch);
+            this.grpAnalysis.Controls.Add(this.grdSales);
             this.grpAnalysis.Controls.Add(this.lblEndDate);
             this.grpAnalysis.Controls.Add(this.lblStart);
             this.grpAnalysis.Controls.Add(this.dtpEndDate);
             this.grpAnalysis.Controls.Add(this.dtpStartDate);
-            this.grpAnalysis.Location = new System.Drawing.Point(50, 172);
+            this.grpAnalysis.Location = new System.Drawing.Point(50, 116);
             this.grpAnalysis.Name = "grpAnalysis";
-            this.grpAnalysis.Size = new System.Drawing.Size(579, 253);
+            this.grpAnalysis.Size = new System.Drawing.Size(579, 307);
             this.grpAnalysis.TabIndex = 8;
             this.grpAnalysis.TabStop = false;
             this.grpAnalysis.Text = "SalesAnalysis";
             this.grpAnalysis.Enter += new System.EventHandler(this.grpAnalysis_Enter);
+            // 
+            // lblEndDate
+            // 
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Location = new System.Drawing.Point(244, 41);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(61, 16);
+            this.lblEndDate.TabIndex = 3;
+            this.lblEndDate.Text = "EndDate";
+            this.lblEndDate.Click += new System.EventHandler(this.lblEndDate_Click);
+            // 
+            // lblStart
+            // 
+            this.lblStart.AutoSize = true;
+            this.lblStart.Location = new System.Drawing.Point(18, 41);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(64, 16);
+            this.lblStart.TabIndex = 2;
+            this.lblStart.Text = "StartDate";
+            this.lblStart.Click += new System.EventHandler(this.lblStart_Click);
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Location = new System.Drawing.Point(247, 76);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpEndDate.TabIndex = 1;
+            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Location = new System.Drawing.Point(18, 76);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpStartDate.TabIndex = 0;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
             // 
             // txtUsername
             // 
@@ -133,50 +172,23 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // dtpStartDate
+            // grdSales
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(18, 76);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpStartDate.TabIndex = 0;
-            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            this.grdSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdSales.Location = new System.Drawing.Point(21, 119);
+            this.grdSales.Name = "grdSales";
+            this.grdSales.Size = new System.Drawing.Size(536, 150);
+            this.grdSales.TabIndex = 4;
             // 
-            // dtpEndDate
+            // btnSearch
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(357, 76);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpEndDate.TabIndex = 1;
-            this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
-            // 
-            // lblStart
-            // 
-            this.lblStart.AutoSize = true;
-            this.lblStart.Location = new System.Drawing.Point(18, 41);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(64, 16);
-            this.lblStart.TabIndex = 2;
-            this.lblStart.Text = "StartDate";
-            this.lblStart.Click += new System.EventHandler(this.lblStart_Click);
-            // 
-            // lblEndDate
-            // 
-            this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(354, 41);
-            this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(61, 16);
-            this.lblEndDate.TabIndex = 3;
-            this.lblEndDate.Text = "EndDate";
-            this.lblEndDate.Click += new System.EventHandler(this.lblEndDate_Click);
-            // 
-            // lstAnalysis
-            // 
-            this.lstAnalysis.FormattingEnabled = true;
-            this.lstAnalysis.ItemHeight = 16;
-            this.lstAnalysis.Location = new System.Drawing.Point(145, 122);
-            this.lstAnalysis.Name = "lstAnalysis";
-            this.lstAnalysis.Size = new System.Drawing.Size(287, 116);
-            this.lstAnalysis.TabIndex = 4;
+            this.btnSearch.Location = new System.Drawing.Point(482, 75);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // frmSalesAnalysis
             // 
@@ -200,6 +212,7 @@
             this.grpAnalysis.PerformLayout();
             this.mnuRevenueReport.ResumeLayout(false);
             this.mnuRevenueReport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +233,7 @@
         private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.ListBox lstAnalysis;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView grdSales;
     }
 }

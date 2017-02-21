@@ -87,6 +87,7 @@
     <Compile Include="DBUtilites.cs" />
     <Compile Include="Prizes\Draw.cs" />
     <Compile Include="Prizes\PrizeModel.cs" />
+    <Compile Include="Sales\Analysis.cs" />
     <Compile Include="Sales\Panels.cs" />
     <Compile Include="Validation.cs" />
     <Compile Include="Sales\Ticket.cs" />

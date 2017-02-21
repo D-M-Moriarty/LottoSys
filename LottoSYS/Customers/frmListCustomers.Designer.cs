@@ -32,7 +32,7 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rdoSurname = new System.Windows.Forms.RadioButton();
-            this.rdoCustID = new System.Windows.Forms.RadioButton();
+            this.rdoWinners = new System.Windows.Forms.RadioButton();
             this.rdoCounty = new System.Windows.Forms.RadioButton();
             this.rdoAge = new System.Windows.Forms.RadioButton();
             this.grpSort = new System.Windows.Forms.Button();
@@ -84,16 +84,16 @@
             this.rdoSurname.UseVisualStyleBackColor = true;
             this.rdoSurname.CheckedChanged += new System.EventHandler(this.rdoSurname_CheckedChanged);
             // 
-            // rdoCustID
+            // rdoWinners
             // 
-            this.rdoCustID.AutoSize = true;
-            this.rdoCustID.Location = new System.Drawing.Point(175, 74);
-            this.rdoCustID.Name = "rdoCustID";
-            this.rdoCustID.Size = new System.Drawing.Size(80, 17);
-            this.rdoCustID.TabIndex = 5;
-            this.rdoCustID.TabStop = true;
-            this.rdoCustID.Text = "CustomerID";
-            this.rdoCustID.UseVisualStyleBackColor = true;
+            this.rdoWinners.AutoSize = true;
+            this.rdoWinners.Location = new System.Drawing.Point(175, 74);
+            this.rdoWinners.Name = "rdoWinners";
+            this.rdoWinners.Size = new System.Drawing.Size(64, 17);
+            this.rdoWinners.TabIndex = 5;
+            this.rdoWinners.TabStop = true;
+            this.rdoWinners.Text = "Winners";
+            this.rdoWinners.UseVisualStyleBackColor = true;
             // 
             // rdoCounty
             // 
@@ -173,7 +173,7 @@
             this.groupBox1.Controls.Add(this.grpSort);
             this.groupBox1.Controls.Add(this.rdoAge);
             this.groupBox1.Controls.Add(this.rdoCounty);
-            this.groupBox1.Controls.Add(this.rdoCustID);
+            this.groupBox1.Controls.Add(this.rdoWinners);
             this.groupBox1.Controls.Add(this.rdoSurname);
             this.groupBox1.Location = new System.Drawing.Point(12, 141);
             this.groupBox1.Name = "groupBox1";
@@ -220,7 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.RadioButton rdoSurname;
-        private System.Windows.Forms.RadioButton rdoCustID;
+        private System.Windows.Forms.RadioButton rdoWinners;
         private System.Windows.Forms.RadioButton rdoCounty;
         private System.Windows.Forms.RadioButton rdoAge;
         private System.Windows.Forms.Button grpSort;

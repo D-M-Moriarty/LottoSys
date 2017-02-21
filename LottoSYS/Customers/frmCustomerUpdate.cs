@@ -77,96 +77,6 @@ namespace LottoSYS
             grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
         }
 
-        private void mnuUpdateCustomer_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void cboCountry_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCountry_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboCounty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCounty_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTown_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTown_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddressLine2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddressLine1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtForename_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSurname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSurname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbnSubmit_Click(object sender, EventArgs e)
         {
             //validate data
@@ -188,7 +98,7 @@ namespace LottoSYS
                     customer.setTitle(cboTitle.Text);
                     customer.setSurname(txtSurname.Text);
                     customer.setForename(txtForename.Text);
-                    customer.setDOB(dtpDOB.Text);
+                    customer.setDOB(String.Format("{0:dd-MMM-yy}", dtpDOB.Value));
                     customer.setPPSN(txtPPSN.Text);
                     customer.setAddressLine1(txtAddress1.Text);
                     customer.setAddressLine2(txtAddress2.Text);

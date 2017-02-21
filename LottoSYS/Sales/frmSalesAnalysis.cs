@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LottoSYS.Sales;
+using System;
 using System.Windows.Forms;
 
 namespace LottoSYS.Finance
@@ -21,8 +22,7 @@ namespace LottoSYS.Finance
 
         private void frmRevenueReport_Load(object sender, EventArgs e)
         {
-            grpAnalysis.Visible = false;
-            lstAnalysis.Items.Add("Total sales\t\t€67000");
+
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -72,6 +72,11 @@ namespace LottoSYS.Finance
         private void grpAnalysis_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            grdSales.DataSource = Analysis.getAnalysis(String.Format("{0:dd-MMM-yy}", dtpStartDate), String.Format("{0:dd-MMM-yy}", dtpEndDate)).Tables["ss"];
         }
     }
 }
