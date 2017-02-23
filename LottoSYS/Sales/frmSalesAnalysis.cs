@@ -76,7 +76,7 @@ namespace LottoSYS.Finance
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdSales.DataSource = Analysis.getAnalysis(String.Format("{0:dd-MMM-yy}", dtpStartDate), String.Format("{0:dd-MMM-yy}", dtpEndDate)).Tables["ss"];
+            grdSales.DataSource = Analysis.getAnalysis(dtpStartDate.Value, dtpEndDate.Value).Tables["ss"];
         }
     }
 }

@@ -71,7 +71,7 @@ namespace LottoSYS.Sales
 
                 ticket.setTicketId(Convert.ToInt32(Ticket.nextTicketId().ToString("00000")));
                 ticket.setCustomerId(custId);
-                ticket.setPurchaseDate(DateTime.Now.ToString());
+                ticket.setPurchaseDate(DateTime.Now);
                 ticket.setTime(DateTime.Now.ToString());
                 ticket.setPrice(price * numOfLines);
                 ticket.setPrizeFlag("NO");

@@ -13,7 +13,7 @@ namespace LottoSYS.Prizes
 {
     class PrizeModel
     {
-        private string drawDate { get; set; }
+        private DateTime drawDate { get; set; }
         private int ticketId { get; set; }
         private int panelId { get; set; }
         private int prizeAmount { get; set; }
@@ -27,7 +27,7 @@ namespace LottoSYS.Prizes
 
         */
 
-        public PrizeModel(string drawDate, int ticketId, int panelId, int prizeAmount)
+        public PrizeModel(DateTime drawDate, int ticketId, int panelId, int prizeAmount)
         {
             setDrawDate(drawDate);
             setTicketId(ticketId);
@@ -42,7 +42,7 @@ namespace LottoSYS.Prizes
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Prizes VALUES('" + DateTime.Now.ToString("dd-MMM-yy") + "', " +
+            String strSQl = "INSERT INTO Prizes VALUES('" + String.Format("{0:dd-MMM-yy}", getDrawDate()) + "', " +
                 getTicketId() + ", " + getPanelId() + ", " +
                 getPrizeAmount() + ")";
 
@@ -90,7 +90,7 @@ namespace LottoSYS.Prizes
             return DS;
         }
 
-        public void setDrawDate(string drawDate)
+        public void setDrawDate(DateTime drawDate)
         {
             this.drawDate = drawDate;
         }
@@ -110,7 +110,7 @@ namespace LottoSYS.Prizes
             this.prizeAmount = prizeAmount;
         }
 
-        public string getDrawDate()
+        public DateTime getDrawDate()
         {
             return drawDate;
         }

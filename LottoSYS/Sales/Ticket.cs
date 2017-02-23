@@ -15,7 +15,7 @@ namespace LottoSYS.Prize
 
         private int ticketId;
         private int customerId;
-        private string purchaseDate;
+        private DateTime purchaseDate;
         private string time;
         private double price;
         private string prizeFlag;
@@ -29,7 +29,7 @@ namespace LottoSYS.Prize
 
         }
 
-        public Ticket(int ticketId, int customerId, string purchaseDate, string time, double price, string prizeFlag)
+        public Ticket(int ticketId, int customerId, DateTime purchaseDate, string time, double price, string prizeFlag)
         {
             this.ticketId = ticketId;
             this.customerId = customerId;
@@ -244,7 +244,7 @@ namespace LottoSYS.Prize
 
             // Define SQL query to INSERT stock record
             String strSQl = "INSERT INTO Ticket VALUES(" + getTicketId() + ", " + getCustomerId() +
-                ", '" + DateTime.Now.ToString("dd-MMM-yy") + "', '" + getTime() + "', " + getPrice() +
+                ", '" + String.Format("{0:dd-MMM-yy}", getPurchaseDate()) + "', '" + getTime() + "', " + getPrice() +
                 ", '" + getPrizeFlag() + "')";
 
 
@@ -712,7 +712,7 @@ namespace LottoSYS.Prize
             this.customerId = customerId;
         }
 
-        public void setPurchaseDate(string purchaseDate)
+        public void setPurchaseDate(DateTime purchaseDate)
         {
             this.purchaseDate = purchaseDate;
         }
@@ -741,7 +741,7 @@ namespace LottoSYS.Prize
             return customerId;
         }
 
-        public string getPurchaseDate()
+        public DateTime getPurchaseDate()
         {
             return purchaseDate;
         }

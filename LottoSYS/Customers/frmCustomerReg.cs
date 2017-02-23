@@ -96,7 +96,7 @@ namespace LottoSYS
                     customer.setTitle(cboTitle.Text);
                     customer.setSurname(txtSurname.Text);
                     customer.setForename(txtForename.Text);
-                    customer.setDOB(String.Format("{0:dd-MMM-yy}", dtpDOB.Value));
+                    customer.setDOB(dtpDOB.Text);
                     customer.setPPSN(txtPPSN.Text);
                     customer.setAddressLine1(txtAddress1.Text);
                     customer.setAddressLine2(txtAddress2.Text);
@@ -108,7 +108,7 @@ namespace LottoSYS
                     customer.setPhone(txtPhone.Text);
                     customer.setEmail(txtEmail.Text);
                     customer.setStatus("Active");
-                    customer.setRegDate(DateTime.Now.ToString());
+                    customer.setRegDate(DateTime.Now);
 
                     customer.regCustomer();
 

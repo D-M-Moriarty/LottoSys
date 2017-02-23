@@ -30,7 +30,7 @@ namespace LottoSYS.Customers
         private string phone;
         private string email;
         private string status;
-        private string regDate;
+        private DateTime regDate;
         private double balance;
 
 
@@ -232,10 +232,10 @@ namespace LottoSYS.Customers
 
             // Define SQL query to INSERT stock record
             String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle() + "', '" + getSurname() + "', '" + getForename() +
-                "', '" + getDOB() + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
+                "', '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
                 getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" +
                 getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" +
-                getBalance() + "', '" + getStatus() + "', '" + DateTime.Now.ToString("dd-MMM-yy") + "')";
+                getBalance() + "', '" + getStatus() + "', '" + String.Format("{0:dd-MMM-yy}", getRegDate()) + "')";
 
 
             // Execute the command
@@ -255,7 +255,7 @@ namespace LottoSYS.Customers
 
             // Define SQL query to INSERT stock record
             String strSQl = "INSERT INTO De_Reg VALUES(" + customerId + 
-                ",'" + DateTime.Now.ToString() + "')";
+                ",'" + String.Format("{0:dd-MMM-yy}", DateTime.Now) + "')";
 
 
             // Execute the command
@@ -275,7 +275,7 @@ namespace LottoSYS.Customers
 
             // Define SQL query to UPDATE Customer details
             String strSQl = "UPDATE Customer SET Title = '" + getTitle() + "', Surname = '" + getSurname() +
-                "', Forename = '" + getForename() + "', DOB = '" + getDOB() + "', PPSN = '" +
+                "', Forename = '" + getForename() + "', DOB = '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', PPSN = '" +
                 getPPSN() + "', AddressLine1 = '" + getAddressLine1() + "', AddressLine2 = '" +
                 getAddressLine2() + "', Town = '" + getTown() + "', County = '" + getCounty() +
                 "', Country = '" + getCountry() + "', Nationality = '" + getNationality() +
@@ -394,7 +394,7 @@ namespace LottoSYS.Customers
             this.status = status;
         }
 
-        public void setRegDate(string regDate)
+        public void setRegDate(DateTime regDate)
         {
             this.regDate = regDate;
         }
@@ -489,7 +489,7 @@ namespace LottoSYS.Customers
             return status;
         }
 
-        public string getRegDate()
+        public DateTime getRegDate()
         {
             return regDate;
         }

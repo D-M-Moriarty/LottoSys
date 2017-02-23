@@ -6,7 +6,7 @@ namespace LottoSYS.Prize
 {
     class Draw
     {
-        public string drawDate { get; set; }
+        public DateTime drawDate { get; set; }
         public int number1 { get; set; }
         public int number2 { get; set; }
         public int number3 { get; set; }
@@ -51,7 +51,7 @@ namespace LottoSYS.Prize
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Draw WHERE DrawDate = '15/02/2017 23:08:17'";
+            string strSQL = "SELECT * FROM Draw";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -100,7 +100,7 @@ namespace LottoSYS.Prize
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Draw VALUES('" + DateTime.Now.ToString("dd-MMM-yy") + "', " +
+            String strSQl = "INSERT INTO Draw VALUES('" + String.Format("{0:dd-MMM-yy}", DateTime.Now) + "', " +
                 getNumber1() + ", " + getNumber2() + ", " +
                 getNumber3() + ", " + getNumber4() + ", " +
                 getNumber5() + ", " + getNumber6() + ")";
@@ -133,12 +133,12 @@ namespace LottoSYS.Prize
             myConn.Close();
         }
 
-        public void setDate(string drawDate)
+        public void setDate(DateTime drawDate)
         {
             this.drawDate = drawDate;
         }
 
-        public string getDate()
+        public DateTime getDate()
         {
             return drawDate;
         }

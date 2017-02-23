@@ -52,7 +52,7 @@ namespace LottoSYS.Prize
             
             draw = new Draw();
 
-            draw.setDate(DateTime.Now.ToString());
+            draw.setDate(DateTime.Now);
             draw.setNumber1(drawNums[0]);
             draw.setNumber2(drawNums[1]);
             draw.setNumber3(drawNums[2]);

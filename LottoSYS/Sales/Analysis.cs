@@ -11,7 +11,7 @@ namespace LottoSYS.Sales
     class Analysis
     {
 
-        public static DataSet getAnalysis(string startDate, string endDate)
+        public static DataSet getAnalysis(DateTime startDate, DateTime endDate)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);

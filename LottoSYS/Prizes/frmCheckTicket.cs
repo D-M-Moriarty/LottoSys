@@ -132,7 +132,7 @@ namespace LottoSYS.Prize
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
 
-                prize = new PrizeModel(DateTime.Now.ToString(),
+                prize = new PrizeModel(DateTime.Now,
                                            pan.getTicketId(),
                                            pan.getPanelId(),
                                            prizeAmount
