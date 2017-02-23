@@ -81,6 +81,7 @@
             this.mnuUpdateCustomer.Size = new System.Drawing.Size(792, 24);
             this.mnuUpdateCustomer.TabIndex = 0;
             this.mnuUpdateCustomer.Text = "menuStrip1";
+            this.mnuUpdateCustomer.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuUpdateCustomer_ItemClicked);
             // 
             // mnuBack
             // 
@@ -270,6 +271,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 21);
             this.txtEmail.TabIndex = 59;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -281,6 +283,7 @@
             this.lblEmail.Size = new System.Drawing.Size(42, 15);
             this.lblEmail.TabIndex = 58;
             this.lblEmail.Text = "Email:";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtPhone
             // 
@@ -289,6 +292,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(136, 21);
             this.txtPhone.TabIndex = 57;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // lblPhone
             // 
@@ -300,6 +304,7 @@
             this.lblPhone.Size = new System.Drawing.Size(66, 15);
             this.lblPhone.TabIndex = 56;
             this.lblPhone.Text = "Phone no.:";
+            this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
             // 
             // txtForename
             // 
@@ -308,6 +313,7 @@
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(136, 21);
             this.txtForename.TabIndex = 55;
+            this.txtForename.TextChanged += new System.EventHandler(this.txtForename_TextChanged);
             // 
             // lblForename
             // 
@@ -328,6 +334,7 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(136, 21);
             this.txtSurname.TabIndex = 53;
+            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged);
             // 
             // lblSurname
             // 
@@ -339,6 +346,7 @@
             this.lblSurname.Size = new System.Drawing.Size(69, 15);
             this.lblSurname.TabIndex = 52;
             this.lblSurname.Text = "Surname: *";
+            this.lblSurname.Click += new System.EventHandler(this.lblSurname_Click);
             // 
             // cboCountry
             // 
@@ -347,6 +355,7 @@
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(136, 21);
             this.cboCountry.TabIndex = 51;
+            this.cboCountry.SelectedIndexChanged += new System.EventHandler(this.cboCountry_SelectedIndexChanged);
             // 
             // lblCountry
             // 
@@ -358,6 +367,7 @@
             this.lblCountry.Size = new System.Drawing.Size(134, 15);
             this.lblCountry.TabIndex = 50;
             this.lblCountry.Text = "Country of Residence: *";
+            this.lblCountry.Click += new System.EventHandler(this.lblCountry_Click);
             // 
             // cboCounty
             // 
@@ -366,6 +376,7 @@
             this.cboCounty.Name = "cboCounty";
             this.cboCounty.Size = new System.Drawing.Size(136, 21);
             this.cboCounty.TabIndex = 49;
+            this.cboCounty.SelectedIndexChanged += new System.EventHandler(this.cboCounty_SelectedIndexChanged);
             // 
             // lblCounty
             // 
@@ -377,6 +388,7 @@
             this.lblCounty.Size = new System.Drawing.Size(55, 15);
             this.lblCounty.TabIndex = 48;
             this.lblCounty.Text = "County: *";
+            this.lblCounty.Click += new System.EventHandler(this.lblCounty_Click);
             // 
             // txtTown
             // 
@@ -384,6 +396,7 @@
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(136, 20);
             this.txtTown.TabIndex = 47;
+            this.txtTown.TextChanged += new System.EventHandler(this.txtTown_TextChanged);
             // 
             // lblTown
             // 
@@ -395,6 +408,7 @@
             this.lblTown.Size = new System.Drawing.Size(48, 15);
             this.lblTown.TabIndex = 46;
             this.lblTown.Text = "Town: *";
+            this.lblTown.Click += new System.EventHandler(this.lblTown_Click);
             // 
             // txtAddress2
             // 
@@ -402,6 +416,7 @@
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(136, 20);
             this.txtAddress2.TabIndex = 45;
+            this.txtAddress2.TextChanged += new System.EventHandler(this.txtAddress2_TextChanged);
             // 
             // lblAddressLine2
             // 
@@ -413,6 +428,7 @@
             this.lblAddressLine2.Size = new System.Drawing.Size(99, 15);
             this.lblAddressLine2.TabIndex = 44;
             this.lblAddressLine2.Text = "Address Line 2: *";
+            this.lblAddressLine2.Click += new System.EventHandler(this.lblAddressLine2_Click);
             // 
             // txtAddress1
             // 
@@ -420,6 +436,7 @@
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(136, 20);
             this.txtAddress1.TabIndex = 43;
+            this.txtAddress1.TextChanged += new System.EventHandler(this.txtAddress1_TextChanged);
             // 
             // lblAddressLine1
             // 
@@ -431,6 +448,7 @@
             this.lblAddressLine1.Size = new System.Drawing.Size(99, 15);
             this.lblAddressLine1.TabIndex = 42;
             this.lblAddressLine1.Text = "Address Line 1: *";
+            this.lblAddressLine1.Click += new System.EventHandler(this.lblAddressLine1_Click);
             // 
             // lblSearchLabel
             // 

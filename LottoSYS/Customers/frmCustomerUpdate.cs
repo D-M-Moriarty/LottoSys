@@ -77,6 +77,96 @@ namespace LottoSYS
             grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
         }
 
+        private void mnuUpdateCustomer_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void cboCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCountry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCounty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCounty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTown_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAddressLine2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAddressLine1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtForename_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSurname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void tbnSubmit_Click(object sender, EventArgs e)
         {
             //validate data
@@ -98,7 +188,7 @@ namespace LottoSYS
                     customer.setTitle(cboTitle.Text);
                     customer.setSurname(txtSurname.Text);
                     customer.setForename(txtForename.Text);
-                    customer.setDOB(String.Format("{0:dd-MMM-yy}", dtpDOB.Value));
+                    customer.setDOB(dtpDOB.Text);
                     customer.setPPSN(txtPPSN.Text);
                     customer.setAddressLine1(txtAddress1.Text);
                     customer.setAddressLine2(txtAddress2.Text);
@@ -185,33 +275,33 @@ namespace LottoSYS
 
                 custId = Convert.ToInt32(row.Cells[0].Value);
 
-                cboTitle.Text = row.Cells[1].Value.ToString();
+                cboTitle.Text = row.Cells[1].Value.ToString().TrimEnd();
 
-                txtSurname.Text = row.Cells[2].Value.ToString();
+                txtSurname.Text = row.Cells[2].Value.ToString().TrimEnd();
 
-                txtForename.Text = row.Cells[3].Value.ToString();
+                txtForename.Text = row.Cells[3].Value.ToString().TrimEnd();
 
-                dtpDOB.Text = row.Cells[4].Value.ToString();
+                dtpDOB.Text = row.Cells[4].Value.ToString().TrimEnd();
 
-                txtPPSN.Text = row.Cells[5].Value.ToString();
+                txtPPSN.Text = row.Cells[5].Value.ToString().TrimEnd();
 
-                txtAddress1.Text = row.Cells[6].Value.ToString();
+                txtAddress1.Text = row.Cells[6].Value.ToString().TrimEnd();
                 
-                txtAddress2.Text = row.Cells[7].Value.ToString();
+                txtAddress2.Text = row.Cells[7].Value.ToString().TrimEnd();
 
-                txtTown.Text = row.Cells[8].Value.ToString();
+                txtTown.Text = row.Cells[8].Value.ToString().TrimEnd();
 
-                cboCounty.Text = row.Cells[9].Value.ToString();
+                cboCounty.Text = row.Cells[9].Value.ToString().TrimEnd();
 
-                cboCountry.Text = row.Cells[10].Value.ToString();
+                cboCountry.Text = row.Cells[10].Value.ToString().TrimEnd();
 
-                cboNationality.Text = row.Cells[11].Value.ToString();
+                cboNationality.Text = row.Cells[11].Value.ToString().TrimEnd();
 
-                cboGender.Text = row.Cells[12].Value.ToString();
+                cboGender.Text = row.Cells[12].Value.ToString().TrimEnd();
 
-                txtPhone.Text = row.Cells[13].Value.ToString();
+                txtPhone.Text = row.Cells[13].Value.ToString().TrimEnd();
 
-                txtEmail.Text = row.Cells[14].Value.ToString();
+                txtEmail.Text = row.Cells[14].Value.ToString().TrimEnd();
 
 
             }

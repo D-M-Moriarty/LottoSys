@@ -10,11 +10,6 @@ namespace LottoSYS.Sales
         private FrmMainMenu parent;
         public const float price = 2.2f;
         public int numOfLines;
-        private String surname;
-        private String forename;
-        private String town;
-        private String phone;
-        private String email;
 
         private const int numbers6 = 6;
 
@@ -62,8 +57,8 @@ namespace LottoSYS.Sales
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
             
-            for(int p = 0; p < 1000; p++)
-            {
+            //for(int p = 0; p < 1000; p++)
+            //{
                 Ticket ticket = new Ticket();
                 Panels panel;
 
@@ -174,7 +169,7 @@ namespace LottoSYS.Sales
 
                     Console.WriteLine(" ");
                 }
-            }
+            //}
                 
 
                 //MessageBox.Show(outpo);

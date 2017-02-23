@@ -134,9 +134,9 @@ namespace LottoSYS
 
                 custId = Convert.ToInt32(row.Cells[0].Value);
 
-                txtSurname.Text = row.Cells[2].Value.ToString();
+                txtSurname.Text = row.Cells[3].Value.ToString();
 
-                txtForename.Text = row.Cells[3].Value.ToString();
+                txtForename.Text = row.Cells[2].Value.ToString();
 
                 txtAddress1.Text = row.Cells[6].Value.ToString();
 
