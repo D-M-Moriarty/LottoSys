@@ -1,4 +1,5 @@
 ﻿using LottoSYS.Customers;
+using LottoSYS.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace LottoSYS
         FrmMainMenu parent;
         String profile;
         String curItem;
+        private int custId;
 
         public frmCustomerProfile()
         {
@@ -112,12 +114,59 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomerProfile(txtSearchBox.Text).Tables["ss"];
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
         }
 
         private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            DataGridViewRow row = this.grdListing.Rows[e.RowIndex];
 
+            this.custId = Convert.ToInt32(row.Cells[0].Value);
+
+            lblName.Text = "Name: " + row.Cells[2].Value.ToString().TrimEnd() + " " + row.Cells[3].Value.ToString();
+            
+            lblAddress.Text = "Address: " + row.Cells[6].Value.ToString();
+
+            lblTown.Text = "Town: " + row.Cells[8].Value.ToString();
+
+            lblCounty.Text = "County: " + row.Cells[9].Value.ToString();
+
+            lblRegDate.Text = "Registration Date: " + row.Cells[17].Value.ToString();
+
+            lblBalance.Text = "Balance: €" + row.Cells[15].Value.ToString();
+
+            grdCustomerTickets.DataSource = Panels.getPanel(custId).Tables["ss"];
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdCustomerTickets_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

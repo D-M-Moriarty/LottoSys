@@ -1,4 +1,5 @@
-﻿using LottoSYS.Prizes;
+﻿using LottoSYS.Customers;
+using LottoSYS.Prizes;
 using LottoSYS.Sales;
 using System;
 using System.Collections.Generic;
@@ -145,6 +146,7 @@ namespace LottoSYS.Prize
                 prize.regPrize();
 
 
+                Customer.updateCustomerBalance(prizeAmount, Ticket.getCustomerId(pan.getTicketId()));
 
 
 

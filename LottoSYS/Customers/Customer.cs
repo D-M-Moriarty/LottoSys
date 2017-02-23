@@ -309,6 +309,24 @@ namespace LottoSYS.Customers
             myConn.Close();
         }
 
+        public static void updateCustomerBalance(int winnings, int custId)
+        {
+            // Connect to database
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            // Define SQL query to UPDATE Customer details
+            String strSQl = "UPDATE Customer SET BALANCE = BALANCE + '" + winnings + "' WHERE CustomerId = " + custId;
+
+            // Execute the command
+            OracleCommand cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+
+
+            // Close DB connection
+            myConn.Close();
+        }
+
         public void setCustomerId(int customerId)
         {
             this.customerId = customerId;

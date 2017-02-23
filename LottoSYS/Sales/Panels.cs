@@ -15,6 +15,38 @@ namespace LottoSYS.Sales
         public int number5 { get; set; }
         public int number6 { get; set; }
 
+        public static DataSet getPanel(int custId)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT P.*, T.PRICE, PR.PRIZEAMOUNT, T.PRIZEFLAG, T.PURCHASEDATE " + 
+                            "From Panel P Join Ticket T ON P.TICKETID = T.TICKETID " + 
+                            "JOIN Customer C ON '" + custId + "' = T.CUSTOMERID " +
+                            "LEFT JOIN Prizes PR ON PR.TICKETID = T.TICKETID " +
+                            "ORDER BY PR.PRIZEAMOUNT";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
         public static DataSet getPanel()
         {
 

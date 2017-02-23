@@ -65,6 +65,44 @@ namespace LottoSYS.Prize
             return DS;
         }
 
+        public static int getCustomerId(int ticketId)
+        {
+
+            // variable to hold value to be returned
+            int customerId;
+
+            // connect to the Db
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            //define sql query
+            string strSQL = "SELECT CustomerId FROM Ticket WHERE TicketId = " + ticketId;
+            
+            OracleCommand cmd = new OracleCommand(strSQL, myConn);
+
+            // Execute the query
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            // read the first (only) value returned by query
+            // If the first stockno, assign value 1, otherwise add 1 to MAX value
+            dr.Read();
+
+            if (dr.IsDBNull(0))
+            {
+                customerId = 1;
+            }
+            else
+            {
+                customerId = Convert.ToInt16(dr.GetValue(0));
+            }
+
+            // Close DB connection
+            myConn.Close();
+
+            // Return next StockNo
+            return customerId;
+        }
+
         public static DataTable getTickets()
         {
 
