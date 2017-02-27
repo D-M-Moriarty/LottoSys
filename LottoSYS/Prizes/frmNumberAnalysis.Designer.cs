@@ -32,12 +32,12 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblnumberAnalysis = new System.Windows.Forms.Label();
-            this.lstMost = new System.Windows.Forms.ListBox();
             this.lblMostFrequent = new System.Windows.Forms.Label();
             this.lblLeastFrequent = new System.Windows.Forms.Label();
-            this.lstLeast = new System.Windows.Forms.ListBox();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.grdNumAnalysis = new System.Windows.Forms.DataGridView();
             this.mnuRunDraw.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNumAnalysis)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuRunDraw
@@ -75,14 +75,6 @@
             this.lblnumberAnalysis.TabIndex = 46;
             this.lblnumberAnalysis.Text = "Number Analysis";
             // 
-            // lstMost
-            // 
-            this.lstMost.FormattingEnabled = true;
-            this.lstMost.Location = new System.Drawing.Point(31, 132);
-            this.lstMost.Name = "lstMost";
-            this.lstMost.Size = new System.Drawing.Size(191, 95);
-            this.lstMost.TabIndex = 47;
-            // 
             // lblMostFrequent
             // 
             this.lblMostFrequent.AutoSize = true;
@@ -102,33 +94,32 @@
             this.lblLeastFrequent.TabIndex = 50;
             this.lblLeastFrequent.Text = "LeastFrequent";
             // 
-            // lstLeast
-            // 
-            this.lstLeast.FormattingEnabled = true;
-            this.lstLeast.Location = new System.Drawing.Point(316, 132);
-            this.lstLeast.Name = "lstLeast";
-            this.lstLeast.Size = new System.Drawing.Size(188, 95);
-            this.lstLeast.TabIndex = 51;
-            // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(31, 240);
+            this.btnPrint.Location = new System.Drawing.Point(31, 305);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(473, 23);
             this.btnPrint.TabIndex = 52;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // grdNumAnalysis
+            // 
+            this.grdNumAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdNumAnalysis.Location = new System.Drawing.Point(31, 131);
+            this.grdNumAnalysis.Name = "grdNumAnalysis";
+            this.grdNumAnalysis.Size = new System.Drawing.Size(248, 150);
+            this.grdNumAnalysis.TabIndex = 53;
+            // 
             // frmNumberAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 275);
+            this.ClientSize = new System.Drawing.Size(533, 340);
+            this.Controls.Add(this.grdNumAnalysis);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.lstLeast);
             this.Controls.Add(this.lblLeastFrequent);
             this.Controls.Add(this.lblMostFrequent);
-            this.Controls.Add(this.lstMost);
             this.Controls.Add(this.lblnumberAnalysis);
             this.Controls.Add(this.mnuRunDraw);
             this.Name = "frmNumberAnalysis";
@@ -136,6 +127,7 @@
             this.Load += new System.EventHandler(this.frmUnclaimedPrize_Load);
             this.mnuRunDraw.ResumeLayout(false);
             this.mnuRunDraw.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNumAnalysis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,10 +139,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.Label lblnumberAnalysis;
-        private System.Windows.Forms.ListBox lstMost;
         private System.Windows.Forms.Label lblMostFrequent;
         private System.Windows.Forms.Label lblLeastFrequent;
-        private System.Windows.Forms.ListBox lstLeast;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.DataGridView grdNumAnalysis;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LottoSYS.Sales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,27 +28,12 @@ namespace LottoSYS.Prize
 
         private void frmUnclaimedPrize_Load(object sender, EventArgs e)
         {
-            lstMost.Items.Add("No 1: 32");
-            lstMost.Items.Add("No 2: 11");
-            lstMost.Items.Add("No 3: 21");
-            lstMost.Items.Add("No 4: 41");
-            lstMost.Items.Add("No 5: 09");
-            lstMost.Items.Add("No 6: 01");
-            lstMost.Items.Add("No 7: 46");
-            lstMost.Items.Add("No 5: 09");
-            lstMost.Items.Add("No 6: 01");
-            lstMost.Items.Add("No 7: 46");
 
-            lstLeast.Items.Add("No 1: 05");
-            lstLeast.Items.Add("No 2: 02");
-            lstLeast.Items.Add("No 3: 27");
-            lstLeast.Items.Add("No 4: 10");
-            lstLeast.Items.Add("No 5: 17");
-            lstLeast.Items.Add("No 6: 47");
-            lstLeast.Items.Add("No 7: 30");
-            lstLeast.Items.Add("No 5: 17");
-            lstLeast.Items.Add("No 6: 47");
-            lstLeast.Items.Add("No 7: 30");
+            Analysis.updateNumberAnalysis();
+
+            grdNumAnalysis.DataSource = Analysis.getNumberAnalysis().Tables["ss"];
+
+            
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
