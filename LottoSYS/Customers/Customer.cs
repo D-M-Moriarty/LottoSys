@@ -260,7 +260,7 @@ namespace LottoSYS.Customers
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle() + "', '" + getSurname() + "', '" + getForename() +
+            String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle().TrimEnd() + "', '" + getSurname() + "', '" + getForename() +
                 "', '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
                 getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" +
                 getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" +
@@ -354,6 +354,32 @@ namespace LottoSYS.Customers
 
             // Close DB connection
             myConn.Close();
+        }
+
+        public static DataSet getTitles()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM TITLE";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
         }
 
         public void setCustomerId(int customerId)

@@ -174,11 +174,9 @@ namespace LottoSYS
 
         private void loadTitles()
         {
-            cboTitle.Items.Add("Miss");
-            cboTitle.Items.Add("Ms");
-            cboTitle.Items.Add("Mx");
-            cboTitle.Items.Add("Mrs");
-            cboTitle.Items.Add("Mr");
+            cboTitle.ValueMember = "TITLES";
+            cboTitle.DataSource = Customer.getTitles().Tables["ss"];
+            cboTitle.SelectedIndex = -1;
             cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 

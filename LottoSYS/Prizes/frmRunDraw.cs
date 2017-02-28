@@ -41,7 +41,7 @@ namespace LottoSYS.Prize
                 DateTime drawDate = draws.Last().getDate();
 
                 if (DateTime.Now < drawDate.AddDays(7) &&
-                    !DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
+                    DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
                 {
                     btnRunDraw.Enabled = false;
 
