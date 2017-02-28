@@ -36,8 +36,10 @@
             this.lblLeastFrequent = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.grdNumAnalysis = new System.Windows.Forms.DataGridView();
+            this.grdList = new System.Windows.Forms.DataGridView();
             this.mnuRunDraw.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdNumAnalysis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdList)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuRunDraw
@@ -47,7 +49,7 @@
             this.mnuExit});
             this.mnuRunDraw.Location = new System.Drawing.Point(0, 0);
             this.mnuRunDraw.Name = "mnuRunDraw";
-            this.mnuRunDraw.Size = new System.Drawing.Size(533, 24);
+            this.mnuRunDraw.Size = new System.Drawing.Size(584, 24);
             this.mnuRunDraw.TabIndex = 1;
             this.mnuRunDraw.Text = "menuStrip1";
             // 
@@ -98,7 +100,7 @@
             // 
             this.btnPrint.Location = new System.Drawing.Point(31, 305);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(473, 23);
+            this.btnPrint.Size = new System.Drawing.Size(525, 23);
             this.btnPrint.TabIndex = 52;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
@@ -111,11 +113,20 @@
             this.grdNumAnalysis.Size = new System.Drawing.Size(248, 150);
             this.grdNumAnalysis.TabIndex = 53;
             // 
+            // grdList
+            // 
+            this.grdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdList.Location = new System.Drawing.Point(316, 131);
+            this.grdList.Name = "grdList";
+            this.grdList.Size = new System.Drawing.Size(240, 150);
+            this.grdList.TabIndex = 54;
+            // 
             // frmNumberAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 340);
+            this.ClientSize = new System.Drawing.Size(584, 340);
+            this.Controls.Add(this.grdList);
             this.Controls.Add(this.grdNumAnalysis);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblLeastFrequent);
@@ -128,6 +139,7 @@
             this.mnuRunDraw.ResumeLayout(false);
             this.mnuRunDraw.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdNumAnalysis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Label lblLeastFrequent;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridView grdNumAnalysis;
+        private System.Windows.Forms.DataGridView grdList;
     }
 }

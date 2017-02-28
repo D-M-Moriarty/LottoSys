@@ -45,9 +45,11 @@ namespace LottoSYS.Prize
 
         private void frmNumberAnalysis_Load(object sender, EventArgs e)
         {
-            Analysis.updateNumberAnalysis();
+            // Analysis.updateNumberAnalysis();
 
-            grdNumAnalysis.DataSource = Analysis.getNumberAnalysis().Tables["ss"];
+            grdNumAnalysis.DataSource = Analysis.getNumberAnalysis("DESC").Tables["ss"];
+
+            grdList.DataSource = Analysis.getNumberAnalysis("ASC").Tables["ss"];
         }
     }
 }

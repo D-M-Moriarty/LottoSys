@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LottoSYS.Sales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,7 @@ namespace LottoSYS.Prize
                 DateTime drawDate = draws.Last().getDate();
 
                 if (DateTime.Now < drawDate.AddDays(7) &&
-                    DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
+                    !DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
                 {
                     btnRunDraw.Enabled = false;
 
@@ -129,6 +130,15 @@ namespace LottoSYS.Prize
             //MessageBox.Show(str,"Draw Results");
             listBox1.Items.Add(str);
             btnRunDraw.Enabled = false;
+
+            try
+            {
+                Analysis.updateNumberAnalysis();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

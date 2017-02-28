@@ -29,8 +29,8 @@ namespace LottoSYS.Sales
                 "FROM PANEL P " +
                     "JOIN TICKET T ON P.TICKETID = T.TICKETID " +
                     "LEFT JOIN PRIZES PR ON T.TICKETID = PR.TICKETID " +
-                "WHERE t.PURCHASEDATE BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate)
-                + "' AND ' " + String.Format("{0:dd-MMM-yy}", endDate) + "'";
+                "WHERE t.PURCHASEDATE BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate) + "'" +
+                " AND '" + String.Format("{0:dd-MMM-yy}", endDate) + "'";
 
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
@@ -46,7 +46,7 @@ namespace LottoSYS.Sales
             return DS;
         }
 
-        public static DataSet getNumberAnalysis()
+        public static DataSet getNumberAnalysis(string order)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -57,7 +57,7 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM NumberAnalysis";
+            string strSQL = "SELECT * FROM NumberAnalysis ORDER BY NumberOccurences " + order + "";
 
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);

@@ -78,7 +78,7 @@ namespace LottoSYS.Customers
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT CUSTOMER.* " +
+            string strSQL = "SELECT DISTINCT CUSTOMER.* " +
                                 "FROM CUSTOMER, TICKET " +
                             "WHERE CUSTOMER.CUSTOMERID = TICKET.CUSTOMERID " +
                             "AND TICKET.PRIZEFLAG = 'YES'";
