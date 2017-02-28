@@ -32,6 +32,9 @@ namespace LottoSYS.Sales
                 "WHERE t.PURCHASEDATE BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate) + "'" +
                 " AND '" + String.Format("{0:dd-MMM-yy}", endDate) + "'";
 
+            Console.WriteLine(String.Format(strSQL.ToString()));
+            Console.WriteLine(String.Format("{0:dd-MMM-yy}", endDate));
+
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

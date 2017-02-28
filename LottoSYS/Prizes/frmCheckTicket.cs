@@ -120,7 +120,7 @@ namespace LottoSYS.Prize
                                        );
 
                 // Set Prize Flag to Yes    
-                Ticket.setPrizeFlag(pan.getTicketId());
+                Ticket.setPrizeFlag(pan.getTicketId(), "YES");
 
                 // Register the winning ticket and panel
                 prize.regPrize();
@@ -133,6 +133,8 @@ namespace LottoSYS.Prize
             }
             else
             {
+
+                Ticket.setPrizeFlag(pan.getTicketId(), "CH");
                 Console.WriteLine("There are no winners this week");
             }
 

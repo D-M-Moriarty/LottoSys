@@ -382,6 +382,113 @@ namespace LottoSYS.Customers
             return DS;
         }
 
+        public static DataSet getNationalities()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Nationality";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getCounties()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM County";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getCountries()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Country";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getGenders()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Gender";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+
+
+
         public void setCustomerId(int customerId)
         {
             this.customerId = customerId;

@@ -40,7 +40,11 @@ namespace LottoSYS
 
         private void frmCustomerUpdate_Load(object sender, EventArgs e)
         {
-
+            loadTitles();
+            loadNationalities();
+            loadCounties();
+            loadCountries();
+            loadGenders();
 
         }
 
@@ -304,5 +308,46 @@ namespace LottoSYS
 
             }
         }
+        private void loadTitles()
+        {
+            cboTitle.ValueMember = "TITLES";
+            cboTitle.DataSource = Customer.getTitles().Tables["ss"];
+            cboTitle.SelectedIndex = -1;
+            cboTitle.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void loadNationalities()
+        {
+
+            cboNationality.ValueMember = "Nationalities";
+            cboNationality.DataSource = Customer.getNationalities().Tables["ss"];
+            cboNationality.SelectedIndex = -1;
+            cboNationality.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void loadCounties()
+        {
+            cboCounty.ValueMember = "Counties";
+            cboCounty.DataSource = Customer.getCounties().Tables["ss"];
+            cboCounty.SelectedIndex = -1;
+            cboCounty.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void loadCountries()
+        {
+            cboCountry.ValueMember = "Countries";
+            cboCountry.DataSource = Customer.getCountries().Tables["ss"];
+            cboCountry.SelectedIndex = -1;
+            cboCountry.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void loadGenders()
+        {
+            cboGender.ValueMember = "Genders";
+            cboGender.DataSource = Customer.getGenders().Tables["ss"];
+            cboGender.SelectedIndex = -1;
+            cboGender.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
     }
 }

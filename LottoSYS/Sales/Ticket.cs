@@ -183,14 +183,14 @@ namespace LottoSYS.Prize
             return DS;
         }
 
-        public static void setPrizeFlag(int TicketId)
+        public static void setPrizeFlag(int TicketId, string ch)
         {
             // Connect to database
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to UPDATE Customer details
-            String strSQl = "UPDATE Ticket SET PrizeFlag = 'YES' WHERE TicketId = " + TicketId;
+            String strSQl = "UPDATE Ticket SET PrizeFlag = '" + ch + "' WHERE TicketId = " + TicketId;
 
             // Execute the command
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
