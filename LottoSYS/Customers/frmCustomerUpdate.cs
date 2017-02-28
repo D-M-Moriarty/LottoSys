@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace LottoSYS
 {
     public partial class frmCustomerUpdate : Form
-    { 
+    {
         private FrmMainMenu parent;
         private string surname;
         private string forename;
@@ -36,12 +36,12 @@ namespace LottoSYS
             parent = Parent;
         }
 
-       
+
 
         private void frmCustomerUpdate_Load(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace LottoSYS
             Application.Exit();
         }
 
-      
+
 
         private void lblForename_Click(object sender, EventArgs e)
         {
@@ -169,6 +169,13 @@ namespace LottoSYS
 
         private void tbnSubmit_Click(object sender, EventArgs e)
         {
+
+            Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
             //validate data
             if (Validation.validateCustomer(cboCounty, cboNationality,
              cboTitle, cboCountry, txtSurname, txtForename,
@@ -217,6 +224,7 @@ namespace LottoSYS
                     cboGender.SelectedIndex = -1;
                     cboNationality.SelectedIndex = -1;
                     cboTitle.SelectedIndex = -1;
+                    dtpDOB.Value = DateTime.Now;
 
                 }
                 else
@@ -236,13 +244,6 @@ namespace LottoSYS
                     if (!Validation.isValidDOB(dtpDOB.Value))
                         error += "The customer is under 18\n\n";
 
-                    Validation.textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB, txtEmail, lblEmail);
-
 
                     MessageBox.Show(error);
                 }
@@ -252,12 +253,7 @@ namespace LottoSYS
             {
                 MessageBox.Show("Please fill out all the required highlighted fields");
 
-                Validation.textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB, txtEmail, lblEmail);
+
             }
 
         }
@@ -269,7 +265,7 @@ namespace LottoSYS
 
         private void grdUpdate_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (grdUpdate.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
                 DataGridViewRow row = this.grdUpdate.Rows[e.RowIndex];
 
@@ -286,7 +282,7 @@ namespace LottoSYS
                 txtPPSN.Text = row.Cells[5].Value.ToString().TrimEnd();
 
                 txtAddress1.Text = row.Cells[6].Value.ToString().TrimEnd();
-                
+
                 txtAddress2.Text = row.Cells[7].Value.ToString().TrimEnd();
 
                 txtTown.Text = row.Cells[8].Value.ToString().TrimEnd();
@@ -302,7 +298,9 @@ namespace LottoSYS
                 txtPhone.Text = row.Cells[13].Value.ToString().TrimEnd();
 
                 txtEmail.Text = row.Cells[14].Value.ToString().TrimEnd();
-
+            }
+            catch
+            {
 
             }
         }

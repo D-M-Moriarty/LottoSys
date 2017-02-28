@@ -79,6 +79,16 @@ namespace LottoSYS.Customers
         {
             grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text, "County").Tables["ss"];
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoWinners_CheckedChanged(object sender, EventArgs e)
+        {
+            grdListing.DataSource = Customer.getWinningCustomer().Tables["ss"];
+        }
     }
         
 }

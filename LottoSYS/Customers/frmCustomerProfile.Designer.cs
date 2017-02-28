@@ -37,15 +37,17 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.grdListing = new System.Windows.Forms.DataGridView();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.grdCustomerTickets = new System.Windows.Forms.DataGridView();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblTown = new System.Windows.Forms.Label();
-            this.lblCounty = new System.Windows.Forms.Label();
-            this.lblRegDate = new System.Windows.Forms.Label();
+            this.grpDetails = new System.Windows.Forms.GroupBox();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.lblRegDate = new System.Windows.Forms.Label();
+            this.lblCounty = new System.Windows.Forms.Label();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.grdCustomerTickets = new System.Windows.Forms.DataGridView();
             this.mnuListCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListing)).BeginInit();
+            this.grpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomerTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,92 +131,96 @@
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
-            // grdCustomerTickets
+            // grpDetails
             // 
-            this.grdCustomerTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomerTickets.Location = new System.Drawing.Point(23, 452);
-            this.grdCustomerTickets.Name = "grdCustomerTickets";
-            this.grdCustomerTickets.Size = new System.Drawing.Size(1141, 150);
-            this.grdCustomerTickets.TabIndex = 50;
-            this.grdCustomerTickets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomerTickets_CellClick);
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(30, 318);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 20);
-            this.lblName.TabIndex = 51;
-            this.lblName.Text = "label1";
-            this.lblName.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(30, 338);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(51, 20);
-            this.lblAddress.TabIndex = 52;
-            this.lblAddress.Text = "label2";
-            this.lblAddress.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lblTown
-            // 
-            this.lblTown.AutoSize = true;
-            this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTown.Location = new System.Drawing.Point(30, 358);
-            this.lblTown.Name = "lblTown";
-            this.lblTown.Size = new System.Drawing.Size(51, 20);
-            this.lblTown.TabIndex = 53;
-            this.lblTown.Text = "label3";
-            this.lblTown.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // lblCounty
-            // 
-            this.lblCounty.AutoSize = true;
-            this.lblCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCounty.Location = new System.Drawing.Point(30, 378);
-            this.lblCounty.Name = "lblCounty";
-            this.lblCounty.Size = new System.Drawing.Size(51, 20);
-            this.lblCounty.TabIndex = 54;
-            this.lblCounty.Text = "label4";
-            this.lblCounty.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // lblRegDate
-            // 
-            this.lblRegDate.AutoSize = true;
-            this.lblRegDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegDate.Location = new System.Drawing.Point(30, 398);
-            this.lblRegDate.Name = "lblRegDate";
-            this.lblRegDate.Size = new System.Drawing.Size(51, 20);
-            this.lblRegDate.TabIndex = 55;
-            this.lblRegDate.Text = "label5";
-            this.lblRegDate.Click += new System.EventHandler(this.label5_Click);
+            this.grpDetails.Controls.Add(this.lblBalance);
+            this.grpDetails.Controls.Add(this.lblRegDate);
+            this.grpDetails.Controls.Add(this.lblCounty);
+            this.grpDetails.Controls.Add(this.lblTown);
+            this.grpDetails.Controls.Add(this.lblAddress);
+            this.grpDetails.Controls.Add(this.lblName);
+            this.grpDetails.Controls.Add(this.grdCustomerTickets);
+            this.grpDetails.Location = new System.Drawing.Point(12, 322);
+            this.grpDetails.Name = "grpDetails";
+            this.grpDetails.Size = new System.Drawing.Size(1162, 321);
+            this.grpDetails.TabIndex = 50;
+            this.grpDetails.TabStop = false;
+            this.grpDetails.Text = "Details";
             // 
             // lblBalance
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(30, 418);
+            this.lblBalance.Location = new System.Drawing.Point(18, 118);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(51, 20);
-            this.lblBalance.TabIndex = 56;
+            this.lblBalance.TabIndex = 63;
             this.lblBalance.Text = "label5";
+            // 
+            // lblRegDate
+            // 
+            this.lblRegDate.AutoSize = true;
+            this.lblRegDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegDate.Location = new System.Drawing.Point(18, 98);
+            this.lblRegDate.Name = "lblRegDate";
+            this.lblRegDate.Size = new System.Drawing.Size(51, 20);
+            this.lblRegDate.TabIndex = 62;
+            this.lblRegDate.Text = "label5";
+            // 
+            // lblCounty
+            // 
+            this.lblCounty.AutoSize = true;
+            this.lblCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCounty.Location = new System.Drawing.Point(18, 78);
+            this.lblCounty.Name = "lblCounty";
+            this.lblCounty.Size = new System.Drawing.Size(51, 20);
+            this.lblCounty.TabIndex = 61;
+            this.lblCounty.Text = "label4";
+            // 
+            // lblTown
+            // 
+            this.lblTown.AutoSize = true;
+            this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTown.Location = new System.Drawing.Point(18, 58);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(51, 20);
+            this.lblTown.TabIndex = 60;
+            this.lblTown.Text = "label3";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(18, 38);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(51, 20);
+            this.lblAddress.TabIndex = 59;
+            this.lblAddress.Text = "label2";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(18, 18);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(51, 20);
+            this.lblName.TabIndex = 58;
+            this.lblName.Text = "label1";
+            // 
+            // grdCustomerTickets
+            // 
+            this.grdCustomerTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCustomerTickets.Location = new System.Drawing.Point(11, 152);
+            this.grdCustomerTickets.Name = "grdCustomerTickets";
+            this.grdCustomerTickets.Size = new System.Drawing.Size(1141, 150);
+            this.grdCustomerTickets.TabIndex = 57;
             // 
             // frmCustomerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 655);
-            this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.lblRegDate);
-            this.Controls.Add(this.lblCounty);
-            this.Controls.Add(this.lblTown);
-            this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.grdCustomerTickets);
+            this.Controls.Add(this.grpDetails);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.grdListing);
             this.Controls.Add(this.lblSearchLabel);
@@ -228,6 +234,8 @@
             this.mnuListCustomers.ResumeLayout(false);
             this.mnuListCustomers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListing)).EndInit();
+            this.grpDetails.ResumeLayout(false);
+            this.grpDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomerTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,12 +253,13 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView grdListing;
         private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.DataGridView grdCustomerTickets;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblTown;
-        private System.Windows.Forms.Label lblCounty;
-        private System.Windows.Forms.Label lblRegDate;
+        private System.Windows.Forms.GroupBox grpDetails;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Label lblRegDate;
+        private System.Windows.Forms.Label lblCounty;
+        private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.DataGridView grdCustomerTickets;
     }
 }

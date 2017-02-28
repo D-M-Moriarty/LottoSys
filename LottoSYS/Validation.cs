@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -116,7 +117,7 @@ namespace LottoSYS.Customers
                 lblTown.ForeColor = System.Drawing.Color.Black;
             }
 
-            if (txtEmail.Text == "")
+            if (txtEmail.Text == "" && isValidEmail(txtEmail.Text))
             {
                 lblEmail.ForeColor = System.Drawing.Color.Red;
             }
@@ -181,6 +182,11 @@ namespace LottoSYS.Customers
                 return true;
             else
                 return false;
+        }
+
+        public static bool isValidEmail(string emailString)
+        {
+            return Regex.IsMatch(emailString, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
         }
 
     }

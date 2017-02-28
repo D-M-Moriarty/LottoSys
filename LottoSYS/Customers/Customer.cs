@@ -67,6 +67,35 @@ namespace LottoSYS.Customers
             return DS;
         }
 
+        public static DataSet getWinningCustomer()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT CUSTOMER.* " +
+                                "FROM CUSTOMER, TICKET " +
+                            "WHERE CUSTOMER.CUSTOMERID = TICKET.CUSTOMERID " +
+                            "AND TICKET.PRIZEFLAG = 'YES'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
         public static DataSet getCustomerProfile(string surname)
         {
 

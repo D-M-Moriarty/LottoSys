@@ -124,7 +124,7 @@
             this.Controls.Add(this.mnuRunDraw);
             this.Name = "frmNumberAnalysis";
             this.Text = "NumberAnalysis";
-            this.Load += new System.EventHandler(this.frmUnclaimedPrize_Load);
+            this.Load += new System.EventHandler(this.frmNumberAnalysis_Load);
             this.mnuRunDraw.ResumeLayout(false);
             this.mnuRunDraw.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdNumAnalysis)).EndInit();

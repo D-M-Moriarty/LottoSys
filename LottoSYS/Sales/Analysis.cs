@@ -23,7 +23,7 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT COUNT(T.TICKETID) / 5 AS Total_Tickets_Sold, " +
+            string strSQL = "SELECT COUNT(T.TICKETID) AS Total_Tickets_Sold, " +
                 "(COUNT(P.PANELID) * 2.2) AS Total_Income, SUM(PR.PRIZEAMOUNT) / 5 AS Payout, " +
                 "(COUNT(P.PANELID) * 2.2) - SUM(PR.PRIZEAMOUNT) / 5 AS Profit " +
                 "FROM PANEL P " +
@@ -78,36 +78,60 @@ namespace LottoSYS.Sales
             var draw = Draw.getDraws();
             var draws = draw.DataTableToList<Draw>();
 
-            int num1 = draws.First().getNumber1();
-            int num2 = draws.First().getNumber2();
-            int num3 = draws.First().getNumber3();
-            int num4 = draws.First().getNumber4();
-            int num5 = draws.First().getNumber5();
-            int num6 = draws.First().getNumber6();
+            int num1 = draws.Last().getNumber1();
+            int num2 = draws.Last().getNumber2();
+            int num3 = draws.Last().getNumber3();
+            int num4 = draws.Last().getNumber4();
+            int num5 = draws.Last().getNumber5();
+            int num6 = draws.Last().getNumber6();
             
             // Connect to database
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
             myConn.Open();
 
             // Define SQL query to UPDATE Customer details
-            String strSQl = "UPDATE NumberAnalysis SET " + num1 + " = " + (num1 + 1) +
-                                                   " SET " + num2 + " = " + (num2 + 1) +
-                                                   " SET " + num3 + " = " + (num3 + 1) +
-                                                   " SET " + num4 + " = " + (num4 + 1) +
-                                                   " SET " + num5 + " = " + (num5 + 1) +
-                                                   " SET " + num6 + " = " + (num6 + 1);
-
+            String strSQl = "UPDATE NumberAnalysis SET NumberOccurences = " +
+                            "NumberOccurences + 1 WHERE NumPk = " + num1;
             // Execute the command
             OracleCommand cmd = new OracleCommand(strSQl, myConn);
             cmd.ExecuteNonQuery();
+            // Define SQL query to UPDATE Customer details
+            strSQl = "UPDATE NumberAnalysis SET NumberOccurences = " +
+                            "NumberOccurences + 1 WHERE NumPk = " + num2;
+            // Execute the command
+            cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+            // Define SQL query to UPDATE Customer details
+            strSQl = "UPDATE NumberAnalysis SET NumberOccurences = " +
+                            "NumberOccurences + 1 WHERE NumPk = " + num3;
+            // Execute the command
+            cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+            // Define SQL query to UPDATE Customer details
+            strSQl = "UPDATE NumberAnalysis SET NumberOccurences = " +
+                            "NumberOccurences + 1 WHERE NumPk = " + num4;
+            // Execute the command
+            cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+            // Define SQL query to UPDATE Customer details
+            strSQl = "UPDATE NumberAnalysis SET NumberOccurences = " +
+                            "NumberOccurences + 1 WHERE NumPk = " + num5;
+            // Execute the command
+            cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+            // Define SQL query to UPDATE Customer details
+            strSQl = "UPDATE NumberAnalysis SET NumberOccurences = " +
+                            "NumberOccurences + 1 WHERE NumPk = " + num6;
+            // Execute the command
+            cmd = new OracleCommand(strSQl, myConn);
+            cmd.ExecuteNonQuery();
+
 
 
             // Close DB connection
             myConn.Close();
         }
-
-
-
+        
     
     }
 }

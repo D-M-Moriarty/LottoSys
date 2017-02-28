@@ -75,8 +75,15 @@ namespace LottoSYS
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-
             //validate data
+
+            Validation.textFieldChecker(cboCounty, cboNationality,
+                                cboTitle, cboCountry, txtSurname, txtForename,
+                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
+                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
+                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
+                                lblTitle, lblDOB, txtEmail, lblEmail);
+
             if (Validation.validateCustomer(cboCounty, cboNationality,
              cboTitle, cboCountry, txtSurname, txtForename,
              txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
@@ -127,6 +134,7 @@ namespace LottoSYS
                     cboGender.SelectedIndex = -1;
                     cboNationality.SelectedIndex = -1;
                     cboTitle.SelectedIndex = -1;
+                    dtpDOB.Value = DateTime.Now;
 
 
                 }
@@ -147,12 +155,8 @@ namespace LottoSYS
                     if (!Validation.isValidDOB(dtpDOB.Value))
                         error += "The customer is under 18\n\n";
 
-                    Validation.textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB, txtEmail, lblEmail);
+                    if(!Validation.isValidEmail(txtEmail.ToString()))
+                        error += "The customers email is invalid\n\n";
 
 
                     MessageBox.Show(error);
@@ -162,13 +166,7 @@ namespace LottoSYS
             else
             {
                 MessageBox.Show("Please fill out all the required highlighted fields");
-
-                Validation.textFieldChecker(cboCounty, cboNationality,
-                                cboTitle, cboCountry, txtSurname, txtForename,
-                                txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
-                                lblSurname, lblForename, lblAddressLine1, lblAddressLine2,
-                                lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
-                                lblTitle, lblDOB, txtEmail, lblEmail);
+                
             }
 
 

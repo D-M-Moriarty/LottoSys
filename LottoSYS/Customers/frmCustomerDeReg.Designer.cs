@@ -62,32 +62,31 @@
             this.exitToolStripMenuItem});
             this.mnuUpdateCustomer.Location = new System.Drawing.Point(0, 0);
             this.mnuUpdateCustomer.Name = "mnuUpdateCustomer";
-            this.mnuUpdateCustomer.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.mnuUpdateCustomer.Size = new System.Drawing.Size(640, 25);
+            this.mnuUpdateCustomer.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.mnuUpdateCustomer.Size = new System.Drawing.Size(753, 24);
             this.mnuUpdateCustomer.TabIndex = 1;
             this.mnuUpdateCustomer.Text = "menuStrip1";
             // 
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(44, 19);
+            this.mnuBack.Size = new System.Drawing.Size(44, 20);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // lblDeReg
             // 
             this.lblDeReg.AutoSize = true;
-            this.lblDeReg.Location = new System.Drawing.Point(42, 39);
-            this.lblDeReg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeReg.Location = new System.Drawing.Point(33, 29);
             this.lblDeReg.Name = "lblDeReg";
-            this.lblDeReg.Size = new System.Drawing.Size(96, 20);
+            this.lblDeReg.Size = new System.Drawing.Size(74, 15);
             this.lblDeReg.TabIndex = 2;
             this.lblDeReg.Text = "De - register";
             this.lblDeReg.Click += new System.EventHandler(this.lblDeReg_Click);
@@ -95,10 +94,10 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(230, 80);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(179, 60);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(64, 27);
+            this.btnSearch.Size = new System.Drawing.Size(64, 26);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -107,10 +106,10 @@
             // txtSearchBox
             // 
             this.txtSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBox.Location = new System.Drawing.Point(89, 85);
-            this.txtSearchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchBox.Location = new System.Drawing.Point(91, 64);
+            this.txtSearchBox.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchBox.Name = "txtSearchBox";
-            this.txtSearchBox.Size = new System.Drawing.Size(86, 22);
+            this.txtSearchBox.Size = new System.Drawing.Size(68, 22);
             this.txtSearchBox.TabIndex = 5;
             this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
@@ -118,7 +117,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(30, 85);
+            this.lblSearch.Location = new System.Drawing.Point(23, 64);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(61, 15);
@@ -141,11 +140,11 @@
             this.grpDeReg.Controls.Add(this.lblAddressLine2);
             this.grpDeReg.Controls.Add(this.txtAddress1);
             this.grpDeReg.Controls.Add(this.lblAddressLine1);
-            this.grpDeReg.Location = new System.Drawing.Point(326, 39);
-            this.grpDeReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDeReg.Location = new System.Drawing.Point(493, 29);
+            this.grpDeReg.Margin = new System.Windows.Forms.Padding(2);
             this.grpDeReg.Name = "grpDeReg";
-            this.grpDeReg.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpDeReg.Size = new System.Drawing.Size(238, 281);
+            this.grpDeReg.Padding = new System.Windows.Forms.Padding(2);
+            this.grpDeReg.Size = new System.Drawing.Size(224, 298);
             this.grpDeReg.TabIndex = 7;
             this.grpDeReg.TabStop = false;
             this.grpDeReg.Text = "DeReg";
@@ -154,10 +153,10 @@
             // rdoWithdrawn
             // 
             this.rdoWithdrawn.AutoSize = true;
-            this.rdoWithdrawn.Location = new System.Drawing.Point(8, 197);
-            this.rdoWithdrawn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoWithdrawn.Location = new System.Drawing.Point(41, 207);
+            this.rdoWithdrawn.Margin = new System.Windows.Forms.Padding(2);
             this.rdoWithdrawn.Name = "rdoWithdrawn";
-            this.rdoWithdrawn.Size = new System.Drawing.Size(102, 24);
+            this.rdoWithdrawn.Size = new System.Drawing.Size(83, 19);
             this.rdoWithdrawn.TabIndex = 70;
             this.rdoWithdrawn.TabStop = true;
             this.rdoWithdrawn.Text = "Withdrawn";
@@ -165,10 +164,10 @@
             // rdoDeceased
             // 
             this.rdoDeceased.AutoSize = true;
-            this.rdoDeceased.Location = new System.Drawing.Point(8, 232);
-            this.rdoDeceased.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoDeceased.Location = new System.Drawing.Point(41, 240);
+            this.rdoDeceased.Margin = new System.Windows.Forms.Padding(2);
             this.rdoDeceased.Name = "rdoDeceased";
-            this.rdoDeceased.Size = new System.Drawing.Size(100, 24);
+            this.rdoDeceased.Size = new System.Drawing.Size(81, 19);
             this.rdoDeceased.TabIndex = 69;
             this.rdoDeceased.TabStop = true;
             this.rdoDeceased.Text = "Deceased";
@@ -177,10 +176,10 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(150, 218);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(152, 230);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(74, 38);
+            this.btnSubmit.Size = new System.Drawing.Size(58, 28);
             this.btnSubmit.TabIndex = 68;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -189,17 +188,18 @@
             // txtForename
             // 
             this.txtForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtForename.Location = new System.Drawing.Point(121, 53);
-            this.txtForename.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtForename.Location = new System.Drawing.Point(129, 58);
+            this.txtForename.Margin = new System.Windows.Forms.Padding(2);
             this.txtForename.Name = "txtForename";
-            this.txtForename.Size = new System.Drawing.Size(103, 21);
+            this.txtForename.Size = new System.Drawing.Size(81, 21);
             this.txtForename.TabIndex = 65;
             // 
             // lblForename
             // 
             this.lblForename.AutoSize = true;
             this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForename.Location = new System.Drawing.Point(39, 58);
+            this.lblForename.Location = new System.Drawing.Point(35, 64);
+            this.lblForename.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForename.Name = "lblForename";
             this.lblForename.Size = new System.Drawing.Size(75, 15);
             this.lblForename.TabIndex = 64;
@@ -208,17 +208,18 @@
             // txtSurname
             // 
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(121, 23);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSurname.Location = new System.Drawing.Point(129, 22);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(103, 21);
+            this.txtSurname.Size = new System.Drawing.Size(81, 21);
             this.txtSurname.TabIndex = 63;
             // 
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(44, 28);
+            this.lblSurname.Location = new System.Drawing.Point(39, 28);
+            this.lblSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(69, 15);
             this.lblSurname.TabIndex = 62;
@@ -227,17 +228,18 @@
             // txtTown
             // 
             this.txtTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTown.Location = new System.Drawing.Point(121, 145);
-            this.txtTown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTown.Location = new System.Drawing.Point(129, 168);
+            this.txtTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtTown.Name = "txtTown";
-            this.txtTown.Size = new System.Drawing.Size(103, 22);
+            this.txtTown.Size = new System.Drawing.Size(81, 22);
             this.txtTown.TabIndex = 61;
             // 
             // lblTown
             // 
             this.lblTown.AutoSize = true;
             this.lblTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTown.Location = new System.Drawing.Point(59, 150);
+            this.lblTown.Location = new System.Drawing.Point(51, 175);
+            this.lblTown.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTown.Name = "lblTown";
             this.lblTown.Size = new System.Drawing.Size(48, 15);
             this.lblTown.TabIndex = 60;
@@ -246,17 +248,18 @@
             // txtAddress2
             // 
             this.txtAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress2.Location = new System.Drawing.Point(121, 114);
-            this.txtAddress2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress2.Location = new System.Drawing.Point(129, 131);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(103, 22);
+            this.txtAddress2.Size = new System.Drawing.Size(81, 22);
             this.txtAddress2.TabIndex = 59;
             // 
             // lblAddressLine2
             // 
             this.lblAddressLine2.AutoSize = true;
             this.lblAddressLine2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressLine2.Location = new System.Drawing.Point(21, 118);
+            this.lblAddressLine2.Location = new System.Drawing.Point(21, 138);
+            this.lblAddressLine2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddressLine2.Name = "lblAddressLine2";
             this.lblAddressLine2.Size = new System.Drawing.Size(99, 15);
             this.lblAddressLine2.TabIndex = 58;
@@ -265,17 +268,18 @@
             // txtAddress1
             // 
             this.txtAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress1.Location = new System.Drawing.Point(121, 83);
-            this.txtAddress1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress1.Location = new System.Drawing.Point(129, 94);
+            this.txtAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.Size = new System.Drawing.Size(103, 22);
+            this.txtAddress1.Size = new System.Drawing.Size(81, 22);
             this.txtAddress1.TabIndex = 57;
             // 
             // lblAddressLine1
             // 
             this.lblAddressLine1.AutoSize = true;
             this.lblAddressLine1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddressLine1.Location = new System.Drawing.Point(21, 87);
+            this.lblAddressLine1.Location = new System.Drawing.Point(21, 101);
+            this.lblAddressLine1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddressLine1.Name = "lblAddressLine1";
             this.lblAddressLine1.Size = new System.Drawing.Size(99, 15);
             this.lblAddressLine1.TabIndex = 56;
@@ -284,18 +288,18 @@
             // grdListing
             // 
             this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdListing.Location = new System.Drawing.Point(32, 136);
-            this.grdListing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdListing.Location = new System.Drawing.Point(25, 102);
+            this.grdListing.Margin = new System.Windows.Forms.Padding(2);
             this.grdListing.Name = "grdListing";
-            this.grdListing.Size = new System.Drawing.Size(262, 160);
+            this.grdListing.Size = new System.Drawing.Size(447, 225);
             this.grdListing.TabIndex = 8;
             this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
             // 
             // frmCustomerDeReg
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 373);
+            this.ClientSize = new System.Drawing.Size(753, 338);
             this.Controls.Add(this.grdListing);
             this.Controls.Add(this.grpDeReg);
             this.Controls.Add(this.btnSearch);
@@ -303,8 +307,8 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.lblDeReg);
             this.Controls.Add(this.mnuUpdateCustomer);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCustomerDeReg";
             this.Text = "frmCustomerDeReg";
             this.Load += new System.EventHandler(this.frmCustomerDeReg_Load);

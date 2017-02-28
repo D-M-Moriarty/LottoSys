@@ -102,7 +102,7 @@ namespace LottoSYS
                 MessageBox.Show("Please select a radio button!!");
             }
 
-            
+
 
         }
 
@@ -128,7 +128,7 @@ namespace LottoSYS
 
         private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (grdListing.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
                 DataGridViewRow row = this.grdListing.Rows[e.RowIndex];
 
@@ -143,7 +143,9 @@ namespace LottoSYS
                 txtAddress2.Text = row.Cells[7].Value.ToString();
 
                 txtTown.Text = row.Cells[8].Value.ToString();
-
+            }
+            catch
+            {
 
             }
         }

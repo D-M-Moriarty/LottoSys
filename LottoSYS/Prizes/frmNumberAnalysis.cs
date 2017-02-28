@@ -25,16 +25,7 @@ namespace LottoSYS.Prize
             InitializeComponent();
             parent = Parent;
         }
-
-        private void frmUnclaimedPrize_Load(object sender, EventArgs e)
-        {
-
-            Analysis.updateNumberAnalysis();
-
-            grdNumAnalysis.DataSource = Analysis.getNumberAnalysis().Tables["ss"];
-
-            
-        }
+        
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
@@ -50,6 +41,13 @@ namespace LottoSYS.Prize
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmNumberAnalysis_Load(object sender, EventArgs e)
+        {
+            Analysis.updateNumberAnalysis();
+
+            grdNumAnalysis.DataSource = Analysis.getNumberAnalysis().Tables["ss"];
         }
     }
 }

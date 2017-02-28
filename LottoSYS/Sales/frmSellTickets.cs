@@ -38,6 +38,7 @@ namespace LottoSYS.Sales
             txtPhone.Enabled = false;
             txtSurname.Enabled = false;
             txtTown.Enabled = false;
+            btnProcess.Enabled = false;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -184,6 +185,8 @@ namespace LottoSYS.Sales
             txtPhone.ResetText();
             cboTicketQTY.SelectedIndex = -1;
 
+            btnProcess.Enabled = false;
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -217,7 +220,7 @@ namespace LottoSYS.Sales
 
         private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (grdListing.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
                 DataGridViewRow row = this.grdListing.Rows[e.RowIndex];
 
@@ -233,6 +236,10 @@ namespace LottoSYS.Sales
 
                 txtEmail.Text = row.Cells[14].Value.ToString();
 
+                btnProcess.Enabled = true;
+            }
+            catch
+            {
 
             }
         }

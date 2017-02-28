@@ -22,7 +22,7 @@ namespace LottoSYS.Finance
 
         private void frmRevenueReport_Load(object sender, EventArgs e)
         {
-
+            dtpEndDate.Value = DateTime.Today.AddDays(1);
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace LottoSYS.Finance
 
         private void dtpStartDate_ValueChanged(object sender, EventArgs e)
         {
-
+            dtpEndDate.Value = dtpStartDate.Value.AddDays(1);
         }
 
         private void lblEndDate_Click(object sender, EventArgs e)

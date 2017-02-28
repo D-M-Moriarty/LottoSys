@@ -28,7 +28,37 @@ namespace LottoSYS.Prize
 
         private void frmRunDraw_Load(object sender, EventArgs e)
         {
+            var draw = Draw.getDraws();
 
+            var draws = draw.DataTableToList<Draw>();
+
+            try
+            {
+
+                // Checking was there a draw run within 7 Days
+                // AND That the draw is being run on a Tuesday
+                DateTime drawDate = draws.Last().getDate();
+
+                if (DateTime.Now < drawDate.AddDays(7) &&
+                    DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
+                {
+                    btnRunDraw.Enabled = false;
+
+                    Console.Write(DateTime.Now.DayOfWeek);
+                    
+                }
+                else
+                {
+                    btnRunDraw.Enabled = true;
+                }
+            }
+            catch
+            {
+
+            }
+            
+
+            
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
