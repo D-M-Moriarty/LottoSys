@@ -260,11 +260,11 @@ namespace LottoSYS.Customers
             myConn.Open();
 
             // Define SQL query to INSERT stock record
-            String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle().TrimEnd() + "', '" + getSurname() + "', '" + getForename() +
-                "', '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', '" + getPPSN() + "', '" + getAddressLine1() + "', '" +
-                getAddressLine2() + "', '" + getTown() + "', '" + getCounty() + "', '" + getCountry() + "', '" +
-                getNationality() + "', '" + getGender() + "', '" + getPhone() + "', '" + getEmail() + "', '" +
-                getBalance() + "', '" + getStatus() + "', '" + String.Format("{0:dd-MMM-yy}", getRegDate()) + "')";
+            String strSQl = "INSERT INTO Customer VALUES(" + getCustomerId() + ", '" + getTitle().TrimEnd().ToUpper() + "', '" + getSurname().ToUpper() + "', '" + getForename().ToUpper() +
+                "', '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', '" + getPPSN().ToUpper() + "', '" + getAddressLine1().ToUpper() + "', '" +
+                getAddressLine2().ToUpper() + "', '" + getTown().ToUpper() + "', '" + getCounty().TrimEnd().ToUpper() + "', '" + getCountry().TrimEnd().ToUpper() + "', '" +
+                getNationality().TrimEnd().ToUpper() + "', '" + getGender().TrimEnd().ToUpper() + "', '" + getPhone().ToUpper() + "', '" + getEmail().ToUpper() + "', '" +
+                getBalance() + "', '" + getStatus().ToUpper() + "', '" + String.Format("{0:dd-MMM-yy}", getRegDate()) + "')";
 
 
             // Execute the command
