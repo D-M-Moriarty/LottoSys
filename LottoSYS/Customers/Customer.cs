@@ -138,7 +138,7 @@ namespace LottoSYS.Customers
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'Active'";
+            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

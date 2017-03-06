@@ -50,12 +50,20 @@ namespace LottoSYS.Prize
                 }
                 else
                 {
+                    Console.Write(DateTime.Now.DayOfWeek);
                     btnRunDraw.Enabled = true;
                 }
             }
             catch
             {
-
+                if (DateTime.Now.DayOfWeek.ToString().Equals("Monday"))
+                {
+                    btnRunDraw.Enabled = true;
+                }
+                else
+                {
+                    btnRunDraw.Enabled = false;
+                }
             }
             
 
@@ -140,5 +148,6 @@ namespace LottoSYS.Prize
 
             }
         }
+        
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
+using LottoSYS.Prize;
+using System.Linq;
 
 namespace LottoSYS.Sales
 {
@@ -88,6 +90,44 @@ namespace LottoSYS.Sales
             //define sql query
             string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PrizeFlag = 'NO'";
 
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            var dr = cmd.ExecuteReader();
+
+            DT.Load(dr);
+
+            //close database
+            conn.Close();
+
+            return DT;
+        }
+
+        public static DataTable getCheckPanels()
+        {
+
+            var draw = Draw.getDraws();
+
+            var draws = draw.DataTableToList<Draw>();
+
+            DateTime drawDate = draws.Last().getDate();
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataTable DT = new DataTable();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PrizeFlag = 'NO'";
+
+            /*SELECT*
+             FROM PANEL P
+             JOIN TICKET T ON T.TICKETID = P.TICKETID
+             WHERE T.PURCHASEDATE >= LASTDRAWDATE
+             AND <= NEXT DRAWDATE
+             */
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             //execute the query

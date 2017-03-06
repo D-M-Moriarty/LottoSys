@@ -114,7 +114,7 @@ namespace LottoSYS
                     customer.setGender(cboGender.Text);
                     customer.setPhone(txtPhone.Text);
                     customer.setEmail(txtEmail.Text);
-                    customer.setStatus("Active");
+                    customer.setStatus("ACTIVE");
                     customer.setRegDate(DateTime.Now);
 
                     customer.regCustomer();
