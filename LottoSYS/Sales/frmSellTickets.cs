@@ -32,13 +32,30 @@ namespace LottoSYS.Sales
 
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
-            loadTicketQTY();
-            txtEmail.Enabled = false;
-            txtForename.Enabled = false;
-            txtPhone.Enabled = false;
-            txtSurname.Enabled = false;
-            txtTown.Enabled = false;
-            btnProcess.Enabled = false;
+            TimeSpan end = new TimeSpan(17, 0, 0); 
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            DateTime today = DateTime.Today;
+
+            if (today.DayOfWeek == DayOfWeek.Tuesday && now < end)
+            {
+                Console.Write(DateTime.Today.DayOfWeek);
+
+                loadTicketQTY();
+                txtEmail.Enabled = false;
+                txtForename.Enabled = false;
+                txtPhone.Enabled = false;
+                txtSurname.Enabled = false;
+                txtTown.Enabled = false;
+                btnProcess.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Cannot buy tickets anymore today");
+                this.Close();
+                parent.Show();
+            }
+
+            
         }
 
         private void mnuBack_Click(object sender, EventArgs e)

@@ -121,11 +121,11 @@ namespace LottoSYS.Sales
 
             //define sql query
             string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PURCHASEDATE >= '" + 
-                String.Format("{0:dd-MMM-yy}", drawDate.AddDays(-7)) + "' "+
-                " AND T.PURCHASEDATE < '" + String.Format("{0:dd-MMM-yy}", drawDate) + "'" +
+                String.Format("{0:dd-MMM-yy}", drawDate.AddDays(-6)) + "' "+
+                " AND T.PURCHASEDATE <= '" + String.Format("{0:dd-MMM-yy}", drawDate) + "'" +
                 " AND T.PrizeFlag = 'NO'";
 
-            Console.Write("The date is " + drawDate.AddDays(-7));
+            Console.Write("The date is " + drawDate.AddDays(-6));
 
             /*SELECT*
              FROM PANEL P
