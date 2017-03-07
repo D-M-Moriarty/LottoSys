@@ -33,6 +33,10 @@ namespace LottoSYS.Prize
 
             var draws = draw.DataTableToList<Draw>();
 
+            TimeSpan end = new TimeSpan(17, 0, 0);
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            DateTime today = DateTime.Today;
+
             try
             {
 
@@ -41,7 +45,8 @@ namespace LottoSYS.Prize
                 DateTime drawDate = draws.Last().getDate();
 
                 if (DateTime.Now >= drawDate.AddDays(7) &&
-                    DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
+                    DateTime.Now.DayOfWeek.ToString().Equals("Tuesday")  &&
+                    now < end)
                 {
                     btnRunDraw.Enabled = true;
 
