@@ -146,7 +146,7 @@ namespace LottoSYS.Prize
         {
             var ticket = Ticket.getTickets();
 
-            var panel = Panels.getPanels();
+            var panel = Panels.getCheckPanels();
 
             var draw = Draw.getDraws();
 
@@ -164,6 +164,8 @@ namespace LottoSYS.Prize
             {
                 checkNumbers(pan, draws.Last());
             }
+            
+
 
             grdWinningTickets.DataSource = PrizeModel.getPrize().Tables["ss"];
         }

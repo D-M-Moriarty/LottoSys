@@ -40,10 +40,10 @@ namespace LottoSYS.Prize
                 // AND That the draw is being run on a Tuesday
                 DateTime drawDate = draws.Last().getDate();
 
-                if (DateTime.Now < drawDate.AddDays(7) &&
-                    !DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
+                if (DateTime.Now >= drawDate.AddDays(7) &&
+                    DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
                 {
-                    btnRunDraw.Enabled = false;
+                    btnRunDraw.Enabled = true;
 
                     Console.Write(DateTime.Now.DayOfWeek);
                     
@@ -51,12 +51,13 @@ namespace LottoSYS.Prize
                 else
                 {
                     Console.Write(DateTime.Now.DayOfWeek);
-                    btnRunDraw.Enabled = true;
+                    btnRunDraw.Enabled = false;
                 }
             }
             catch
             {
-                if (DateTime.Now.DayOfWeek.ToString().Equals("Monday"))
+                // If a Draw has not been run
+                if (DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
                 {
                     btnRunDraw.Enabled = true;
                 }

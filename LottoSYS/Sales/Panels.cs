@@ -120,7 +120,12 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PrizeFlag = 'NO'";
+            string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PURCHASEDATE >= '" + 
+                String.Format("{0:dd-MMM-yy}", drawDate.AddDays(-7)) + "' "+
+                " AND T.PURCHASEDATE < '" + String.Format("{0:dd-MMM-yy}", drawDate) + "'" +
+                " AND T.PrizeFlag = 'NO'";
+
+            Console.Write("The date is " + drawDate.AddDays(-7));
 
             /*SELECT*
              FROM PANEL P
@@ -128,6 +133,7 @@ namespace LottoSYS.Sales
              WHERE T.PURCHASEDATE >= LASTDRAWDATE
              AND <= NEXT DRAWDATE
              */
+
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
             //execute the query
