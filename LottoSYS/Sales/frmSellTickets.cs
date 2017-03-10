@@ -36,7 +36,9 @@ namespace LottoSYS.Sales
             TimeSpan now = DateTime.Now.TimeOfDay;
             DateTime today = DateTime.Today;
 
-            if (today.DayOfWeek == DayOfWeek.Tuesday && now < end)
+            // Checking if its a Tuesday and its before 5 o clock or else its not a tuesday
+            // This is to stop selling tickets after 5 o clock on tuesdays before the draw is run
+            if (today.DayOfWeek == DayOfWeek.Tuesday && now < end || today.DayOfWeek != DayOfWeek.Tuesday)
             {
                 Console.Write(DateTime.Today.DayOfWeek);
 
