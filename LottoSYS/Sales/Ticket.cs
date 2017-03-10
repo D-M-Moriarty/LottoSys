@@ -486,7 +486,7 @@ namespace LottoSYS.Prize
 
                     numsCopy[i, j] = num;
 
-                    //insertion sort
+                    // selection sort
                     if (j == 5)
                     {
                         int min;

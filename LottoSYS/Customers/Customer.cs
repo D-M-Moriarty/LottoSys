@@ -110,7 +110,7 @@ namespace LottoSYS.Customers
             string strSQL = "SELECT C.Forename, C.Surname, T.purchaseDate, P.* " + 
                 "From Customer C Join Ticket T ON C.CustomerId = T.CUSTOMERID " +
                 "Join Panel P ON P.TICKETID = T.TICKETID " +
-                "WHERE C.Surname LIKE '%" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
+                "WHERE C.Surname LIKE '" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -138,7 +138,7 @@ namespace LottoSYS.Customers
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
+            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '" + surname + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

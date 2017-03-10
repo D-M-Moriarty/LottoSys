@@ -78,7 +78,7 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
+            grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
         }
 
         private void mnuUpdateCustomer_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
