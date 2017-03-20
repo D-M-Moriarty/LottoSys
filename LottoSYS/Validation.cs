@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -117,7 +118,7 @@ namespace LottoSYS.Customers
                 lblTown.ForeColor = System.Drawing.Color.Black;
             }
 
-            if (txtEmail.Text == "" && isValidEmail(txtEmail.Text))
+            if (txtEmail.Text == "" && !IsValidEmail(txtEmail.Text))
             {
                 lblEmail.ForeColor = System.Drawing.Color.Red;
             }
@@ -184,9 +185,22 @@ namespace LottoSYS.Customers
                 return false;
         }
 
-        public static bool isValidEmail(string emailString)
+        public static bool IsValidEmail(string emailaddress)
         {
-            return Regex.IsMatch(emailString, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            try
+            {
+                System.Net.Mail.MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
     }

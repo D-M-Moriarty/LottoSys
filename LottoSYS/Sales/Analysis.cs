@@ -24,8 +24,8 @@ namespace LottoSYS.Sales
 
             //define sql query
             string strSQL = "SELECT COUNT(T.TICKETID) AS Total_Tickets_Sold, " +
-                "(COUNT(P.PANELID) * 2.2) AS Total_Income, SUM(PR.PRIZEAMOUNT) / 5 AS Payout, " +
-                "(COUNT(P.PANELID) * 2.2) - SUM(PR.PRIZEAMOUNT) / 5 AS Profit " +
+                "(COUNT(P.PANELID) * " + Panels.PANEL_PRICE + ") AS Total_Income, SUM(PR.PRIZEAMOUNT) / 5 AS Payout, " +
+                "(COUNT(P.PANELID) * " + Panels.PANEL_PRICE + ") - SUM(PR.PRIZEAMOUNT) / 5 AS Profit " +
                 "FROM PANEL P " +
                     "JOIN TICKET T ON P.TICKETID = T.TICKETID " +
                     "LEFT JOIN PRIZES PR ON T.TICKETID = PR.TICKETID " +

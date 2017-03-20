@@ -303,7 +303,7 @@ namespace LottoSYS.Customers
             myConn.Open();
 
             // Define SQL query to UPDATE Customer details
-            String strSQl = "UPDATE Customer SET Title = '" + getTitle() + "', Surname = '" + getSurname() +
+            String strSQl = "UPDATE Customer SET Title = '" + getTitle().TrimEnd() + "', Surname = '" + getSurname() +
                 "', Forename = '" + getForename() + "', DOB = '" + String.Format("{0:dd-MMM-yy}", getDOB()) + "', PPSN = '" +
                 getPPSN() + "', AddressLine1 = '" + getAddressLine1() + "', AddressLine2 = '" +
                 getAddressLine2() + "', Town = '" + getTown() + "', County = '" + getCounty() +

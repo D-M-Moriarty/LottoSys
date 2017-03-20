@@ -195,6 +195,7 @@
             // txtPPSN
             // 
             this.txtPPSN.Location = new System.Drawing.Point(125, 192);
+            this.txtPPSN.MaxLength = 8;
             this.txtPPSN.Name = "txtPPSN";
             this.txtPPSN.Size = new System.Drawing.Size(136, 22);
             this.txtPPSN.TabIndex = 5;
@@ -212,6 +213,7 @@
             // txtForename
             // 
             this.txtForename.Location = new System.Drawing.Point(125, 113);
+            this.txtForename.MaxLength = 25;
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(136, 22);
             this.txtForename.TabIndex = 3;
@@ -229,6 +231,7 @@
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(125, 76);
+            this.txtSurname.MaxLength = 25;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(136, 22);
             this.txtSurname.TabIndex = 2;
@@ -261,6 +264,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(125, 134);
+            this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 22);
             this.txtEmail.TabIndex = 14;
@@ -278,6 +282,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(125, 93);
+            this.txtPhone.MaxLength = 15;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(136, 22);
             this.txtPhone.TabIndex = 13;
@@ -368,6 +373,7 @@
             // txtTown
             // 
             this.txtTown.Location = new System.Drawing.Point(166, 134);
+            this.txtTown.MaxLength = 40;
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(136, 22);
             this.txtTown.TabIndex = 9;
@@ -385,6 +391,7 @@
             // txtAddress2
             // 
             this.txtAddress2.Location = new System.Drawing.Point(166, 95);
+            this.txtAddress2.MaxLength = 40;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(136, 22);
             this.txtAddress2.TabIndex = 8;
@@ -401,7 +408,8 @@
             // 
             // txtAddress1
             // 
-            this.txtAddress1.Location = new System.Drawing.Point(166, 57);
+            this.txtAddress1.Location = new System.Drawing.Point(166, 60);
+            this.txtAddress1.MaxLength = 40;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(136, 22);
             this.txtAddress1.TabIndex = 7;

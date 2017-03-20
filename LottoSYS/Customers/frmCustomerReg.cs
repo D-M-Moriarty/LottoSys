@@ -92,7 +92,7 @@ namespace LottoSYS
              lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
                 if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
-                    Validation.isValidDOB(dtpDOB.Value))
+                    Validation.isValidDOB(dtpDOB.Value) && Validation.IsValidEmail(txtEmail.Text))
                 {
 
                     MessageBox.Show("Data has been registered");
@@ -155,7 +155,7 @@ namespace LottoSYS
                     if (!Validation.isValidDOB(dtpDOB.Value))
                         error += "The customer is under 18\n\n";
 
-                    if(!Validation.isValidEmail(txtEmail.ToString()))
+                    if(!Validation.IsValidEmail(txtEmail.ToString()))
                         error += "The customers email is invalid\n\n";
 
 

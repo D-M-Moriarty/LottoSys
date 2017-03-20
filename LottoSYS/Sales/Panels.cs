@@ -17,6 +17,8 @@ namespace LottoSYS.Sales
         public int number5 { get; set; }
         public int number6 { get; set; }
 
+        public const float PANEL_PRICE = 2.2f;
+
         public static DataSet getPanel(int custId)
         {
 

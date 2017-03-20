@@ -99,6 +99,7 @@
             // txtSearchBox
             // 
             this.txtSearchBox.Location = new System.Drawing.Point(90, 97);
+            this.txtSearchBox.MaxLength = 25;
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(100, 20);
             this.txtSearchBox.TabIndex = 45;

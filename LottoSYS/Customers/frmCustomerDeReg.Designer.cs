@@ -108,6 +108,7 @@
             this.txtSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBox.Location = new System.Drawing.Point(91, 64);
             this.txtSearchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchBox.MaxLength = 25;
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(68, 22);
             this.txtSearchBox.TabIndex = 5;

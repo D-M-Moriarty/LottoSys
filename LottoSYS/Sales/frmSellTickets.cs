@@ -8,7 +8,6 @@ namespace LottoSYS.Sales
     public partial class frmSellTickets : Form
     {
         private FrmMainMenu parent;
-        public const float price = 2.2f;
         public int numOfLines;
 
         private const int numbers6 = 6;
@@ -88,7 +87,7 @@ namespace LottoSYS.Sales
                 ticket.setCustomerId(custId);
                 ticket.setPurchaseDate(DateTime.Now);
                 ticket.setTime(DateTime.Now.ToString());
-                ticket.setPrice(price * numOfLines);
+                ticket.setPrice(Panels.PANEL_PRICE * numOfLines);
                 ticket.setPrizeFlag("NO");
 
                 ticket.regTicket();
