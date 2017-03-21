@@ -196,20 +196,21 @@ namespace LottoSYS
                     Customer customer = new Customer();
 
                     customer.setCustomerId(custId);
-                    customer.setTitle(cboTitle.Text);
-                    customer.setSurname(txtSurname.Text);
-                    customer.setForename(txtForename.Text);
-                    customer.setDOB(dtpDOB.Text);
-                    customer.setPPSN(txtPPSN.Text);
-                    customer.setAddressLine1(txtAddress1.Text);
-                    customer.setAddressLine2(txtAddress2.Text);
-                    customer.setTown(txtTown.Text);
-                    customer.setCounty(cboCounty.Text);
-                    customer.setCountry(cboCountry.Text);
-                    customer.setNationality(cboNationality.Text);
-                    customer.setGender(cboGender.Text);
-                    customer.setPhone(txtPhone.Text);
-                    customer.setEmail(txtEmail.Text);
+                    customer.setTitle(cboTitle.Text.ToUpper());
+                    customer.setSurname(txtSurname.Text.ToUpper());
+                    customer.setForename(txtForename.Text.ToUpper());
+                    customer.setDOB(dtpDOB.Text.ToUpper());
+                    customer.setPPSN(txtPPSN.Text.ToUpper());
+                    customer.setAddressLine1(txtAddress1.Text.ToUpper());
+                    customer.setAddressLine2(txtAddress2.Text.ToUpper());
+                    customer.setTown(txtTown.Text.ToUpper());
+                    customer.setCounty(cboCounty.Text.ToUpper());
+                    customer.setCountry(cboCountry.Text.ToUpper());
+                    customer.setNationality(cboNationality.Text.ToUpper());
+                    customer.setGender(cboGender.Text.ToUpper());
+                    customer.setPhone(txtPhone.Text.ToUpper());
+                    customer.setEmail(txtEmail.Text.ToUpper());
+
 
                     customer.updateCustomer();
 
@@ -229,6 +230,8 @@ namespace LottoSYS
                     cboNationality.SelectedIndex = -1;
                     cboTitle.SelectedIndex = -1;
                     dtpDOB.Value = DateTime.Now;
+
+                    grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
 
                 }
                 else
@@ -275,7 +278,7 @@ namespace LottoSYS
 
                 custId = Convert.ToInt32(row.Cells[0].Value);
 
-                cboTitle.Text = row.Cells[1].Value.ToString().TrimEnd();
+                cboTitle.SelectedValue = row.Cells[1].Value.ToString().TrimEnd();
 
                 txtSurname.Text = row.Cells[2].Value.ToString().TrimEnd();
 
@@ -291,13 +294,13 @@ namespace LottoSYS
 
                 txtTown.Text = row.Cells[8].Value.ToString().TrimEnd();
 
-                cboCounty.Text = row.Cells[9].Value.ToString().TrimEnd();
+                cboCounty.SelectedValue = row.Cells[9].Value.ToString().TrimEnd();
 
-                cboCountry.Text = row.Cells[10].Value.ToString().TrimEnd();
+                cboCountry.SelectedValue = row.Cells[10].Value.ToString().TrimEnd();
 
-                cboNationality.Text = row.Cells[11].Value.ToString().TrimEnd();
+                cboNationality.SelectedValue = row.Cells[11].Value.ToString().TrimEnd();
 
-                cboGender.Text = row.Cells[12].Value.ToString().TrimEnd();
+                cboGender.SelectedValue = row.Cells[12].Value.ToString().TrimEnd();
 
                 txtPhone.Text = row.Cells[13].Value.ToString().TrimEnd();
 

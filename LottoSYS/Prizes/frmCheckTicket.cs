@@ -144,30 +144,39 @@ namespace LottoSYS.Prize
 
         private void btnCheckTickets_Click(object sender, EventArgs e)
         {
-            var ticket = Ticket.getTickets();
 
-            var panel = Panels.getCheckPanels();
-
-            var draw = Draw.getDraws();
-
-            //Populate panels
-            var panels = panel.DataTableToList<Panels>();
-            var draws = draw.DataTableToList<Draw>();
-            var tickets = ticket.DataTableToList<Ticket>();
-
-            //Get Draw numbers
-            int[] drawNums = new int[6];
-            int[] panelNums = new int[6];
-
-            //Check each panel against the draw numbers for winners
-            foreach (var pan in panels)
+            try
             {
-                checkNumbers(pan, draws.Last());
+                var ticket = Ticket.getTickets();
+
+                var panel = Panels.getCheckPanels();
+
+                var draw = Draw.getDraws();
+
+                //Populate panels
+                var panels = panel.DataTableToList<Panels>();
+                var draws = draw.DataTableToList<Draw>();
+                var tickets = ticket.DataTableToList<Ticket>();
+
+                //Get Draw numbers
+                int[] drawNums = new int[6];
+                int[] panelNums = new int[6];
+
+                //Check each panel against the draw numbers for winners
+                foreach (var pan in panels)
+                {
+                    checkNumbers(pan, draws.Last());
+                }
+
+
+
+                grdWinningTickets.DataSource = PrizeModel.getPrize().Tables["ss"];
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No draw has been run yet");
             }
             
-
-
-            grdWinningTickets.DataSource = PrizeModel.getPrize().Tables["ss"];
         }
     }
 }

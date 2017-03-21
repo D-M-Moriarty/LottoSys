@@ -250,8 +250,10 @@
             // 
             // cboTitle
             // 
+            this.cboTitle.AllowDrop = true;
             this.cboTitle.FormattingEnabled = true;
             this.cboTitle.Location = new System.Drawing.Point(167, 34);
+            this.cboTitle.MaxLength = 10;
             this.cboTitle.Name = "cboTitle";
             this.cboTitle.Size = new System.Drawing.Size(66, 21);
             this.cboTitle.TabIndex = 60;
@@ -532,7 +534,6 @@
         private System.Windows.Forms.Label lblSearchLabel;
         private System.Windows.Forms.Button tbnSubmit;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ComboBox cboTitle;
         private System.Windows.Forms.ComboBox cboNationality;
         private System.Windows.Forms.Label lblNationality;
         private System.Windows.Forms.Label lblDOB;
@@ -542,5 +543,6 @@
         private System.Windows.Forms.ComboBox cboGender;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.DataGridView grdUpdate;
+        private System.Windows.Forms.ComboBox cboTitle;
     }
 }

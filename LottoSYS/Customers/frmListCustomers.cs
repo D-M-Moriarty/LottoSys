@@ -38,9 +38,9 @@ namespace LottoSYS.Customers
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
 
-            btnSearch.Enabled = false;
+            //btnSearch.Enabled = false;
         }
 
 

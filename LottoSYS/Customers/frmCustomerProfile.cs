@@ -61,7 +61,7 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
+            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
         }
 
         private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)

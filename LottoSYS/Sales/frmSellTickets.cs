@@ -31,7 +31,7 @@ namespace LottoSYS.Sales
 
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
-            TimeSpan end = new TimeSpan(17, 0, 0); 
+            TimeSpan end = new TimeSpan(10, 0, 0); 
             TimeSpan now = DateTime.Now.TimeOfDay;
             DateTime today = DateTime.Today;
 
@@ -76,8 +76,8 @@ namespace LottoSYS.Sales
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
             
-            //for(int p = 0; p < 1000; p++)
-            //{
+            for(int p = 0; p < 1000; p++)
+            {
                 Ticket ticket = new Ticket();
                 Panels panel;
 
@@ -188,7 +188,7 @@ namespace LottoSYS.Sales
 
                     Console.WriteLine(" ");
                 }
-            //}
+            }
                 
 
                 //MessageBox.Show(outpo);
