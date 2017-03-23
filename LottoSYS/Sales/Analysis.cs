@@ -24,10 +24,9 @@ namespace LottoSYS.Sales
 
             //define sql query
             string strSQL = "SELECT COUNT(T.TICKETID) AS Total_Tickets_Sold, " +
-                "(COUNT(P.PANELID) * " + Panels.PANEL_PRICE + ") AS Total_Income, SUM(PR.PRIZEAMOUNT) / 5 AS Payout, " +
+                "(SUM(T.Price) AS Total_Income, SUM(PR.PRIZEAMOUNT) / 5 AS Payout, " +
                 "(COUNT(P.PANELID) * " + Panels.PANEL_PRICE + ") - SUM(PR.PRIZEAMOUNT) / 5 AS Profit " +
-                "FROM PANEL P " +
-                    "JOIN TICKET T ON P.TICKETID = T.TICKETID " +
+                "FROM Ticket T " +
                     "LEFT JOIN PRIZES PR ON T.TICKETID = PR.TICKETID " +
                 "WHERE t.PURCHASEDATE BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate) + "'" +
                 " AND '" + String.Format("{0:dd-MMM-yy}", endDate) + "'";
