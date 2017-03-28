@@ -31,7 +31,7 @@ namespace LottoSYS.Sales
 
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
-            TimeSpan end = new TimeSpan(10, 0, 0); 
+            TimeSpan end = new TimeSpan(11, 0, 0); 
             TimeSpan now = DateTime.Now.TimeOfDay;
             DateTime today = DateTime.Today;
 

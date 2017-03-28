@@ -23,17 +23,15 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT COUNT(T.TICKETID) AS Total_Tickets_Sold, " +
-                "(SUM(T.Price) AS Total_Income, SUM(PR.PRIZEAMOUNT) / 5 AS Payout, " +
-                "(COUNT(P.PANELID) * " + Panels.PANEL_PRICE + ") - SUM(PR.PRIZEAMOUNT) / 5 AS Profit " +
-                "FROM Ticket T " +
-                    "LEFT JOIN PRIZES PR ON T.TICKETID = PR.TICKETID " +
-                "WHERE t.PURCHASEDATE BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate) + "'" +
-                " AND '" + String.Format("{0:dd-MMM-yy}", endDate) + "'";
-
-            Console.WriteLine(String.Format(strSQL.ToString()));
-            Console.WriteLine(String.Format("{0:dd-MMM-yy}", endDate));
-
+            string strSQL = "SELECT SUM(NumTickets) AS TotTickets, SUM(Price) AS TotSales, SUM(PrizeAmount) AS TotPrizes, SUM(Price) - SUM(PrizeAmount) AS PROFIT " +
+                            "FROM(SELECT TicketID, 1 AS NumTickets, Price, 0 AS PrizeAmount " +
+                                  "FROM Ticket " +
+                                  "WHERE PurchaseDate BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate) + "' AND '" + String.Format("{0:dd-MMM-yy}", endDate) + "' " +
+                                  "UNION ALL " +
+                                  "SELECT TicketID, 0 AS NumTickets, 0 AS Price, PrizeAmount " +
+                                  "FROM Prizes " +
+                                  "WHERE TicketID IN(SELECT TicketID FROM Ticket WHERE PurchaseDate BETWEEN '" + String.Format("{0:dd-MMM-yy}", startDate) + "' AND '" + String.Format("{0:dd-MMM-yy}", endDate) + "'))";
+                                  
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

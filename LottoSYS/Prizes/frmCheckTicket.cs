@@ -151,32 +151,51 @@ namespace LottoSYS.Prize
 
                 var panel = Panels.getCheckPanels();
 
-                var draw = Draw.getDraws();
-
-                //Populate panels
-                var panels = panel.DataTableToList<Panels>();
-                var draws = draw.DataTableToList<Draw>();
-                var tickets = ticket.DataTableToList<Ticket>();
-
-                //Get Draw numbers
-                int[] drawNums = new int[6];
-                int[] panelNums = new int[6];
-
-                //Check each panel against the draw numbers for winners
-                foreach (var pan in panels)
+                try
                 {
-                    checkNumbers(pan, draws.Last());
+                    var draw = Draw.getDraws();
+
+                    //Populate panels
+                    var panels = panel.DataTableToList<Panels>();
+                    var draws = draw.DataTableToList<Draw>();
+                    var tickets = ticket.DataTableToList<Ticket>();
+
+                    //Get Draw numbers
+                    int[] drawNums = new int[6];
+                    int[] panelNums = new int[6];
+
+                    //Check each panel against the draw numbers for winners
+                    foreach (var pan in panels)
+                    {
+                        checkNumbers(pan, draws.Last());
+                    }
+
+
+                    int drawCount = draws.Count;
+
+                    if (drawCount > 0)
+                    {
+                        grdWinningTickets.DataSource = PrizeModel.getPrize(draws.Last().drawDate).Tables["ss"];
+                    }
+                    else
+                    {
+                        MessageBox.Show("No draw has been run yet");
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("There are no winners");
                 }
 
-
-
-                grdWinningTickets.DataSource = PrizeModel.getPrize().Tables["ss"];
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("No draw has been run yet");
+                MessageBox.Show("No tickets have been sold");
             }
-            
+
+
         }
     }
 }

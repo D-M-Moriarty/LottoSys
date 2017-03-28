@@ -64,7 +64,7 @@ namespace LottoSYS.Prizes
             myConn.Close();
         }
 
-        public static DataSet getPrize()
+        public static DataSet getPrize(DateTime drawdate)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -75,7 +75,7 @@ namespace LottoSYS.Prizes
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM PRIZES";
+            string strSQL = "SELECT * FROM PRIZES WHERE DRAWDATE = " + drawdate;
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

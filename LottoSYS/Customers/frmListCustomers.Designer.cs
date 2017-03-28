@@ -101,10 +101,10 @@
             this.rdoCounty.AutoSize = true;
             this.rdoCounty.Location = new System.Drawing.Point(345, 74);
             this.rdoCounty.Name = "rdoCounty";
-            this.rdoCounty.Size = new System.Drawing.Size(58, 17);
+            this.rdoCounty.Size = new System.Drawing.Size(76, 17);
             this.rdoCounty.TabIndex = 6;
             this.rdoCounty.TabStop = true;
-            this.rdoCounty.Text = "County";
+            this.rdoCounty.Text = "Withdrawn";
             this.rdoCounty.UseVisualStyleBackColor = true;
             this.rdoCounty.CheckedChanged += new System.EventHandler(this.rdoCounty_CheckedChanged);
             // 

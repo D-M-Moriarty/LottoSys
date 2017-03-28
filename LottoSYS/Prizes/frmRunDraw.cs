@@ -38,14 +38,21 @@ namespace LottoSYS.Prize
             TimeSpan now = DateTime.Now.TimeOfDay;
             DateTime today = DateTime.Today;
 
+            // counting the number of draws that have been run
+            int drawCount = draws.Count;
+
+            MessageBox.Show(drawCount.ToString());
+
             try
             {
 
                 // Checking was there a draw run within 7 Days
                 // AND That the draw is being run on a Tuesday
-                DateTime drawDate = draws.Last().getDate();
+                DateTime lastDrawDate = Convert.ToDateTime(Draw.getMaxDrawDate());
 
-                if (DateTime.Now >= drawDate.AddDays(7) &&
+                MessageBox.Show(lastDrawDate.ToString());
+
+                if (DateTime.Now >= lastDrawDate.AddDays(7) &&
                     DateTime.Now.DayOfWeek.ToString().Equals("Tuesday")  &&
                     now > drawTime)
                 {
@@ -62,9 +69,11 @@ namespace LottoSYS.Prize
             }
             catch
             {
+                MessageBox.Show("Int catch");
+
                 // If a Draw has not been run
                 if (DateTime.Now.DayOfWeek.ToString().Equals("Tuesday") &&
-                    now > drawTime)
+                    now > drawTime && drawCount == 0)
                 {
                     btnRunDraw.Enabled = true;
                 }

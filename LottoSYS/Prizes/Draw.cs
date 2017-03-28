@@ -115,6 +115,41 @@ namespace LottoSYS.Prize
             myConn.Close();
         }
 
+        public static DateTime getMaxDrawDate()
+        {
+
+            // variable to hold value to be returned
+            DateTime lastDraw;
+
+            // connect to the Db
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            // Define SQL query to get MAX Stock_No used
+            string strSQl = "SELECT MAX(DRAWDATE) FROM Draw";
+
+            OracleCommand cmd = new OracleCommand(strSQl, myConn);
+
+            // Execute the query
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            // read the first (only) value returned by query
+            // If the first stockno, assign value 1, otherwise add 1 to MAX value
+            dr.Read();
+
+            
+            lastDraw = Convert.ToDateTime(dr.GetValue(0));
+            
+
+            // Close DB connection
+            myConn.Close();
+
+            // Return next StockNo
+            return lastDraw;
+        }
+
+
+
         public void updateTicket()
         {
             // Connect to database

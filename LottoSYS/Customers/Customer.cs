@@ -96,6 +96,34 @@ namespace LottoSYS.Customers
             return DS;
         }
 
+        public static DataSet getWithdrawnCustomer()
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT * " +
+                                "FROM CUSTOMER " +
+                                "WHERE CUSTOMER_STATUS != 'ACTIVE'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
         public static DataSet getCustomerProfile(string surname)
         {
 

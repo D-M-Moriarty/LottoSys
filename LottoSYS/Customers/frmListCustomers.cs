@@ -77,7 +77,7 @@ namespace LottoSYS.Customers
 
         private void rdoCounty_CheckedChanged(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text, "County").Tables["ss"];
+            grdListing.DataSource = Customer.getWithdrawnCustomer().Tables["ss"];
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
