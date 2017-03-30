@@ -33,7 +33,7 @@
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.rdoSurname = new System.Windows.Forms.RadioButton();
             this.rdoWinners = new System.Windows.Forms.RadioButton();
-            this.rdoCounty = new System.Windows.Forms.RadioButton();
+            this.rdoWithdrawn = new System.Windows.Forms.RadioButton();
             this.rdoAge = new System.Windows.Forms.RadioButton();
             this.grpSort = new System.Windows.Forms.Button();
             this.lblList = new System.Windows.Forms.Label();
@@ -77,10 +77,10 @@
             this.rdoSurname.AutoSize = true;
             this.rdoSurname.Location = new System.Drawing.Point(34, 74);
             this.rdoSurname.Name = "rdoSurname";
-            this.rdoSurname.Size = new System.Drawing.Size(67, 17);
+            this.rdoSurname.Size = new System.Drawing.Size(36, 17);
             this.rdoSurname.TabIndex = 4;
             this.rdoSurname.TabStop = true;
-            this.rdoSurname.Text = "Surname";
+            this.rdoSurname.Text = "All";
             this.rdoSurname.UseVisualStyleBackColor = true;
             this.rdoSurname.CheckedChanged += new System.EventHandler(this.rdoSurname_CheckedChanged);
             // 
@@ -96,17 +96,17 @@
             this.rdoWinners.UseVisualStyleBackColor = true;
             this.rdoWinners.CheckedChanged += new System.EventHandler(this.rdoWinners_CheckedChanged);
             // 
-            // rdoCounty
+            // rdoWithdrawn
             // 
-            this.rdoCounty.AutoSize = true;
-            this.rdoCounty.Location = new System.Drawing.Point(345, 74);
-            this.rdoCounty.Name = "rdoCounty";
-            this.rdoCounty.Size = new System.Drawing.Size(76, 17);
-            this.rdoCounty.TabIndex = 6;
-            this.rdoCounty.TabStop = true;
-            this.rdoCounty.Text = "Withdrawn";
-            this.rdoCounty.UseVisualStyleBackColor = true;
-            this.rdoCounty.CheckedChanged += new System.EventHandler(this.rdoCounty_CheckedChanged);
+            this.rdoWithdrawn.AutoSize = true;
+            this.rdoWithdrawn.Location = new System.Drawing.Point(345, 74);
+            this.rdoWithdrawn.Name = "rdoWithdrawn";
+            this.rdoWithdrawn.Size = new System.Drawing.Size(76, 17);
+            this.rdoWithdrawn.TabIndex = 6;
+            this.rdoWithdrawn.TabStop = true;
+            this.rdoWithdrawn.Text = "Withdrawn";
+            this.rdoWithdrawn.UseVisualStyleBackColor = true;
+            this.rdoWithdrawn.CheckedChanged += new System.EventHandler(this.rdoWithdrawn_CheckedChanged);
             // 
             // rdoAge
             // 
@@ -174,7 +174,7 @@
             this.groupBox1.Controls.Add(this.grdListing);
             this.groupBox1.Controls.Add(this.grpSort);
             this.groupBox1.Controls.Add(this.rdoAge);
-            this.groupBox1.Controls.Add(this.rdoCounty);
+            this.groupBox1.Controls.Add(this.rdoWithdrawn);
             this.groupBox1.Controls.Add(this.rdoWinners);
             this.groupBox1.Controls.Add(this.rdoSurname);
             this.groupBox1.Location = new System.Drawing.Point(12, 141);
@@ -224,7 +224,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.RadioButton rdoSurname;
         private System.Windows.Forms.RadioButton rdoWinners;
-        private System.Windows.Forms.RadioButton rdoCounty;
+        private System.Windows.Forms.RadioButton rdoWithdrawn;
         private System.Windows.Forms.RadioButton rdoAge;
         private System.Windows.Forms.Button grpSort;
         private System.Windows.Forms.Label lblList;

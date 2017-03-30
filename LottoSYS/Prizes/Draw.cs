@@ -77,7 +77,7 @@ namespace LottoSYS.Prize
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM Draw";
+            string strSQL = "SELECT * FROM Draw ORDER BY DrawDate";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

@@ -67,7 +67,7 @@ namespace LottoSYS.Customers
             return DS;
         }
 
-        public static DataSet getWinningCustomer()
+        public static DataSet getWinningCustomer(string surname)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -81,7 +81,7 @@ namespace LottoSYS.Customers
             string strSQL = "SELECT DISTINCT CUSTOMER.* " +
                                 "FROM CUSTOMER, TICKET " +
                             "WHERE CUSTOMER.CUSTOMERID = TICKET.CUSTOMERID " +
-                            "AND TICKET.PRIZEFLAG = 'YES'";
+                            "AND TICKET.PRIZEFLAG = 'YES' AND Surname LIKE '" + surname.ToUpper() + "%'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -96,7 +96,7 @@ namespace LottoSYS.Customers
             return DS;
         }
 
-        public static DataSet getWithdrawnCustomer()
+        public static DataSet getWithdrawnCustomer(string surname)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -109,7 +109,7 @@ namespace LottoSYS.Customers
             //define sql query
             string strSQL = "SELECT * " +
                                 "FROM CUSTOMER " +
-                                "WHERE CUSTOMER_STATUS != 'ACTIVE'";
+                                "WHERE CUSTOMER_STATUS != 'ACTIVE' AND Surname LIKE '" + surname.ToUpper() + "%'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

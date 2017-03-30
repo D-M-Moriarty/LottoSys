@@ -74,11 +74,7 @@ namespace LottoSYS.Customers
         {
             grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
         }
-
-        private void rdoCounty_CheckedChanged(object sender, EventArgs e)
-        {
-            grdListing.DataSource = Customer.getWithdrawnCustomer().Tables["ss"];
-        }
+        
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -87,7 +83,12 @@ namespace LottoSYS.Customers
 
         private void rdoWinners_CheckedChanged(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getWinningCustomer().Tables["ss"];
+            grdListing.DataSource = Customer.getWinningCustomer(txtSearchBox.Text).Tables["ss"];
+        }
+
+        private void rdoWithdrawn_CheckedChanged(object sender, EventArgs e)
+        {
+            grdListing.DataSource = Customer.getWithdrawnCustomer(txtSearchBox.Text).Tables["ss"];
         }
     }
         
