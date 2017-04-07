@@ -34,7 +34,6 @@
             this.rdoSurname = new System.Windows.Forms.RadioButton();
             this.rdoWinners = new System.Windows.Forms.RadioButton();
             this.rdoWithdrawn = new System.Windows.Forms.RadioButton();
-            this.rdoAge = new System.Windows.Forms.RadioButton();
             this.grpSort = new System.Windows.Forms.Button();
             this.lblList = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -54,7 +53,7 @@
             this.mnuExit});
             this.mnuListCustomers.Location = new System.Drawing.Point(0, 0);
             this.mnuListCustomers.Name = "mnuListCustomers";
-            this.mnuListCustomers.Size = new System.Drawing.Size(674, 24);
+            this.mnuListCustomers.Size = new System.Drawing.Size(594, 24);
             this.mnuListCustomers.TabIndex = 2;
             this.mnuListCustomers.Text = "ListCustomers";
             // 
@@ -108,20 +107,9 @@
             this.rdoWithdrawn.UseVisualStyleBackColor = true;
             this.rdoWithdrawn.CheckedChanged += new System.EventHandler(this.rdoWithdrawn_CheckedChanged);
             // 
-            // rdoAge
-            // 
-            this.rdoAge.AutoSize = true;
-            this.rdoAge.Location = new System.Drawing.Point(492, 74);
-            this.rdoAge.Name = "rdoAge";
-            this.rdoAge.Size = new System.Drawing.Size(44, 17);
-            this.rdoAge.TabIndex = 7;
-            this.rdoAge.TabStop = true;
-            this.rdoAge.Text = "Age";
-            this.rdoAge.UseVisualStyleBackColor = true;
-            // 
             // grpSort
             // 
-            this.grpSort.Location = new System.Drawing.Point(560, 235);
+            this.grpSort.Location = new System.Drawing.Point(461, 74);
             this.grpSort.Name = "grpSort";
             this.grpSort.Size = new System.Drawing.Size(75, 23);
             this.grpSort.TabIndex = 8;
@@ -173,13 +161,12 @@
             // 
             this.groupBox1.Controls.Add(this.grdListing);
             this.groupBox1.Controls.Add(this.grpSort);
-            this.groupBox1.Controls.Add(this.rdoAge);
             this.groupBox1.Controls.Add(this.rdoWithdrawn);
             this.groupBox1.Controls.Add(this.rdoWinners);
             this.groupBox1.Controls.Add(this.rdoSurname);
             this.groupBox1.Location = new System.Drawing.Point(12, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 289);
+            this.groupBox1.Size = new System.Drawing.Size(568, 289);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sort Listings";
@@ -197,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 442);
+            this.ClientSize = new System.Drawing.Size(594, 442);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblList);
             this.Controls.Add(this.btnSearch);
@@ -225,7 +212,6 @@
         private System.Windows.Forms.RadioButton rdoSurname;
         private System.Windows.Forms.RadioButton rdoWinners;
         private System.Windows.Forms.RadioButton rdoWithdrawn;
-        private System.Windows.Forms.RadioButton rdoAge;
         private System.Windows.Forms.Button grpSort;
         private System.Windows.Forms.Label lblList;
         private System.Windows.Forms.Button btnSearch;

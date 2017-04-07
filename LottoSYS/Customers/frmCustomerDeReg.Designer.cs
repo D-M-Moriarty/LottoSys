@@ -63,7 +63,7 @@
             this.mnuUpdateCustomer.Location = new System.Drawing.Point(0, 0);
             this.mnuUpdateCustomer.Name = "mnuUpdateCustomer";
             this.mnuUpdateCustomer.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mnuUpdateCustomer.Size = new System.Drawing.Size(753, 24);
+            this.mnuUpdateCustomer.Size = new System.Drawing.Size(947, 24);
             this.mnuUpdateCustomer.TabIndex = 1;
             this.mnuUpdateCustomer.Text = "menuStrip1";
             // 
@@ -141,7 +141,7 @@
             this.grpDeReg.Controls.Add(this.lblAddressLine2);
             this.grpDeReg.Controls.Add(this.txtAddress1);
             this.grpDeReg.Controls.Add(this.lblAddressLine1);
-            this.grpDeReg.Location = new System.Drawing.Point(493, 29);
+            this.grpDeReg.Location = new System.Drawing.Point(712, 29);
             this.grpDeReg.Margin = new System.Windows.Forms.Padding(2);
             this.grpDeReg.Name = "grpDeReg";
             this.grpDeReg.Padding = new System.Windows.Forms.Padding(2);
@@ -292,7 +292,7 @@
             this.grdListing.Location = new System.Drawing.Point(25, 102);
             this.grdListing.Margin = new System.Windows.Forms.Padding(2);
             this.grdListing.Name = "grdListing";
-            this.grdListing.Size = new System.Drawing.Size(447, 225);
+            this.grdListing.Size = new System.Drawing.Size(665, 225);
             this.grdListing.TabIndex = 8;
             this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
             // 
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 338);
+            this.ClientSize = new System.Drawing.Size(947, 338);
             this.Controls.Add(this.grdListing);
             this.Controls.Add(this.grpDeReg);
             this.Controls.Add(this.btnSearch);

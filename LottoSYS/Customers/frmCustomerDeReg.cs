@@ -58,7 +58,7 @@ namespace LottoSYS
         {
             grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
 
-            btnSubmit.Enabled = true;
+            
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -130,6 +130,8 @@ namespace LottoSYS
         {
             try
             {
+                btnSubmit.Enabled = true;
+
                 DataGridViewRow row = this.grdListing.Rows[e.RowIndex];
 
                 custId = Convert.ToInt32(row.Cells[0].Value);

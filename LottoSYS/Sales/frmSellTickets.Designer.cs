@@ -64,7 +64,7 @@
             this.mnuUpdateCustomer.Location = new System.Drawing.Point(0, 0);
             this.mnuUpdateCustomer.Name = "mnuUpdateCustomer";
             this.mnuUpdateCustomer.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.mnuUpdateCustomer.Size = new System.Drawing.Size(679, 27);
+            this.mnuUpdateCustomer.Size = new System.Drawing.Size(933, 27);
             this.mnuUpdateCustomer.TabIndex = 2;
             this.mnuUpdateCustomer.Text = "menuStrip1";
             // 
@@ -136,7 +136,7 @@
             this.grpDetailBox.Controls.Add(this.lblSurname);
             this.grpDetailBox.Controls.Add(this.txtTown);
             this.grpDetailBox.Controls.Add(this.lblTown);
-            this.grpDetailBox.Location = new System.Drawing.Point(359, 47);
+            this.grpDetailBox.Location = new System.Drawing.Point(636, 47);
             this.grpDetailBox.Name = "grpDetailBox";
             this.grpDetailBox.Size = new System.Drawing.Size(263, 388);
             this.grpDetailBox.TabIndex = 48;
@@ -281,7 +281,7 @@
             this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdListing.Location = new System.Drawing.Point(44, 161);
             this.grdListing.Name = "grdListing";
-            this.grdListing.Size = new System.Drawing.Size(266, 218);
+            this.grdListing.Size = new System.Drawing.Size(572, 274);
             this.grdListing.TabIndex = 49;
             this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
             // 
@@ -289,7 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 459);
+            this.ClientSize = new System.Drawing.Size(933, 459);
             this.Controls.Add(this.grdListing);
             this.Controls.Add(this.grpDetailBox);
             this.Controls.Add(this.lblSellTicket);
