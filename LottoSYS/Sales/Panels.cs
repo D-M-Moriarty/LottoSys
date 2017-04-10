@@ -108,11 +108,11 @@ namespace LottoSYS.Sales
         public static DataTable getCheckPanels()
         {
 
-            var draw = Draw.getDraws();
+            /*var draw = Draw.getDraws();
 
             var draws = draw.DataTableToList<Draw>();
 
-            DateTime drawDate = draws.Last().getDate();
+            DateTime drawDate = draws.Last().getDate();*/
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
 
@@ -123,11 +123,11 @@ namespace LottoSYS.Sales
 
             //define sql query
             string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PURCHASEDATE >= '" + 
-                String.Format("{0:dd-MMM-yy}", drawDate.AddDays(-6)) + "' "+
-                " AND T.PURCHASEDATE <= '" + String.Format("{0:dd-MMM-yy}", drawDate) + "'" +
+                String.Format("{0:dd-MMM-yy}", Draw.getMaxDrawDate().AddDays(-6)) + "' "+
+                " AND T.PURCHASEDATE <= '" + String.Format("{0:dd-MMM-yy}", Draw.getMaxDrawDate()) + "'" +
                 " AND T.PrizeFlag = 'NO'";
 
-            Console.Write("The date is " + drawDate.AddDays(-6));
+            Console.Write("The date is " + Draw.getMaxDrawDate().AddDays(-6));
 
             /*SELECT*
              FROM PANEL P

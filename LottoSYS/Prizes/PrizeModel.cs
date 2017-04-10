@@ -75,7 +75,7 @@ namespace LottoSYS.Prizes
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT * FROM PRIZES WHERE DRAWDATE = " + drawdate;
+            string strSQL = "SELECT * FROM PRIZES WHERE DRAWDATE = '" + String.Format("{0:dd-MMM-yy}", drawdate) + "'";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

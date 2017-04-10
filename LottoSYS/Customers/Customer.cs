@@ -124,7 +124,7 @@ namespace LottoSYS.Customers
             return DS;
         }
 
-        public static DataSet getCustomerProfile(string surname)
+        /*public static DataSet getCustomerProfile(string surname)
         {
 
             OracleConnection conn = new OracleConnection(ConnectDB.oradb);
@@ -151,7 +151,7 @@ namespace LottoSYS.Customers
             conn.Close();
 
             return DS;
-        }
+        }*/
 
 
 
@@ -177,6 +177,35 @@ namespace LottoSYS.Customers
 
             //close database
             conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getCustomerProfile(string surname)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT CUSTOMERID, TITLE, SURNAME, FORENAME, DOB, ADDRESSLINE1, TOWN, COUNTY, REG_DATE, BALANCE, PHONE, EMAIL " +
+                            "FROM Customer WHERE Surname LIKE '" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            
 
             return DS;
         }

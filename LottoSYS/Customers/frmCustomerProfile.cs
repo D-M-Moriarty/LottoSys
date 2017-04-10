@@ -62,7 +62,7 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
+            grdListing.DataSource = Customer.getCustomerProfile(txtSearchBox.Text.ToUpper()).Tables["ss"];
         }
 
         private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -76,15 +76,15 @@ namespace LottoSYS
 
                 lblName.Text = "Name: " + row.Cells[2].Value.ToString().TrimEnd() + " " + row.Cells[3].Value.ToString();
 
-                lblAddress.Text = "Address: " + row.Cells[6].Value.ToString();
+                lblAddress.Text = "Address: " + row.Cells[5].Value.ToString();
 
-                lblTown.Text = "Town: " + row.Cells[8].Value.ToString();
+                lblTown.Text = "Town: " + row.Cells[6].Value.ToString();
 
-                lblCounty.Text = "County: " + row.Cells[9].Value.ToString();
+                lblCounty.Text = "County: " + row.Cells[7].Value.ToString();
 
-                lblRegDate.Text = "Registration Date: " + row.Cells[17].Value.ToString();
+                lblRegDate.Text = "Registration Date: " + row.Cells[8].Value.ToString();
 
-                lblBalance.Text = "Balance: €" + row.Cells[15].Value.ToString();
+                lblBalance.Text = "Balance: €" + row.Cells[9].Value.ToString();
 
                 grdCustomerTickets.DataSource = Panels.getPanel(custId).Tables["ss"];
 
@@ -159,10 +159,10 @@ namespace LottoSYS
             e.Graphics.DrawString("LottoSys", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, 300, 50);
             e.Graphics.DrawString("Customer Profile", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, Convert.ToInt32(270) , 100);
             e.Graphics.DrawString(lblName.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 150);
-            e.Graphics.DrawString(lblAddress.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 550, 150);
-            //e.Graphics.DrawString("Customer ID: " + customerID2, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 300);
-            //e.Graphics.DrawString("Rental ID: " + rentalID2, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 350);
-            //e.Graphics.DrawString("Cost: " + cost, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 550, 350);//wero;qt
+            e.Graphics.DrawString(lblAddress.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 180);
+            e.Graphics.DrawString(lblCounty.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 210);
+            e.Graphics.DrawString(lblRegDate.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 240);
+            e.Graphics.DrawString(lblBalance.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 270);
         }
 
 

@@ -41,7 +41,7 @@ namespace LottoSYS.Prize
             // counting the number of draws that have been run
             int drawCount = draws.Count;
 
-            MessageBox.Show(drawCount.ToString());
+           // MessageBox.Show(drawCount.ToString());
 
             try
             {
@@ -50,7 +50,7 @@ namespace LottoSYS.Prize
                 // AND That the draw is being run on a Tuesday
                 DateTime lastDrawDate = Convert.ToDateTime(Draw.getMaxDrawDate());
 
-                MessageBox.Show(lastDrawDate.ToString());
+                //MessageBox.Show(lastDrawDate.ToString());
 
                 if (DateTime.Now >= lastDrawDate.AddDays(7) &&
                     DateTime.Now.DayOfWeek.ToString().Equals("Tuesday")  &&
@@ -64,6 +64,7 @@ namespace LottoSYS.Prize
                 else
                 {
                     Console.Write(DateTime.Now.DayOfWeek);
+                    // change when testing
                     btnRunDraw.Enabled = false;
                 }
             }

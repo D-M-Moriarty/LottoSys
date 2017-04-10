@@ -175,7 +175,9 @@ namespace LottoSYS.Prize
 
                     if (drawCount > 0)
                     {
-                        grdWinningTickets.DataSource = PrizeModel.getPrize(draws.Last().drawDate).Tables["ss"];
+                        //MessageBox.Show(Draw.getMaxDrawDate().ToString());
+
+                        grdWinningTickets.DataSource = PrizeModel.getPrize(Draw.getMaxDrawDate()).Tables["ss"];
                     }
                     else
                     {
