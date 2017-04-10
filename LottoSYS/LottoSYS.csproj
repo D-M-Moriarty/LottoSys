@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectDB.cs" />
+    <Compile Include="Customers\ClsPrint.cs" />
     <Compile Include="Customers\Customer.cs" />
     <Compile Include="Customers\frmCustomerDeReg.cs">
       <SubType>Form</SubType>
@@ -168,7 +169,6 @@
     <EmbeddedResource Include="Customers\frmListCustomers.resx">
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prizes\Report1.rdlc" />
     <EmbeddedResource Include="Sales\frmSalesAnalysis.resx">
       <DependentUpon>frmSalesAnalysis.cs</DependentUpon>
     </EmbeddedResource>

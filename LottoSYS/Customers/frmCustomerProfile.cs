@@ -156,13 +156,42 @@ namespace LottoSYS
            // pd.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("PaperA4", 840, 1180);
             //pd.Print();
 
-            e.Graphics.DrawString("LottoSys", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, 300, 50);
-            e.Graphics.DrawString("Customer Profile", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, Convert.ToInt32(270) , 100);
+            e.Graphics.DrawString("LottoSys", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, 350, 50);
+            e.Graphics.DrawString("Customer Profile", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, 310 , 100);
             e.Graphics.DrawString(lblName.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 150);
             e.Graphics.DrawString(lblAddress.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 180);
             e.Graphics.DrawString(lblCounty.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 210);
             e.Graphics.DrawString(lblRegDate.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 240);
             e.Graphics.DrawString(lblBalance.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 270);
+
+        
+            //e.Graphics.DrawString(, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 300);
+
+            
+
+            //ClsPrint _ClsPrint = new ClsPrint(grdCustomerTickets, "header doc text");
+            //_ClsPrint.PrintForm();
+
+
+            Bitmap bm = new Bitmap(this.grdCustomerTickets.Width, this.grdCustomerTickets.Height);
+            grdCustomerTickets.DrawToBitmap(bm, new Rectangle(0, 0, this.grdCustomerTickets.Width, this.grdCustomerTickets.Height));
+            e.Graphics.DrawImage(bm, 0, 300);
+        }
+
+        public static string DGVtoString(DataGridView dgv, char delimiter)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    sb.Append(cell.Value);
+                    sb.Append(delimiter);
+                }
+                sb.Remove(sb.Length - 1, 1); // Removes the last delimiter 
+                sb.AppendLine();
+            }
+            return sb.ToString();
         }
 
 

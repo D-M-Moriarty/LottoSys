@@ -1,4 +1,5 @@
-﻿using LottoSYS.Sales;
+﻿using LottoSYS.Customers;
+using LottoSYS.Sales;
 using System;
 using System.Windows.Forms;
 
@@ -77,6 +78,32 @@ namespace LottoSYS.Finance
         private void btnSearch_Click(object sender, EventArgs e)
         {
             grdSales.DataSource = Analysis.getAnalysis(dtpStartDate.Value, dtpEndDate.Value).Tables["ss"];
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            ClsPrint _ClsPrint = new ClsPrint(grdSales, "Number Analysis");
+            _ClsPrint.PrintForm();
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

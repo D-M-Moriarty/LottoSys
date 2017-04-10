@@ -90,6 +90,12 @@ namespace LottoSYS.Customers
         {
             grdListing.DataSource = Customer.getWithdrawnCustomer(txtSearchBox.Text).Tables["ss"];
         }
+
+        private void grpSort_Click(object sender, EventArgs e)
+        {
+            ClsPrint _ClsPrint = new ClsPrint(grdListing, "Customer Listing");
+            _ClsPrint.PrintForm();
+        }
     }
         
 }

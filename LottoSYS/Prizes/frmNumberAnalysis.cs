@@ -1,4 +1,5 @@
-﻿using LottoSYS.Sales;
+﻿using LottoSYS.Customers;
+using LottoSYS.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,12 @@ namespace LottoSYS.Prize
             grdNumAnalysis.DataSource = Analysis.getNumberAnalysis("DESC").Tables["ss"];
 
             grdList.DataSource = Analysis.getNumberAnalysis("ASC").Tables["ss"];
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            ClsPrint _ClsPrint = new ClsPrint(grdNumAnalysis, "Number Analysis");
+            _ClsPrint.PrintForm();
         }
     }
 }

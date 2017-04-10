@@ -43,6 +43,7 @@
             this.mnuRevenueReport = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.grpAnalysis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdSales)).BeginInit();
             this.mnuRevenueReport.SuspendLayout();
@@ -51,26 +52,28 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(124, 84);
+            this.lblPassword.Location = new System.Drawing.Point(12, 77);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(68, 16);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password";
+            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(221, 78);
+            this.txtPassword.Location = new System.Drawing.Point(109, 71);
             this.txtPassword.MaxLength = 40;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(147, 22);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnEnter
             // 
             this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnter.Location = new System.Drawing.Point(407, 77);
+            this.btnEnter.Location = new System.Drawing.Point(295, 70);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(75, 23);
             this.btnEnter.TabIndex = 3;
@@ -80,15 +83,16 @@
             // 
             // grpAnalysis
             // 
+            this.grpAnalysis.Controls.Add(this.btnPrint);
             this.grpAnalysis.Controls.Add(this.btnSearch);
             this.grpAnalysis.Controls.Add(this.grdSales);
             this.grpAnalysis.Controls.Add(this.lblEndDate);
             this.grpAnalysis.Controls.Add(this.lblStart);
             this.grpAnalysis.Controls.Add(this.dtpEndDate);
             this.grpAnalysis.Controls.Add(this.dtpStartDate);
-            this.grpAnalysis.Location = new System.Drawing.Point(50, 116);
+            this.grpAnalysis.Location = new System.Drawing.Point(12, 116);
             this.grpAnalysis.Name = "grpAnalysis";
-            this.grpAnalysis.Size = new System.Drawing.Size(579, 307);
+            this.grpAnalysis.Size = new System.Drawing.Size(660, 307);
             this.grpAnalysis.TabIndex = 8;
             this.grpAnalysis.TabStop = false;
             this.grpAnalysis.Text = "SalesAnalysis";
@@ -96,7 +100,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(482, 75);
+            this.btnSearch.Location = new System.Drawing.Point(463, 75);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 5;
@@ -106,10 +110,11 @@
             // 
             // grdSales
             // 
+            this.grdSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSales.Location = new System.Drawing.Point(21, 119);
             this.grdSales.Name = "grdSales";
-            this.grdSales.Size = new System.Drawing.Size(536, 150);
+            this.grdSales.Size = new System.Drawing.Size(620, 150);
             this.grdSales.TabIndex = 4;
             // 
             // lblEndDate
@@ -151,21 +156,23 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(221, 41);
+            this.txtUsername.Location = new System.Drawing.Point(109, 34);
             this.txtUsername.MaxLength = 40;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(147, 22);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(124, 47);
+            this.lblUserName.Location = new System.Drawing.Point(12, 40);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(71, 16);
             this.lblUserName.TabIndex = 9;
             this.lblUserName.Text = "Username";
+            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
             // 
             // mnuRevenueReport
             // 
@@ -191,6 +198,16 @@
             this.mnuExit.Size = new System.Drawing.Size(37, 20);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(566, 75);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmSalesAnalysis
             // 
@@ -237,5 +254,6 @@
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView grdSales;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

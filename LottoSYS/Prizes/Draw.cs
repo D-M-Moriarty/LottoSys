@@ -14,57 +14,6 @@ namespace LottoSYS.Prize
         public int number5 { get; set; }
         public int number6 { get; set; }
 
-        public static DataSet getDraw(String f)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Draw";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static DataSet getDraw()
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Draw";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
 
         public static DataTable getDraws()
         {
@@ -149,24 +98,6 @@ namespace LottoSYS.Prize
         }
 
 
-
-        public void updateTicket()
-        {
-            // Connect to database
-            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
-            myConn.Open();
-
-            // Define SQL query to UPDATE Customer details
-            String strSQl = "UPDATE Panel SET PrizeFlag = 'YES'";
-
-            // Execute the command
-            OracleCommand cmd = new OracleCommand(strSQl, myConn);
-            cmd.ExecuteNonQuery();
-
-
-            // Close DB connection
-            myConn.Close();
-        }
 
         public void setDate(DateTime drawDate)
         {

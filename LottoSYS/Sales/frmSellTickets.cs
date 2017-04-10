@@ -91,55 +91,12 @@ namespace LottoSYS.Sales
                 ticket.setPrizeFlag("NO");
 
                 ticket.regTicket();
-
-                string ticketOut = "";
-
-                //Ticket.generateNumbers2(cboTicketQTY);
-
-
-
-
+                
 
                 panelNums = new int[numOfLines, numbers6];
 
                 panelNums = Ticket.generateNumbers(numOfLines);
 
-                /*for (int i = 0; i < numOfLines; i++)
-                {
-
-
-                    for (int j = 0; j < numbers6; j++)
-                    {
-                        // schrodinger cat method
-                        panelNums[i, j] = generated[j];
-                        Console.Write(panelNums[i, j] + ",");
-                    }
-
-
-
-                }*/
-
-                /*for (int i = 0; i < numOfLines; i++)
-                {
-                    generated = Ticket.generateNumbers();
-
-                    Panel panel = new Panel();
-
-                    panel.setPanelId(i + 1);
-
-                    panel.setTicketId(ticketId);
-
-                    panel.setNum1(generated[0]);
-                    panel.setNum2(generated[1]);
-                    panel.setNum3(generated[2]);
-                    panel.setNum4(generated[3]);
-                    panel.setNum5(generated[4]);
-                    panel.setNum6(generated[5]);
-
-                    panel.regPanel();
-
-
-                }*/
 
                 for (int i = 0; i < numOfLines; i++)
                 {

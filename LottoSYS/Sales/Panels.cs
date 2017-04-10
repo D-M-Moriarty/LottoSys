@@ -51,59 +51,6 @@ namespace LottoSYS.Sales
             return DS;
         }
 
-        public static DataSet getPanel()
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Panel";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static DataTable getPanels()
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataTable DT = new DataTable();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Panel P JOIN Ticket T on T.TicketId = P.TicketId WHERE T.PrizeFlag = 'NO'";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            var dr = cmd.ExecuteReader();
-
-            DT.Load(dr);
-
-            //close database
-            conn.Close();
-
-            return DT;
-        }
 
         public static DataTable getCheckPanels()
         {
@@ -129,12 +76,7 @@ namespace LottoSYS.Sales
 
             Console.Write("The date is " + Draw.getMaxDrawDate().AddDays(-6));
 
-            /*SELECT*
-             FROM PANEL P
-             JOIN TICKET T ON T.TICKETID = P.TICKETID
-             WHERE T.PURCHASEDATE >= LASTDRAWDATE
-             AND <= NEXT DRAWDATE
-             */
+             
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
@@ -149,131 +91,7 @@ namespace LottoSYS.Sales
             return DT;
         }
 
-        public static DataSet getPanel(int ticketId, int panelId)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Panel WHERE TicketId = " + ticketId + " AND PanelId = " + panelId;
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static DataSet getPanel(string surname, string order)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname +
-                "%' AND CUSTOMER_STATUS = 'Active' ORDER BY " + order;
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static DataSet getPanel(DataSet DS, string description)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT Stock_No, Description FROM STOCK WHERE Description LIKE '" + description + "%'";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            try
-            {
-                da.Fill(DS, "res");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static int nextPanelId()
-        {
-            // variable to hold value to be returned
-            int intNextCustomerId;
-
-            // connect to the Db
-            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
-            myConn.Open();
-
-            // Define SQL query to get MAX Stock_No used
-            String strSQl = "SELECT MAX(PanelId) FROM Panel";
-
-            OracleCommand cmd = new OracleCommand(strSQl, myConn);
-
-            // Execute the query
-            OracleDataReader dr = cmd.ExecuteReader();
-
-            // read the first (only) value returned by query
-            // If the first stockno, assign value 1, otherwise add 1 to MAX value
-            dr.Read();
-
-            if (dr.IsDBNull(0))
-            {
-                intNextCustomerId = 1;
-            }
-            else
-            {
-                intNextCustomerId = Convert.ToInt16(dr.GetValue(0)) + 1;
-            }
-
-            // Close DB connection
-            myConn.Close();
-
-            // Return next StockNo
-            return intNextCustomerId;
-
-
-
-        }
+      
 
         public void regPanel()
         {
@@ -296,23 +114,6 @@ namespace LottoSYS.Sales
             myConn.Close();
         }
 
-        public void updateTicket()
-        {
-            // Connect to database
-            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
-            myConn.Open();
-
-            // Define SQL query to UPDATE Customer details
-            String strSQl = "UPDATE Panel SET PrizeFlag = 'YES'";
-
-            // Execute the command
-            OracleCommand cmd = new OracleCommand(strSQl, myConn);
-            cmd.ExecuteNonQuery();
-
-
-            // Close DB connection
-            myConn.Close();
-        }
 
         public void setPanelId(int panelId)
         {

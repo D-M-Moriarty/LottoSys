@@ -41,31 +41,6 @@ namespace LottoSYS.Customers
 
         }
 
-        public static DataSet getCustomer()
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Customer";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
 
         public static DataSet getWinningCustomer(string surname)
         {
@@ -124,35 +99,6 @@ namespace LottoSYS.Customers
             return DS;
         }
 
-        /*public static DataSet getCustomerProfile(string surname)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT C.Forename, C.Surname, T.purchaseDate, P.* " + 
-                "From Customer C Join Ticket T ON C.CustomerId = T.CUSTOMERID " +
-                "Join Panel P ON P.TICKETID = T.TICKETID " +
-                "WHERE C.Surname LIKE '" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }*/
-
 
 
         public static DataSet getCustomer(string surname)
@@ -210,65 +156,6 @@ namespace LottoSYS.Customers
             return DS;
         }
 
-        public static DataSet getCustomer(string surname, string order)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            DataSet DS = new DataSet();
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT * FROM Customer WHERE Surname LIKE '%" + surname +
-                "%' AND CUSTOMER_STATUS = 'Active' ORDER BY " + order;
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            da.Fill(DS, "ss");
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
-
-        public static DataSet getCustomer(DataSet DS, string description)
-        {
-
-            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
-
-            //connect to the database
-            conn.Open();
-
-            //define sql query
-            string strSQL = "SELECT Stock_No, Description FROM STOCK WHERE Description LIKE '" + description + "%'";
-
-
-            OracleCommand cmd = new OracleCommand(strSQL, conn);
-
-            //execute the query
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            try
-            {
-                da.Fill(DS, "res");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-
-            //close database
-            conn.Close();
-
-            return DS;
-        }
 
         public static int nextCustomerId()
         {

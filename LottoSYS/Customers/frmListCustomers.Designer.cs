@@ -115,6 +115,7 @@
             this.grpSort.TabIndex = 8;
             this.grpSort.Text = "Print";
             this.grpSort.UseVisualStyleBackColor = true;
+            this.grpSort.Click += new System.EventHandler(this.grpSort_Click);
             // 
             // lblList
             // 

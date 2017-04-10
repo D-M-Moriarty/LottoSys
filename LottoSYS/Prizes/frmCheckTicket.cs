@@ -28,7 +28,8 @@ namespace LottoSYS.Prize
 
         private void frmPayPrize_Load(object sender, EventArgs e)
         {
-            
+            btnPrint.Enabled = false;
+
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -144,6 +145,7 @@ namespace LottoSYS.Prize
 
         private void btnCheckTickets_Click(object sender, EventArgs e)
         {
+            btnPrint.Enabled = true;
 
             try
             {
@@ -198,6 +200,12 @@ namespace LottoSYS.Prize
             }
 
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            ClsPrint _ClsPrint = new ClsPrint(grdWinningTickets, "Winning tickes");
+            _ClsPrint.PrintForm();
         }
     }
 }
