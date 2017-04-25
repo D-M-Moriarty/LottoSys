@@ -99,6 +99,89 @@ namespace LottoSYS.Customers
             return DS;
         }
 
+        public static DataSet getWinningCustomerList(string surname)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT DISTINCT CUSTOMER.CUSTOMERID, CUSTOMER.FORENAME, CUSTOMER.SURNAME, CUSTOMER.DOB, CUSTOMER.TOWN " +
+                                "FROM CUSTOMER, TICKET " +
+                            "WHERE CUSTOMER.CUSTOMERID = TICKET.CUSTOMERID " +
+                            "AND TICKET.PRIZEFLAG = 'YES' AND SURNAME LIKE '" + surname.ToUpper() + "%'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getWithdrawnCustomerList(string surname)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT CUSTOMERID, FORENAME, SURNAME, DOB, TOWN " +
+                                "FROM CUSTOMER " +
+                                "WHERE CUSTOMER_STATUS != 'ACTIVE' AND Surname LIKE '" + surname.ToUpper() + "%'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
+        public static DataSet getCustomerList(string surname)
+        {
+
+            OracleConnection conn = new OracleConnection(ConnectDB.oradb);
+
+            DataSet DS = new DataSet();
+
+            //connect to the database
+            conn.Open();
+
+            //define sql query
+            string strSQL = "SELECT CUSTOMERID, FORENAME, SURNAME, DOB, TOWN FROM CUSTOMER WHERE Surname LIKE '" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
+
+            OracleCommand cmd = new OracleCommand(strSQL, conn);
+
+            //execute the query
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            da.Fill(DS, "ss");
+
+            //close database
+            conn.Close();
+
+            return DS;
+        }
+
 
 
         public static DataSet getCustomer(string surname)

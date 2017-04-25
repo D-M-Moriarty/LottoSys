@@ -37,6 +37,7 @@ namespace LottoSYS
         private void frmListCustomers_Load(object sender, EventArgs e)
         {
             grpDetails.Visible = false;
+            btnPrintPreview.Enabled = false;
             
         }
 
@@ -63,6 +64,7 @@ namespace LottoSYS
         private void btnSearch_Click(object sender, EventArgs e)
         {
             grdListing.DataSource = Customer.getCustomerProfile(txtSearchBox.Text.ToUpper()).Tables["ss"];
+            
         }
 
         private void grdListing_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -89,6 +91,7 @@ namespace LottoSYS
                 grdCustomerTickets.DataSource = Panels.getPanel(custId).Tables["ss"];
 
                 grpDetails.Visible = true;
+                btnPrintPreview.Enabled = true;
             }
             catch
             {
@@ -164,13 +167,10 @@ namespace LottoSYS
             e.Graphics.DrawString(lblRegDate.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 240);
             e.Graphics.DrawString(lblBalance.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 270);
 
-        
+
             //e.Graphics.DrawString(, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 300);
 
             
-
-            //ClsPrint _ClsPrint = new ClsPrint(grdCustomerTickets, "header doc text");
-            //_ClsPrint.PrintForm();
 
 
             Bitmap bm = new Bitmap(this.grdCustomerTickets.Width, this.grdCustomerTickets.Height);
@@ -198,8 +198,13 @@ namespace LottoSYS
 
         private void btnPrintPreview_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.ShowDialog();
+            string details = lblName.Text + "\n" + lblAddress.Text + "\n" + lblCounty.Text +
+                "\n" + lblRegDate.Text + "\n" + lblBalance.Text;
+
+            ClsPrint _ClsPrint = new ClsPrint(grdCustomerTickets, "LottoSys\nCustomerProfile\n", details);
+            _ClsPrint.printPreview();
+            //printPreviewDialog1.Document = printDocument1;
+            //printPreviewDialog1.ShowDialog();
         }
     }
 }

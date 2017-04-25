@@ -12,9 +12,6 @@ namespace LottoSYS.Customers
 {
     class ClsPrint
     {
-
-        // http://stackoverflow.com/questions/15853746/how-to-print-values-from-a-datagridview-control
-
         #region Variables
 
         int iCellHeight = 0; //Used to get/set the datagridview cell height
@@ -29,6 +26,8 @@ namespace LottoSYS.Customers
         private PrintDocument _printDocument = new PrintDocument();
         private DataGridView gw = new DataGridView();
         private string _ReportHeader;
+        private string _details;
+        private Boolean printDetails = false;
 
         #endregion
 
@@ -37,23 +36,39 @@ namespace LottoSYS.Customers
             _printDocument.PrintPage += new PrintPageEventHandler(_printDocument_PrintPage);
             _printDocument.BeginPrint += new PrintEventHandler(_printDocument_BeginPrint);
             gw = gridview;
+            printDetails = false;
+            _ReportHeader = ReportHeader;
+        }
+
+        public ClsPrint(DataGridView gridview, string ReportHeader, string details)
+        {
+            _printDocument.PrintPage += new PrintPageEventHandler(_printDocument_PrintPage);
+            _printDocument.BeginPrint += new PrintEventHandler(_printDocument_BeginPrint);
+            _details = details;
+            printDetails = true;
+            gw = gridview;
             _ReportHeader = ReportHeader;
         }
 
         public void PrintForm()
         {
-            ////Open the print dialog
-            //PrintDialog printDialog = new PrintDialog();
-            //printDialog.Document = _printDocument;
-            //printDialog.UseEXDialog = true;
+            //Open the print dialog
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = _printDocument;
+            printDialog.UseEXDialog = true;
 
-            ////Get the document
-            //if (DialogResult.OK == printDialog.ShowDialog())
-            //{
-            //    _printDocument.DocumentName = "Test Page Print";
-            //    _printDocument.Print();
-            //}
+            //Get the document
+            if (DialogResult.OK == printDialog.ShowDialog())
+            {
+                _printDocument.DocumentName = "Test Page Print";
+                _printDocument.Print();
+            }
 
+
+        }
+
+        public void printPreview()
+        {
             //Open the print preview dialog
             PrintPreviewDialog objPPdialog = new PrintPreviewDialog();
             objPPdialog.Document = _printDocument;
@@ -71,11 +86,12 @@ namespace LottoSYS.Customers
             //Whether more pages have to print or not
             bool bMorePagesToPrint = false;
             int iTmpWidth = 0;
-            
 
             //For the first page to print set the cell width and header height
             if (bFirstPage)
             {
+
+
                 foreach (DataGridViewColumn GridCol in gw.Columns)
                 {
                     iTmpWidth = (int)(Math.Floor((double)((double)GridCol.Width /
@@ -111,6 +127,17 @@ namespace LottoSYS.Customers
 
                     if (bNewPage)
                     {
+                        if (printDetails)
+                        {
+                            e.Graphics.DrawString(_details,
+                            new Font(gw.Font, FontStyle.Bold),
+                            Brushes.Black, e.MarginBounds.Left,
+                            e.MarginBounds.Top - e.Graphics.MeasureString(_details,
+                            new Font(gw.Font, FontStyle.Bold),
+                            e.MarginBounds.Width).Height + 80);
+                           
+                        }
+
                         //Draw Header
                         e.Graphics.DrawString(_ReportHeader,
                             new Font(gw.Font, FontStyle.Bold),
@@ -133,6 +160,10 @@ namespace LottoSYS.Customers
 
                         //Draw Columns                 
                         iTopMargin = e.MarginBounds.Top;
+                        if (bFirstPage && printDetails)
+                        {
+                            iTopMargin += 100;
+                        }
                         DataGridViewColumn[] _GridCol = new DataGridViewColumn[gw.Columns.Count];
                         int colcount = 0;
                         //Convert ltr to rtl
@@ -140,8 +171,9 @@ namespace LottoSYS.Customers
                         {
                             _GridCol[colcount++] = GridCol;
                         }
-                        for (int i = (_GridCol.Count() - 1); i >= 0; i--)
+                        for (int i = 0; i < _GridCol.Count(); i++)
                         {
+
                             e.Graphics.FillRectangle(new SolidBrush(Color.LightGray),
                                 new Rectangle((int)arrColumnLefts[iCount], iTopMargin,
                                 (int)arrColumnWidths[iCount], iHeaderHeight));
@@ -168,9 +200,10 @@ namespace LottoSYS.Customers
                     {
                         _GridCell[cellcount++] = Cel;
                     }
-                    //Draw Columns Contents                
-                    for (int i = (_GridCell.Count() - 1); i >= 0; i--)
+                    //Draw Columns Contents
+                    for (int i = 0; i < _GridCell.Count(); i++)
                     {
+                        //                    
                         if (_GridCell[i].Value != null)
                         {
                             e.Graphics.DrawString(_GridCell[i].FormattedValue.ToString(),
@@ -232,6 +265,5 @@ namespace LottoSYS.Customers
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

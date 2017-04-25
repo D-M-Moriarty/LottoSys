@@ -56,7 +56,7 @@ namespace LottoSYS.Prize
         private void btnPrint_Click(object sender, EventArgs e)
         {
             ClsPrint _ClsPrint = new ClsPrint(grdNumAnalysis, "Number Analysis");
-            _ClsPrint.PrintForm();
+            _ClsPrint.printPreview();
         }
     }
 }

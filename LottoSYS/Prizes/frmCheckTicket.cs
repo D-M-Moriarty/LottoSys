@@ -178,8 +178,13 @@ namespace LottoSYS.Prize
                     if (drawCount > 0)
                     {
                         //MessageBox.Show(Draw.getMaxDrawDate().ToString());
-
+                       
                         grdWinningTickets.DataSource = PrizeModel.getPrize(Draw.getMaxDrawDate()).Tables["ss"];
+
+                        DataGridViewRow row = this.grdWinningTickets.Rows[0];
+                        
+                        if (row.Cells[0].Value == null)
+                            MessageBox.Show("There are no winning tickets", "OOps!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -205,7 +210,7 @@ namespace LottoSYS.Prize
         private void btnPrint_Click(object sender, EventArgs e)
         {
             ClsPrint _ClsPrint = new ClsPrint(grdWinningTickets, "Winning tickes");
-            _ClsPrint.PrintForm();
+            _ClsPrint.printPreview();
         }
     }
 }

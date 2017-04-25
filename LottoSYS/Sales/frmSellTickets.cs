@@ -51,7 +51,7 @@ namespace LottoSYS.Sales
             }
             else
             {
-                MessageBox.Show("Cannot buy tickets anymore today");
+                MessageBox.Show("Cannot buy tickets anymore today", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 parent.Show();
             }

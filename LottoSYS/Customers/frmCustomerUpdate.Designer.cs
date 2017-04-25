@@ -477,6 +477,7 @@
             this.grdUpdate.Size = new System.Drawing.Size(403, 150);
             this.grdUpdate.TabIndex = 44;
             this.grdUpdate.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUpdate_CellClick);
+            this.grdUpdate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUpdate_CellContentClick);
             // 
             // frmCustomerUpdate
             // 

@@ -30,7 +30,7 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT DISTINCT P.*, T.PRICE, PR.PRIZEAMOUNT, T.PRIZEFLAG, T.PURCHASEDATE " + 
+            string strSQL = "SELECT DISTINCT P.*, T.PRICE, PR.PRIZEAMOUNT, T.PURCHASEDATE " + 
                             "From Panel P Join Ticket T ON P.TICKETID = T.TICKETID " + 
                             "JOIN Customer C ON '" + custId + "' = T.CUSTOMERID " +
                             "LEFT JOIN Prizes PR ON PR.TICKETID = T.TICKETID " +

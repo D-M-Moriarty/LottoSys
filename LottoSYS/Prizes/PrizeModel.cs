@@ -87,7 +87,10 @@ namespace LottoSYS.Prizes
             //close database
             conn.Close();
 
-            return DS;
+            if (DateTime.Today > drawdate.AddDays(7))
+                return new DataSet();
+            else
+                return DS;
         }
 
         public void setDrawDate(DateTime drawDate)

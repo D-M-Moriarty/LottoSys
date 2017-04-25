@@ -38,7 +38,7 @@ namespace LottoSYS.Customers
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
+            grdListing.DataSource = Customer.getCustomerList(txtSearchBox.Text.ToUpper()).Tables["ss"];
 
             //btnSearch.Enabled = false;
         }
@@ -72,7 +72,7 @@ namespace LottoSYS.Customers
 
         private void rdoSurname_CheckedChanged(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text).Tables["ss"];
+            grdListing.DataSource = Customer.getCustomerList(txtSearchBox.Text).Tables["ss"];
         }
         
 
@@ -83,18 +83,23 @@ namespace LottoSYS.Customers
 
         private void rdoWinners_CheckedChanged(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getWinningCustomer(txtSearchBox.Text).Tables["ss"];
+            grdListing.DataSource = Customer.getWinningCustomerList(txtSearchBox.Text).Tables["ss"];
         }
 
         private void rdoWithdrawn_CheckedChanged(object sender, EventArgs e)
         {
-            grdListing.DataSource = Customer.getWithdrawnCustomer(txtSearchBox.Text).Tables["ss"];
+            grdListing.DataSource = Customer.getWithdrawnCustomerList(txtSearchBox.Text).Tables["ss"];
         }
 
         private void grpSort_Click(object sender, EventArgs e)
         {
             ClsPrint _ClsPrint = new ClsPrint(grdListing, "Customer Listing");
-            _ClsPrint.PrintForm();
+            _ClsPrint.printPreview();
+        }
+
+        private void grdListing_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
         

@@ -180,6 +180,7 @@
             this.grdListing.Name = "grdListing";
             this.grdListing.Size = new System.Drawing.Size(502, 152);
             this.grdListing.TabIndex = 9;
+            this.grdListing.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellContentClick);
             // 
             // frmListCustomers
             // 

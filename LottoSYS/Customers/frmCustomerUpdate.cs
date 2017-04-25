@@ -352,5 +352,9 @@ namespace LottoSYS
             cboGender.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        private void grdUpdate_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -37,7 +37,6 @@
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.grdListing = new System.Windows.Forms.DataGridView();
-            this.btnProfile = new System.Windows.Forms.Button();
             this.grpDetails = new System.Windows.Forms.GroupBox();
             this.lblBalance = new System.Windows.Forms.Label();
             this.lblRegDate = new System.Windows.Forms.Label();
@@ -63,7 +62,7 @@
             this.mnuExit});
             this.mnuListCustomers.Location = new System.Drawing.Point(0, 0);
             this.mnuListCustomers.Name = "mnuListCustomers";
-            this.mnuListCustomers.Size = new System.Drawing.Size(1309, 24);
+            this.mnuListCustomers.Size = new System.Drawing.Size(1232, 24);
             this.mnuListCustomers.TabIndex = 1;
             this.mnuListCustomers.Text = "ListCustomers";
             // 
@@ -124,19 +123,9 @@
             this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdListing.Location = new System.Drawing.Point(22, 156);
             this.grdListing.Name = "grdListing";
-            this.grdListing.Size = new System.Drawing.Size(1260, 150);
+            this.grdListing.Size = new System.Drawing.Size(1174, 150);
             this.grdListing.TabIndex = 48;
             this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Location = new System.Drawing.Point(496, 95);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(278, 23);
-            this.btnProfile.TabIndex = 49;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click_1);
             // 
             // grpDetails
             // 
@@ -149,7 +138,7 @@
             this.grpDetails.Controls.Add(this.grdCustomerTickets);
             this.grpDetails.Location = new System.Drawing.Point(12, 322);
             this.grpDetails.Name = "grpDetails";
-            this.grpDetails.Size = new System.Drawing.Size(1285, 321);
+            this.grpDetails.Size = new System.Drawing.Size(1203, 321);
             this.grpDetails.TabIndex = 50;
             this.grpDetails.TabStop = false;
             this.grpDetails.Text = "Details";
@@ -219,7 +208,7 @@
             this.grdCustomerTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCustomerTickets.Location = new System.Drawing.Point(11, 152);
             this.grdCustomerTickets.Name = "grdCustomerTickets";
-            this.grdCustomerTickets.Size = new System.Drawing.Size(1259, 150);
+            this.grdCustomerTickets.Size = new System.Drawing.Size(1173, 150);
             this.grdCustomerTickets.TabIndex = 57;
             // 
             // printPreviewDialog1
@@ -254,10 +243,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1309, 655);
+            this.ClientSize = new System.Drawing.Size(1232, 655);
             this.Controls.Add(this.btnPrintPreview);
             this.Controls.Add(this.grpDetails);
-            this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.grdListing);
             this.Controls.Add(this.lblSearchLabel);
             this.Controls.Add(this.btnSearch);
@@ -288,7 +276,6 @@
         private System.Windows.Forms.TextBox txtSearchBox;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView grdListing;
-        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.GroupBox grpDetails;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label lblRegDate;
