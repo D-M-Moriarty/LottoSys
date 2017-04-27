@@ -75,83 +75,82 @@ namespace LottoSYS.Sales
 
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
-            
-            for(int p = 0; p < 1000; p++)
+
+            Ticket ticket = new Ticket();
+            Panels panel;
+
+            int ticketId = Ticket.nextTicketId();
+
+            ticket.setTicketId(Convert.ToInt32(Ticket.nextTicketId().ToString("00000")));
+            ticket.setCustomerId(custId);
+            ticket.setPurchaseDate(DateTime.Now);
+            ticket.setTime(DateTime.Now.ToString());
+            ticket.setPrice(Panels.PANEL_PRICE * numOfLines);
+            ticket.setPrizeFlag("NO");
+
+            ticket.regTicket();
+
+
+            panelNums = new int[numOfLines, numbers6];
+
+            panelNums = Ticket.generateNumbers(numOfLines);
+
+
+            for (int i = 0; i < numOfLines; i++)
             {
-                Ticket ticket = new Ticket();
-                Panels panel;
+                panel = new Panels();
 
-                int ticketId = Ticket.nextTicketId();
+                panel.setPanelId(i + 1);
 
-                ticket.setTicketId(Convert.ToInt32(Ticket.nextTicketId().ToString("00000")));
-                ticket.setCustomerId(custId);
-                ticket.setPurchaseDate(DateTime.Now);
-                ticket.setTime(DateTime.Now.ToString());
-                ticket.setPrice(Panels.PANEL_PRICE * numOfLines);
-                ticket.setPrizeFlag("NO");
+                panel.setTicketId(ticketId);
 
-                ticket.regTicket();
-                
+                panel.setNum1(panelNums[i, 0]);
+                panel.setNum2(panelNums[i, 1]);
+                panel.setNum3(panelNums[i, 2]);
+                panel.setNum4(panelNums[i, 3]);
+                panel.setNum5(panelNums[i, 4]);
+                panel.setNum6(panelNums[i, 5]);
 
-                panelNums = new int[numOfLines, numbers6];
+                panel.regPanel();
 
-                panelNums = Ticket.generateNumbers(numOfLines);
+            }
 
 
-                for (int i = 0; i < numOfLines; i++)
+            // string output for the new ticket
+            string outpo = "Ticket Numbers: \n\n";
+
+            for (int i = 0; i < numOfLines; i++)
+            {
+                outpo += "Line no. " + (i + 1) + ": ";
+
+                for (int j = 0; j < numbers6; j++)
                 {
-                    panel = new Panels();
-
-                    panel.setPanelId(i + 1);
-
-                    panel.setTicketId(ticketId);
-
-                    panel.setNum1(panelNums[i, 0]);
-                    panel.setNum2(panelNums[i, 1]);
-                    panel.setNum3(panelNums[i, 2]);
-                    panel.setNum4(panelNums[i, 3]);
-                    panel.setNum5(panelNums[i, 4]);
-                    panel.setNum6(panelNums[i, 5]);
-
-                    panel.regPanel();
-
-                }
-
-
-
-                string outpo = "";
-
-                for (int i = 0; i < numOfLines; i++)
-                {
-                    outpo += "Line no. " + (i + 1) + ": ";
-
-                    for (int j = 0; j < numbers6; j++)
+                    if (panelNums[i, j] < 10)
                     {
-                        if (panelNums[i, j] < 10)
-                        {
-                            string zero = "0";
-                            zero += panelNums[i, j];
-                            outpo += " " + zero;
-                        }
-                        else
-                        {
-                            outpo += " " + panelNums[i, j];
-                        }
-
-                        Console.Write(panelNums[i, j]);
+                        string zero = "0";
+                        zero += panelNums[i, j];
+                        outpo += " " + zero;
+                    }
+                    else
+                    {
+                        outpo += " " + panelNums[i, j];
                     }
 
-                    outpo += "\n\n";
-
-                    Console.WriteLine(" ");
+                    Console.Write(panelNums[i, j]);
                 }
+
+                outpo += "\n\n";
+
+                Console.WriteLine(" ");
             }
-                
-
-                //MessageBox.Show(outpo);
 
 
-            
+
+            MessageBox.Show(outpo);
+
+
+       
+
 
             txtSurname.ResetText();
             txtForename.ResetText();

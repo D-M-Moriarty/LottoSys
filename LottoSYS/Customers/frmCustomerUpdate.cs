@@ -78,6 +78,7 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
             grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
         }
 
@@ -174,6 +175,9 @@ namespace LottoSYS
         private void tbnSubmit_Click(object sender, EventArgs e)
         {
 
+            lblEmail.ForeColor = System.Drawing.Color.Black;
+            lblPPSN.ForeColor = System.Drawing.Color.Black;
+
             Validation.textFieldChecker(cboCounty, cboNationality,
                                 cboTitle, cboCountry, txtSurname, txtForename,
                                 txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
@@ -188,87 +192,115 @@ namespace LottoSYS
              lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
              lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
+
+                lblEmail.ForeColor = System.Drawing.Color.Black;
+                lblPPSN.ForeColor = System.Drawing.Color.Black;
+
                 if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
-                    Validation.isValidDOB(dtpDOB.Value) && Validation.IsValidEmail(txtEmail.Text) && Validation.isValidPPSN(txtPPSN.Text))
+                    Validation.isValidDOB(dtpDOB.Value))
                 {
-                    MessageBox.Show("Data has been updated");
+                    // if both fields are unchanged
+                    if (PPSN == txtPPSN.Text && email == txtEmail.Text)
+                    {
+                        regDetails();
+                    }
+                    // if both have been changed
+                    else if (PPSN != txtPPSN.Text && email != txtEmail.Text)
+                    {
+                        if (Validation.IsValidEmail(txtEmail.Text) && Validation.isValidPPSN(txtPPSN.Text))
+                        {
+                            regDetails();
+                        }
+                        else
+                        {
+                            string error = "";
 
-                    Customer customer = new Customer();
+                            lblEmail.ForeColor = System.Drawing.Color.Red;
+                            lblPPSN.ForeColor = System.Drawing.Color.Red;
 
-                    customer.setCustomerId(custId);
-                    customer.setTitle(cboTitle.Text.ToUpper());
-                    customer.setSurname(txtSurname.Text.ToUpper());
-                    customer.setForename(txtForename.Text.ToUpper());
-                    customer.setDOB(dtpDOB.Text.ToUpper());
-                    customer.setPPSN(txtPPSN.Text.ToUpper());
-                    customer.setAddressLine1(txtAddress1.Text.ToUpper());
-                    customer.setAddressLine2(txtAddress2.Text.ToUpper());
-                    customer.setTown(txtTown.Text.ToUpper());
-                    customer.setCounty(cboCounty.Text.ToUpper());
-                    customer.setCountry(cboCountry.Text.ToUpper());
-                    customer.setNationality(cboNationality.Text.ToUpper());
-                    customer.setGender(cboGender.Text.ToUpper());
-                    customer.setPhone(txtPhone.Text.ToUpper());
-                    customer.setEmail(txtEmail.Text.ToUpper());
+                            if (!Validation.IsValidEmail(txtEmail.Text))
+                                error += "The customers email is invalid\n\n";
+
+                            if (!Validation.isValidPPSN(txtPPSN.Text))
+                                error += "The customers PPSN is invalidn\n";
 
 
-                    customer.updateCustomer();
+                            MessageBox.Show(error);
+                        }
+                    }
+                    // if pps has been changed
+                    else if (PPSN != txtPPSN.Text)
+                    {
+                        if (Validation.isValidPPSN(txtPPSN.Text))
+                        {
+                            regDetails();
+                        }
+                        else
+                        {
+                            string error = "";
 
-                    txtSurname.Text = "";
-                    txtForename.Text = "";
-                    txtAddress2.Text = "";
-                    txtTown.Text = "";
-                    txtPhone.Text = "";
-                    txtEmail.Text = "";
-                    txtAddress1.Text = "";
-                    cboCounty.Text = "";
-                    cboCountry.Text = "";
-                    txtPPSN.Text = "";
-                    cboCountry.SelectedIndex = -1;
-                    cboCounty.SelectedIndex = -1;
-                    cboGender.SelectedIndex = -1;
-                    cboNationality.SelectedIndex = -1;
-                    cboTitle.SelectedIndex = -1;
-                    dtpDOB.Value = DateTime.Now;
+                            if (!Validation.isValidPPSN(txtPPSN.Text))
+                                error += "The customers PPSN is invalidn\n";
 
-                    grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
+                            lblPPSN.ForeColor = System.Drawing.Color.Red;
+
+
+                            MessageBox.Show(error);
+                        }
+                    }
+                    // if email has been changed
+                    else if (email != txtEmail.Text)
+                    {
+                        if (Validation.IsValidEmail(txtEmail.Text))
+                        {
+                            regDetails();
+                        }
+                        else
+                        {
+                            string error = "";
+
+                            if (!Validation.IsValidEmail(txtEmail.Text))
+                                error += "The customers email is invalid\n\n";
+
+                            lblEmail.ForeColor = System.Drawing.Color.Red;
+
+
+
+
+                            MessageBox.Show(error);
+                        }
+
+
+                    }
+                    else
+                    {
+                        string error = "";
+
+                        if (!Validation.isValidName(txtSurname.ToString()))
+                            error += "The surname is invalid\n\n";
+                        else
+                            lblSurname.ForeColor = System.Drawing.Color.Black;
+
+                        if (!Validation.isValidName(txtForename.ToString()))
+                            error += "The forename is invalid\n\n";
+                        else
+                            lblForename.ForeColor = System.Drawing.Color.Black;
+
+                        if (!Validation.isValidDOB(dtpDOB.Value))
+                            error += "The customer is under 18\n\n";
+
+                        MessageBox.Show(error);
+                    }
 
                 }
                 else
                 {
-                    string error = "";
-
-                    if (!Validation.isValidName(txtSurname.ToString()))
-                        error += "The surname is invalid\n\n";
-                    else
-                        lblSurname.ForeColor = System.Drawing.Color.Black;
-
-                    if (!Validation.isValidName(txtForename.ToString()))
-                        error += "The forename is invalid\n\n";
-                    else
-                        lblForename.ForeColor = System.Drawing.Color.Black;
-
-                    if (!Validation.isValidDOB(dtpDOB.Value))
-                        error += "The customer is under 18\n\n";
-
-                    if (!Validation.IsValidEmail(txtEmail.Text))
-                        error += "The customers email is invalid\n\n";
-
-                    if (!Validation.isValidPPSN(txtPPSN.Text))
-                        error += "The customers PPSN is invalidn\n";
+                    MessageBox.Show("Please fill out all the required highlighted fields");
 
 
-                    MessageBox.Show(error);
                 }
 
             }
-            else
-            {
-                MessageBox.Show("Please fill out all the required highlighted fields");
-
-
-            }
-
         }
 
         private void grpUpdateBox_Enter(object sender, EventArgs e)
@@ -294,6 +326,8 @@ namespace LottoSYS
 
                 txtPPSN.Text = row.Cells[5].Value.ToString().TrimEnd();
 
+                PPSN = txtPPSN.Text;
+
                 txtAddress1.Text = row.Cells[6].Value.ToString().TrimEnd();
 
                 txtAddress2.Text = row.Cells[7].Value.ToString().TrimEnd();
@@ -311,12 +345,63 @@ namespace LottoSYS
                 txtPhone.Text = row.Cells[13].Value.ToString().TrimEnd();
 
                 txtEmail.Text = row.Cells[14].Value.ToString().TrimEnd();
+
+                email = txtEmail.Text;
             }
             catch
             {
 
             }
         }
+
+        public void regDetails()
+        {
+            MessageBox.Show("Data has been updated");
+
+            Customer customer = new Customer();
+
+            customer.setCustomerId(custId);
+            customer.setTitle(cboTitle.Text.ToUpper());
+            customer.setSurname(txtSurname.Text.ToUpper());
+            customer.setForename(txtForename.Text.ToUpper());
+            customer.setDOB(dtpDOB.Text.ToUpper());
+            customer.setPPSN(txtPPSN.Text.ToUpper());
+            customer.setAddressLine1(txtAddress1.Text.ToUpper());
+            customer.setAddressLine2(txtAddress2.Text.ToUpper());
+            customer.setTown(txtTown.Text.ToUpper());
+            customer.setCounty(cboCounty.Text.ToUpper());
+            customer.setCountry(cboCountry.Text.ToUpper());
+            customer.setNationality(cboNationality.Text.ToUpper());
+            customer.setGender(cboGender.Text.ToUpper());
+            customer.setPhone(txtPhone.Text.ToUpper());
+            customer.setEmail(txtEmail.Text.ToUpper());
+
+
+            customer.updateCustomer();
+
+            txtSurname.Text = "";
+            txtForename.Text = "";
+            txtAddress2.Text = "";
+            txtTown.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtAddress1.Text = "";
+            cboCounty.Text = "";
+            cboCountry.Text = "";
+            txtPPSN.Text = "";
+            cboCountry.SelectedIndex = -1;
+            cboCounty.SelectedIndex = -1;
+            cboGender.SelectedIndex = -1;
+            cboNationality.SelectedIndex = -1;
+            cboTitle.SelectedIndex = -1;
+            dtpDOB.Value = DateTime.Now;
+
+            lblEmail.ForeColor = System.Drawing.Color.Black;
+            lblPPSN.ForeColor = System.Drawing.Color.Black;
+
+            grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
+        }
+
         private void loadTitles()
         {
             cboTitle.ValueMember = "TITLES";

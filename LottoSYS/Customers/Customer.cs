@@ -110,7 +110,7 @@ namespace LottoSYS.Customers
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT DISTINCT CUSTOMER.CUSTOMERID, CUSTOMER.FORENAME, CUSTOMER.SURNAME, CUSTOMER.DOB, CUSTOMER.TOWN " +
+            string strSQL = "SELECT DISTINCT CUSTOMER.CUSTOMERID, CUSTOMER.FORENAME, CUSTOMER.SURNAME, CUSTOMER.BALANCE, CUSTOMER.TOWN " +
                                 "FROM CUSTOMER, TICKET " +
                             "WHERE CUSTOMER.CUSTOMERID = TICKET.CUSTOMERID " +
                             "AND TICKET.PRIZEFLAG = 'YES' AND SURNAME LIKE '" + surname.ToUpper() + "%'";
@@ -167,7 +167,7 @@ namespace LottoSYS.Customers
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT CUSTOMERID, FORENAME, SURNAME, DOB, TOWN FROM CUSTOMER WHERE Surname LIKE '" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE'";
+            string strSQL = "SELECT CUSTOMERID, FORENAME, SURNAME, BALANCE, TOWN FROM CUSTOMER WHERE Surname LIKE '" + surname.ToUpper() + "%' AND CUSTOMER_STATUS = 'ACTIVE' ORDER BY CUSTOMERID";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 
