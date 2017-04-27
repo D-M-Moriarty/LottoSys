@@ -30,11 +30,19 @@ namespace LottoSYS.Sales
             conn.Open();
 
             //define sql query
-            string strSQL = "SELECT DISTINCT P.*, T.PRICE, PR.PRIZEAMOUNT, T.PURCHASEDATE " + 
+            /*string strSQL = "SELECT DISTINCT P.*, T.PRICE, PR.PRIZEAMOUNT, T.PURCHASEDATE " + 
                             "From Panel P Join Ticket T ON P.TICKETID = T.TICKETID " + 
                             "JOIN Customer C ON '" + custId + "' = T.CUSTOMERID " +
                             "LEFT JOIN Prizes PR ON PR.TICKETID = T.TICKETID " +
                             "ORDER BY PR.PRIZEAMOUNT";
+            */
+
+            string strSQL = "SELECT T.TicketID ,  T.PRICE, T.purchaseDate, NVL(SUM(PrizeAmount),0) AS PRIZE " +
+                                "FROM Ticket T LEFT JOIN Prizes P ON T.TicketID = P.TicketID " +
+                                "JOIN CUSTOMER C ON C.CUSTOMERID = T.CUSTOMERID " +
+                                "WHERE C.CUSTOMERID = " + custId +
+                                " GROUP BY T.TicketID, T.purchaseDate, T.PRICE " +
+                                " ORDER BY T.TicketID, T.purchaseDate, T.PRICE";
 
             OracleCommand cmd = new OracleCommand(strSQL, conn);
 

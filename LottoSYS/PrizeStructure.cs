@@ -23,7 +23,7 @@ namespace LottoSYS
             myConn.Open();
 
             //define sql query
-            string strSQL = "SELECT MATCH" + num + " FROM PRIZESTRUCTURE WHERE DRAWDATE < '" + Draw.getMaxDrawDate() + "'";
+            string strSQL = "SELECT MATCH" + num +" FROM PRIZESTRUCTURE WHERE DRAWDATE = (SELECT MAX(DRAWDATE) FROM PRIZESTRUCTURE)";
 
             OracleCommand cmd = new OracleCommand(strSQL, myConn);
 
@@ -31,17 +31,10 @@ namespace LottoSYS
             OracleDataReader dr = cmd.ExecuteReader();
 
             // read the first (only) value returned by query
-            // If the first stockno, assign value 1, otherwise add 1 to MAX value
             dr.Read();
 
-            if (dr.IsDBNull(0))
-            {
-                PrizeAmount = 1;
-            }
-            else
-            {
-                PrizeAmount = Convert.ToInt16(dr.GetValue(0)) + 1;
-            }
+            PrizeAmount = Convert.ToInt32(dr.GetValue(0));
+            
 
             // Close DB connection
             myConn.Close();

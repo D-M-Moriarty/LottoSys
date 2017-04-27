@@ -62,7 +62,7 @@
             this.mnuExit});
             this.mnuListCustomers.Location = new System.Drawing.Point(0, 0);
             this.mnuListCustomers.Name = "mnuListCustomers";
-            this.mnuListCustomers.Size = new System.Drawing.Size(1232, 24);
+            this.mnuListCustomers.Size = new System.Drawing.Size(925, 24);
             this.mnuListCustomers.TabIndex = 1;
             this.mnuListCustomers.Text = "ListCustomers";
             // 
@@ -123,7 +123,7 @@
             this.grdListing.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdListing.Location = new System.Drawing.Point(22, 156);
             this.grdListing.Name = "grdListing";
-            this.grdListing.Size = new System.Drawing.Size(1174, 150);
+            this.grdListing.Size = new System.Drawing.Size(863, 150);
             this.grdListing.TabIndex = 48;
             this.grdListing.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListing_CellClick);
             // 
@@ -138,7 +138,7 @@
             this.grpDetails.Controls.Add(this.grdCustomerTickets);
             this.grpDetails.Location = new System.Drawing.Point(12, 322);
             this.grpDetails.Name = "grpDetails";
-            this.grpDetails.Size = new System.Drawing.Size(1203, 321);
+            this.grpDetails.Size = new System.Drawing.Size(902, 192);
             this.grpDetails.TabIndex = 50;
             this.grpDetails.TabStop = false;
             this.grpDetails.Text = "Details";
@@ -206,9 +206,9 @@
             // grdCustomerTickets
             // 
             this.grdCustomerTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomerTickets.Location = new System.Drawing.Point(11, 152);
+            this.grdCustomerTickets.Location = new System.Drawing.Point(394, 18);
             this.grdCustomerTickets.Name = "grdCustomerTickets";
-            this.grdCustomerTickets.Size = new System.Drawing.Size(1173, 150);
+            this.grdCustomerTickets.Size = new System.Drawing.Size(479, 150);
             this.grdCustomerTickets.TabIndex = 57;
             // 
             // printPreviewDialog1
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 655);
+            this.ClientSize = new System.Drawing.Size(925, 523);
             this.Controls.Add(this.btnPrintPreview);
             this.Controls.Add(this.grpDetails);
             this.Controls.Add(this.grdListing);

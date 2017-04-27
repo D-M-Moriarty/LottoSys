@@ -189,7 +189,7 @@ namespace LottoSYS
              lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
                 if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
-                    Validation.isValidDOB(dtpDOB.Value))
+                    Validation.isValidDOB(dtpDOB.Value) && Validation.IsValidEmail(txtEmail.Text) && Validation.isValidPPSN(txtPPSN.Text))
                 {
                     MessageBox.Show("Data has been updated");
 
@@ -250,6 +250,12 @@ namespace LottoSYS
 
                     if (!Validation.isValidDOB(dtpDOB.Value))
                         error += "The customer is under 18\n\n";
+
+                    if (!Validation.IsValidEmail(txtEmail.Text))
+                        error += "The customers email is invalid\n\n";
+
+                    if (!Validation.isValidPPSN(txtPPSN.Text))
+                        error += "The customers PPSN is invalidn\n";
 
 
                     MessageBox.Show(error);

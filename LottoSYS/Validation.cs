@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -11,8 +12,6 @@ namespace LottoSYS.Customers
 {
     class Validation
     {
-
-
 
 
         public static Boolean validateCustomer(ComboBox cboCounty, ComboBox cboNationality,
@@ -100,7 +99,7 @@ namespace LottoSYS.Customers
                 lblDOB.ForeColor = System.Drawing.Color.Black;
             }
 
-            if (txtPPSN.Text == "")
+            if (txtPPSN.Text == "" || !isValidPPSN(txtPPSN.Text))
             {
                 lblPPSN.ForeColor = System.Drawing.Color.Red;
             }
@@ -118,7 +117,7 @@ namespace LottoSYS.Customers
                 lblTown.ForeColor = System.Drawing.Color.Black;
             }
 
-            if (txtEmail.Text == "" && !IsValidEmail(txtEmail.Text))
+            if (txtEmail.Text == "" || !IsValidEmail(txtEmail.Text))
             {
                 lblEmail.ForeColor = System.Drawing.Color.Red;
             }
@@ -187,15 +186,98 @@ namespace LottoSYS.Customers
 
         public static bool IsValidEmail(string emailaddress)
         {
+
             try
             {
-                System.Net.Mail.MailAddress m = new MailAddress(emailaddress);
+                // variable to hold value to be returned
+                int intCustomerId;
 
-                return true;
+                // connect to the Db
+                OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+                myConn.Open();
+
+                // Define SQL query to get MAX Stock_No used
+                String strSQl = "SELECT MAX(CustomerId) FROM Customer WHERE EMAIL = '" + emailaddress.ToUpper() + "'";
+
+                OracleCommand cmd = new OracleCommand(strSQl, myConn);
+
+                // Execute the query
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                // read the first (only) value returned by query
+                // If the first stockno, assign value 1, otherwise add 1 to MAX value
+                dr.Read();
+
+
+                if (dr.IsDBNull(0))
+                {
+                    try
+                    {
+                        System.Net.Mail.MailAddress m = new MailAddress(emailaddress);
+
+                        return true;
+                    }
+                    catch (FormatException)
+                    {
+                        return false;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+
+                // Close DB connection
+                myConn.Close();
+
             }
-            catch (FormatException)
+            catch (Exception)
             {
                 return false;
+            }
+            
+        }
+
+        public static bool isValidPPSN(string PPSN)
+        {
+            try
+            {
+                // variable to hold value to be returned
+                int intCustomerId;
+
+                // connect to the Db
+                OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+                myConn.Open();
+
+                // Define SQL query to get MAX Stock_No used
+                String strSQl = "SELECT MAX(CustomerId) FROM Customer WHERE PPSN = '" + PPSN.ToUpper() + "'";
+
+                OracleCommand cmd = new OracleCommand(strSQl, myConn);
+
+                // Execute the query
+                OracleDataReader dr = cmd.ExecuteReader();
+
+                // read the first (only) value returned by query
+                // If the first stockno, assign value 1, otherwise add 1 to MAX value
+                dr.Read();
+               
+
+                if (dr.IsDBNull(0))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                // Close DB connection
+                myConn.Close();
+
             }
             catch (Exception)
             {
@@ -204,4 +286,6 @@ namespace LottoSYS.Customers
         }
 
     }
+
+    
 }

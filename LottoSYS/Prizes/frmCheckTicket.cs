@@ -93,29 +93,29 @@ namespace LottoSYS.Prize
             {
                 if (count == 3)
                 {
-                    prizeAmount = 100;
-                    //prizeAmount = PrizeStructure.getPrizeStructure(3);
+                    //prizeAmount = 100;
+                    prizeAmount = PrizeStructure.getPrizeStructure(3);
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 4)
                 {
-                    prizeAmount = 1000;
-                    //prizeAmount = PrizeStructure.getPrizeStructure(4);
+                    //prizeAmount = 1000;
+                    prizeAmount = PrizeStructure.getPrizeStructure(4);
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 5)
                 {
-                    prizeAmount = 50000;
-                    //prizeAmount = PrizeStructure.getPrizeStructure(5);
+                    //prizeAmount = 50000;
+                    prizeAmount = PrizeStructure.getPrizeStructure(5);
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 6)
                 {
-                    prizeAmount = 100000;
-                    //prizeAmount = PrizeStructure.getPrizeStructure(6);
+                    //prizeAmount = 100000;
+                    prizeAmount = PrizeStructure.getPrizeStructure(6);
 
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
