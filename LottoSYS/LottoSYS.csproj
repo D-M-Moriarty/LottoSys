@@ -98,6 +98,7 @@
       <DependentUpon>frmListCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="DBUtilites.cs" />
+    <Compile Include="PrizeStructure.cs" />
     <Compile Include="Prizes\Draw.cs" />
     <Compile Include="Prizes\PrizeModel.cs" />
     <Compile Include="Sales\Analysis.cs" />

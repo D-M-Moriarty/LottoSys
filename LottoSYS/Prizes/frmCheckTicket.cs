@@ -29,6 +29,8 @@ namespace LottoSYS.Prize
         private void frmPayPrize_Load(object sender, EventArgs e)
         {
             btnPrint.Enabled = false;
+            
+            MessageBox.Show(PrizeStructure.getPrizeStructure(6).ToString());
 
         }
 
@@ -91,25 +93,30 @@ namespace LottoSYS.Prize
             {
                 if (count == 3)
                 {
-                    prizeAmount = 50000;
+                    prizeAmount = 100;
+                    //prizeAmount = PrizeStructure.getPrizeStructure(3);
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 4)
                 {
-                    prizeAmount = 100000;
+                    prizeAmount = 1000;
+                    //prizeAmount = PrizeStructure.getPrizeStructure(4);
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 5)
                 {
-                    prizeAmount = 500000;
+                    prizeAmount = 50000;
+                    //prizeAmount = PrizeStructure.getPrizeStructure(5);
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
                 else if (count == 6)
                 {
-                    prizeAmount = 1000000;
+                    prizeAmount = 100000;
+                    //prizeAmount = PrizeStructure.getPrizeStructure(6);
+
 
                     //MessageBox.Show("you won " + prizeAmount.ToString());
                 }
