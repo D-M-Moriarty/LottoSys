@@ -86,115 +86,160 @@ namespace LottoSYS
              lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
              lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
-
-                lblEmail.ForeColor = System.Drawing.Color.Black;
-                lblPPSN.ForeColor = System.Drawing.Color.Black;
-
+                
                 if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
                     Validation.isValidDOB(dtpDOB.Value))
                 {
-                    // if both fields are unchanged
-                    if (PPSN == txtPPSN.Text && email == txtEmail.Text)
-                    {
-                        updateDetails();
-                    }
-                    // if both have been changed
-                    else if (PPSN != txtPPSN.Text && email != txtEmail.Text)
-                    {
-                        if (Validation.IsValidEmail(txtEmail.Text) && Validation.isValidPPSN(txtPPSN.Text))
-                        {
-                            updateDetails();
-                        }
-                        else
-                        {
-                            string error = "";
-
-                            lblEmail.ForeColor = System.Drawing.Color.Red;
-                            lblPPSN.ForeColor = System.Drawing.Color.Red;
-
-                            if (!Validation.IsValidEmail(txtEmail.Text))
-                                error += "The customers email is invalid\n\n";
-
-                            if (!Validation.isValidPPSN(txtPPSN.Text))
-                                error += "The customers PPSN is invalidn\n";
-
-
-                            MessageBox.Show(error);
-                        }
-                    }
-                    // if pps has been changed
-                    else if (PPSN != txtPPSN.Text)
-                    {
-                        if (Validation.isValidPPSN(txtPPSN.Text))
-                        {
-                            updateDetails();
-                        }
-                        else
-                        {
-                            string error = "";
-
-                            if (!Validation.isValidPPSN(txtPPSN.Text))
-                                error += "The customers PPSN is invalidn\n";
-
-                            lblPPSN.ForeColor = System.Drawing.Color.Red;
-
-
-                            MessageBox.Show(error);
-                        }
-                    }
-                    // if email has been changed
-                    else if (email != txtEmail.Text)
-                    {
-                        if (Validation.IsValidEmail(txtEmail.Text))
-                        {
-                            updateDetails();
-                        }
-                        else
-                        {
-                            string error = "";
-
-                            if (!Validation.IsValidEmail(txtEmail.Text))
-                                error += "The customers email is invalid\n\n";
-
-                            lblEmail.ForeColor = System.Drawing.Color.Red;
-
-
-
-
-                            MessageBox.Show(error);
-                        }
-
-
-                    }
-                    else
-                    {
-                        string error = "";
-
-                        if (!Validation.isValidName(txtSurname.ToString()))
-                            error += "The surname is invalid\n\n";
-                        else
-                            lblSurname.ForeColor = System.Drawing.Color.Black;
-
-                        if (!Validation.isValidName(txtForename.ToString()))
-                            error += "The forename is invalid\n\n";
-                        else
-                            lblForename.ForeColor = System.Drawing.Color.Black;
-
-                        if (!Validation.isValidDOB(dtpDOB.Value))
-                            error += "The customer is under 18\n\n";
-
-                        MessageBox.Show(error);
-                    }
-
+                    ifNameDobValid();
                 }
                 else
                 {
-                    MessageBox.Show("Please fill out all the required highlighted fields");
-
+                    // if the name dob is not valid
+                    checkValid();
 
                 }
 
             }
+            else
+            {
+                // if some fields are blank
+                checkValid();
+                
+            }
+
+        }
+
+        public void checkValid()
+        {
+            lblPPSN.ForeColor = System.Drawing.Color.Black;
+            lblEmail.ForeColor = System.Drawing.Color.Black;
+
+            string error = "";
+
+            if (!Validation.isValidName(txtSurname.Text))
+                error += "The surname is invalid\n\n";
+            else
+                lblSurname.ForeColor = System.Drawing.Color.Black;
+
+            if (!Validation.isValidName(txtForename.Text))
+                error += "The forename is invalid\n\n";
+            else
+                lblForename.ForeColor = System.Drawing.Color.Black;
+
+            if (!Validation.isValidDOB(dtpDOB.Value))
+                error += "The customer is under 18\n\n";
+
+            lblPPSN.ForeColor = System.Drawing.Color.Black;
+            lblEmail.ForeColor = System.Drawing.Color.Black;
+
+            if (email != txtEmail.Text)
+            {
+                if (!Validation.IsValidEmail(txtEmail.Text))
+                {
+                    error += "The customers email is invalid\n\n";
+                    lblEmail.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                    lblEmail.ForeColor = System.Drawing.Color.Black;
+            }
+
+            if (PPSN != txtPPSN.Text)
+            {
+                if (!Validation.isValidPPSN(txtPPSN.Text))
+                {
+                    error += "The customers PPSN is invalidn\n";
+                    lblPPSN.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                    lblPPSN.ForeColor = System.Drawing.Color.Black;
+            }
+
+            MessageBox.Show(error);
+        }
+
+        public void ifNameDobValid()
+        {
+            // if both fields are unchanged
+            if (PPSN == txtPPSN.Text && email == txtEmail.Text)
+            {
+                updateDetails();
+            }
+            // if both have been changed
+            else if (PPSN != txtPPSN.Text && email != txtEmail.Text)
+            {
+                // if the email is valid and the ppsn is valid
+                if (Validation.IsValidEmail(txtEmail.Text) && Validation.isValidPPSN(txtPPSN.Text))
+                {
+                    updateDetails();
+                }
+                else
+                {
+                    string error = "";
+
+                    lblEmail.ForeColor = System.Drawing.Color.Red;
+                    lblPPSN.ForeColor = System.Drawing.Color.Red;
+
+                    if (!Validation.IsValidEmail(txtEmail.Text))
+                        error += "The customers email is invalid\n\n";
+                    else
+                        lblEmail.ForeColor = System.Drawing.Color.Black;
+
+                    if (!Validation.isValidPPSN(txtPPSN.Text))
+                        error += "The customers PPSN is invalidn\n";
+                    else
+                        lblPPSN.ForeColor = System.Drawing.Color.Black;
+
+
+                    MessageBox.Show(error);
+                }
+            }
+            // if pps has been changed
+            else if (PPSN != txtPPSN.Text)
+            {
+                if (Validation.isValidPPSN(txtPPSN.Text))
+                {
+                    updateDetails();
+                }
+                else
+                {
+                    string error = "";
+
+                    if (!Validation.isValidPPSN(txtPPSN.Text))
+                        error += "The customers PPSN is invalidn\n";
+                    else
+                        lblPPSN.ForeColor = System.Drawing.Color.Black;
+
+                    lblEmail.ForeColor = System.Drawing.Color.Black;
+
+
+                    MessageBox.Show(error);
+                }
+            }
+            // if email has been changed
+            else if (email != txtEmail.Text)
+            {
+                if (Validation.IsValidEmail(txtEmail.Text))
+                {
+                    updateDetails();
+                }
+                else
+                {
+                    string error = "";
+
+                    if (!Validation.IsValidEmail(txtEmail.Text))
+                        error += "The customers email is invalid\n\n";
+                    else
+                        lblEmail.ForeColor = System.Drawing.Color.Black;
+
+
+                    lblPPSN.ForeColor = System.Drawing.Color.Black;
+
+
+                    MessageBox.Show(error);
+                }
+
+
+            }// end correct names and dob
         }
 
         private void grpUpdateBox_Enter(object sender, EventArgs e)

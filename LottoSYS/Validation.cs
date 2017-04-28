@@ -162,6 +162,9 @@ namespace LottoSYS.Customers
         // Name validation
         public static bool isValidName(string name)
         {
+            if (name.Length < 1)
+                return false;
+
             for (int i = 0; i < name.Length; i++)
             {
                 if (char.IsNumber(name[i]))
