@@ -90,6 +90,7 @@ namespace LottoSYS
                 if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
                     Validation.isValidDOB(dtpDOB.Value))
                 {
+                    
                     // check if the ppsn and or email has been changed
                     ifNameDobValid();
                 }
@@ -162,6 +163,9 @@ namespace LottoSYS
 
         public void ifNameDobValid()
         {
+
+            lblEmail.ForeColor = System.Drawing.Color.Black;
+            lblPPSN.ForeColor = System.Drawing.Color.Black;
             // if both fields are unchanged
             if (PPSN == txtPPSN.Text && email == txtEmail.Text)
             {
@@ -183,12 +187,18 @@ namespace LottoSYS
                     lblPPSN.ForeColor = System.Drawing.Color.Red;
 
                     if (!Validation.IsValidEmail(txtEmail.Text))
+                    {
                         error += "The customers email is invalid\n\n";
+                        lblEmail.ForeColor = System.Drawing.Color.Red;
+                    }
                     else
                         lblEmail.ForeColor = System.Drawing.Color.Black;
 
                     if (!Validation.isValidPPSN(txtPPSN.Text))
+                    {
                         error += "The customers PPSN is invalidn\n";
+                        lblPPSN.ForeColor = System.Drawing.Color.Red;
+                    }
                     else
                         lblPPSN.ForeColor = System.Drawing.Color.Black;
 
@@ -208,7 +218,10 @@ namespace LottoSYS
                     string error = "";
 
                     if (!Validation.isValidPPSN(txtPPSN.Text))
+                    {
                         error += "The customers PPSN is invalidn\n";
+                        lblPPSN.ForeColor = System.Drawing.Color.Red;
+                    }
                     else
                         lblPPSN.ForeColor = System.Drawing.Color.Black;
 
@@ -230,7 +243,10 @@ namespace LottoSYS
                     string error = "";
 
                     if (!Validation.IsValidEmail(txtEmail.Text))
+                    {
                         error += "The customers email is invalid\n\n";
+                        lblEmail.ForeColor = System.Drawing.Color.Red;
+                    }   
                     else
                         lblEmail.ForeColor = System.Drawing.Color.Black;
 

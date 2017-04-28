@@ -66,7 +66,7 @@ namespace LottoSYS.Prize
                 else
                 {
                     Console.Write(DateTime.Now.DayOfWeek);
-                    // change when testing
+                    // change to true when testing for one draw only
                     btnRunDraw.Enabled = false;
                 }
             }
@@ -82,6 +82,7 @@ namespace LottoSYS.Prize
                 }
                 else
                 {
+                    // change to true when testing for one draw only
                     btnRunDraw.Enabled = false;
                 }
             }

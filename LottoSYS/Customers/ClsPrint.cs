@@ -30,6 +30,11 @@ namespace LottoSYS.Customers
         private Boolean printDetails = false;
 
         #endregion
+        /// <summary>
+        /// code for printing found on stackoverflow
+        /// http://stackoverflow.com/questions/15853746/how-to-print-values-from-a-datagridview-control
+        /// </summary>
+
 
         public ClsPrint(DataGridView gridview, string ReportHeader)
         {

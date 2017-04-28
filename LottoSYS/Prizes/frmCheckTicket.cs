@@ -199,7 +199,7 @@ namespace LottoSYS.Prize
 
             try
             {
-                var ticket = Ticket.getTickets();
+                //var ticket = Ticket.getTickets();
                 
                 var panel = Panels.getCheckPanels();
 
@@ -211,7 +211,7 @@ namespace LottoSYS.Prize
                     //Populate panels
                     var panels = panel.DataTableToList<Panels>();
                     var draws = draw.DataTableToList<Draw>();
-                    var tickets = ticket.DataTableToList<Ticket>();
+                    //var tickets = ticket.DataTableToList<Ticket>();
 
                     //Get Draw numbers
                     int[] drawNums = new int[6];
@@ -254,7 +254,7 @@ namespace LottoSYS.Prize
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No tickets have been sold");
+                MessageBox.Show("tickets cannot be checked");
             }
 
 
