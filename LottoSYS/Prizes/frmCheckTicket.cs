@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
 
@@ -146,6 +147,9 @@ namespace LottoSYS.Prize
                 // updating the customers balance
                 Customer.updateCustomerBalance(prizeAmount, Ticket.getCustomerId(pan.getTicketId()));
 
+                // send email to notify customer they have won a prize
+                sendEmail(Ticket.getCustomerId(pan.getTicketId()));
+
 
             }
             else
@@ -157,6 +161,35 @@ namespace LottoSYS.Prize
 
 
 
+        }
+
+        public static void sendEmail(int customerId)
+        {
+            string email = Customer.getCustomerEmail(customerId);
+
+            var fromAddress = new MailAddress("dmamprop@gmail.com", "Lotto Prize");
+            var toAddress = new MailAddress(email, "Customer");
+            const string fromPassword = "x11-453762";
+            const string subject = "LottoSys";
+            string body = "You have recently won a prize and your balance has een updated";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+                Timeout = 20000
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
         }
 
         private void btnCheckTickets_Click(object sender, EventArgs e)

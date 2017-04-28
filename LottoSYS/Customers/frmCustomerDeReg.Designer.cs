@@ -188,10 +188,12 @@
             // 
             // txtForename
             // 
+            this.txtForename.Enabled = false;
             this.txtForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtForename.Location = new System.Drawing.Point(129, 58);
             this.txtForename.Margin = new System.Windows.Forms.Padding(2);
             this.txtForename.Name = "txtForename";
+            this.txtForename.ReadOnly = true;
             this.txtForename.Size = new System.Drawing.Size(81, 21);
             this.txtForename.TabIndex = 4;
             // 
@@ -208,10 +210,12 @@
             // 
             // txtSurname
             // 
+            this.txtSurname.Enabled = false;
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSurname.Location = new System.Drawing.Point(129, 22);
             this.txtSurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtSurname.Name = "txtSurname";
+            this.txtSurname.ReadOnly = true;
             this.txtSurname.Size = new System.Drawing.Size(81, 21);
             this.txtSurname.TabIndex = 3;
             // 
@@ -228,10 +232,12 @@
             // 
             // txtTown
             // 
+            this.txtTown.Enabled = false;
             this.txtTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTown.Location = new System.Drawing.Point(129, 168);
             this.txtTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtTown.Name = "txtTown";
+            this.txtTown.ReadOnly = true;
             this.txtTown.Size = new System.Drawing.Size(81, 22);
             this.txtTown.TabIndex = 7;
             // 
@@ -248,10 +254,12 @@
             // 
             // txtAddress2
             // 
+            this.txtAddress2.Enabled = false;
             this.txtAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress2.Location = new System.Drawing.Point(129, 131);
             this.txtAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.ReadOnly = true;
             this.txtAddress2.Size = new System.Drawing.Size(81, 22);
             this.txtAddress2.TabIndex = 6;
             // 
@@ -268,10 +276,12 @@
             // 
             // txtAddress1
             // 
+            this.txtAddress1.Enabled = false;
             this.txtAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress1.Location = new System.Drawing.Point(129, 94);
             this.txtAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress1.Name = "txtAddress1";
+            this.txtAddress1.ReadOnly = true;
             this.txtAddress1.Size = new System.Drawing.Size(81, 22);
             this.txtAddress1.TabIndex = 5;
             // 

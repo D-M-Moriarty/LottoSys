@@ -280,6 +280,40 @@ namespace LottoSYS.Customers
 
         }
 
+        public static string getCustomerEmail(int cutomerId)
+        {
+            // variable to hold value to be returned
+            string email;
+
+            // connect to the Db
+            OracleConnection myConn = new OracleConnection(ConnectDB.oradb);
+            myConn.Open();
+
+            // Define SQL query to get MAX Stock_No used
+            String strSQl = "SELECT Email FROM Customer WHERE CustomerId = " + cutomerId;
+
+            OracleCommand cmd = new OracleCommand(strSQl, myConn);
+
+            // Execute the query
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            // read the first (only) value returned by query
+            // If the first stockno, assign value 1, otherwise add 1 to MAX value
+            dr.Read();
+
+            email = Convert.ToString(dr.GetValue(0));
+            
+
+            // Close DB connection
+            myConn.Close();
+
+            // Return next StockNo
+            return email;
+
+
+
+        }
+
         public void regCustomer()
         {
             // Connect to database
