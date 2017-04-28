@@ -81,7 +81,6 @@
             this.mnuUpdateCustomer.Size = new System.Drawing.Size(792, 24);
             this.mnuUpdateCustomer.TabIndex = 0;
             this.mnuUpdateCustomer.Text = "menuStrip1";
-            this.mnuUpdateCustomer.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuUpdateCustomer_ItemClicked);
             // 
             // mnuBack
             // 
@@ -107,7 +106,6 @@
             this.lblSearch.Size = new System.Drawing.Size(61, 15);
             this.lblSearch.TabIndex = 1;
             this.lblSearch.Text = "Surname:";
-            this.lblSearch.Click += new System.EventHandler(this.lblSearch_Click);
             // 
             // txtSearchBox
             // 
@@ -115,15 +113,14 @@
             this.txtSearchBox.MaxLength = 25;
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchBox.TabIndex = 2;
-            this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
+            this.txtSearchBox.TabIndex = 1;
             // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(252, 98);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -170,10 +167,11 @@
             // cboGender
             // 
             this.cboGender.FormattingEnabled = true;
+            this.cboGender.ItemHeight = 13;
             this.cboGender.Location = new System.Drawing.Point(167, 235);
             this.cboGender.Name = "cboGender";
             this.cboGender.Size = new System.Drawing.Size(136, 21);
-            this.cboGender.TabIndex = 68;
+            this.cboGender.TabIndex = 9;
             // 
             // lblGender
             // 
@@ -188,10 +186,11 @@
             // cboNationality
             // 
             this.cboNationality.FormattingEnabled = true;
+            this.cboNationality.ItemHeight = 13;
             this.cboNationality.Location = new System.Drawing.Point(167, 199);
             this.cboNationality.Name = "cboNationality";
             this.cboNationality.Size = new System.Drawing.Size(136, 21);
-            this.cboNationality.TabIndex = 64;
+            this.cboNationality.TabIndex = 8;
             // 
             // lblNationality
             // 
@@ -218,7 +217,7 @@
             this.dtpDOB.Location = new System.Drawing.Point(167, 130);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(136, 20);
-            this.dtpDOB.TabIndex = 62;
+            this.dtpDOB.TabIndex = 6;
             // 
             // txtPPSN
             // 
@@ -226,7 +225,7 @@
             this.txtPPSN.MaxLength = 8;
             this.txtPPSN.Name = "txtPPSN";
             this.txtPPSN.Size = new System.Drawing.Size(136, 20);
-            this.txtPPSN.TabIndex = 63;
+            this.txtPPSN.TabIndex = 7;
             // 
             // lblPPSN
             // 
@@ -252,18 +251,19 @@
             // 
             this.cboTitle.AllowDrop = true;
             this.cboTitle.FormattingEnabled = true;
+            this.cboTitle.ItemHeight = 13;
             this.cboTitle.Location = new System.Drawing.Point(167, 34);
             this.cboTitle.MaxLength = 10;
             this.cboTitle.Name = "cboTitle";
             this.cboTitle.Size = new System.Drawing.Size(66, 21);
-            this.cboTitle.TabIndex = 60;
+            this.cboTitle.TabIndex = 3;
             // 
             // tbnSubmit
             // 
             this.tbnSubmit.Location = new System.Drawing.Point(534, 270);
             this.tbnSubmit.Name = "tbnSubmit";
             this.tbnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.tbnSubmit.TabIndex = 45;
+            this.tbnSubmit.TabIndex = 17;
             this.tbnSubmit.Text = "Submit";
             this.tbnSubmit.UseVisualStyleBackColor = true;
             this.tbnSubmit.Click += new System.EventHandler(this.tbnSubmit_Click);
@@ -275,8 +275,7 @@
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 21);
-            this.txtEmail.TabIndex = 59;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.TabIndex = 10;
             // 
             // lblEmail
             // 
@@ -288,7 +287,6 @@
             this.lblEmail.Size = new System.Drawing.Size(42, 15);
             this.lblEmail.TabIndex = 58;
             this.lblEmail.Text = "Email:";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtPhone
             // 
@@ -297,8 +295,7 @@
             this.txtPhone.MaxLength = 15;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(136, 21);
-            this.txtPhone.TabIndex = 57;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
+            this.txtPhone.TabIndex = 16;
             // 
             // lblPhone
             // 
@@ -310,7 +307,6 @@
             this.lblPhone.Size = new System.Drawing.Size(66, 15);
             this.lblPhone.TabIndex = 56;
             this.lblPhone.Text = "Phone no.:";
-            this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
             // 
             // txtForename
             // 
@@ -318,8 +314,7 @@
             this.txtForename.Location = new System.Drawing.Point(167, 98);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(136, 21);
-            this.txtForename.TabIndex = 55;
-            this.txtForename.TextChanged += new System.EventHandler(this.txtForename_TextChanged);
+            this.txtForename.TabIndex = 5;
             // 
             // lblForename
             // 
@@ -331,7 +326,6 @@
             this.lblForename.Size = new System.Drawing.Size(75, 15);
             this.lblForename.TabIndex = 54;
             this.lblForename.Text = "Forename: *";
-            this.lblForename.Click += new System.EventHandler(this.lblForename_Click);
             // 
             // txtSurname
             // 
@@ -339,8 +333,7 @@
             this.txtSurname.Location = new System.Drawing.Point(167, 61);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(136, 21);
-            this.txtSurname.TabIndex = 53;
-            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged);
+            this.txtSurname.TabIndex = 4;
             // 
             // lblSurname
             // 
@@ -352,16 +345,15 @@
             this.lblSurname.Size = new System.Drawing.Size(69, 15);
             this.lblSurname.TabIndex = 52;
             this.lblSurname.Text = "Surname: *";
-            this.lblSurname.Click += new System.EventHandler(this.lblSurname_Click);
             // 
             // cboCountry
             // 
             this.cboCountry.FormattingEnabled = true;
+            this.cboCountry.ItemHeight = 13;
             this.cboCountry.Location = new System.Drawing.Point(473, 186);
             this.cboCountry.Name = "cboCountry";
             this.cboCountry.Size = new System.Drawing.Size(136, 21);
-            this.cboCountry.TabIndex = 51;
-            this.cboCountry.SelectedIndexChanged += new System.EventHandler(this.cboCountry_SelectedIndexChanged);
+            this.cboCountry.TabIndex = 15;
             // 
             // lblCountry
             // 
@@ -373,16 +365,15 @@
             this.lblCountry.Size = new System.Drawing.Size(134, 15);
             this.lblCountry.TabIndex = 50;
             this.lblCountry.Text = "Country of Residence: *";
-            this.lblCountry.Click += new System.EventHandler(this.lblCountry_Click);
             // 
             // cboCounty
             // 
             this.cboCounty.FormattingEnabled = true;
+            this.cboCounty.ItemHeight = 13;
             this.cboCounty.Location = new System.Drawing.Point(473, 146);
             this.cboCounty.Name = "cboCounty";
             this.cboCounty.Size = new System.Drawing.Size(136, 21);
-            this.cboCounty.TabIndex = 49;
-            this.cboCounty.SelectedIndexChanged += new System.EventHandler(this.cboCounty_SelectedIndexChanged);
+            this.cboCounty.TabIndex = 14;
             // 
             // lblCounty
             // 
@@ -394,7 +385,6 @@
             this.lblCounty.Size = new System.Drawing.Size(55, 15);
             this.lblCounty.TabIndex = 48;
             this.lblCounty.Text = "County: *";
-            this.lblCounty.Click += new System.EventHandler(this.lblCounty_Click);
             // 
             // txtTown
             // 
@@ -402,8 +392,7 @@
             this.txtTown.MaxLength = 40;
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(136, 20);
-            this.txtTown.TabIndex = 47;
-            this.txtTown.TextChanged += new System.EventHandler(this.txtTown_TextChanged);
+            this.txtTown.TabIndex = 13;
             // 
             // lblTown
             // 
@@ -415,7 +404,6 @@
             this.lblTown.Size = new System.Drawing.Size(48, 15);
             this.lblTown.TabIndex = 46;
             this.lblTown.Text = "Town: *";
-            this.lblTown.Click += new System.EventHandler(this.lblTown_Click);
             // 
             // txtAddress2
             // 
@@ -423,8 +411,7 @@
             this.txtAddress2.MaxLength = 40;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(136, 20);
-            this.txtAddress2.TabIndex = 45;
-            this.txtAddress2.TextChanged += new System.EventHandler(this.txtAddress2_TextChanged);
+            this.txtAddress2.TabIndex = 12;
             // 
             // lblAddressLine2
             // 
@@ -436,7 +423,6 @@
             this.lblAddressLine2.Size = new System.Drawing.Size(99, 15);
             this.lblAddressLine2.TabIndex = 44;
             this.lblAddressLine2.Text = "Address Line 2: *";
-            this.lblAddressLine2.Click += new System.EventHandler(this.lblAddressLine2_Click);
             // 
             // txtAddress1
             // 
@@ -444,8 +430,7 @@
             this.txtAddress1.MaxLength = 40;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(136, 20);
-            this.txtAddress1.TabIndex = 43;
-            this.txtAddress1.TextChanged += new System.EventHandler(this.txtAddress1_TextChanged);
+            this.txtAddress1.TabIndex = 11;
             // 
             // lblAddressLine1
             // 
@@ -457,7 +442,6 @@
             this.lblAddressLine1.Size = new System.Drawing.Size(99, 15);
             this.lblAddressLine1.TabIndex = 42;
             this.lblAddressLine1.Text = "Address Line 1: *";
-            this.lblAddressLine1.Click += new System.EventHandler(this.lblAddressLine1_Click);
             // 
             // lblSearchLabel
             // 

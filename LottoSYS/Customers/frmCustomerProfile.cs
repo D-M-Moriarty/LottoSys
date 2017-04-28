@@ -36,6 +36,7 @@ namespace LottoSYS
 
         private void frmListCustomers_Load(object sender, EventArgs e)
         {
+            // details gridview invisible
             grpDetails.Visible = false;
             btnPrintPreview.Enabled = false;
             
@@ -63,6 +64,7 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            // customer details
             grdListing.DataSource = Customer.getCustomerProfile(txtSearchBox.Text.ToUpper()).Tables["ss"];
             
         }
@@ -131,6 +133,7 @@ namespace LottoSYS
 
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
+            // printing the customer profile
             printDialog1.Document = printDocument1;
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -144,21 +147,6 @@ namespace LottoSYS
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
 
-
-            //lblTown.Text =
-
-            //lblCounty.Text
-
-
-            //lblRegDate.Text
-
-
-            //lblBalance.Text
-
-            //PrintDocument pd = new PrintDocument();
-           // pd.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("PaperA4", 840, 1180);
-            //pd.Print();
-
             e.Graphics.DrawString("LottoSys", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, 350, 50);
             e.Graphics.DrawString("Customer Profile", new Font("Arial", 20, FontStyle.Regular), Brushes.Black, 310 , 100);
             e.Graphics.DrawString(lblName.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 150);
@@ -166,13 +154,7 @@ namespace LottoSYS
             e.Graphics.DrawString(lblCounty.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 210);
             e.Graphics.DrawString(lblRegDate.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 240);
             e.Graphics.DrawString(lblBalance.Text, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 270);
-
-
-            //e.Graphics.DrawString(, new Font("Arial", 15, FontStyle.Regular), Brushes.Black, 50, 300);
-
             
-
-
             Bitmap bm = new Bitmap(this.grdCustomerTickets.Width, this.grdCustomerTickets.Height);
             grdCustomerTickets.DrawToBitmap(bm, new Rectangle(0, 0, this.grdCustomerTickets.Width, this.grdCustomerTickets.Height));
             e.Graphics.DrawImage(bm, 0, 300);

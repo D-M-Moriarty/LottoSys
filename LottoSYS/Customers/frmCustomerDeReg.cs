@@ -41,6 +41,7 @@ namespace LottoSYS
 
         private void frmCustomerDeReg_Load(object sender, EventArgs e)
         {
+            // setting the fields to read only
             txtAddress1.ReadOnly = true;
             txtAddress1.BackColor = Color.White;
             txtAddress2.ReadOnly = true;
@@ -56,9 +57,9 @@ namespace LottoSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            // populating the gridview
             grdListing.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
-
-            
+   
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -67,15 +68,16 @@ namespace LottoSYS
 
             customer.setCustomerId(custId);
 
-
+            // checking which radio button was selected
             if (rdoDeceased.Checked)
             {
-                MessageBox.Show("Please enter dated deceased");
+
+                //MessageBox.Show("Please enter dated deceased");
 
                 customer.updateCustomer("Deceased");
 
                 customer.de_regCustomer(custId);
-
+                // clearing the fields
                 txtSurname.Text = "";
                 txtForename.Text = "";
                 txtAddress1.Text = "";

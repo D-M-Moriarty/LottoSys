@@ -34,7 +34,7 @@ namespace LottoSYS.Prize
             var draws = draw.DataTableToList<Draw>();
 
             // draw runs at 7 o clock on tuesday
-            TimeSpan drawTime = new TimeSpan(11, 0, 0);
+            TimeSpan drawTime = new TimeSpan(19, 0, 0);
             TimeSpan now = DateTime.Now.TimeOfDay;
             DateTime today = DateTime.Today;
 
@@ -104,6 +104,7 @@ namespace LottoSYS.Prize
 
             Draw draw;
 
+            // generating the draw numbers
             int[] drawNums = Ticket.generateNumbers();
 
             
@@ -117,6 +118,7 @@ namespace LottoSYS.Prize
             draw.setNumber5(drawNums[4]);
             draw.setNumber6(drawNums[5]);
 
+            // registering the draw numbers
             draw.regDraw();
 
 
@@ -126,10 +128,9 @@ namespace LottoSYS.Prize
 
             string str = "";
             string zero = "0";
-           
-            //might make each ticket a line instead
+          
 
-            
+            // the draw output
             str += "Draw result: ";
 
             for (int i = 0; i < drawNums.Length; i++)
@@ -153,13 +154,14 @@ namespace LottoSYS.Prize
             
             str += "\n\n";
             
-            //MessageBox.Show(str,"Draw Results");
+            MessageBox.Show(str,"Draw Results");
             listBox1.Items.Add(str);
             btnRunDraw.Enabled = false;
 
             try
             {
-                Analysis.updateNumberAnalysis();
+                // counting the numbers that occured and updating the number analysis file
+                Analysis.updateNumberAnalysis(drawNums);
             }
             catch
             {

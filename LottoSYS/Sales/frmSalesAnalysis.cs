@@ -18,17 +18,19 @@ namespace LottoSYS.Finance
         {
             InitializeComponent();
             parent = Parent;
+            // stopping the password beinng displayed
             txtPassword.PasswordChar = '*';
         }
 
         private void frmRevenueReport_Load(object sender, EventArgs e)
         {
+            // setting the end value to one day after the selected value of the first date
             dtpEndDate.Value = DateTime.Today.AddDays(1);
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-
+            // checking if the username and password are correct
             if (txtPassword.Text == "12345" && txtUsername.Text == "Darren")
             {
                 grpAnalysis.Visible = true;

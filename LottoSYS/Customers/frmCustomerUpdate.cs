@@ -40,6 +40,7 @@ namespace LottoSYS
 
         private void frmCustomerUpdate_Load(object sender, EventArgs e)
         {
+            // loading the dropdowns
             loadTitles();
             loadNationalities();
             loadCounties();
@@ -59,117 +60,10 @@ namespace LottoSYS
             Application.Exit();
         }
 
-
-
-        private void lblForename_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSearchBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            // displaying the customers on the datagrid
             grdUpdate.DataSource = Customer.getCustomer(txtSearchBox.Text.ToUpper()).Tables["ss"];
-        }
-
-        private void mnuUpdateCustomer_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void cboCountry_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCountry_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboCounty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCounty_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTown_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTown_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddressLine2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAddressLine1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtForename_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSurname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSurname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPhone_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tbnSubmit_Click(object sender, EventArgs e)
@@ -202,14 +96,14 @@ namespace LottoSYS
                     // if both fields are unchanged
                     if (PPSN == txtPPSN.Text && email == txtEmail.Text)
                     {
-                        regDetails();
+                        updateDetails();
                     }
                     // if both have been changed
                     else if (PPSN != txtPPSN.Text && email != txtEmail.Text)
                     {
                         if (Validation.IsValidEmail(txtEmail.Text) && Validation.isValidPPSN(txtPPSN.Text))
                         {
-                            regDetails();
+                            updateDetails();
                         }
                         else
                         {
@@ -233,7 +127,7 @@ namespace LottoSYS
                     {
                         if (Validation.isValidPPSN(txtPPSN.Text))
                         {
-                            regDetails();
+                            updateDetails();
                         }
                         else
                         {
@@ -253,7 +147,7 @@ namespace LottoSYS
                     {
                         if (Validation.IsValidEmail(txtEmail.Text))
                         {
-                            regDetails();
+                            updateDetails();
                         }
                         else
                         {
@@ -354,7 +248,8 @@ namespace LottoSYS
             }
         }
 
-        public void regDetails()
+        // method to update the customers details
+        public void updateDetails()
         {
             MessageBox.Show("Data has been updated");
 

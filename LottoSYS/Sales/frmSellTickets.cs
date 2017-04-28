@@ -31,7 +31,7 @@ namespace LottoSYS.Sales
 
         private void frmSellTickets_Load(object sender, EventArgs e)
         {
-            TimeSpan end = new TimeSpan(11, 0, 0); 
+            TimeSpan end = new TimeSpan(17, 0, 0); 
             TimeSpan now = DateTime.Now.TimeOfDay;
             DateTime today = DateTime.Today;
 
@@ -51,6 +51,7 @@ namespace LottoSYS.Sales
             }
             else
             {
+                // cannot buy tickets after the draw for the rest of the day
                 MessageBox.Show("Cannot buy tickets anymore today", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 parent.Show();
@@ -76,6 +77,7 @@ namespace LottoSYS.Sales
             //Parsing to an integer
             int numOfLines = Int32.Parse(cboTicketQTY.Text);
 
+            // creating a new ticket
             Ticket ticket = new Ticket();
             Panels panel;
 
@@ -88,14 +90,16 @@ namespace LottoSYS.Sales
             ticket.setPrice(Panels.PANEL_PRICE * numOfLines);
             ticket.setPrizeFlag("NO");
 
+            // registering the ticket
             ticket.regTicket();
 
-
+            // initialising 2d array with correct number of lines
             panelNums = new int[numOfLines, numbers6];
 
+            // generating the panels
             panelNums = Ticket.generateNumbers(numOfLines);
 
-
+            // populating the panels
             for (int i = 0; i < numOfLines; i++)
             {
                 panel = new Panels();
@@ -145,13 +149,9 @@ namespace LottoSYS.Sales
             }
 
 
-
+            // display the ticket
             MessageBox.Show(outpo);
-
-
-       
-
-
+            
             txtSurname.ResetText();
             txtForename.ResetText();
             txtTown.ResetText();
@@ -184,6 +184,7 @@ namespace LottoSYS.Sales
 
         private void loadTicketQTY()
         {
+            // displaying the ticket qty cboBox
             for (int i = 1; i < 6; i++)
             {
                 cboTicketQTY.Items.Add(i.ToString());

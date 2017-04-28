@@ -84,7 +84,7 @@
             // lblDeReg
             // 
             this.lblDeReg.AutoSize = true;
-            this.lblDeReg.Location = new System.Drawing.Point(33, 29);
+            this.lblDeReg.Location = new System.Drawing.Point(22, 29);
             this.lblDeReg.Name = "lblDeReg";
             this.lblDeReg.Size = new System.Drawing.Size(74, 15);
             this.lblDeReg.TabIndex = 2;
@@ -98,7 +98,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(64, 26);
-            this.btnSearch.TabIndex = 6;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -111,7 +111,7 @@
             this.txtSearchBox.MaxLength = 25;
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(105, 22);
-            this.txtSearchBox.TabIndex = 5;
+            this.txtSearchBox.TabIndex = 1;
             this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
             // lblSearch
@@ -158,7 +158,7 @@
             this.rdoWithdrawn.Margin = new System.Windows.Forms.Padding(2);
             this.rdoWithdrawn.Name = "rdoWithdrawn";
             this.rdoWithdrawn.Size = new System.Drawing.Size(83, 19);
-            this.rdoWithdrawn.TabIndex = 70;
+            this.rdoWithdrawn.TabIndex = 8;
             this.rdoWithdrawn.TabStop = true;
             this.rdoWithdrawn.Text = "Withdrawn";
             // 
@@ -169,7 +169,7 @@
             this.rdoDeceased.Margin = new System.Windows.Forms.Padding(2);
             this.rdoDeceased.Name = "rdoDeceased";
             this.rdoDeceased.Size = new System.Drawing.Size(81, 19);
-            this.rdoDeceased.TabIndex = 69;
+            this.rdoDeceased.TabIndex = 9;
             this.rdoDeceased.TabStop = true;
             this.rdoDeceased.Text = "Deceased";
             this.rdoDeceased.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(58, 28);
-            this.btnSubmit.TabIndex = 68;
+            this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -193,7 +193,7 @@
             this.txtForename.Margin = new System.Windows.Forms.Padding(2);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(81, 21);
-            this.txtForename.TabIndex = 65;
+            this.txtForename.TabIndex = 4;
             // 
             // lblForename
             // 
@@ -213,7 +213,7 @@
             this.txtSurname.Margin = new System.Windows.Forms.Padding(2);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(81, 21);
-            this.txtSurname.TabIndex = 63;
+            this.txtSurname.TabIndex = 3;
             // 
             // lblSurname
             // 
@@ -233,7 +233,7 @@
             this.txtTown.Margin = new System.Windows.Forms.Padding(2);
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(81, 22);
-            this.txtTown.TabIndex = 61;
+            this.txtTown.TabIndex = 7;
             // 
             // lblTown
             // 
@@ -253,7 +253,7 @@
             this.txtAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(81, 22);
-            this.txtAddress2.TabIndex = 59;
+            this.txtAddress2.TabIndex = 6;
             // 
             // lblAddressLine2
             // 
@@ -273,7 +273,7 @@
             this.txtAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(81, 22);
-            this.txtAddress1.TabIndex = 57;
+            this.txtAddress1.TabIndex = 5;
             // 
             // lblAddressLine1
             // 
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 338);
+            this.ClientSize = new System.Drawing.Size(947, 426);
             this.Controls.Add(this.grdListing);
             this.Controls.Add(this.grpDeReg);
             this.Controls.Add(this.btnSearch);

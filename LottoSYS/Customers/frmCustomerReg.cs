@@ -52,7 +52,7 @@ namespace LottoSYS
 
         private void frmCustomerReg_Load(object sender, EventArgs e)
         {
-            
+            // Load all the dropdown boxes
             loadTitles();
             loadNationalities();
             loadCounties();
@@ -77,6 +77,7 @@ namespace LottoSYS
         {
             //validate data
 
+            // check for empty fields
             Validation.textFieldChecker(cboCounty, cboNationality,
                                 cboTitle, cboCountry, txtSurname, txtForename,
                                 txtAddress1, txtAddress2, txtPPSN, txtTown, dtpDOB,
@@ -117,8 +118,10 @@ namespace LottoSYS
                     customer.setStatus("ACTIVE");
                     customer.setRegDate(DateTime.Now);
 
+                    // registering the new customer
                     customer.regCustomer();
 
+                    // resetting the ui
                     txtSurname.Text = "";
                     txtForename.Text = "";
                     txtAddress2.Text = "";
@@ -142,6 +145,7 @@ namespace LottoSYS
                 {
                     string error = "";
 
+                    // keeping track of the errors
                     if (!Validation.isValidName(txtSurname.ToString()))
                         error += "The surname is invalid\n\n";
                     else
@@ -159,9 +163,9 @@ namespace LottoSYS
                         error += "The customers email is invalid\n\n";
 
                     if (!Validation.isValidPPSN(txtPPSN.Text))
-                        error += "The customers PPSN is invalidn\n";
+                        error += "The customers PPSN is invalid\n";
 
-
+                    // show the user the errors
                     MessageBox.Show(error);
                 }
                 

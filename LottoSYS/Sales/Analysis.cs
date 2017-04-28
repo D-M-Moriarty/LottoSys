@@ -73,17 +73,18 @@ namespace LottoSYS.Sales
             return DS;
         }
 
-        public static void updateNumberAnalysis()
+        public static void updateNumberAnalysis(int[] drawNums)
         {
             var draw = Draw.getDraws();
             var draws = draw.DataTableToList<Draw>();
 
-            int num1 = draws.Last().getNumber1();
-            int num2 = draws.Last().getNumber2();
-            int num3 = draws.Last().getNumber3();
-            int num4 = draws.Last().getNumber4();
-            int num5 = draws.Last().getNumber5();
-            int num6 = draws.Last().getNumber6();
+            // TODO make sure this works
+            int num1 = drawNums[0];
+            int num2 = drawNums[1];
+            int num3 = drawNums[2];
+            int num4 = drawNums[3];
+            int num5 = drawNums[4];
+            int num6 = drawNums[5];
             
             // Connect to database
             OracleConnection myConn = new OracleConnection(ConnectDB.oradb);

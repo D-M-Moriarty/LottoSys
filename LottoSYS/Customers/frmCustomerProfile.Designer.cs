@@ -95,7 +95,7 @@
             this.btnSearch.Location = new System.Drawing.Point(229, 94);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 46;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -106,7 +106,7 @@
             this.txtSearchBox.MaxLength = 25;
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchBox.TabIndex = 45;
+            this.txtSearchBox.TabIndex = 1;
             // 
             // lblSearch
             // 
@@ -234,7 +234,7 @@
             this.btnPrintPreview.Location = new System.Drawing.Point(374, 95);
             this.btnPrintPreview.Name = "btnPrintPreview";
             this.btnPrintPreview.Size = new System.Drawing.Size(75, 23);
-            this.btnPrintPreview.TabIndex = 51;
+            this.btnPrintPreview.TabIndex = 3;
             this.btnPrintPreview.Text = "Preview";
             this.btnPrintPreview.UseVisualStyleBackColor = true;
             this.btnPrintPreview.Click += new System.EventHandler(this.btnPrintPreview_Click);

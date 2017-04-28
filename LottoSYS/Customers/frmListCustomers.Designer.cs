@@ -77,7 +77,7 @@
             this.rdoSurname.Location = new System.Drawing.Point(34, 74);
             this.rdoSurname.Name = "rdoSurname";
             this.rdoSurname.Size = new System.Drawing.Size(36, 17);
-            this.rdoSurname.TabIndex = 4;
+            this.rdoSurname.TabIndex = 3;
             this.rdoSurname.TabStop = true;
             this.rdoSurname.Text = "All";
             this.rdoSurname.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.rdoWinners.Location = new System.Drawing.Point(175, 74);
             this.rdoWinners.Name = "rdoWinners";
             this.rdoWinners.Size = new System.Drawing.Size(64, 17);
-            this.rdoWinners.TabIndex = 5;
+            this.rdoWinners.TabIndex = 4;
             this.rdoWinners.TabStop = true;
             this.rdoWinners.Text = "Winners";
             this.rdoWinners.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             this.rdoWithdrawn.Location = new System.Drawing.Point(345, 74);
             this.rdoWithdrawn.Name = "rdoWithdrawn";
             this.rdoWithdrawn.Size = new System.Drawing.Size(76, 17);
-            this.rdoWithdrawn.TabIndex = 6;
+            this.rdoWithdrawn.TabIndex = 5;
             this.rdoWithdrawn.TabStop = true;
             this.rdoWithdrawn.Text = "Withdrawn";
             this.rdoWithdrawn.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.grpSort.Location = new System.Drawing.Point(461, 74);
             this.grpSort.Name = "grpSort";
             this.grpSort.Size = new System.Drawing.Size(75, 23);
-            this.grpSort.TabIndex = 8;
+            this.grpSort.TabIndex = 6;
             this.grpSort.Text = "Print";
             this.grpSort.UseVisualStyleBackColor = true;
             this.grpSort.Click += new System.EventHandler(this.grpSort_Click);
@@ -133,7 +133,7 @@
             this.btnSearch.Location = new System.Drawing.Point(225, 95);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 46;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -144,7 +144,7 @@
             this.txtSearchBox.MaxLength = 25;
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchBox.TabIndex = 45;
+            this.txtSearchBox.TabIndex = 1;
             this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
             // lblSearch
