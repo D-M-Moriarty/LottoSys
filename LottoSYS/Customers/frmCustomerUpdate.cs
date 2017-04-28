@@ -86,15 +86,16 @@ namespace LottoSYS
              lblPPSN, lblTown, lblCounty, lblCountry, lblNationality,
              lblTitle, lblDOB, txtPhone, txtEmail, cboGender, lblEmail))
             {
-                
+                // if the surname forename and dob are valid
                 if (Validation.isValidName(txtSurname.ToString()) && Validation.isValidName(txtForename.ToString()) &&
                     Validation.isValidDOB(dtpDOB.Value))
                 {
+                    // check if the ppsn and or email has been changed
                     ifNameDobValid();
                 }
                 else
                 {
-                    // if the name dob is not valid
+                    // if the surname forename and dob is not valid
                     checkValid();
 
                 }
@@ -132,6 +133,7 @@ namespace LottoSYS
             lblPPSN.ForeColor = System.Drawing.Color.Black;
             lblEmail.ForeColor = System.Drawing.Color.Black;
 
+            // if email has been changed
             if (email != txtEmail.Text)
             {
                 if (!Validation.IsValidEmail(txtEmail.Text))
@@ -143,6 +145,7 @@ namespace LottoSYS
                     lblEmail.ForeColor = System.Drawing.Color.Black;
             }
 
+            // if ppsn has been changed
             if (PPSN != txtPPSN.Text)
             {
                 if (!Validation.isValidPPSN(txtPPSN.Text))
