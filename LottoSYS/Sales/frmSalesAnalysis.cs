@@ -84,7 +84,7 @@ namespace LottoSYS.Finance
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            ClsPrint _ClsPrint = new ClsPrint(grdSales, "Number Analysis");
+            ClsPrint _ClsPrint = new ClsPrint(grdSales, "Sales Analysis");
             _ClsPrint.printPreview();
         }
 

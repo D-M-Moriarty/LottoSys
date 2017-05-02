@@ -147,8 +147,21 @@ namespace LottoSYS.Prize
                 // updating the customers balance
                 Customer.updateCustomerBalance(prizeAmount, Ticket.getCustomerId(pan.getTicketId()));
 
+                String panelsS = "";
+
+                String drawS = "";
+
+                for (int i = 0; i < 6; i++)
+                    panelsS += panelNums[i] + ", ";
+
+                for (int i = 0; i < 6; i++)
+                    drawS += drawNums[i] + ", ";
+
+                MessageBox.Show("Winning ticket\n" + drawS + "\n" + panelsS);
+
+
                 // send email to notify customer they have won a prize
-                sendEmail(Ticket.getCustomerId(pan.getTicketId()));
+                //sendEmail(Ticket.getCustomerId(pan.getTicketId()));
 
 
             }
