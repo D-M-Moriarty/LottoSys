@@ -160,7 +160,7 @@ namespace LottoSYS.Prize
                 MessageBox.Show("Winning ticket\n" + drawS + "\n" + panelsS);
 
 
-                // send email to notify customer they have won a prize
+                // send email to notify customer they have won a prize, uncomment and use own email address
                 //sendEmail(Ticket.getCustomerId(pan.getTicketId()));
 
 
@@ -182,7 +182,7 @@ namespace LottoSYS.Prize
 
             var fromAddress = new MailAddress("dmamprop@gmail.com", "Lotto Prize");
             var toAddress = new MailAddress(email, "Customer");
-            const string fromPassword = "x11-453762";
+            const string fromPassword = "*****";
             const string subject = "LottoSys";
             string body = "You have recently won a prize and your balance has een updated";
 
